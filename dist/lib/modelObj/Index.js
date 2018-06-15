@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const Base_1 = require("../Base");
 exports.Base = Base_1.Base;
+exports.ObjectId = Base_1.ObjectId;
 const Model_string_1 = require("./Model_string");
 exports.string = Model_string_1.Model_string;
 const Model_licence_temporelle_1 = require("./Model_licence_temporelle");
