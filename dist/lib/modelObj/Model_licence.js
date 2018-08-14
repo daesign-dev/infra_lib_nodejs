@@ -1,11 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const _ = require("lodash");
-const Base_1 = require("../Base");
+const utils_1 = require("utils");
 /**
   représente la licence d'un utilisateur pour un service (ou application) distribué par un end_client
 */
-class Model_licence extends Base_1.Base {
+class Model_licence extends utils_1.Base {
     /**
       représente la licence d'un utilisateur pour un service (ou application) distribué par un end_client
     */

@@ -1,11 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const _ = require("lodash");
-const Base_1 = require("../Base");
+const utils_1 = require("utils");
 /**
   ce champ est le champ représente les champs de la base. Il est abstrait, vous devez utiliser ces enfants
 */
-class Model_field extends Base_1.Base {
+class Model_field extends utils_1.Base {
     /**
       ce champ est le champ représente les champs de la base. Il est abstrait, vous devez utiliser ces enfants
     */

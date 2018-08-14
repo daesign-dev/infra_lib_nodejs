@@ -1,10 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const Base_1 = require("../Base");
+const utils_1 = require("utils");
 /**
   collection de mail
 */
-class Model_mail extends Base_1.Base {
+class Model_mail extends utils_1.Base {
     /**
       collection de mail
     */

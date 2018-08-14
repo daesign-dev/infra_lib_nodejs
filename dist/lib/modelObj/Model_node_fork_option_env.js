@@ -1,11 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const _ = require("lodash");
-const Base_1 = require("../Base");
+const utils_1 = require("utils");
 /**
   les paramètres d’environnement a passer aux sous-processus
 */
-class Model_node_fork_option_env extends Base_1.Base {
+class Model_node_fork_option_env extends utils_1.Base {
     /**
       les paramètres d’environnement a passer aux sous-processus
     */

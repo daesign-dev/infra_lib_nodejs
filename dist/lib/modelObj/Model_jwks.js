@@ -2,11 +2,11 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const _ = require("lodash");
 const Index = require("./Index");
-const Base_1 = require("../Base");
+const utils_1 = require("utils");
 /**
   JSON Web Key Set (JWK Set)
 */
-class Model_jwks extends Base_1.Base {
+class Model_jwks extends utils_1.Base {
     /**
       JSON Web Key Set (JWK Set)
     */

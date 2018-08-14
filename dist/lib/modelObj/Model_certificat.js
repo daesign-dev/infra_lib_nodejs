@@ -1,11 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const _ = require("lodash");
-const Base_1 = require("../Base");
+const utils_1 = require("utils");
 /**
   certificat
 */
-class Model_certificat extends Base_1.Base {
+class Model_certificat extends utils_1.Base {
     /**
       certificat
     */

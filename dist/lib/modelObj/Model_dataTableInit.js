@@ -1,11 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const _ = require("lodash");
-const Base_1 = require("../Base");
+const utils_1 = require("utils");
 /**
   initalisation des listes
 */
-class Model_dataTableInit extends Base_1.Base {
+class Model_dataTableInit extends utils_1.Base {
     /**
       initalisation des listes
     */

@@ -1,12 +1,9 @@
 
 
-import {UtilsSecu , CtxInterpretor} from "utils" ;
-import { IHttpResult } from '../IHttpResult'
-import {IBase } from "../../lib/IBase" ;
-import {HttpServiceBase} from "../HttpServiceBase" ;
-import { HttpAbstractService } from '../HttpAbstractService'
+import {UtilsSecu , CtxInterpretor ,IHttpResult , IBase ,HttpServiceBase  ,HttpAbstractService ,  MiddleWareConfig } from "utils" ;
+
 import * as Interfaces from "../../lib/modelObj/Interfaces" ;
-import { MiddleWareConfig } from '../MiddleWareConfig' ;
+
 
 export class api_collection_plateform {
 
@@ -165,6 +162,18 @@ export class api_collection_plateform {
 		this.service_tutor= new HttpServiceBase<Interfaces.Iservice_tutor>({url:conf.url + "collection/service_tutor/" , secure:conf.secure})  ;
 
 		 
+		 
+		this.service_init_js= new HttpServiceBase<Interfaces.Iservice_init_js>({url:conf.url + "collection/service_init_js/" , secure:conf.secure})  ;
+
+		 
+		 
+		this.service_infra_admin= new HttpServiceBase<Interfaces.Iservice_infra_admin>({url:conf.url + "collection/service_infra_admin/" , secure:conf.secure})  ;
+
+		 
+		 
+		this.mailtoinfra2= new HttpServiceBase<Interfaces.Imailtoinfra2>({url:conf.url + "collection/mailtoinfra2/" , secure:conf.secure})  ;
+
+		 
 	
 
 		this.protoschema= new HttpServiceBase<Interfaces.Iprotoschema>( {url:conf.url + "collection/protoschema/" , secure:conf.secure} )  ;
@@ -204,6 +213,11 @@ export class api_collection_plateform {
 		 
 	
 
+		this.MultilangSendGridTemplate= new HttpServiceBase<Interfaces.IMultilangSendGridTemplate>( {url:conf.url + "collection/MultilangSendGridTemplate/" , secure:conf.secure} )  ;
+
+		
+	
+
 		this.application= new HttpServiceBase<Interfaces.Iapplication>( {url:conf.url + "collection/application/" , secure:conf.secure} )  ;
 
 		
@@ -213,7 +227,7 @@ export class api_collection_plateform {
 		 
 	
 
-		this.MultilangSendGridTemplate= new HttpServiceBase<Interfaces.IMultilangSendGridTemplate>( {url:conf.url + "collection/MultilangSendGridTemplate/" , secure:conf.secure} )  ;
+		this.TemplateLodash= new HttpServiceBase<Interfaces.ITemplateLodash>( {url:conf.url + "collection/TemplateLodash/" , secure:conf.secure} )  ;
 
 		
 	
@@ -421,6 +435,12 @@ export class api_collection_plateform {
 		 
 		 	Iservice_tutor      service de gestion des message tutoré
 		 
+		 	Iservice_init_js      service qui retourne un init.js
+		 
+		 	Iservice_infra_admin      administration de l'infra
+		 
+		 	Imailtoinfra2      retrouve la configuration de connection de l'app savy a partir du mail de l'utilisateur
+		 
 		 
 		*/
 		public service:HttpServiceBase<Interfaces.Iservice> ;
@@ -594,6 +614,30 @@ export class api_collection_plateform {
 		public service_tutor:HttpServiceBase<Interfaces.Iservice_tutor> ;
 
 		 
+		 /**
+		 service d'accès a la sous-collection :service_init_js
+		 desc: service qui retourne un init.js
+		 info: vous ne pouvez voir que ce type d'objet
+		*/
+		public service_init_js:HttpServiceBase<Interfaces.Iservice_init_js> ;
+
+		 
+		 /**
+		 service d'accès a la sous-collection :service_infra_admin
+		 desc: administration de l'infra
+		 info: vous ne pouvez voir que ce type d'objet
+		*/
+		public service_infra_admin:HttpServiceBase<Interfaces.Iservice_infra_admin> ;
+
+		 
+		 /**
+		 service d'accès a la sous-collection :mailtoinfra2
+		 desc: retrouve la configuration de connection de l'app savy a partir du mail de l'utilisateur
+		 info: vous ne pouvez voir que ce type d'objet
+		*/
+		public mailtoinfra2:HttpServiceBase<Interfaces.Imailtoinfra2> ;
+
+		 
 	
 		/**
 		 service d'accès à la collection :protoschema
@@ -687,6 +731,17 @@ export class api_collection_plateform {
 		 
 	
 		/**
+		 service d'accès à la collection :MultilangSendGridTemplate
+		 desc: décrit un template multi langue d'envoie de mail avec sendGrid
+		 
+
+		 
+		*/
+		public MultilangSendGridTemplate:HttpServiceBase<Interfaces.IMultilangSendGridTemplate> ;
+
+		
+	
+		/**
 		 service d'accès à la collection :application
 		 desc: liste des applications
 		 
@@ -710,13 +765,13 @@ export class api_collection_plateform {
 		 
 	
 		/**
-		 service d'accès à la collection :MultilangSendGridTemplate
-		 desc: décrit un template multi langue d'envoie de mail avec sendGrid
+		 service d'accès à la collection :TemplateLodash
+		 desc: template lodash + nom
 		 
 
 		 
 		*/
-		public MultilangSendGridTemplate:HttpServiceBase<Interfaces.IMultilangSendGridTemplate> ;
+		public TemplateLodash:HttpServiceBase<Interfaces.ITemplateLodash> ;
 
 		
 	

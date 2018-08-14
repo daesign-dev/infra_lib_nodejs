@@ -1,11 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const _ = require("lodash");
-const Base_1 = require("../Base");
+const utils_1 = require("utils");
 /**
   description d'une identit   pour l'acl
 */
-class Model_aclIdentity extends Base_1.Base {
+class Model_aclIdentity extends utils_1.Base {
     /**
       description d'une identit   pour l'acl
     */

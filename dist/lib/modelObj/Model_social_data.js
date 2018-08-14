@@ -1,10 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const Base_1 = require("../Base");
+const utils_1 = require("utils");
 /**
   donnée des connecteur sociaux
 */
-class Model_social_data extends Base_1.Base {
+class Model_social_data extends utils_1.Base {
     /**
       donnée des connecteur sociaux
     */

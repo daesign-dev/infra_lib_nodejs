@@ -1,7 +1,7 @@
 import * as _ from "lodash" ;
 import * as Interface from "./Interfaces" ;
 import * as Index from "./Index" ;
-import {Base } from "../Base" ;
+import {Base } from "utils" ;
 
 
 
@@ -32,6 +32,14 @@ export class Model_application extends  Base  implements Interface.Iapplication 
         }
         
     
+        
+        if(obj["depot"] != undefined){
+          
+           this["depot"] = obj["depot"].toString() ;
+           
+        }
+        
+    
   }
   
 
@@ -48,6 +56,12 @@ export class Model_application extends  Base  implements Interface.Iapplication 
         la description public de l'appli
         */
                public "description"?:string ;
+              
+       
+              /**
+        nom du depot de l'app
+        */
+               public "depot"?:string ;
               
        
 
@@ -82,6 +96,23 @@ export class Model_application extends  Base  implements Interface.Iapplication 
 
                  if(! _.isString(_description)){
                     throw new Error(path+"description is not a string") ;
+                    
+                  }
+                  
+                  
+                 
+              
+              
+           }
+           
+              
+              if(target["depot"] != null && target["depot"] != undefined ){
+              
+                let _depot  = target["depot"] ;
+                
+
+                 if(! _.isString(_depot)){
+                    throw new Error(path+"depot is not a string") ;
                     
                   }
                   

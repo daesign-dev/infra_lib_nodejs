@@ -1,11 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const _ = require("lodash");
-const Base_1 = require("../Base");
+const utils_1 = require("utils");
 /**
   association d'une entité et de l'url de son service
 */
-class Model_entity_source extends Base_1.Base {
+class Model_entity_source extends utils_1.Base {
     /**
       association d'une entité et de l'url de son service
     */

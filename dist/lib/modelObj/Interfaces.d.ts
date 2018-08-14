@@ -1,4 +1,4 @@
-import { IBase } from "../IBase";
+import { IBase } from "utils";
 export interface I {
 }
 /**
@@ -1000,14 +1000,6 @@ export interface Ilicence extends IBase {
     "usingDate"?: Date;
 }
 /**
-interface de la class application
-description liste des applications
-*/
-export interface Iapplication extends IBase {
-    "name"?: string;
-    "description"?: string;
-}
-/**
 interface de la class service_dumy_fso
 description simple remote file system a n utiliser que pour des test
 */
@@ -1193,4 +1185,49 @@ export interface Ipassport_strategie_saml extends Ipassport_strategie {
     "logoutUrl"?: string;
     "additionalLogoutParams"?: string;
     "logoutCallbackUrl"?: string;
+}
+/**
+interface de la class application
+description liste des applications
+*/
+export interface Iapplication extends IBase {
+    "name"?: string;
+    "description"?: string;
+    "depot"?: string;
+}
+/**
+interface de la class TemplateLodash
+description template lodash + nom
+*/
+export interface ITemplateLodash extends IBase {
+    "name": string;
+    "template": string;
+}
+/**
+interface de la class service_init_js
+description service qui retourne un init.js
+*/
+export interface Iservice_init_js extends Iservice {
+    "templates": ITemplateLodash[];
+}
+/**
+interface de la class service_infra_admin
+description administration de l'infra
+*/
+export interface Iservice_infra_admin extends Iservice {
+    "ssoBdUrl": string;
+    "infraBdUrl": string;
+    "platformBdUrl"?: string;
+    "service_nginxMultiConfiguratorId": string | Iservice_nginxMultiConfigurator;
+    "nginxApplicationSuffix"?: string;
+}
+/**
+interface de la class mailtoinfra2
+description retrouve la configuration de connection de l'app savy a partir du mail de l'utilisateur
+*/
+export interface Imailtoinfra2 extends Iservice {
+    "ssoBdUrl": string;
+    "infraBdUrl": string;
+    "savyLearnerId"?: string | Iapplication;
+    "confMapping"?: Imail_connexion_conf[];
 }

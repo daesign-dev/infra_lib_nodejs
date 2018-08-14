@@ -2,11 +2,11 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const _ = require("lodash");
 const Index = require("./Index");
-const Base_1 = require("../Base");
+const utils_1 = require("utils");
 /**
   option d'un sous processus node
 */
-class Model_node_fork_option extends Base_1.Base {
+class Model_node_fork_option extends utils_1.Base {
     /**
       option d'un sous processus node
     */

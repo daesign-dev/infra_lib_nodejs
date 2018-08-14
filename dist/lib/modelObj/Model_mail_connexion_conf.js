@@ -1,11 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const _ = require("lodash");
-const Base_1 = require("../Base");
+const utils_1 = require("utils");
 /**
   associe un mail a une configuration de connexion sso+ app
 */
-class Model_mail_connexion_conf extends Base_1.Base {
+class Model_mail_connexion_conf extends utils_1.Base {
     /**
       associe un mail a une configuration de connexion sso+ app
     */

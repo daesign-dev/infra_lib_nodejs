@@ -2,11 +2,11 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const _ = require("lodash");
 const Index = require("./Index");
-const Base_1 = require("../Base");
+const utils_1 = require("utils");
 /**
   décrit les régles de paramètre des servies
 */
-class Model_service_access extends Base_1.Base {
+class Model_service_access extends utils_1.Base {
     /**
       décrit les régles de paramètre des servies
     */

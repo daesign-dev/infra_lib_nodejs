@@ -1,4 +1,4 @@
-import {IHttpResult} from "./IHttpResult" ;
+import {IHttpResult} from "utils" ;
     <% _.forEach(datas , function(service){ %>
         import {<%= service.name %>} from ".<%= service.path %>" ;
     <% }) %>
