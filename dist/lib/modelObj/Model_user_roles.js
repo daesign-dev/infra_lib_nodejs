@@ -1,11 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const _ = require("lodash");
-const Base_1 = require("../Base");
+const utils_1 = require("utils");
 /**
   paire utilisateurs role
 */
-class Model_user_roles extends Base_1.Base {
+class Model_user_roles extends utils_1.Base {
     /**
       paire utilisateurs role
     */

@@ -2,11 +2,11 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const _ = require("lodash");
 const Index = require("./Index");
-const Base_1 = require("../Base");
+const utils_1 = require("utils");
 /**
   décrit un template multi langue d'envoie de mail avec sendGrid
 */
-class Model_MultilangSendGridTemplate extends Base_1.Base {
+class Model_MultilangSendGridTemplate extends utils_1.Base {
     /**
       décrit un template multi langue d'envoie de mail avec sendGrid
     */

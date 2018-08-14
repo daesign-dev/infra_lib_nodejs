@@ -1,10 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const Base_1 = require("../Base");
+const utils_1 = require("utils");
 /**
   mongo_expression
 */
-class Model_mongo_expression extends Base_1.Base {
+class Model_mongo_expression extends utils_1.Base {
     /**
       mongo_expression
     */

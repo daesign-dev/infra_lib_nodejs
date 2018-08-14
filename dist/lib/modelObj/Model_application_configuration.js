@@ -1,11 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const _ = require("lodash");
-const Base_1 = require("../Base");
+const utils_1 = require("utils");
 /**
   c'est la configuration d'une application
 */
-class Model_application_configuration extends Base_1.Base {
+class Model_application_configuration extends utils_1.Base {
     /**
       c'est la configuration d'une application
     */

@@ -2,11 +2,11 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const _ = require("lodash");
 const Index = require("./Index");
-const Base_1 = require("../Base");
+const utils_1 = require("utils");
 /**
   compte de l'utilisateur
 */
-class Model_oidc_account extends Base_1.Base {
+class Model_oidc_account extends utils_1.Base {
     /**
       compte de l'utilisateur
     */

@@ -2,11 +2,11 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const _ = require("lodash");
 const Index = require("./Index");
-const Base_1 = require("../Base");
+const utils_1 = require("utils");
 /**
   un noeud de menu de mongoEditor
 */
-class Model_ui_menu_mongo_editor extends Base_1.Base {
+class Model_ui_menu_mongo_editor extends utils_1.Base {
     /**
       un noeud de menu de mongoEditor
     */

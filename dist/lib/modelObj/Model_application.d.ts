@@ -1,5 +1,5 @@
 import * as Interface from "./Interfaces";
-import { Base } from "../Base";
+import { Base } from "utils";
 /**
   liste des applications
 */
@@ -17,6 +17,10 @@ le nom de l'application
 la description public de l'appli
 */
     "description"?: string;
+    /**
+nom du depot de l'app
+*/
+    "depot"?: string;
     static check(target: any, isCompleteObj?: boolean, path?: string): Promise<boolean>;
     static create(target: any, path?: string): Promise<Model_application>;
 }

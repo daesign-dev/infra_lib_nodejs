@@ -2,11 +2,11 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const _ = require("lodash");
 const Index = require("./Index");
-const Base_1 = require("../Base");
+const utils_1 = require("utils");
 /**
   Acl d'un enregistrement
 */
-class Model__acl extends Base_1.Base {
+class Model__acl extends utils_1.Base {
     /**
       Acl d'un enregistrement
     */

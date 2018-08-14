@@ -2,11 +2,11 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const _ = require("lodash");
 const Index = require("./Index");
-const Base_1 = require("../Base");
+const utils_1 = require("utils");
 /**
   protoschema est un méta modéle. il permet de créer les autres modèle de la base
 */
-class Model_protoschema extends Base_1.Base {
+class Model_protoschema extends utils_1.Base {
     /**
       protoschema est un méta modéle. il permet de créer les autres modèle de la base
     */

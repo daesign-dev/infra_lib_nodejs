@@ -1,11 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const _ = require("lodash");
-const Base_1 = require("../Base");
+const utils_1 = require("utils");
 /**
   liste des applications
 */
-class Model_application extends Base_1.Base {
+class Model_application extends utils_1.Base {
     /**
       liste des applications
     */
@@ -17,6 +17,9 @@ class Model_application extends Base_1.Base {
         }
         if (obj["description"] != undefined) {
             this["description"] = obj["description"].toString();
+        }
+        if (obj["depot"] != undefined) {
+            this["depot"] = obj["depot"].toString();
         }
     }
     static check(target, isCompleteObj = true, path = "") {
@@ -33,6 +36,12 @@ class Model_application extends Base_1.Base {
                 let _description = target["description"];
                 if (!_.isString(_description)) {
                     throw new Error(path + "description is not a string");
+                }
+            }
+            if (target["depot"] != null && target["depot"] != undefined) {
+                let _depot = target["depot"];
+                if (!_.isString(_depot)) {
+                    throw new Error(path + "depot is not a string");
                 }
             }
             return Promise.all(promArr).then(() => { return true; });

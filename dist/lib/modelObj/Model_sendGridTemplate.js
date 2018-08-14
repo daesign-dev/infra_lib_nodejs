@@ -2,11 +2,11 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const _ = require("lodash");
 const Index = require("./Index");
-const Base_1 = require("../Base");
+const utils_1 = require("utils");
 /**
   template send grid
 */
-class Model_sendGridTemplate extends Base_1.Base {
+class Model_sendGridTemplate extends utils_1.Base {
     /**
       template send grid
     */

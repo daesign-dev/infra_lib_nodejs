@@ -2,11 +2,11 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const _ = require("lodash");
 const Index = require("./Index");
-const Base_1 = require("../Base");
+const utils_1 = require("utils");
 /**
   c'est le client que l'on facture
 */
-class Model_end_client extends Base_1.Base {
+class Model_end_client extends utils_1.Base {
     /**
       c'est le client que l'on facture
     */

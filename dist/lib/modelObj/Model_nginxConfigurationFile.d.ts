@@ -1,5 +1,5 @@
 import * as Interface from "./Interfaces";
-import { Base } from "../Base";
+import { Base } from "utils";
 /**
   description d'un fichier de configuration nginx
 */

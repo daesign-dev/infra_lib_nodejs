@@ -1,11 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const _ = require("lodash");
-const Base_1 = require("../Base");
+const utils_1 = require("utils");
 /**
   c'est une paire nom url
 */
-class Model_name_url extends Base_1.Base {
+class Model_name_url extends utils_1.Base {
     /**
       c'est une paire nom url
     */
