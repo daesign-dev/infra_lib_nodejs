@@ -2428,38 +2428,6 @@
    }
 
     /**
-    interface de la class service_planned_tasks 
-    description Service de Taches planifiées
-   */
-    export interface Iservice_planned_tasks extends   Iservice{
-        
-              
-               "bdd_url":string;
-              
-       
-              
-               "handlerInterval"?:number;
-              
-       
-              
-               "startHandlingOnServiceStart"?:boolean;
-              
-       
-              
-               "schedule_url"?:string;
-              
-       
-              
-               "task_url"?:string;
-              
-       
-              
-               "licencesService_url"?:string;
-              
-       
-   }
-
-    /**
     interface de la class licenceStore 
     description stock de licence distribuable
    */
@@ -2983,6 +2951,42 @@
        
               
                "confMapping"?:Imail_connexion_conf[];
+              
+       
+   }
+
+    /**
+    interface de la class service_planned_tasks 
+    description Service de Taches planifiées
+   */
+    export interface Iservice_planned_tasks extends   Iservice{
+        
+              
+               "bdd_url":string;
+              
+       
+              
+               "handlerInterval"?:number;
+              
+       
+              
+               "startHandlingOnServiceStart"?:boolean;
+              
+       
+              
+               "schedule_url"?:string;
+              
+       
+              
+               "task_url"?:string;
+              
+       
+              
+               "licencesService_url"?:string;
+              
+       
+              
+               "apiUrl":string;
               
        
    }

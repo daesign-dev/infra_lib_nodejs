@@ -135,10 +135,6 @@ export class api_collection_plateform {
 
 		 
 		 
-		this.service_planned_tasks= new HttpServiceBase<Interfaces.Iservice_planned_tasks>({url:conf.url + "collection/service_planned_tasks/" , secure:conf.secure})  ;
-
-		 
-		 
 		this.service_signin= new HttpServiceBase<Interfaces.Iservice_signin>({url:conf.url + "collection/service_signin/" , secure:conf.secure})  ;
 
 		 
@@ -172,6 +168,10 @@ export class api_collection_plateform {
 		 
 		 
 		this.mailtoinfra2= new HttpServiceBase<Interfaces.Imailtoinfra2>({url:conf.url + "collection/mailtoinfra2/" , secure:conf.secure})  ;
+
+		 
+		 
+		this.service_planned_tasks= new HttpServiceBase<Interfaces.Iservice_planned_tasks>({url:conf.url + "collection/service_planned_tasks/" , secure:conf.secure})  ;
 
 		 
 	
@@ -421,8 +421,6 @@ export class api_collection_plateform {
 		 
 		 	Iservice_dumy_fso      simple remote file system a n utiliser que pour des test
 		 
-		 	Iservice_planned_tasks      Service de Taches planifiées
-		 
 		 	Iservice_signin      service d'enregistrement
 		 
 		 	Iservice_sendGrid      permet d'envoyer des mail via l'api send grid v3
@@ -440,6 +438,8 @@ export class api_collection_plateform {
 		 	Iservice_infra_admin      administration de l'infra
 		 
 		 	Imailtoinfra2      retrouve la configuration de connection de l'app savy a partir du mail de l'utilisateur
+		 
+		 	Iservice_planned_tasks      Service de Taches planifiées
 		 
 		 
 		*/
@@ -559,14 +559,6 @@ export class api_collection_plateform {
 
 		 
 		 /**
-		 service d'accès a la sous-collection :service_planned_tasks
-		 desc: Service de Taches planifiées
-		 info: vous ne pouvez voir que ce type d'objet
-		*/
-		public service_planned_tasks:HttpServiceBase<Interfaces.Iservice_planned_tasks> ;
-
-		 
-		 /**
 		 service d'accès a la sous-collection :service_signin
 		 desc: service d'enregistrement
 		 info: vous ne pouvez voir que ce type d'objet
@@ -636,6 +628,14 @@ export class api_collection_plateform {
 		 info: vous ne pouvez voir que ce type d'objet
 		*/
 		public mailtoinfra2:HttpServiceBase<Interfaces.Imailtoinfra2> ;
+
+		 
+		 /**
+		 service d'accès a la sous-collection :service_planned_tasks
+		 desc: Service de Taches planifiées
+		 info: vous ne pouvez voir que ce type d'objet
+		*/
+		public service_planned_tasks:HttpServiceBase<Interfaces.Iservice_planned_tasks> ;
 
 		 
 	

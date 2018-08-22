@@ -34,6 +34,9 @@ class Model_service_planned_tasks extends Model_service_1.Model_service {
         if (obj["licencesService_url"] != undefined) {
             this["licencesService_url"] = obj["licencesService_url"].toString();
         }
+        if (obj["apiUrl"] != undefined) {
+            this["apiUrl"] = obj["apiUrl"].toString();
+        }
     }
     static check(target, isCompleteObj = true, path = "") {
         return super.check(target, isCompleteObj, path)
@@ -76,6 +79,15 @@ class Model_service_planned_tasks extends Model_service_1.Model_service {
                 let _licencesService_url = target["licencesService_url"];
                 if (!_.isString(_licencesService_url)) {
                     throw new Error(path + "licencesService_url is not a string");
+                }
+            }
+            if (isCompleteObj && (target["apiUrl"] == null || target["apiUrl"] == undefined)) {
+                throw new Error(path + "apiUrl is required");
+            }
+            if (target["apiUrl"] != null && target["apiUrl"] != undefined) {
+                let _apiUrl = target["apiUrl"];
+                if (!_.isString(_apiUrl)) {
+                    throw new Error(path + "apiUrl is not a string");
                 }
             }
             return Promise.all(promArr).then(() => { return true; });

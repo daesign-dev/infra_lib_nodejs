@@ -35,7 +35,6 @@ class api_collection_plateform {
         this.service_push_notification = new utils_1.HttpServiceBase({ url: conf.url + "collection/service_push_notification/", secure: conf.secure });
         this.service_like = new utils_1.HttpServiceBase({ url: conf.url + "collection/service_like/", secure: conf.secure });
         this.service_dumy_fso = new utils_1.HttpServiceBase({ url: conf.url + "collection/service_dumy_fso/", secure: conf.secure });
-        this.service_planned_tasks = new utils_1.HttpServiceBase({ url: conf.url + "collection/service_planned_tasks/", secure: conf.secure });
         this.service_signin = new utils_1.HttpServiceBase({ url: conf.url + "collection/service_signin/", secure: conf.secure });
         this.service_sendGrid = new utils_1.HttpServiceBase({ url: conf.url + "collection/service_sendGrid/", secure: conf.secure });
         this.service_trainingCoursesService = new utils_1.HttpServiceBase({ url: conf.url + "collection/service_trainingCoursesService/", secure: conf.secure });
@@ -45,6 +44,7 @@ class api_collection_plateform {
         this.service_init_js = new utils_1.HttpServiceBase({ url: conf.url + "collection/service_init_js/", secure: conf.secure });
         this.service_infra_admin = new utils_1.HttpServiceBase({ url: conf.url + "collection/service_infra_admin/", secure: conf.secure });
         this.mailtoinfra2 = new utils_1.HttpServiceBase({ url: conf.url + "collection/mailtoinfra2/", secure: conf.secure });
+        this.service_planned_tasks = new utils_1.HttpServiceBase({ url: conf.url + "collection/service_planned_tasks/", secure: conf.secure });
         this.protoschema = new utils_1.HttpServiceBase({ url: conf.url + "collection/protoschema/", secure: conf.secure });
         this.mail = new utils_1.HttpServiceBase({ url: conf.url + "collection/mail/", secure: conf.secure });
         this.mail_sendgrid = new utils_1.HttpServiceBase({ url: conf.url + "collection/mail_sendgrid/", secure: conf.secure });

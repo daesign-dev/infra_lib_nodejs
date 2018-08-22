@@ -66,6 +66,14 @@ export class Model_service_planned_tasks extends   Model_service   implements In
         }
         
     
+        
+        if(obj["apiUrl"] != undefined){
+          
+           this["apiUrl"] = obj["apiUrl"].toString() ;
+           
+        }
+        
+    
   }
   
 
@@ -106,6 +114,12 @@ export class Model_service_planned_tasks extends   Model_service   implements In
         licencesService_url
         */
                public "licencesService_url"?:string ;
+              
+       
+              /**
+        url de la base de donnée
+        */
+               public "apiUrl":string ;
               
        
 
@@ -211,6 +225,27 @@ export class Model_service_planned_tasks extends   Model_service   implements In
 
                  if(! _.isString(_licencesService_url)){
                     throw new Error(path+"licencesService_url is not a string") ;
+                    
+                  }
+                  
+                  
+                 
+              
+              
+           }
+           
+              
+              if( isCompleteObj && (target["apiUrl"] == null || target["apiUrl"] == undefined) ){
+                  throw new Error(path + "apiUrl is required") ;
+              }
+              
+              if(target["apiUrl"] != null && target["apiUrl"] != undefined ){
+              
+                let _apiUrl  = target["apiUrl"] ;
+                
+
+                 if(! _.isString(_apiUrl)){
+                    throw new Error(path+"apiUrl is not a string") ;
                     
                   }
                   
