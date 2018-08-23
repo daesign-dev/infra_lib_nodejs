@@ -13,7 +13,7 @@
     "pub": "git checkout master && npm version $npm_package_version && git checkout dev",
     "vMajor": "npm version major ",
     "vMinor": "npm version minor && npm run initNewVBrach",
-    "initNewVBrach": "git checkout -b V$npm_package_version  && git add -A && git push && npm run pub",
+    "initNewVBrach": "git checkout -b V$npm_package_version && git push --set-upstream origin V$npm_package_version && git add -A && git push && npm run pub",
     "vPatch": "npm version patch",
     "version": "git add -A ",
     "postversion": "git push && git push --tags "
