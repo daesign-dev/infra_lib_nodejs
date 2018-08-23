@@ -1,6 +1,6 @@
 {
   "name": "infra_lib_nodejs",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "librarie de communication avec la base infra for nodeJS",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -8,7 +8,7 @@
     "rmDist": "rm -r dist",
     "devDistToMaster": "git checkout dev -- dist",
     "updateMaster": "npm run rmDist && npm run devDistToMaster",
-    "version": "npm updateMaster && git add -A ",
+    "version": "npm run updateMaster && git add -A ",
     "postversion": "git push && git push --tags "
   },
   "repository": {
