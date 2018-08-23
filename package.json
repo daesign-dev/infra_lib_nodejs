@@ -12,7 +12,7 @@
     "testing": "node dist/test.js",
     "pub": "git checkout master && npm version $npm_package_version && git checkout dev",
     "vMajor": "npm version major ",
-    "vMinor": "npm version minor && npm run initBranch",
+    "vMinor": "npm version minor && npm run initNewVBrach",
     "initNewVBrach": "git checkout -b $npm_package_versionX && git add -A && git push && npm run pub",
     "vPatch": "npm version patch",
     "version": "git add -A ",
