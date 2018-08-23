@@ -10,7 +10,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
     "testing": "node dist/test.js",
-    "pub":"git checkout master"
+    "pub":"git checkout master && npm version patch"
   },
   "repository": {
     "type": "git",
