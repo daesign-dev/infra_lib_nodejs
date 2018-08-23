@@ -1,6 +1,6 @@
 {
   "name": "infra_lib_nodejs",
-  "version": "1.0.8",
+  "version": "1.0.12",
   "description": "librarie de communication avec la base infra for nodeJS",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -10,7 +10,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
     "testing": "node dist/test.js",
-    "pub":"git checkout master && npm version patch"
+    "pub":"git checkout master && npm version $npm_package_version",
+    "echo":"echo 'blabal' $npm_package_version"
   },
   "repository": {
     "type": "git",
