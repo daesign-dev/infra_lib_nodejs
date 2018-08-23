@@ -10,8 +10,14 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
     "testing": "node dist/test.js",
-    "pub":"git checkout master && npm version $npm_package_version",
-    "echo":"echo 'blabal' $npm_package_version"
+    "pub":"git checkout master && npm version $npm_package_version && git checkout dev",
+    "echo":"echo 'blabal' $npm_package_version",
+    "vMajor":"npm version major ",
+    "vMinor":"npm version minor && npm run initBranch",
+    "initNewVBrach": "git checkout -b $npm_package_versionX && git add -A && git push && npm run pub",
+    "vPatch":"npm version patch",
+    "version": "git add -A ",
+    "postversion": "git push && git push --tags "
   },
   "repository": {
     "type": "git",
