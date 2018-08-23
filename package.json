@@ -1,6 +1,6 @@
 {
   "name": "infra_lib_nodejs",
-  "version": "1.8.3",
+  "version": "1.8.4",
   "description": "librarie de communication avec la base infra for nodeJS",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -15,7 +15,6 @@
     "vMinor": "npm run initNewVBrach && npm --no-git-tag-version version minor && npm run pub",
     "initNewVBrach": "git checkout -b V$npm_package_version && git push --set-upstream origin V$npm_package_version && git add -A && git push && git checkout dev ",
     "vPatch": "npm --no-git-tag-version version patch && npm run pub",
-    
     "postversion": "git tag dev_$npm_package_version && git add -A && git commit -m 'dev_$npm_package_version' && git push && git push --tags ",
     "publi": "npm run build && npm run vPatch"
   },
