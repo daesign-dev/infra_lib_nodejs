@@ -45,6 +45,7 @@ class api_collection_plateform {
         this.service_infra_admin = new utils_1.HttpServiceBase({ url: conf.url + "collection/service_infra_admin/", secure: conf.secure });
         this.mailtoinfra2 = new utils_1.HttpServiceBase({ url: conf.url + "collection/mailtoinfra2/", secure: conf.secure });
         this.service_planned_tasks = new utils_1.HttpServiceBase({ url: conf.url + "collection/service_planned_tasks/", secure: conf.secure });
+        this.Service_scorm_gateway = new utils_1.HttpServiceBase({ url: conf.url + "collection/Service_scorm_gateway/", secure: conf.secure });
         this.protoschema = new utils_1.HttpServiceBase({ url: conf.url + "collection/protoschema/", secure: conf.secure });
         this.mail = new utils_1.HttpServiceBase({ url: conf.url + "collection/mail/", secure: conf.secure });
         this.mail_sendgrid = new utils_1.HttpServiceBase({ url: conf.url + "collection/mail_sendgrid/", secure: conf.secure });

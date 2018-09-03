@@ -174,6 +174,10 @@ export class api_collection_plateform {
 		this.service_planned_tasks= new HttpServiceBase<Interfaces.Iservice_planned_tasks>({url:conf.url + "collection/service_planned_tasks/" , secure:conf.secure})  ;
 
 		 
+		 
+		this.Service_scorm_gateway= new HttpServiceBase<Interfaces.IService_scorm_gateway>({url:conf.url + "collection/Service_scorm_gateway/" , secure:conf.secure})  ;
+
+		 
 	
 
 		this.protoschema= new HttpServiceBase<Interfaces.Iprotoschema>( {url:conf.url + "collection/protoschema/" , secure:conf.secure} )  ;
@@ -441,6 +445,8 @@ export class api_collection_plateform {
 		 
 		 	Iservice_planned_tasks      Service de Taches planifiées
 		 
+		 	IService_scorm_gateway      service passerelle d'un package scorm vers l'interne
+		 
 		 
 		*/
 		public service:HttpServiceBase<Interfaces.Iservice> ;
@@ -636,6 +642,14 @@ export class api_collection_plateform {
 		 info: vous ne pouvez voir que ce type d'objet
 		*/
 		public service_planned_tasks:HttpServiceBase<Interfaces.Iservice_planned_tasks> ;
+
+		 
+		 /**
+		 service d'accès a la sous-collection :Service_scorm_gateway
+		 desc: service passerelle d'un package scorm vers l'interne
+		 info: vous ne pouvez voir que ce type d'objet
+		*/
+		public Service_scorm_gateway:HttpServiceBase<Interfaces.IService_scorm_gateway> ;
 
 		 
 	

@@ -2990,3 +2990,27 @@
               
        
    }
+
+    /**
+    interface de la class Service_scorm_gateway 
+    description service passerelle d'un package scorm vers l'interne
+   */
+    export interface IService_scorm_gateway extends   Iservice{
+        
+              
+               "privateKey":string;
+              
+       
+              
+               "endClientId":string | Iend_client;
+              
+       
+              
+               "signinUrl":string;
+              
+       
+              
+               "licenceUrl":string;
+              
+       
+   }

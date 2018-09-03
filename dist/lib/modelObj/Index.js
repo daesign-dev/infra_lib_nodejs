@@ -244,4 +244,6 @@ const Model_mailtoinfra2_1 = require("./Model_mailtoinfra2");
 exports.mailtoinfra2 = Model_mailtoinfra2_1.Model_mailtoinfra2;
 const Model_service_planned_tasks_1 = require("./Model_service_planned_tasks");
 exports.service_planned_tasks = Model_service_planned_tasks_1.Model_service_planned_tasks;
+const Model_Service_scorm_gateway_1 = require("./Model_Service_scorm_gateway");
+exports.Service_scorm_gateway = Model_Service_scorm_gateway_1.Model_Service_scorm_gateway;
 //# sourceMappingURL=Index.js.map

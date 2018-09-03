@@ -175,6 +175,8 @@ export declare class api_collection_plateform {
      
         Iservice_planned_tasks      Service de Taches planifiées
      
+        IService_scorm_gateway      service passerelle d'un package scorm vers l'interne
+     
      
     */
     service: HttpServiceBase<Interfaces.Iservice>;
@@ -322,6 +324,12 @@ export declare class api_collection_plateform {
     info: vous ne pouvez voir que ce type d'objet
    */
     service_planned_tasks: HttpServiceBase<Interfaces.Iservice_planned_tasks>;
+    /**
+    service d'accès a la sous-collection :Service_scorm_gateway
+    desc: service passerelle d'un package scorm vers l'interne
+    info: vous ne pouvez voir que ce type d'objet
+   */
+    Service_scorm_gateway: HttpServiceBase<Interfaces.IService_scorm_gateway>;
     /**
      service d'accès à la collection :protoschema
      desc: protoschema est un méta modéle. il permet de créer les autres modèle de la base
