@@ -3013,4 +3013,12 @@
                "licenceUrl":string;
               
        
+              
+               "templateUser":Iobject;
+              
+       
+              
+               "templateProfileUser":Iobject;
+              
+       
    }

@@ -54,6 +54,30 @@ export class Model_Service_scorm_gateway extends   Model_service   implements In
         }
         
     
+        
+        if(obj["templateUser"] != undefined){
+          
+            if(obj._class){
+              this["templateUser"] =  new Index[obj._class](obj["templateUser"]) ;
+            }else{
+              this["templateUser"] =  new Index["object"](obj["templateUser"]) ;
+            }
+          
+        }
+        
+    
+        
+        if(obj["templateProfileUser"] != undefined){
+          
+            if(obj._class){
+              this["templateProfileUser"] =  new Index[obj._class](obj["templateProfileUser"]) ;
+            }else{
+              this["templateProfileUser"] =  new Index["object"](obj["templateProfileUser"]) ;
+            }
+          
+        }
+        
+    
   }
   
 
@@ -82,6 +106,18 @@ export class Model_Service_scorm_gateway extends   Model_service   implements In
         url du service de licence
         */
                public "licenceUrl":string ;
+              
+       
+              /**
+        templateUser
+        */
+               public "templateUser":Interface.Iobject;
+              
+       
+              /**
+        templateProfileUser
+        */
+               public "templateProfileUser":Interface.Iobject;
               
        
 
@@ -168,6 +204,68 @@ export class Model_Service_scorm_gateway extends   Model_service   implements In
                   
                   
                  
+              
+              
+           }
+           
+              
+              if( isCompleteObj && (target["templateUser"] == null || target["templateUser"] == undefined) ){
+                  throw new Error(path + "templateUser is required") ;
+              }
+              
+              if(target["templateUser"] != null && target["templateUser"] != undefined ){
+              
+                  let _templateUser  = target["templateUser"] ;
+                  
+                  
+                    promArr.push( Index["object"].check(_templateUser, isCompleteObj , path+"templateUser.")
+                      .catch((err)=>{
+                        throw new Error(path+"templateUser is not ") ;
+                        
+
+                      }) )
+                  if(_templateUser._class != null && _templateUser._class != undefined){
+                    promArr.push( Index[_templateUser._class].check(_templateUser, isCompleteObj , path+"templateUser.")
+                      .catch((err)=>{
+                        throw new Error(path+"templateUser is not a " + _templateUser._class ) ;
+                        
+
+                      })
+                    )
+                  }
+
+                  
+              
+              
+           }
+           
+              
+              if( isCompleteObj && (target["templateProfileUser"] == null || target["templateProfileUser"] == undefined) ){
+                  throw new Error(path + "templateProfileUser is required") ;
+              }
+              
+              if(target["templateProfileUser"] != null && target["templateProfileUser"] != undefined ){
+              
+                  let _templateProfileUser  = target["templateProfileUser"] ;
+                  
+                  
+                    promArr.push( Index["object"].check(_templateProfileUser, isCompleteObj , path+"templateProfileUser.")
+                      .catch((err)=>{
+                        throw new Error(path+"templateProfileUser is not ") ;
+                        
+
+                      }) )
+                  if(_templateProfileUser._class != null && _templateProfileUser._class != undefined){
+                    promArr.push( Index[_templateProfileUser._class].check(_templateProfileUser, isCompleteObj , path+"templateProfileUser.")
+                      .catch((err)=>{
+                        throw new Error(path+"templateProfileUser is not a " + _templateProfileUser._class ) ;
+                        
+
+                      })
+                    )
+                  }
+
+                  
               
               
            }

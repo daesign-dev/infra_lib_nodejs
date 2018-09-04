@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const _ = require("lodash");
+const Index = require("./Index");
 const Model_service_1 = require("./Model_service");
 /**
   service passerelle d'un package scorm vers l'interne
@@ -28,6 +29,22 @@ class Model_Service_scorm_gateway extends Model_service_1.Model_service {
         }
         if (obj["licenceUrl"] != undefined) {
             this["licenceUrl"] = obj["licenceUrl"].toString();
+        }
+        if (obj["templateUser"] != undefined) {
+            if (obj._class) {
+                this["templateUser"] = new Index[obj._class](obj["templateUser"]);
+            }
+            else {
+                this["templateUser"] = new Index["object"](obj["templateUser"]);
+            }
+        }
+        if (obj["templateProfileUser"] != undefined) {
+            if (obj._class) {
+                this["templateProfileUser"] = new Index[obj._class](obj["templateProfileUser"]);
+            }
+            else {
+                this["templateProfileUser"] = new Index["object"](obj["templateProfileUser"]);
+            }
         }
     }
     static check(target, isCompleteObj = true, path = "") {
@@ -68,6 +85,38 @@ class Model_Service_scorm_gateway extends Model_service_1.Model_service {
                 let _licenceUrl = target["licenceUrl"];
                 if (!_.isString(_licenceUrl)) {
                     throw new Error(path + "licenceUrl is not a string");
+                }
+            }
+            if (isCompleteObj && (target["templateUser"] == null || target["templateUser"] == undefined)) {
+                throw new Error(path + "templateUser is required");
+            }
+            if (target["templateUser"] != null && target["templateUser"] != undefined) {
+                let _templateUser = target["templateUser"];
+                promArr.push(Index["object"].check(_templateUser, isCompleteObj, path + "templateUser.")
+                    .catch((err) => {
+                    throw new Error(path + "templateUser is not ");
+                }));
+                if (_templateUser._class != null && _templateUser._class != undefined) {
+                    promArr.push(Index[_templateUser._class].check(_templateUser, isCompleteObj, path + "templateUser.")
+                        .catch((err) => {
+                        throw new Error(path + "templateUser is not a " + _templateUser._class);
+                    }));
+                }
+            }
+            if (isCompleteObj && (target["templateProfileUser"] == null || target["templateProfileUser"] == undefined)) {
+                throw new Error(path + "templateProfileUser is required");
+            }
+            if (target["templateProfileUser"] != null && target["templateProfileUser"] != undefined) {
+                let _templateProfileUser = target["templateProfileUser"];
+                promArr.push(Index["object"].check(_templateProfileUser, isCompleteObj, path + "templateProfileUser.")
+                    .catch((err) => {
+                    throw new Error(path + "templateProfileUser is not ");
+                }));
+                if (_templateProfileUser._class != null && _templateProfileUser._class != undefined) {
+                    promArr.push(Index[_templateProfileUser._class].check(_templateProfileUser, isCompleteObj, path + "templateProfileUser.")
+                        .catch((err) => {
+                        throw new Error(path + "templateProfileUser is not a " + _templateProfileUser._class);
+                    }));
                 }
             }
             return Promise.all(promArr).then(() => { return true; });
