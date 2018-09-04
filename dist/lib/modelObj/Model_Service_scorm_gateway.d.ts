@@ -25,6 +25,14 @@ url du service de signin
 url du service de licence
 */
     "licenceUrl": string;
+    /**
+templateUser
+*/
+    "templateUser": Interface.Iobject;
+    /**
+templateProfileUser
+*/
+    "templateProfileUser": Interface.Iobject;
     static check(target: any, isCompleteObj?: boolean, path?: string): Promise<boolean>;
     static create(target: any, path?: string): Promise<Model_Service_scorm_gateway>;
 }

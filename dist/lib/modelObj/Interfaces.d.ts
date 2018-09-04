@@ -1241,4 +1241,6 @@ export interface IService_scorm_gateway extends Iservice {
     "endClientId": string | Iend_client;
     "signinUrl": string;
     "licenceUrl": string;
+    "templateUser": Iobject;
+    "templateProfileUser": Iobject;
 }
