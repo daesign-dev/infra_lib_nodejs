@@ -28,11 +28,15 @@ url du service de licence
     /**
 templateUser
 */
-    "templateUser": Interface.Iobject;
+    "templateUser": any;
     /**
 templateProfileUser
 */
-    "templateProfileUser": Interface.Iobject;
+    "templateProfileUser": any;
+    /**
+apiUrl
+*/
+    "apiUrl"?: string;
     static check(target: any, isCompleteObj?: boolean, path?: string): Promise<boolean>;
     static create(target: any, path?: string): Promise<Model_Service_scorm_gateway>;
 }

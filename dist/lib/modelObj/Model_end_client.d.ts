@@ -14,6 +14,10 @@ le nom de la société
 */
     "name"?: string;
     /**
+le nom humain à afficher pour l'entreprise
+*/
+    "label"?: string;
+    /**
 liste des instance d'application au quelle le end_client a accés
 */
     "applications"?: string[];
@@ -25,6 +29,10 @@ liste des administrateurs du end_client
 distributeur de licence
 */
     "licenceStore"?: Interface.IlicenceStore[];
+    /**
+client notices
+*/
+    "client_notices"?: Interface.I[];
     static check(target: any, isCompleteObj?: boolean, path?: string): Promise<boolean>;
     static create(target: any, path?: string): Promise<Model_end_client>;
 }
