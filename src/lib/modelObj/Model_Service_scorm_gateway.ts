@@ -57,11 +57,7 @@ export class Model_Service_scorm_gateway extends   Model_service   implements In
         
         if(obj["templateUser"] != undefined){
           
-            if(obj._class){
-              this["templateUser"] =  new Index[obj._class](obj["templateUser"]) ;
-            }else{
-              this["templateUser"] =  new Index["object"](obj["templateUser"]) ;
-            }
+           this["templateUser"] = obj["templateUser"] ;
           
         }
         
@@ -69,12 +65,16 @@ export class Model_Service_scorm_gateway extends   Model_service   implements In
         
         if(obj["templateProfileUser"] != undefined){
           
-            if(obj._class){
-              this["templateProfileUser"] =  new Index[obj._class](obj["templateProfileUser"]) ;
-            }else{
-              this["templateProfileUser"] =  new Index["object"](obj["templateProfileUser"]) ;
-            }
+           this["templateProfileUser"] = obj["templateProfileUser"] ;
           
+        }
+        
+    
+        
+        if(obj["apiUrl"] != undefined){
+          
+           this["apiUrl"] = obj["apiUrl"].toString() ;
+           
         }
         
     
@@ -111,13 +111,19 @@ export class Model_Service_scorm_gateway extends   Model_service   implements In
               /**
         templateUser
         */
-               public "templateUser":Interface.Iobject;
+               public "templateUser":any ;
               
        
               /**
         templateProfileUser
         */
-               public "templateProfileUser":Interface.Iobject;
+               public "templateProfileUser":any ;
+              
+       
+              /**
+        apiUrl
+        */
+               public "apiUrl"?:string ;
               
        
 
@@ -215,26 +221,7 @@ export class Model_Service_scorm_gateway extends   Model_service   implements In
               
               if(target["templateUser"] != null && target["templateUser"] != undefined ){
               
-                  let _templateUser  = target["templateUser"] ;
-                  
-                  
-                    promArr.push( Index["object"].check(_templateUser, isCompleteObj , path+"templateUser.")
-                      .catch((err)=>{
-                        throw new Error(path+"templateUser is not ") ;
-                        
-
-                      }) )
-                  if(_templateUser._class != null && _templateUser._class != undefined){
-                    promArr.push( Index[_templateUser._class].check(_templateUser, isCompleteObj , path+"templateUser.")
-                      .catch((err)=>{
-                        throw new Error(path+"templateUser is not a " + _templateUser._class ) ;
-                        
-
-                      })
-                    )
-                  }
-
-                  
+               // public "templateUser":Iobject;
               
               
            }
@@ -246,26 +233,24 @@ export class Model_Service_scorm_gateway extends   Model_service   implements In
               
               if(target["templateProfileUser"] != null && target["templateProfileUser"] != undefined ){
               
-                  let _templateProfileUser  = target["templateProfileUser"] ;
-                  
-                  
-                    promArr.push( Index["object"].check(_templateProfileUser, isCompleteObj , path+"templateProfileUser.")
-                      .catch((err)=>{
-                        throw new Error(path+"templateProfileUser is not ") ;
-                        
+               // public "templateProfileUser":Iobject;
+              
+              
+           }
+           
+              
+              if(target["apiUrl"] != null && target["apiUrl"] != undefined ){
+              
+                let _apiUrl  = target["apiUrl"] ;
+                
 
-                      }) )
-                  if(_templateProfileUser._class != null && _templateProfileUser._class != undefined){
-                    promArr.push( Index[_templateProfileUser._class].check(_templateProfileUser, isCompleteObj , path+"templateProfileUser.")
-                      .catch((err)=>{
-                        throw new Error(path+"templateProfileUser is not a " + _templateProfileUser._class ) ;
-                        
-
-                      })
-                    )
+                 if(! _.isString(_apiUrl)){
+                    throw new Error(path+"apiUrl is not a string") ;
+                    
                   }
-
                   
+                  
+                 
               
               
            }

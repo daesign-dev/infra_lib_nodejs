@@ -16,6 +16,9 @@ class Model_end_client extends utils_1.Base {
         if (obj["name"] != undefined) {
             this["name"] = obj["name"].toString();
         }
+        if (obj["label"] != undefined) {
+            this["label"] = obj["label"].toString();
+        }
         if (obj["applications"] != undefined && obj["applications"] != null && _.isArray(obj["applications"])) {
             this["applications"] = obj["applications"].map((value) => {
                 if (_.isString(value)) {
@@ -46,6 +49,16 @@ class Model_end_client extends utils_1.Base {
                 }
             });
         }
+        if (obj["client_notices"] != undefined && obj["client_notices"] != null && _.isArray(obj["client_notices"])) {
+            this["client_notices"] = obj["client_notices"].map((value) => {
+                if (value._class) {
+                    return new Index[value._class](value);
+                }
+                else {
+                    return new Index[""](value);
+                }
+            });
+        }
     }
     static check(target, isCompleteObj = true, path = "") {
         return super.check(target, isCompleteObj, path)
@@ -55,6 +68,12 @@ class Model_end_client extends utils_1.Base {
                 let _name = target["name"];
                 if (!_.isString(_name)) {
                     throw new Error(path + "name is not a string");
+                }
+            }
+            if (target["label"] != null && target["label"] != undefined) {
+                let _label = target["label"];
+                if (!_.isString(_label)) {
+                    throw new Error(path + "label is not a string");
                 }
             }
             if (target["applications"] != null && target["applications"] != undefined) {
@@ -81,6 +100,20 @@ class Model_end_client extends utils_1.Base {
                         promArr.push(Index[_licenceStore._class].check(_licenceStore, isCompleteObj, path + "licenceStore.")
                             .catch((err) => {
                             throw new Error(path + "licenceStore index: " + index + "is not a " + _licenceStore._class);
+                        }));
+                    }
+                });
+            }
+            if (target["client_notices"] != null && target["client_notices"] != undefined) {
+                target["client_notices"].forEach((_client_notices, index) => {
+                    promArr.push(Index[""].check(_client_notices, isCompleteObj, path + "client_notices.")
+                        .catch((err) => {
+                        throw new Error(path + "client_notices index: " + index + "is not ");
+                    }));
+                    if (_client_notices._class != null && _client_notices._class != undefined) {
+                        promArr.push(Index[_client_notices._class].check(_client_notices, isCompleteObj, path + "client_notices.")
+                            .catch((err) => {
+                            throw new Error(path + "client_notices index: " + index + "is not a " + _client_notices._class);
                         }));
                     }
                 });

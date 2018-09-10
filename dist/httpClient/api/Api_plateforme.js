@@ -8,7 +8,6 @@ class api_collection_plateform {
         this.secure = conf.secure;
         this.certificat = new utils_1.HttpServiceBase({ url: conf.url + "collection/certificat/", secure: conf.secure });
         this.rsa = new utils_1.HttpServiceBase({ url: conf.url + "collection/rsa/", secure: conf.secure });
-        this.end_client = new utils_1.HttpServiceBase({ url: conf.url + "collection/end_client/", secure: conf.secure });
         this.oidc_Client = new utils_1.HttpServiceBase({ url: conf.url + "collection/oidc_Client/", secure: conf.secure });
         this.application_configuration = new utils_1.HttpServiceBase({ url: conf.url + "collection/application_configuration/", secure: conf.secure });
         this.application_configuration_phoneCard = new utils_1.HttpServiceBase({ url: conf.url + "collection/application_configuration_phoneCard/", secure: conf.secure });
@@ -58,6 +57,7 @@ class api_collection_plateform {
         this.application = new utils_1.HttpServiceBase({ url: conf.url + "collection/application/", secure: conf.secure });
         this.pack_card = new utils_1.HttpServiceBase({ url: conf.url + "collection/pack_card/", secure: conf.secure });
         this.TemplateLodash = new utils_1.HttpServiceBase({ url: conf.url + "collection/TemplateLodash/", secure: conf.secure });
+        this.end_client = new utils_1.HttpServiceBase({ url: conf.url + "collection/end_client/", secure: conf.secure });
     }
 }
 exports.api_collection_plateform = api_collection_plateform;

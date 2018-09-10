@@ -21,11 +21,6 @@ export class api_collection_plateform {
 		 
 	
 
-		this.end_client= new HttpServiceBase<Interfaces.Iend_client>( {url:conf.url + "collection/end_client/" , secure:conf.secure} )  ;
-
-		
-	
-
 		this.oidc_Client= new HttpServiceBase<Interfaces.Ioidc_Client>( {url:conf.url + "collection/oidc_Client/" , secure:conf.secure} )  ;
 
 		
@@ -235,6 +230,11 @@ export class api_collection_plateform {
 
 		
 	
+
+		this.end_client= new HttpServiceBase<Interfaces.Iend_client>( {url:conf.url + "collection/end_client/" , secure:conf.secure} )  ;
+
+		
+	
 	}
 	protected url:string ;
 	protected secure: UtilsSecu = null
@@ -261,17 +261,6 @@ export class api_collection_plateform {
 		public rsa:HttpServiceBase<Interfaces.Irsa> ;
 
 		 
-	
-		/**
-		 service d'accès à la collection :end_client
-		 desc: c'est le client que l'on facture
-		 
-
-		 
-		*/
-		public end_client:HttpServiceBase<Interfaces.Iend_client> ;
-
-		
 	
 		/**
 		 service d'accès à la collection :oidc_Client
@@ -786,6 +775,17 @@ export class api_collection_plateform {
 		 
 		*/
 		public TemplateLodash:HttpServiceBase<Interfaces.ITemplateLodash> ;
+
+		
+	
+		/**
+		 service d'accès à la collection :end_client
+		 desc: c'est le client que l'on facture
+		 
+
+		 
+		*/
+		public end_client:HttpServiceBase<Interfaces.Iend_client> ;
 
 		
 	

@@ -108,30 +108,6 @@
    }
 
     /**
-    interface de la class end_client 
-    description c'est le client que l'on facture
-   */
-    export interface Iend_client extends  IBase {
-        
-              
-               "name"?:string;
-              
-       
-              
-               "applications"?:string[] | Iapplication_instance[];
-              
-       
-              
-               "admins"?:string[] | Ioidc_account[];
-              
-       
-              
-               "licenceStore"?:IlicenceStore[];
-              
-       
-   }
-
-    /**
     interface de la class service_sso 
     description c'est un sso
    */
@@ -2992,6 +2968,38 @@
    }
 
     /**
+    interface de la class end_client 
+    description c'est le client que l'on facture
+   */
+    export interface Iend_client extends  IBase {
+        
+              
+               "name"?:string;
+              
+       
+              
+               "label"?:string;
+              
+       
+              
+               "applications"?:string[] | Iapplication_instance[];
+              
+       
+              
+               "admins"?:string[] | Ioidc_account[];
+              
+       
+              
+               "licenceStore"?:IlicenceStore[];
+              
+       
+              
+               "client_notices"?:I[];
+              
+       
+   }
+
+    /**
     interface de la class Service_scorm_gateway 
     description service passerelle d'un package scorm vers l'interne
    */
@@ -3014,11 +3022,15 @@
               
        
               
-               "templateUser":Iobject;
+               "templateUser":any;              
               
        
               
-               "templateProfileUser":Iobject;
+               "templateProfileUser":any;              
+              
+       
+              
+               "apiUrl"?:string;
               
        
    }

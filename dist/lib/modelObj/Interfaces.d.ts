@@ -44,16 +44,6 @@ export interface Icertificat extends IBase {
     "name"?: string;
 }
 /**
-interface de la class end_client
-description c'est le client que l'on facture
-*/
-export interface Iend_client extends IBase {
-    "name"?: string;
-    "applications"?: string[] | Iapplication_instance[];
-    "admins"?: string[] | Ioidc_account[];
-    "licenceStore"?: IlicenceStore[];
-}
-/**
 interface de la class service_sso
 description c'est un sso
 */
@@ -1233,6 +1223,18 @@ export interface Iservice_planned_tasks extends Iservice {
     "apiUrl": string;
 }
 /**
+interface de la class end_client
+description c'est le client que l'on facture
+*/
+export interface Iend_client extends IBase {
+    "name"?: string;
+    "label"?: string;
+    "applications"?: string[] | Iapplication_instance[];
+    "admins"?: string[] | Ioidc_account[];
+    "licenceStore"?: IlicenceStore[];
+    "client_notices"?: I[];
+}
+/**
 interface de la class Service_scorm_gateway
 description service passerelle d'un package scorm vers l'interne
 */
@@ -1241,6 +1243,7 @@ export interface IService_scorm_gateway extends Iservice {
     "endClientId": string | Iend_client;
     "signinUrl": string;
     "licenceUrl": string;
-    "templateUser": Iobject;
-    "templateProfileUser": Iobject;
+    "templateUser": any;
+    "templateProfileUser": any;
+    "apiUrl"?: string;
 }

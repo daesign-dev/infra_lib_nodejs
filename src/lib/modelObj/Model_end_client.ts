@@ -25,6 +25,14 @@ export class Model_end_client extends  Base  implements Interface.Iend_client {
         
     
         
+        if(obj["label"] != undefined){
+          
+           this["label"] = obj["label"].toString() ;
+           
+        }
+        
+    
+        
         if(obj["applications"] != undefined && obj["applications"] != null && _.isArray(obj["applications"])){
           
           this["applications"] = obj["applications"].map((value)=>{
@@ -70,6 +78,22 @@ export class Model_end_client extends  Base  implements Interface.Iend_client {
         }
         
     
+        
+        if(obj["client_notices"] != undefined && obj["client_notices"] != null && _.isArray(obj["client_notices"])){
+          
+
+            this["client_notices"] = obj["client_notices"].map((value)=>{
+              if(value._class){
+                return new Index[value._class](value) ;
+              }else{
+                return new Index[""](value) ;
+              }
+            })
+            
+          
+        }
+        
+    
   }
   
 
@@ -80,6 +104,12 @@ export class Model_end_client extends  Base  implements Interface.Iend_client {
         le nom de la société
         */
                public "name"?:string ;
+              
+       
+              /**
+        le nom humain à afficher pour l'entreprise
+        */
+               public "label"?:string ;
               
        
               /**
@@ -100,6 +130,12 @@ export class Model_end_client extends  Base  implements Interface.Iend_client {
                public "licenceStore"?:Interface.IlicenceStore[];
               
        
+              /**
+        client notices
+        */
+               public "client_notices"?:Interface.I[];
+              
+       
 
 
        public static check(target:any , isCompleteObj:boolean=true,  path:string=""):Promise<boolean>{
@@ -115,6 +151,23 @@ export class Model_end_client extends  Base  implements Interface.Iend_client {
 
                  if(! _.isString(_name)){
                     throw new Error(path+"name is not a string") ;
+                    
+                  }
+                  
+                  
+                 
+              
+              
+           }
+           
+              
+              if(target["label"] != null && target["label"] != undefined ){
+              
+                let _label  = target["label"] ;
+                
+
+                 if(! _.isString(_label)){
+                    throw new Error(path+"label is not a string") ;
                     
                   }
                   
@@ -168,6 +221,33 @@ export class Model_end_client extends  Base  implements Interface.Iend_client {
                     promArr.push( Index[_licenceStore._class].check(_licenceStore, isCompleteObj , path+"licenceStore.")
                       .catch((err)=>{
                         throw new Error(path+"licenceStore index: "+ index +"is not a " + _licenceStore._class )
+                        
+
+                      })
+                    )
+                  }
+
+                  });
+              
+              
+           }
+           
+              
+              if(target["client_notices"] != null && target["client_notices"] != undefined ){
+              
+                  target["client_notices"].forEach((_client_notices , index:number)=>{
+                  
+                  
+                    promArr.push( Index[""].check(_client_notices, isCompleteObj , path+"client_notices.")
+                      .catch((err)=>{
+                        throw new Error(path+"client_notices index: "+ index +"is not ")
+                        
+
+                      }) )
+                  if(_client_notices._class != null && _client_notices._class != undefined){
+                    promArr.push( Index[_client_notices._class].check(_client_notices, isCompleteObj , path+"client_notices.")
+                      .catch((err)=>{
+                        throw new Error(path+"client_notices index: "+ index +"is not a " + _client_notices._class )
                         
 
                       })

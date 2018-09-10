@@ -23,14 +23,6 @@ export declare class api_collection_plateform {
    */
     rsa: HttpServiceBase<Interfaces.Irsa>;
     /**
-     service d'accès à la collection :end_client
-     desc: c'est le client que l'on facture
-     
-
-     
-    */
-    end_client: HttpServiceBase<Interfaces.Iend_client>;
-    /**
      service d'accès à la collection :oidc_Client
      desc: description d'un client openId (c'est une application)
      
@@ -434,6 +426,14 @@ export declare class api_collection_plateform {
      
     */
     TemplateLodash: HttpServiceBase<Interfaces.ITemplateLodash>;
+    /**
+     service d'accès à la collection :end_client
+     desc: c'est le client que l'on facture
+     
+
+     
+    */
+    end_client: HttpServiceBase<Interfaces.Iend_client>;
 }
 /**
     accès à la vue :Client
