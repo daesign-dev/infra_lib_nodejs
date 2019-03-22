@@ -30,7 +30,8 @@ fs.removeSync("./src/httpClient/services/");
 fs.removeSync("./src/httpClient/api/");
 fs.removeSync("./src/httpClient/aggregaServices/");
 
-var bddUrl:string = "https://api.justplug.fr/infra_bdd2/" ;
+//var bddUrl:string = "https://api.justplug.fr/infra_bdd2/" ;
+var bddUrl:string = "https://core-services-dev.daesign.com/infra-dbs/";
 
 rqInfra.url = `${bddUrl}collection/protoschema/`  ;
 // "https://api.justplug.fr/sso_bdd/collection/protoschema/" ;

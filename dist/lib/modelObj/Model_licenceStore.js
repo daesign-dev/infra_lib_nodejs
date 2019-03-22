@@ -13,6 +13,9 @@ class Model_licenceStore extends utils_1.Base {
     constructor(obj = {}) {
         super(obj);
         this._class = "licenceStore";
+        if (obj["licenceStoreParent"] != undefined) {
+            this["licenceStoreParent"] = obj["licenceStoreParent"].toString();
+        }
         if (obj["nbLicence"] != undefined) {
             this["nbLicence"] = new Number(obj["nbLicence"]).valueOf();
         }
@@ -59,6 +62,12 @@ class Model_licenceStore extends utils_1.Base {
         return super.check(target, isCompleteObj, path)
             .then((boolean) => {
             var promArr = [Promise.resolve(true)];
+            if (target["licenceStoreParent"] != null && target["licenceStoreParent"] != undefined) {
+                let _licenceStoreParent = target["licenceStoreParent"];
+                if (!_.isString(_licenceStoreParent)) {
+                    throw new Error(path + "licenceStoreParent is not a string");
+                }
+            }
             if (target["nbLicence"] != null && target["nbLicence"] != undefined) {
                 let _nbLicence = target["nbLicence"];
                 if (!_.isNumber(_nbLicence)) {

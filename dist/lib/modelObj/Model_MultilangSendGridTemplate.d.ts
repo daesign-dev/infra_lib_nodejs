@@ -14,6 +14,10 @@ le nom du template
 */
     "name": string;
     /**
+enum type of mail (invit, relance)
+*/
+    "type"?: string;
+    /**
 liste des Template sendgrid
 */
     "sendGridTemplates"?: Interface.IsendGridTemplate[];

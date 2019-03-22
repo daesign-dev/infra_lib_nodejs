@@ -12,6 +12,10 @@ class Model_service_trainingCoursesService extends Model_service_1.Model_service
     constructor(obj = {}) {
         super(obj);
         this._class = "service_trainingCoursesService";
+        /**
+  default name sender for mail notifications
+  */
+        this["defaultNameSender"] = "Academy Daesign (dev)";
         if (obj["apiSession"] != undefined) {
             this["apiSession"] = obj["apiSession"].toString();
         }
@@ -23,6 +27,9 @@ class Model_service_trainingCoursesService extends Model_service_1.Model_service
         }
         if (obj["mailServiceUrl"] != undefined) {
             this["mailServiceUrl"] = obj["mailServiceUrl"].toString();
+        }
+        if (obj["defaultNameSender"] != undefined) {
+            this["defaultNameSender"] = obj["defaultNameSender"].toString();
         }
         if (obj["clientInfraUrl"] != undefined) {
             this["clientInfraUrl"] = obj["clientInfraUrl"].toString();
@@ -66,6 +73,12 @@ class Model_service_trainingCoursesService extends Model_service_1.Model_service
                 let _mailServiceUrl = target["mailServiceUrl"];
                 if (!_.isString(_mailServiceUrl)) {
                     throw new Error(path + "mailServiceUrl is not a string");
+                }
+            }
+            if (target["defaultNameSender"] != null && target["defaultNameSender"] != undefined) {
+                let _defaultNameSender = target["defaultNameSender"];
+                if (!_.isString(_defaultNameSender)) {
+                    throw new Error(path + "defaultNameSender is not a string");
                 }
             }
             if (isCompleteObj && (target["clientInfraUrl"] == null || target["clientInfraUrl"] == undefined)) {

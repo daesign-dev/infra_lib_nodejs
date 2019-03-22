@@ -13,6 +13,10 @@ class Model_node_fork_option extends utils_1.Base {
     constructor(obj = {}) {
         super(obj);
         this._class = "node_fork_option";
+        /**
+  Current working directory of the child process
+  */
+        this["cwd"] = "$ENV.BASE_PATH$$/wd/";
         if (obj["cwd"] != undefined) {
             this["cwd"] = obj["cwd"].toString();
         }

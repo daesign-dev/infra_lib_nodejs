@@ -30,9 +30,17 @@ url du service d'acces au info client
 */
     "clientServiceUrl": string;
     /**
+url du file service pour le forum
+*/
+    "fileServiceUrl"?: string;
+    /**
 template des acl
 */
     "aclTemplate"?: Interface.I_acl;
+    /**
+test
+*/
+    "test"?: string;
     static check(target: any, isCompleteObj?: boolean, path?: string): Promise<boolean>;
     static create(target: any, path?: string): Promise<Model_application_configuration_appClient>;
 }

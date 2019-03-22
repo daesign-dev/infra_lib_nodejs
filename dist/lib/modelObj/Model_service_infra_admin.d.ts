@@ -26,9 +26,13 @@ id du service service_nginxMultiConfigurator
 */
     "service_nginxMultiConfiguratorId": string;
     /**
-nginxApplicationSuffix
+application suffix to updatefor wepapp type1
 */
-    "nginxApplicationSuffix"?: string;
+    "nginxApplicationSuffixWebapp1"?: string;
+    /**
+application suffix to updatefor wepapp type2
+*/
+    "nginxApplicationSuffixWebapp2"?: string;
     static check(target: any, isCompleteObj?: boolean, path?: string): Promise<boolean>;
     static create(target: any, path?: string): Promise<Model_service_infra_admin>;
 }

@@ -16,6 +16,9 @@ class Model_MultilangSendGridTemplate extends utils_1.Base {
         if (obj["name"] != undefined) {
             this["name"] = obj["name"].toString();
         }
+        if (obj["type"] != undefined) {
+            this["type"] = obj["type"].toString();
+        }
         if (obj["sendGridTemplates"] != undefined && obj["sendGridTemplates"] != null && _.isArray(obj["sendGridTemplates"])) {
             this["sendGridTemplates"] = obj["sendGridTemplates"].map((value) => {
                 if (value._class) {
@@ -38,6 +41,16 @@ class Model_MultilangSendGridTemplate extends utils_1.Base {
                 let _name = target["name"];
                 if (!_.isString(_name)) {
                     throw new Error(path + "name is not a string");
+                }
+            }
+            if (target["type"] != null && target["type"] != undefined) {
+                let _type = target["type"];
+                if (!_.isString(_type)) {
+                    throw new Error(path + "type is not a string");
+                }
+                let _enum_type = ["_TRAININGCOURSE_INVITATION_", "_TRAININGCOURSE_UNSTARTED_", "_TRAININGCOURSE_INACTIVITY_", "_TRAININGCOURSE_COMPLETE_", "_TRAININGCOURSE_SUCCEED_", "_TRAININGCOURSE_UNSUCCEED_", "_TRAININGSESSION_ENDED_", "_SAVVYLEARNER_INVITATION_"];
+                if (_enum_type.indexOf(_type) == -1) {
+                    throw new Error(path + "type dont match one of _TRAININGCOURSE_INVITATION_ , _TRAININGCOURSE_UNSTARTED_ , _TRAININGCOURSE_INACTIVITY_ , _TRAININGCOURSE_COMPLETE_ , _TRAININGCOURSE_SUCCEED_ , _TRAININGCOURSE_UNSUCCEED_ , _TRAININGSESSION_ENDED_ , _SAVVYLEARNER_INVITATION_");
                 }
             }
             if (target["sendGridTemplates"] != null && target["sendGridTemplates"] != undefined) {

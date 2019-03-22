@@ -30,6 +30,10 @@ l'url racine des services
 */
     "urlBase": string;
     /**
+client service URL for custom client
+*/
+    "clientServiceUrl"?: string;
+    /**
 l'url du service de like et note
 */
     "likeServiceUrl": string;
@@ -57,6 +61,22 @@ url du service de video call
 url du service de tutora
 */
     "tutorServiceUrl": string;
+    /**
+url for savvylearner to add to apps
+*/
+    "savvyLearnerUrl"?: string;
+    /**
+Flag to enable forum for the whole application
+*/
+    "useForums": boolean;
+    /**
+Flag to enable tutor for the whole application
+*/
+    "useTutors": boolean;
+    /**
+use profile flag (defaut is true)
+*/
+    "useProfile"?: boolean;
     static check(target: any, isCompleteObj?: boolean, path?: string): Promise<boolean>;
     static create(target: any, path?: string): Promise<Model_application_configuration_appApprenant>;
 }
