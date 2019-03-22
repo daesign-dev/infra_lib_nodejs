@@ -4,86 +4,6 @@
   }
   
     /**
-    interface de la class string 
-    description string est un type de base qui permet de représenter les champ de type string
-   */
-    export interface Istring extends   Ifield{
-        
-              
-               "name":string;
-              
-       
-              
-               "description":string;
-              
-       
-              
-               "isArrayOf"?:boolean;
-              
-       
-              
-               "required"?:boolean;
-              
-       
-              
-               "unique"?:boolean;
-              
-       
-              
-               "index"?:boolean;
-              
-       
-              
-               "default"?:string;
-              
-       
-              
-               "lowercase"?:boolean;
-              
-       
-              
-               "uppercase"?:boolean;
-              
-       
-              
-               "trim"?:boolean;
-              
-       
-              
-               "match"?:string;
-              
-       
-              
-               "enum"?:string[];
-              
-       
-   }
-
-    /**
-    interface de la class licence_temporelle 
-    description c'est une licence qui dure un certain temps
-   */
-    export interface Ilicence_temporelle extends   Ilicence{
-        
-              
-               "validityStartDate"?:Date;
-              
-       
-              
-               "validityEndDate"?:Date;
-              
-       
-              
-               "licenceDuration"?:number;
-              
-       
-              
-               "licenceEndDate"?:Date;
-              
-       
-   }
-
-    /**
     interface de la class ui_menu_mongo_editor_separateur 
     description représente un séparateur dans le menu
    */
@@ -632,74 +552,6 @@
    }
 
     /**
-    interface de la class node_fork_option_env 
-    description les paramètres d’environnement a passer aux sous-processus
-   */
-    export interface Inode_fork_option_env extends  IBase {
-        
-              
-               "CONF_URL"?:string;
-              
-       
-              
-               "SRV_ID"?:string | Iservice;
-              
-       
-   }
-
-    /**
-    interface de la class node_fork_option 
-    description option d'un sous processus node 
-   */
-    export interface Inode_fork_option extends  IBase {
-        
-              
-               "cwd"?:string;
-              
-       
-              
-               "env"?:Inode_fork_option_env;
-              
-       
-   }
-
-    /**
-    interface de la class service_supervision_service_conf 
-    description configuration d'un service dans le superviseur
-   */
-    export interface Iservice_supervision_service_conf extends  IBase {
-        
-              
-               "name"?:string;
-              
-       
-              
-               "path"?:string;
-              
-       
-              
-               "args"?:string[];
-              
-       
-              
-               "options"?:Inode_fork_option;
-              
-       
-              
-               "restart"?:boolean;
-              
-       
-              
-               "maxKill"?:number;
-              
-       
-              
-               "minTime"?:number;
-              
-       
-   }
-
-    /**
     interface de la class route_role 
     description paire route et role
    */
@@ -757,14 +609,6 @@
                "licence_service"?:string;
               
        
-   }
-
-    /**
-    interface de la class application_configuration_phoneCard 
-    description configuration d'une application phoneCard
-   */
-    export interface Iapplication_configuration_phoneCard extends   Iapplication_configuration{
-        
    }
 
     /**
@@ -1184,46 +1028,6 @@
    }
 
     /**
-    interface de la class licenceStore_global 
-    description licence store dont les applications sont le catalogue du client
-   */
-    export interface IlicenceStore_global extends   IlicenceStore{
-        
-   }
-
-    /**
-    interface de la class service_licence_token 
-    description c'est un service en charge de valider les licences et retourner les configurations des applications web
-   */
-    export interface Iservice_licence_token extends   Iservice{
-        
-              
-               "licenceUrl"?:string;
-              
-       
-              
-               "application_instanceUrl"?:string;
-              
-       
-              
-               "tockenDuration"?:number;
-              
-       
-              
-               "sso_well-known"?:string;
-              
-       
-              
-               "certificates"?:string[] | Icertificat[];
-              
-       
-              
-               "end_clientUrl"?:string;
-              
-       
-   }
-
-    /**
     interface de la class oidc_account 
     description compte de l'utilisateur
    */
@@ -1467,6 +1271,108 @@
        
               
                "direction"?:string;
+              
+       
+   }
+
+    /**
+    interface de la class passport_strategie_saml 
+    description strategie saml pour passport (https://github.com/bergie/passport-saml)
+   */
+    export interface Ipassport_strategie_saml extends   Ipassport_strategie{
+        
+              
+               "lib":string;
+              
+       
+              
+               "strategieName":string;
+              
+       
+              
+               "callbackUrl":string;
+              
+       
+              
+               "entryPoint"?:string;
+              
+       
+              
+               "issuer"?:string;
+              
+       
+              
+               "cert"?:string;
+              
+       
+              
+               "privateCert"?:string;
+              
+       
+              
+               "decryptionPvk"?:string;
+              
+       
+              
+               "signatureAlgorithm"?:string;
+              
+       
+              
+               "additionalParams"?:string;
+              
+       
+              
+               "identifierFormat"?:string;
+              
+       
+              
+               "acceptedClockSkewMs"?:number;
+              
+       
+              
+               "attributeConsumingServiceIndex"?:string;
+              
+       
+              
+               "disableRequestedAuthnContext"?:boolean;
+              
+       
+              
+               "authnContext"?:string;
+              
+       
+              
+               "forceAuthn"?:boolean;
+              
+       
+              
+               "skipRequestCompression"?:boolean;
+              
+       
+              
+               "validateInResponseTo"?:string;
+              
+       
+              
+               "requestIdExpirationPeriodMs"?:number;
+              
+       
+                          
+       
+              
+               "passReqToCallback"?:boolean;
+              
+       
+              
+               "logoutUrl"?:string;
+              
+       
+              
+               "additionalLogoutParams"?:string;
+              
+       
+              
+               "logoutCallbackUrl"?:string;
               
        
    }
@@ -1720,22 +1626,6 @@
    }
 
     /**
-    interface de la class service_goshabaGateway 
-    description passerelle pour goshaba
-   */
-    export interface Iservice_goshabaGateway extends   Iservice{
-        
-              
-               "privateKey":string;
-              
-       
-              
-               "packUrl":string;
-              
-       
-   }
-
-    /**
     interface de la class service_mongo 
     description configure un service mongo
    */
@@ -1888,194 +1778,6 @@
    }
 
     /**
-    interface de la class mongo_aggregation 
-    description les opérateurs d'aggregation du pipe de mongo
-   */
-    export interface Imongo_aggregation extends  IBase {
-        
-              
-               "from"?:string;
-              
-       
-   }
-
-    /**
-    interface de la class mongo_queryfilter 
-    description mongo_queryfilter
-   */
-    export interface Imongo_queryfilter extends  IBase {
-        
-   }
-
-    /**
-    interface de la class mongo_expression_eq 
-    description https://docs.mongodb.com/manual/reference/operator/query/eq/#op._S_eq
-   */
-    export interface Imongo_expression_eq extends   Imongo_expression_comp{
-        
-   }
-
-    /**
-    interface de la class mongo_expression_gt 
-    description https://docs.mongodb.com/manual/reference/operator/query/eq/#op._S_gt
-   */
-    export interface Imongo_expression_gt extends   Imongo_expression_comp{
-        
-   }
-
-    /**
-    interface de la class mongo_expression_gte 
-    description https://docs.mongodb.com/manual/reference/operator/query/eq/#op._S_gte
-   */
-    export interface Imongo_expression_gte extends   Imongo_expression_comp{
-        
-   }
-
-    /**
-    interface de la class mongo_expression_in 
-    description https://docs.mongodb.com/manual/reference/operator/query/eq/#op._S_in
-   */
-    export interface Imongo_expression_in extends   Imongo_expression_comp{
-        
-   }
-
-    /**
-    interface de la class mongo_expression_lt 
-    description https://docs.mongodb.com/manual/reference/operator/query/eq/#op._S_lt
-   */
-    export interface Imongo_expression_lt extends   Imongo_expression_comp{
-        
-   }
-
-    /**
-    interface de la class mongo_expression_lte 
-    description https://docs.mongodb.com/manual/reference/operator/query/eq/#op._S_lte
-   */
-    export interface Imongo_expression_lte extends   Imongo_expression_comp{
-        
-   }
-
-    /**
-    interface de la class mongo_expression_ne 
-    description https://docs.mongodb.com/manual/reference/operator/query/eq/#op._S_nin
-   */
-    export interface Imongo_expression_ne extends   Imongo_expression_comp{
-        
-   }
-
-    /**
-    interface de la class mongo_expression_comp 
-    description mongo_expression_comp
-   */
-    export interface Imongo_expression_comp extends   Imongo_expression{
-        
-              
-               "field"?:string;
-              
-       
-              
-               "value":string[];
-              
-       
-              
-               "dataType":string;
-              
-       
-              
-               "isArray"?:boolean;
-              
-       
-   }
-
-    /**
-    interface de la class mongo_expression 
-    description mongo_expression
-   */
-    export interface Imongo_expression extends  IBase {
-        
-   }
-
-    /**
-    interface de la class mongo_expression_logical 
-    description Logical Query Operators
-   */
-    export interface Imongo_expression_logical extends   Imongo_expression{
-        
-   }
-
-    /**
-    interface de la class mongo_expression_and 
-    description https://docs.mongodb.com/manual/reference/operator/query/and/
-   */
-    export interface Imongo_expression_and extends   Imongo_expression_logical{
-        
-              
-               "expression":Imongo_expression[];
-              
-       
-   }
-
-    /**
-    interface de la class mongo_expression_not 
-    description https://docs.mongodb.com/manual/reference/operator/query/not/
-   */
-    export interface Imongo_expression_not extends   Imongo_expression_logical{
-        
-              
-               "field":string;
-              
-       
-              
-               "expression":Imongo_expression[];
-              
-       
-   }
-
-    /**
-    interface de la class mongo_expression_nor 
-    description https://docs.mongodb.com/manual/reference/operator/query/nor/
-   */
-    export interface Imongo_expression_nor extends   Imongo_expression_logical{
-        
-              
-               "expression":Imongo_expression[];
-              
-       
-   }
-
-    /**
-    interface de la class mongo_expression_or 
-    description https://docs.mongodb.com/manual/reference/operator/query/or/
-   */
-    export interface Imongo_expression_or extends   Imongo_expression_logical{
-        
-              
-               "expression":Imongo_expression[];
-              
-       
-   }
-
-    /**
-    interface de la class mongo_expression_array 
-    description mongo_expression_array
-   */
-    export interface Imongo_expression_array extends   Imongo_expression{
-        
-              
-               "value"?:string[];
-              
-       
-              
-               "valueType"?:string;
-              
-       
-              
-               "isArray"?:boolean;
-              
-       
-   }
-
-    /**
     interface de la class nginxConfigurationFile 
     description description d'un fichier de configuration nginx
    */
@@ -2096,79 +1798,215 @@
    }
 
     /**
-    interface de la class service_nginxConfigurator 
-    description service_nginxConfigurator
+    interface de la class string 
+    description string est un type de base qui permet de représenter les champ de type string
    */
-    export interface Iservice_nginxConfigurator extends   Iservice{
-        
-   }
-
-    /**
-    interface de la class nginxConfigurationFileApp 
-    description description d'un fichier de configuration nginx
-   */
-    export interface InginxConfigurationFileApp extends  IBase {
+    export interface Istring extends   Ifield{
         
               
-               "suffix"?:string;
+               "name":string;
               
        
               
-               "template"?:string;
+               "description":string;
               
        
               
-               "applications":string[] | Iapplication_instance[];
+               "isArrayOf"?:boolean;
               
        
               
-               "clients":string[] | Iend_client[];
-              
-       
-   }
-
-    /**
-    interface de la class service_nginxMultiConfigurator 
-    description configuration d'un service nginx multi configuration
-   */
-    export interface Iservice_nginxMultiConfigurator extends   Iservice_nginxConfigurator{
-        
-              
-               "nginxUser"?:string;
+               "required"?:boolean;
               
        
               
-               "serviceUrl"?:string;
+               "unique"?:boolean;
               
        
               
-               "clientUrl":string;
+               "index"?:boolean;
               
        
               
-               "appInstanceUrl"?:string;
+               "default"?:string;
               
        
               
-               "appUrl":string;
+               "lowercase"?:boolean;
               
        
               
-               "configurationFile"?:InginxConfigurationFile[];
+               "uppercase"?:boolean;
               
        
               
-               "configurationApplication"?:InginxConfigurationFileApp[];
+               "trim"?:boolean;
+              
+       
+              
+               "match"?:string;
+              
+       
+              
+               "enum"?:string[];
               
        
    }
 
     /**
-    interface de la class application_configuration_appCoach 
-    description c'est la configuration d'une application Coach
+    interface de la class service_supervision_service_conf 
+    description configuration d'un service dans le superviseur
    */
-    export interface Iapplication_configuration_appCoach extends   Iapplication_configuration{
+    export interface Iservice_supervision_service_conf extends  IBase {
         
+              
+               "name"?:string;
+              
+       
+              
+               "path"?:string;
+              
+       
+              
+               "args"?:string[];
+              
+       
+              
+               "options"?:Inode_fork_option;
+              
+       
+              
+               "restart"?:boolean;
+              
+       
+              
+               "maxKill"?:number;
+              
+       
+              
+               "minTime"?:number;
+              
+       
+   }
+
+    /**
+    interface de la class node_fork_option 
+    description option d'un sous processus node 
+   */
+    export interface Inode_fork_option extends  IBase {
+        
+              
+               "cwd"?:string;
+              
+       
+              
+               "env"?:Inode_fork_option_env;
+              
+       
+   }
+
+    /**
+    interface de la class node_fork_option_env 
+    description les paramètres d’environnement a passer aux sous-processus
+   */
+    export interface Inode_fork_option_env extends  IBase {
+        
+              
+               "CONF_URL"?:string;
+              
+       
+              
+               "SRV_ID"?:string | Iservice;
+              
+       
+   }
+
+    /**
+    interface de la class routeParam 
+    description paramètre d'une route
+   */
+    export interface IrouteParam extends  IBase {
+        
+              
+               "paramName":string;
+              
+       
+              
+               "type"?:string;
+              
+       
+   }
+
+    /**
+    interface de la class castParam 
+    description paramètre d'une querry qui doit être casté
+   */
+    export interface IcastParam extends  IBase {
+        
+              
+               "paramName":string;
+              
+       
+              
+               "type"?:string;
+              
+       
+              
+               "param":string;
+              
+       
+   }
+
+    /**
+    interface de la class object 
+    description ce champ représente les objets
+   */
+    export interface Iobject extends   Ifield{
+        
+   }
+
+    /**
+    interface de la class _view 
+    description créer des pipe d'agrégation intérogeable https://docs.mongodb.com/manual/reference/operator/aggregation-pipeline/
+   */
+    export interface I_view extends  IBase {
+        
+              
+               "name":string;
+              
+       
+              
+               "description":string;
+              
+       
+              
+               "output":string;
+              
+       
+              
+               "model":string;
+              
+       
+              
+               "pipeline"?:any[];              
+              
+       
+   }
+
+    /**
+    interface de la class _view_params 
+    description view avec des params
+   */
+    export interface I_view_params extends   I_view{
+        
+              
+               "params"?:IrouteParam[];
+              
+       
+              
+               "castParams"?:IcastParam[];
+              
+       
    }
 
     /**
@@ -2216,11 +2054,19 @@
    }
 
     /**
-    interface de la class service_push_notification 
-    description Service pour gérer les notifications push des applications
+    interface de la class service_goshabaGateway 
+    description passerelle pour goshaba
    */
-    export interface Iservice_push_notification extends   Iservice{
+    export interface Iservice_goshabaGateway extends   Iservice{
         
+              
+               "privateKey":string;
+              
+       
+              
+               "packUrl":string;
+              
+       
    }
 
     /**
@@ -2240,219 +2086,39 @@
    }
 
     /**
-    interface de la class service_serviceOrchestrator 
-    description service d'orchestration de service. ce service permet de créer des routes qui enchaîne des middleware paramétré qui consomment les autres services
+    interface de la class api_key 
+    description Défini un certificat utilisant uniquement une clé d'API pour une application donnée
    */
-    export interface Iservice_serviceOrchestrator extends  IBase {
-        
-   }
-
-    /**
-    interface de la class object 
-    description ce champ représente les objets
-   */
-    export interface Iobject extends   Ifield{
-        
-   }
-
-    /**
-    interface de la class _view 
-    description créer des pipe d'agrégation intérogeable https://docs.mongodb.com/manual/reference/operator/aggregation-pipeline/
-   */
-    export interface I_view extends  IBase {
+    export interface Iapi_key extends   Icertificat{
         
               
-               "name":string;
+               "key"?:string;
               
        
               
-               "description":string;
-              
-       
-              
-               "output":string;
-              
-       
-              
-               "model":string;
-              
-       
-              
-               "pipeline"?:any[];              
+               "app"?:string | Iapplication_instance;
               
        
    }
 
     /**
-    interface de la class castParam 
-    description paramètre d'une querry qui doit être casté
+    interface de la class pem_for_app 
+    description Certificat PEM pour une app donnée
    */
-    export interface IcastParam extends  IBase {
+    export interface Ipem_for_app extends   Icertificat{
         
               
-               "paramName":string;
+               "app"?:string | Iapplication_instance;
               
        
               
-               "type"?:string;
+               "certificat"?:string;
               
        
               
-               "param":string;
+               "private_key"?:string;
               
        
-   }
-
-    /**
-    interface de la class _view_params 
-    description view avec des params
-   */
-    export interface I_view_params extends   I_view{
-        
-              
-               "params"?:IrouteParam[];
-              
-       
-              
-               "castParams"?:IcastParam[];
-              
-       
-   }
-
-    /**
-    interface de la class routeParam 
-    description paramètre d'une route
-   */
-    export interface IrouteParam extends  IBase {
-        
-              
-               "paramName":string;
-              
-       
-              
-               "type"?:string;
-              
-       
-   }
-
-    /**
-    interface de la class licence 
-    description représente la licence d'un utilisateur pour un service (ou application) distribué par un end_client
-   */
-    export interface Ilicence extends  IBase {
-        
-              
-               "end_client"?:string | Iend_client;
-              
-       
-              
-               "user"?:string | Ioidc_account;
-              
-       
-              
-               "application_instance"?:string[] | Iapplication_instance[];
-              
-       
-              
-               "ressource"?:string[] | Ipack_card[];
-              
-       
-              
-               "licenceStoreRef"?:string;
-              
-       
-              
-               "creationDate":Date;
-              
-       
-              
-               "usingDate"?:Date;
-              
-       
-   }
-
-    /**
-    interface de la class service_dumy_fso 
-    description simple remote file system a n utiliser que pour des test
-   */
-    export interface Iservice_dumy_fso extends   Iservice{
-        
-              
-               "fsoBase"?:string;
-              
-       
-              
-               "url_bd"?:string;
-              
-       
-              
-               "url_folder_collection"?:string;
-              
-       
-              
-               "url_file_collection"?:string;
-              
-       
-              
-               "url_service"?:string;
-              
-       
-              
-               "root_file_directory"?:string;
-              
-       
-   }
-
-    /**
-    interface de la class licenceStore 
-    description stock de licence distribuable
-   */
-    export interface IlicenceStore extends  IBase {
-        
-              
-               "nbLicence"?:number;
-              
-       
-              
-               "licenceTemplate"?:Ilicence[];
-              
-       
-              
-               "autoAssign"?:boolean;
-              
-       
-              
-               "validytyStartDate"?:Date;
-              
-       
-              
-               "validityEndDate"?:Date;
-              
-       
-              
-               "distributionPeriode"?:IperiodicalDistrution[];
-              
-       
-              
-               "name":string;
-              
-       
-              
-               "nbLicenceOriginal":number;
-              
-       
-              
-               "ref"?:string;
-              
-       
-   }
-
-    /**
-    interface de la class application_configuration_antico 
-    description configuration d'un parcourt anticoruption
-   */
-    export interface Iapplication_configuration_antico extends   Iapplication_configuration{
-        
    }
 
     /**
@@ -2492,22 +2158,6 @@
    }
 
     /**
-    interface de la class MultilangSendGridTemplate 
-    description décrit un template multi langue d'envoie de mail avec sendGrid
-   */
-    export interface IMultilangSendGridTemplate extends  IBase {
-        
-              
-               "name":string;
-              
-       
-              
-               "sendGridTemplates"?:IsendGridTemplate[];
-              
-       
-   }
-
-    /**
     interface de la class service_sendGrid 
     description permet d'envoyer des mail via l'api send grid v3
    */
@@ -2527,34 +2177,6 @@
        
               
                "templates"?:string[] | IMultilangSendGridTemplate[];
-              
-       
-   }
-
-    /**
-    interface de la class service_trainingCoursesService 
-    description service de gestion des parcourts de formation
-   */
-    export interface Iservice_trainingCoursesService extends   Iservice{
-        
-              
-               "apiSession":string;
-              
-       
-              
-               "licenceServiceUrl":string;
-              
-       
-              
-               "taskServiceUrl":string;
-              
-       
-              
-               "mailServiceUrl":string;
-              
-       
-              
-               "clientInfraUrl":string;
               
        
    }
@@ -2608,45 +2230,125 @@
    }
 
     /**
-    interface de la class application_configuration_appClient 
-    description c'est la configuration d'une application Client
+    interface de la class service_licence_token 
+    description c'est un service en charge de valider les licences et retourner les configurations des applications web
    */
-    export interface Iapplication_configuration_appClient extends   Iapplication_configuration{
+    export interface Iservice_licence_token extends   Iservice{
         
               
-               "configurationUrlDb":string;
+               "licenceUrl"?:string;
               
        
               
-               "urlBase":string;
+               "application_instanceUrl"?:string;
               
        
               
-               "signinUrl":string;
+               "tockenDuration"?:number;
               
        
               
-               "serviceSessionUrl":string;
+               "sso_well-known"?:string;
               
        
               
-               "clientServiceUrl":string;
+               "certificates"?:string[] | Icertificat[];
               
        
               
-               "aclTemplate"?:I_acl;
+               "end_clientUrl"?:string;
               
        
    }
 
     /**
-    interface de la class service_orchestrator 
-    description service d'orchestration
+    interface de la class licence_temporelle 
+    description c'est une licence qui dure un certain temps
    */
-    export interface Iservice_orchestrator extends   Iservice{
+    export interface Ilicence_temporelle extends   Ilicence{
         
               
-               "apiUrl":string;
+               "validityStartDate"?:Date;
+              
+       
+              
+               "validityEndDate"?:Date;
+              
+       
+              
+               "licenceDuration"?:number;
+              
+       
+              
+               "licenceEndDate"?:Date;
+              
+       
+   }
+
+    /**
+    interface de la class service_dumy_fso 
+    description simple remote file system a n utiliser que pour des test
+   */
+    export interface Iservice_dumy_fso extends   Iservice{
+        
+              
+               "fsoBase"?:string;
+              
+       
+              
+               "url_bd"?:string;
+              
+       
+              
+               "url_folder_collection"?:string;
+              
+       
+              
+               "url_file_collection"?:string;
+              
+       
+              
+               "url_service"?:string;
+              
+       
+              
+               "root_file_directory"?:string;
+              
+       
+   }
+
+    /**
+    interface de la class service_push_notification 
+    description Service pour gérer les notifications push des applications
+   */
+    export interface Iservice_push_notification extends   Iservice{
+        
+              
+               "url_service_db"?:string;
+              
+       
+              
+               "url_certificate_collection"?:string;
+              
+       
+              
+               "context"?:string;
+              
+       
+              
+               "aws_access_key_id"?:string;
+              
+       
+              
+               "aws_secret_access_key"?:string;
+              
+       
+              
+               "aws_region"?:string;
+              
+       
+              
+               "url_service_task"?:string;
               
        
    }
@@ -2676,162 +2378,6 @@
    }
 
     /**
-    interface de la class application_configuration_appApprenant 
-    description c'est la configuration d'une application Apprenant
-   */
-    export interface Iapplication_configuration_appApprenant extends   Iapplication_configuration{
-        
-              
-               "forumUrl"?:string;
-              
-       
-              
-               "fileServiceUrl"?:string;
-              
-       
-              
-               "URL_FileService"?:string;
-              
-       
-              
-               "configurationUrlDb":string;
-              
-       
-              
-               "urlBase":string;
-              
-       
-              
-               "likeServiceUrl":string;
-              
-       
-              
-               "aclTemplate"?:I_acl;
-              
-       
-              
-               "trainingCourseServiceUrl":string;
-              
-       
-              
-               "syncSoketioUrl":string;
-              
-       
-              
-               "syncSoketioPath":string;
-              
-       
-              
-               "tutorVideoCallUrl":string;
-              
-       
-              
-               "tutorServiceUrl":string;
-              
-       
-   }
-
-    /**
-    interface de la class passport_strategie_saml 
-    description strategie saml pour passport (https://github.com/bergie/passport-saml)
-   */
-    export interface Ipassport_strategie_saml extends   Ipassport_strategie{
-        
-              
-               "lib":string;
-              
-       
-              
-               "strategieName":string;
-              
-       
-              
-               "callbackUrl":string;
-              
-       
-              
-               "entryPoint"?:string;
-              
-       
-              
-               "issuer"?:string;
-              
-       
-              
-               "cert"?:string;
-              
-       
-              
-               "privateCert"?:string;
-              
-       
-              
-               "decryptionPvk"?:string;
-              
-       
-              
-               "signatureAlgorithm"?:string;
-              
-       
-              
-               "additionalParams"?:string;
-              
-       
-              
-               "identifierFormat"?:string;
-              
-       
-              
-               "acceptedClockSkewMs"?:number;
-              
-       
-              
-               "attributeConsumingServiceIndex"?:string;
-              
-       
-              
-               "disableRequestedAuthnContext"?:boolean;
-              
-       
-              
-               "authnContext"?:string;
-              
-       
-              
-               "forceAuthn"?:boolean;
-              
-       
-              
-               "skipRequestCompression"?:boolean;
-              
-       
-              
-               "validateInResponseTo"?:string;
-              
-       
-              
-               "requestIdExpirationPeriodMs"?:number;
-              
-       
-              
-               "passReqToCallback"?:boolean;
-              
-       
-              
-               "logoutUrl"?:string;
-              
-       
-              
-               "additionalLogoutParams"?:string;
-              
-       
-              
-               "logoutCallbackUrl"?:string;
-              
-       
-   }
-
-    /**
     interface de la class application 
     description liste des applications
    */
@@ -2847,6 +2393,62 @@
        
               
                "depot"?:string;
+              
+       
+   }
+
+    /**
+    interface de la class service_nginxConfigurator 
+    description service_nginxConfigurator
+   */
+    export interface Iservice_nginxConfigurator extends   Iservice{
+        
+   }
+
+    /**
+    interface de la class service_nginxMultiConfigurator 
+    description configuration d'un service nginx multi configuration
+   */
+    export interface Iservice_nginxMultiConfigurator extends   Iservice_nginxConfigurator{
+        
+              
+               "nginxUser"?:string;
+              
+       
+              
+               "serviceUrl"?:string;
+              
+       
+              
+               "clientUrl":string;
+              
+       
+              
+               "appInstanceUrl"?:string;
+              
+       
+              
+               "appUrl":string;
+              
+       
+              
+               "configurationFile"?:InginxConfigurationFile[];
+              
+       
+              
+               "configurationApplication"?:InginxConfigurationFileApp[];
+              
+       
+   }
+
+    /**
+    interface de la class service_init_js 
+    description service qui retourne un init.js
+   */
+    export interface Iservice_init_js extends   Iservice{
+        
+              
+               "templates":ITemplateLodash[];
               
        
    }
@@ -2868,67 +2470,43 @@
    }
 
     /**
-    interface de la class service_init_js 
-    description service qui retourne un init.js
+    interface de la class nginxConfigurationFileApp 
+    description description d'un fichier de configuration nginx
    */
-    export interface Iservice_init_js extends   Iservice{
+    export interface InginxConfigurationFileApp extends  IBase {
         
               
-               "templates":ITemplateLodash[];
+               "suffix"?:string;
+              
+       
+              
+               "template"?:string;
+              
+       
+              
+               "applications":string[] | Iapplication_instance[];
+              
+       
+              
+               "clients":string[] | Iend_client[];
               
        
    }
 
     /**
-    interface de la class service_infra_admin 
-    description administration de l'infra
+    interface de la class application_configuration_parcours 
+    description application_configuration_parcours
    */
-    export interface Iservice_infra_admin extends   Iservice{
+    export interface Iapplication_configuration_parcours extends   Iapplication_configuration{
         
-              
-               "ssoBdUrl":string;
-              
-       
-              
-               "infraBdUrl":string;
-              
-       
-              
-               "platformBdUrl"?:string;
-              
-       
-              
-               "service_nginxMultiConfiguratorId":string | Iservice_nginxMultiConfigurator;
-              
-       
-              
-               "nginxApplicationSuffix"?:string;
-              
-       
    }
 
     /**
-    interface de la class mailtoinfra2 
-    description retrouve la configuration de connection de l'app savy a partir du mail de l'utilisateur
+    interface de la class application_configuration_xlxUploader 
+    description application_configuration_xlxUploader
    */
-    export interface Imailtoinfra2 extends   Iservice{
+    export interface Iapplication_configuration_xlxUploader extends   Iapplication_configuration{
         
-              
-               "ssoBdUrl":string;
-              
-       
-              
-               "infraBdUrl":string;
-              
-       
-              
-               "savyLearnerId"?:string | Iapplication;
-              
-       
-              
-               "confMapping"?:Imail_connexion_conf[];
-              
-       
    }
 
     /**
@@ -2968,33 +2546,13 @@
    }
 
     /**
-    interface de la class end_client 
-    description c'est le client que l'on facture
+    interface de la class client_notices 
+    description notices for client
    */
-    export interface Iend_client extends  IBase {
+    export interface Iclient_notices extends  IBase {
         
               
-               "name"?:string;
-              
-       
-              
-               "label"?:string;
-              
-       
-              
-               "applications"?:string[] | Iapplication_instance[];
-              
-       
-              
-               "admins"?:string[] | Ioidc_account[];
-              
-       
-              
-               "licenceStore"?:IlicenceStore[];
-              
-       
-              
-               "client_notices"?:I[];
+               "values"?:Inotice_field[];
               
        
    }
@@ -3031,6 +2589,614 @@
        
               
                "apiUrl"?:string;
+              
+       
+   }
+
+    /**
+    interface de la class licenceStore_global 
+    description licence store dont les applications sont le catalogue du client
+   */
+    export interface IlicenceStore_global extends   IlicenceStore{
+        
+   }
+
+    /**
+    interface de la class licenceStore 
+    description stock de licence distribuable
+   */
+    export interface IlicenceStore extends  IBase {
+        
+              
+               "licenceStoreParent"?:string;
+              
+       
+              
+               "nbLicence"?:number;
+              
+       
+              
+               "licenceTemplate"?:Ilicence[];
+              
+       
+              
+               "autoAssign"?:boolean;
+              
+       
+              
+               "validytyStartDate"?:Date;
+              
+       
+              
+               "validityEndDate"?:Date;
+              
+       
+              
+               "distributionPeriode"?:IperiodicalDistrution[];
+              
+       
+              
+               "name":string;
+              
+       
+              
+               "nbLicenceOriginal":number;
+              
+       
+              
+               "ref"?:string;
+              
+       
+   }
+
+    /**
+    interface de la class service_trainingCoursesService 
+    description service de gestion des parcourts de formation
+   */
+    export interface Iservice_trainingCoursesService extends   Iservice{
+        
+              
+               "apiSession":string;
+              
+       
+              
+               "licenceServiceUrl":string;
+              
+       
+              
+               "taskServiceUrl":string;
+              
+       
+              
+               "mailServiceUrl":string;
+              
+       
+              
+               "defaultNameSender"?:string;
+              
+       
+              
+               "clientInfraUrl":string;
+              
+       
+   }
+
+    /**
+    interface de la class lang_code 
+    description Définit le code pour une langue (se référer au code ISO 639 : https://fr.wikipedia.org/wiki/Liste_des_codes_ISO_639-1)
+   */
+    export interface Ilang_code extends  IBase {
+        
+              
+               "code":string;
+              
+       
+              
+               "name"?:string;
+              
+       
+   }
+
+    /**
+    interface de la class multilingual_text 
+    description Définit un texte multilingue
+   */
+    export interface Imultilingual_text extends  IBase {
+        
+              
+               "name":string;
+              
+       
+              
+               "description"?:string;
+              
+       
+              
+               "texts"?:Imonolingual_text[];
+              
+       
+   }
+
+    /**
+    interface de la class monolingual_text 
+    description Définit un texte dans une langue
+   */
+    export interface Imonolingual_text extends  IBase {
+        
+              
+               "lang"?:string | Ilang_code;
+              
+       
+              
+               "texte"?:string;
+              
+       
+   }
+
+    /**
+    interface de la class notice_field 
+    description notice field
+   */
+    export interface Inotice_field extends  IBase {
+        
+              
+               "name"?:string;
+              
+       
+              
+               "content"?:string;
+              
+       
+              
+               "lname"?:string | Imultilingual_text;
+              
+       
+              
+               "lcontent"?:string | Imultilingual_text;
+              
+       
+   }
+
+    /**
+    interface de la class licence 
+    description représente la licence d'un utilisateur pour un service (ou application) distribué par un end_client
+   */
+    export interface Ilicence extends  IBase {
+        
+              
+               "end_client"?:string | Iend_client;
+              
+       
+              
+               "user"?:string | Ioidc_account;
+              
+       
+              
+               "application_instance"?:string[] | Iapplication_instance[];
+              
+       
+              
+               "ressource"?:string[] | Ipack_card[];
+              
+       
+              
+               "licenceStoreRef"?:string;
+              
+       
+              
+               "creationDate":Date;
+              
+       
+              
+               "usingDate"?:Date;
+              
+       
+   }
+
+    /**
+    interface de la class end_client 
+    description c'est le client que l'on facture
+   */
+    export interface Iend_client extends  IBase {
+        
+              
+               "name"?:string;
+              
+       
+              
+               "label"?:string;
+              
+       
+              
+               "logoUrl"?:string;
+              
+       
+              
+               "applications"?:string[] | Iapplication_instance[];
+              
+       
+              
+               "admins"?:string[] | Ioidc_account[];
+              
+       
+              
+               "licenceStore"?:IlicenceStore[];
+              
+       
+              
+               "client_notices"?:Inotice_field[];
+              
+       
+   }
+
+    /**
+    interface de la class application_configuration_appApprenant 
+    description c'est la configuration d'une application Apprenant
+   */
+    export interface Iapplication_configuration_appApprenant extends   Iapplication_configuration{
+        
+              
+               "forumUrl"?:string;
+              
+       
+              
+               "fileServiceUrl"?:string;
+              
+       
+              
+               "URL_FileService"?:string;
+              
+       
+              
+               "configurationUrlDb":string;
+              
+       
+              
+               "urlBase":string;
+              
+       
+              
+               "clientServiceUrl"?:string;
+              
+       
+              
+               "likeServiceUrl":string;
+              
+       
+              
+               "aclTemplate"?:I_acl;
+              
+       
+              
+               "trainingCourseServiceUrl":string;
+              
+       
+              
+               "syncSoketioUrl":string;
+              
+       
+              
+               "syncSoketioPath":string;
+              
+       
+              
+               "tutorVideoCallUrl":string;
+              
+       
+              
+               "tutorServiceUrl":string;
+              
+       
+              
+               "savvyLearnerUrl"?:string;
+              
+       
+              
+               "useForums":boolean;
+              
+       
+              
+               "useTutors":boolean;
+              
+       
+              
+               "useProfile"?:boolean;
+              
+       
+   }
+
+    /**
+    interface de la class application_configuration_appCoach 
+    description c'est la configuration d'une application coach
+   */
+    export interface Iapplication_configuration_appCoach extends   Iapplication_configuration{
+        
+              
+               "forumUrl"?:string;
+              
+       
+              
+               "fileServiceUrl"?:string;
+              
+       
+              
+               "URL_FileService"?:string;
+              
+       
+              
+               "configurationUrlDb":string;
+              
+       
+              
+               "urlBase":string;
+              
+       
+              
+               "clientServiceUrl"?:string;
+              
+       
+              
+               "likeServiceUrl":string;
+              
+       
+              
+               "aclTemplate"?:I_acl;
+              
+       
+              
+               "trainingCourseServiceUrl":string;
+              
+       
+              
+               "tutorServiceUrl":string;
+              
+       
+              
+               "syncSoketioUrl":string;
+              
+       
+              
+               "syncSoketioPath":string;
+              
+       
+              
+               "tutorVideoCallUrl"?:string;
+              
+       
+   }
+
+    /**
+    interface de la class application_configuration_appClient 
+    description c'est la configuration d'une application Client
+   */
+    export interface Iapplication_configuration_appClient extends   Iapplication_configuration{
+        
+              
+               "configurationUrlDb":string;
+              
+       
+              
+               "urlBase":string;
+              
+       
+              
+               "signinUrl":string;
+              
+       
+              
+               "serviceSessionUrl":string;
+              
+       
+              
+               "clientServiceUrl":string;
+              
+       
+              
+               "fileServiceUrl"?:string;
+              
+       
+              
+               "aclTemplate"?:I_acl;
+              
+       
+              
+               "test"?:string;
+              
+       
+   }
+
+    /**
+    interface de la class application_configuration_appEditor 
+    description c'est la configuration d'une application type editeur
+   */
+    export interface Iapplication_configuration_appEditor extends   Iapplication_configuration{
+        
+              
+               "fileServiceUrl"?:string;
+              
+       
+              
+               "URL_FileService"?:string;
+              
+       
+              
+               "configurationUrlDb":string;
+              
+       
+              
+               "urlBase":string;
+              
+       
+              
+               "clientServiceUrl":string;
+              
+       
+              
+               "aclTemplate"?:I_acl;
+              
+       
+   }
+
+    /**
+    interface de la class MultilangSendGridTemplate 
+    description décrit un template multi langue d'envoie de mail avec sendGrid
+   */
+    export interface IMultilangSendGridTemplate extends  IBase {
+        
+              
+               "name":string;
+              
+       
+              
+               "type"?:string;
+              
+       
+              
+               "sendGridTemplates"?:IsendGridTemplate[];
+              
+       
+   }
+
+    /**
+    interface de la class service_infra_admin 
+    description administration de l'infra
+   */
+    export interface Iservice_infra_admin extends   Iservice{
+        
+              
+               "ssoBdUrl":string;
+              
+       
+              
+               "infraBdUrl":string;
+              
+       
+              
+               "platformBdUrl"?:string;
+              
+       
+              
+               "service_nginxMultiConfiguratorId":string | Iservice_nginxMultiConfigurator;
+              
+       
+              
+               "nginxApplicationSuffixWebapp1"?:string;
+              
+       
+              
+               "nginxApplicationSuffixWebapp2"?:string;
+              
+       
+   }
+
+    /**
+    interface de la class service_nathan_gateway 
+    description Service servant de passerelle entre Nathan et notre infra
+   */
+    export interface Iservice_nathan_gateway extends   Iservice{
+        
+              
+               "url_webservice_prospect"?:string;
+              
+       
+              
+               "url_wsdl_prospect"?:string;
+              
+       
+              
+               "login"?:string;
+              
+       
+              
+               "password"?:string;
+              
+       
+              
+               "licence"?:string | Ilicence;
+              
+       
+              
+               "url_licence_collection"?:string;
+              
+       
+              
+               "savvy_author_db_url"?:string;
+              
+       
+   }
+
+    /**
+    interface de la class application_configuration_savvy_author 
+    description Configuration pour l'application Savvy - Author
+   */
+    export interface Iapplication_configuration_savvy_author extends   Iapplication_configuration{
+        
+              
+               "configurationUrlDb":string;
+              
+       
+              
+               "aclTemplate"?:I_acl;
+              
+       
+              
+               "urlInfraDb"?:string;
+              
+       
+              
+               "urlFrontAppsDb"?:string;
+              
+       
+              
+               "su_clientId"?:string | Iend_client;
+              
+       
+              
+               "su_conf"?:boolean;
+              
+       
+   }
+
+    /**
+    interface de la class application_configuration_savvy_learner 
+    description configuration de l'application Savvy Learner
+   */
+    export interface Iapplication_configuration_savvy_learner extends   Iapplication_configuration_appApprenant{
+        
+              
+               "savvyDbUrl"?:string;
+              
+       
+              
+               "savvyAuthorId"?:string | Iapplication_instance;
+              
+       
+              
+               "savvyAuthorSUId"?:string | Iapplication_instance;
+              
+       
+   }
+
+    /**
+    interface de la class service_mailtoinfra2 
+    description retrouve la configuration de connection de l'app savy a partir du mail de l'utilisateur
+   */
+    export interface Iservice_mailtoinfra2 extends   Iservice{
+        
+              
+               "ssoBdUrl":string;
+              
+       
+              
+               "infraBdUrl":string;
+              
+       
+              
+               "savyLearnerId"?:string | Iapplication;
+              
+       
+              
+               "confMapping"?:Imail_connexion_conf[];
               
        
    }

@@ -171,6 +171,14 @@ export class Model_passport_strategie_saml extends   Model_passport_strategie   
         
     
         
+        if(obj["requestIdExpirationPeriodMs"] != undefined){
+          
+           this["requestIdExpirationPeriodMs"] = obj["requestIdExpirationPeriodMs"].toString() ;
+           
+        }
+        
+    
+        
         if(obj["passReqToCallback"] != undefined){
           
            this["passReqToCallback"] = new Boolean(obj["passReqToCallback"]).valueOf() ;
@@ -320,6 +328,11 @@ export class Model_passport_strategie_saml extends   Model_passport_strategie   
         Defines the expiration time when a Request ID generated for a SAML request will not be valid if seen in a SAML response in the InResponseTo field. Default is 8 hours.
         */
                public "requestIdExpirationPeriodMs"?:number ;
+              
+       
+              /**
+        Defines the expiration time when a Request ID generated for a SAML request will not be valid if seen in a SAML response in the InResponseTo field. Default is 8 hours.
+        */
               
        
               /**
@@ -686,6 +699,23 @@ export class Model_passport_strategie_saml extends   Model_passport_strategie   
                 
 
                 
+              
+              
+           }
+           
+              
+              if(target["requestIdExpirationPeriodMs"] != null && target["requestIdExpirationPeriodMs"] != undefined ){
+              
+                let _requestIdExpirationPeriodMs  = target["requestIdExpirationPeriodMs"] ;
+                
+
+                 if(! _.isString(_requestIdExpirationPeriodMs)){
+                    throw new Error(path+"requestIdExpirationPeriodMs is not a string") ;
+                    
+                  }
+                  
+                  
+                 
               
               
            }

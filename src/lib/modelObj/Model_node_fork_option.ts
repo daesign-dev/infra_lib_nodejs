@@ -45,7 +45,7 @@ export class Model_node_fork_option extends  Base  implements Interface.Inode_fo
               /**
         Current working directory of the child process
         */
-               public "cwd"?:string ;
+               public "cwd"?:string ="$ENV.BASE_PATH$$/wd/";
               
        
               /**

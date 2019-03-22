@@ -59,6 +59,14 @@ export class Model_application_configuration_appApprenant extends   Model_applic
         
     
         
+        if(obj["clientServiceUrl"] != undefined){
+          
+           this["clientServiceUrl"] = obj["clientServiceUrl"].toString() ;
+           
+        }
+        
+    
+        
         if(obj["likeServiceUrl"] != undefined){
           
            this["likeServiceUrl"] = obj["likeServiceUrl"].toString() ;
@@ -118,6 +126,38 @@ export class Model_application_configuration_appApprenant extends   Model_applic
         }
         
     
+        
+        if(obj["savvyLearnerUrl"] != undefined){
+          
+           this["savvyLearnerUrl"] = obj["savvyLearnerUrl"].toString() ;
+           
+        }
+        
+    
+        
+        if(obj["useForums"] != undefined){
+          
+           this["useForums"] = new Boolean(obj["useForums"]).valueOf() ;
+          
+        }
+        
+    
+        
+        if(obj["useTutors"] != undefined){
+          
+           this["useTutors"] = new Boolean(obj["useTutors"]).valueOf() ;
+          
+        }
+        
+    
+        
+        if(obj["useProfile"] != undefined){
+          
+           this["useProfile"] = new Boolean(obj["useProfile"]).valueOf() ;
+          
+        }
+        
+    
   }
   
 
@@ -152,6 +192,12 @@ export class Model_application_configuration_appApprenant extends   Model_applic
         l'url racine des services
         */
                public "urlBase":string ;
+              
+       
+              /**
+        client service URL for custom client
+        */
+               public "clientServiceUrl"?:string ;
               
        
               /**
@@ -194,6 +240,30 @@ export class Model_application_configuration_appApprenant extends   Model_applic
         url du service de tutora
         */
                public "tutorServiceUrl":string ;
+              
+       
+              /**
+        url for savvylearner to add to apps
+        */
+               public "savvyLearnerUrl"?:string ;
+              
+       
+              /**
+        Flag to enable forum for the whole application
+        */
+               public "useForums":boolean =true;
+              
+       
+              /**
+        Flag to enable tutor for the whole application
+        */
+               public "useTutors":boolean =true;
+              
+       
+              /**
+        use profile flag (defaut is true)
+        */
+               public "useProfile"?:boolean =true;
               
        
 
@@ -287,6 +357,23 @@ export class Model_application_configuration_appApprenant extends   Model_applic
 
                  if(! _.isString(_urlBase)){
                     throw new Error(path+"urlBase is not a string") ;
+                    
+                  }
+                  
+                  
+                 
+              
+              
+           }
+           
+              
+              if(target["clientServiceUrl"] != null && target["clientServiceUrl"] != undefined ){
+              
+                let _clientServiceUrl  = target["clientServiceUrl"] ;
+                
+
+                 if(! _.isString(_clientServiceUrl)){
+                    throw new Error(path+"clientServiceUrl is not a string") ;
                     
                   }
                   
@@ -445,6 +532,76 @@ export class Model_application_configuration_appApprenant extends   Model_applic
                   
                   
                  
+              
+              
+           }
+           
+              
+              if(target["savvyLearnerUrl"] != null && target["savvyLearnerUrl"] != undefined ){
+              
+                let _savvyLearnerUrl  = target["savvyLearnerUrl"] ;
+                
+
+                 if(! _.isString(_savvyLearnerUrl)){
+                    throw new Error(path+"savvyLearnerUrl is not a string") ;
+                    
+                  }
+                  
+                  
+                 
+              
+              
+           }
+           
+              
+              if( isCompleteObj && (target["useForums"] == null || target["useForums"] == undefined) ){
+                  throw new Error(path + "useForums is required") ;
+              }
+              
+              if(target["useForums"] != null && target["useForums"] != undefined ){
+              
+                let _useForums  = target["useForums"] ;
+                
+                  if(! _.isBoolean(_useForums)){
+                    throw new Error(path+"useForums is not a boolean") ;
+                    
+                  }
+                
+
+              
+              
+           }
+           
+              
+              if( isCompleteObj && (target["useTutors"] == null || target["useTutors"] == undefined) ){
+                  throw new Error(path + "useTutors is required") ;
+              }
+              
+              if(target["useTutors"] != null && target["useTutors"] != undefined ){
+              
+                let _useTutors  = target["useTutors"] ;
+                
+                  if(! _.isBoolean(_useTutors)){
+                    throw new Error(path+"useTutors is not a boolean") ;
+                    
+                  }
+                
+
+              
+              
+           }
+           
+              
+              if(target["useProfile"] != null && target["useProfile"] != undefined ){
+              
+                let _useProfile  = target["useProfile"] ;
+                
+                  if(! _.isBoolean(_useProfile)){
+                    throw new Error(path+"useProfile is not a boolean") ;
+                    
+                  }
+                
+
               
               
            }

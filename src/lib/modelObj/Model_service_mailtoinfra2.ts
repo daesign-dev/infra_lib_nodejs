@@ -10,7 +10,7 @@ import {Model_service } from "./Model_service"
 /**
   retrouve la configuration de connection de l'app savy a partir du mail de l'utilisateur
 */
-export class Model_mailtoinfra2 extends   Model_service   implements Interface.Imailtoinfra2 {
+export class Model_service_mailtoinfra2 extends   Model_service   implements Interface.Iservice_mailtoinfra2 {
 
 /**
   retrouve la configuration de connection de l'app savy a partir du mail de l'utilisateur
@@ -65,7 +65,7 @@ export class Model_mailtoinfra2 extends   Model_service   implements Interface.I
   }
   
 
-    public _class:string  = "mailtoinfra2" ;
+    public _class:string  = "service_mailtoinfra2" ;
 
         
               /**
@@ -191,9 +191,9 @@ export class Model_mailtoinfra2 extends   Model_service   implements Interface.I
 
       }
 
-      public static create(target:any, path:string=""):Promise<Model_mailtoinfra2>{
-        return Model_mailtoinfra2.check(target, true, path).then(()=>{
-          return new Model_mailtoinfra2(target) ;
+      public static create(target:any, path:string=""):Promise<Model_service_mailtoinfra2>{
+        return Model_service_mailtoinfra2.check(target, true, path).then(()=>{
+          return new Model_service_mailtoinfra2(target) ;
         })
       }
 

@@ -33,6 +33,14 @@ export class Model_end_client extends  Base  implements Interface.Iend_client {
         
     
         
+        if(obj["logoUrl"] != undefined){
+          
+           this["logoUrl"] = obj["logoUrl"].toString() ;
+           
+        }
+        
+    
+        
         if(obj["applications"] != undefined && obj["applications"] != null && _.isArray(obj["applications"])){
           
           this["applications"] = obj["applications"].map((value)=>{
@@ -86,7 +94,7 @@ export class Model_end_client extends  Base  implements Interface.Iend_client {
               if(value._class){
                 return new Index[value._class](value) ;
               }else{
-                return new Index[""](value) ;
+                return new Index["notice_field"](value) ;
               }
             })
             
@@ -113,6 +121,12 @@ export class Model_end_client extends  Base  implements Interface.Iend_client {
               
        
               /**
+        url for logo
+        */
+               public "logoUrl"?:string ;
+              
+       
+              /**
         liste des instance d'application au quelle le end_client a accés
         */
                public "applications"?:string[] ;
@@ -133,7 +147,7 @@ export class Model_end_client extends  Base  implements Interface.Iend_client {
               /**
         client notices
         */
-               public "client_notices"?:Interface.I[];
+               public "client_notices"?:Interface.Inotice_field[];
               
        
 
@@ -168,6 +182,23 @@ export class Model_end_client extends  Base  implements Interface.Iend_client {
 
                  if(! _.isString(_label)){
                     throw new Error(path+"label is not a string") ;
+                    
+                  }
+                  
+                  
+                 
+              
+              
+           }
+           
+              
+              if(target["logoUrl"] != null && target["logoUrl"] != undefined ){
+              
+                let _logoUrl  = target["logoUrl"] ;
+                
+
+                 if(! _.isString(_logoUrl)){
+                    throw new Error(path+"logoUrl is not a string") ;
                     
                   }
                   
@@ -238,9 +269,9 @@ export class Model_end_client extends  Base  implements Interface.Iend_client {
                   target["client_notices"].forEach((_client_notices , index:number)=>{
                   
                   
-                    promArr.push( Index[""].check(_client_notices, isCompleteObj , path+"client_notices.")
+                    promArr.push( Index["notice_field"].check(_client_notices, isCompleteObj , path+"client_notices.")
                       .catch((err)=>{
-                        throw new Error(path+"client_notices index: "+ index +"is not ")
+                        throw new Error(path+"client_notices index: "+ index +"is not notice_field")
                         
 
                       }) )

@@ -55,9 +55,17 @@ export class Model_service_infra_admin extends   Model_service   implements Inte
         
     
         
-        if(obj["nginxApplicationSuffix"] != undefined){
+        if(obj["nginxApplicationSuffixWebapp1"] != undefined){
           
-           this["nginxApplicationSuffix"] = obj["nginxApplicationSuffix"].toString() ;
+           this["nginxApplicationSuffixWebapp1"] = obj["nginxApplicationSuffixWebapp1"].toString() ;
+           
+        }
+        
+    
+        
+        if(obj["nginxApplicationSuffixWebapp2"] != undefined){
+          
+           this["nginxApplicationSuffixWebapp2"] = obj["nginxApplicationSuffixWebapp2"].toString() ;
            
         }
         
@@ -93,9 +101,15 @@ export class Model_service_infra_admin extends   Model_service   implements Inte
               
        
               /**
-        nginxApplicationSuffix
+        application suffix to updatefor wepapp type1
         */
-               public "nginxApplicationSuffix"?:string ;
+               public "nginxApplicationSuffixWebapp1"?:string ;
+              
+       
+              /**
+        application suffix to updatefor wepapp type2
+        */
+               public "nginxApplicationSuffixWebapp2"?:string ;
               
        
 
@@ -183,13 +197,30 @@ export class Model_service_infra_admin extends   Model_service   implements Inte
            }
            
               
-              if(target["nginxApplicationSuffix"] != null && target["nginxApplicationSuffix"] != undefined ){
+              if(target["nginxApplicationSuffixWebapp1"] != null && target["nginxApplicationSuffixWebapp1"] != undefined ){
               
-                let _nginxApplicationSuffix  = target["nginxApplicationSuffix"] ;
+                let _nginxApplicationSuffixWebapp1  = target["nginxApplicationSuffixWebapp1"] ;
                 
 
-                 if(! _.isString(_nginxApplicationSuffix)){
-                    throw new Error(path+"nginxApplicationSuffix is not a string") ;
+                 if(! _.isString(_nginxApplicationSuffixWebapp1)){
+                    throw new Error(path+"nginxApplicationSuffixWebapp1 is not a string") ;
+                    
+                  }
+                  
+                  
+                 
+              
+              
+           }
+           
+              
+              if(target["nginxApplicationSuffixWebapp2"] != null && target["nginxApplicationSuffixWebapp2"] != undefined ){
+              
+                let _nginxApplicationSuffixWebapp2  = target["nginxApplicationSuffixWebapp2"] ;
+                
+
+                 if(! _.isString(_nginxApplicationSuffixWebapp2)){
+                    throw new Error(path+"nginxApplicationSuffixWebapp2 is not a string") ;
                     
                   }
                   

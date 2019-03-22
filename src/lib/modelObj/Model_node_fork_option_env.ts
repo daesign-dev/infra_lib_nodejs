@@ -45,7 +45,7 @@ export class Model_node_fork_option_env extends  Base  implements Interface.Inod
               /**
         l'url du serveur de configuration
         */
-               public "CONF_URL"?:string ;
+               public "CONF_URL"?:string ="$ENV.CONF_URL";
               
        
               /**

@@ -59,6 +59,14 @@ export class Model_application_configuration_appClient extends   Model_applicati
         
     
         
+        if(obj["fileServiceUrl"] != undefined){
+          
+           this["fileServiceUrl"] = obj["fileServiceUrl"].toString() ;
+           
+        }
+        
+    
+        
         if(obj["aclTemplate"] != undefined){
           
             if(obj._class){
@@ -67,6 +75,14 @@ export class Model_application_configuration_appClient extends   Model_applicati
               this["aclTemplate"] =  new Index["_acl"](obj["aclTemplate"]) ;
             }
           
+        }
+        
+    
+        
+        if(obj["test"] != undefined){
+          
+           this["test"] = obj["test"].toString() ;
+           
         }
         
     
@@ -107,9 +123,21 @@ export class Model_application_configuration_appClient extends   Model_applicati
               
        
               /**
+        url du file service pour le forum
+        */
+               public "fileServiceUrl"?:string ;
+              
+       
+              /**
         template des acl
         */
                public "aclTemplate"?:Interface.I_acl;
+              
+       
+              /**
+        test
+        */
+               public "test"?:string ;
               
        
 
@@ -225,6 +253,23 @@ export class Model_application_configuration_appClient extends   Model_applicati
            }
            
               
+              if(target["fileServiceUrl"] != null && target["fileServiceUrl"] != undefined ){
+              
+                let _fileServiceUrl  = target["fileServiceUrl"] ;
+                
+
+                 if(! _.isString(_fileServiceUrl)){
+                    throw new Error(path+"fileServiceUrl is not a string") ;
+                    
+                  }
+                  
+                  
+                 
+              
+              
+           }
+           
+              
               if(target["aclTemplate"] != null && target["aclTemplate"] != undefined ){
               
                   let _aclTemplate  = target["aclTemplate"] ;
@@ -247,6 +292,23 @@ export class Model_application_configuration_appClient extends   Model_applicati
                   }
 
                   
+              
+              
+           }
+           
+              
+              if(target["test"] != null && target["test"] != undefined ){
+              
+                let _test  = target["test"] ;
+                
+
+                 if(! _.isString(_test)){
+                    throw new Error(path+"test is not a string") ;
+                    
+                  }
+                  
+                  
+                 
               
               
            }

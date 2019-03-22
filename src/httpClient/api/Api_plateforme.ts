@@ -19,6 +19,14 @@ export class api_collection_plateform {
 		this.rsa= new HttpServiceBase<Interfaces.Irsa>({url:conf.url + "collection/rsa/" , secure:conf.secure})  ;
 
 		 
+		 
+		this.api_key= new HttpServiceBase<Interfaces.Iapi_key>({url:conf.url + "collection/api_key/" , secure:conf.secure})  ;
+
+		 
+		 
+		this.pem_for_app= new HttpServiceBase<Interfaces.Ipem_for_app>({url:conf.url + "collection/pem_for_app/" , secure:conf.secure})  ;
+
+		 
 	
 
 		this.oidc_Client= new HttpServiceBase<Interfaces.Ioidc_Client>( {url:conf.url + "collection/oidc_Client/" , secure:conf.secure} )  ;
@@ -30,7 +38,19 @@ export class api_collection_plateform {
 
 		
 		 
-		this.application_configuration_phoneCard= new HttpServiceBase<Interfaces.Iapplication_configuration_phoneCard>({url:conf.url + "collection/application_configuration_phoneCard/" , secure:conf.secure})  ;
+		this.application_configuration_super_admin_mongo= new HttpServiceBase<Interfaces.Iapplication_configuration_super_admin_mongo>({url:conf.url + "collection/application_configuration_super_admin_mongo/" , secure:conf.secure})  ;
+
+		 
+		 
+		this.application_configuration_parcours= new HttpServiceBase<Interfaces.Iapplication_configuration_parcours>({url:conf.url + "collection/application_configuration_parcours/" , secure:conf.secure})  ;
+
+		 
+		 
+		this.application_configuration_xlxUploader= new HttpServiceBase<Interfaces.Iapplication_configuration_xlxUploader>({url:conf.url + "collection/application_configuration_xlxUploader/" , secure:conf.secure})  ;
+
+		 
+		 
+		this.application_configuration_appApprenant= new HttpServiceBase<Interfaces.Iapplication_configuration_appApprenant>({url:conf.url + "collection/application_configuration_appApprenant/" , secure:conf.secure})  ;
 
 		 
 		 
@@ -38,19 +58,19 @@ export class api_collection_plateform {
 
 		 
 		 
-		this.application_configuration_super_admin_mongo= new HttpServiceBase<Interfaces.Iapplication_configuration_super_admin_mongo>({url:conf.url + "collection/application_configuration_super_admin_mongo/" , secure:conf.secure})  ;
-
-		 
-		 
-		this.application_configuration_antico= new HttpServiceBase<Interfaces.Iapplication_configuration_antico>({url:conf.url + "collection/application_configuration_antico/" , secure:conf.secure})  ;
-
-		 
-		 
 		this.application_configuration_appClient= new HttpServiceBase<Interfaces.Iapplication_configuration_appClient>({url:conf.url + "collection/application_configuration_appClient/" , secure:conf.secure})  ;
 
 		 
 		 
-		this.application_configuration_appApprenant= new HttpServiceBase<Interfaces.Iapplication_configuration_appApprenant>({url:conf.url + "collection/application_configuration_appApprenant/" , secure:conf.secure})  ;
+		this.application_configuration_appEditor= new HttpServiceBase<Interfaces.Iapplication_configuration_appEditor>({url:conf.url + "collection/application_configuration_appEditor/" , secure:conf.secure})  ;
+
+		 
+		 
+		this.application_configuration_savvy_author= new HttpServiceBase<Interfaces.Iapplication_configuration_savvy_author>({url:conf.url + "collection/application_configuration_savvy_author/" , secure:conf.secure})  ;
+
+		 
+		 
+		this.application_configuration_savvy_learner= new HttpServiceBase<Interfaces.Iapplication_configuration_savvy_learner>({url:conf.url + "collection/application_configuration_savvy_learner/" , secure:conf.secure})  ;
 
 		 
 	
@@ -86,14 +106,6 @@ export class api_collection_plateform {
 
 		 
 		 
-		this.service_licence_token= new HttpServiceBase<Interfaces.Iservice_licence_token>({url:conf.url + "collection/service_licence_token/" , secure:conf.secure})  ;
-
-		 
-		 
-		this.service_goshabaGateway= new HttpServiceBase<Interfaces.Iservice_goshabaGateway>({url:conf.url + "collection/service_goshabaGateway/" , secure:conf.secure})  ;
-
-		 
-		 
 		this.service_mongo= new HttpServiceBase<Interfaces.Iservice_mongo>({url:conf.url + "collection/service_mongo/" , secure:conf.secure})  ;
 
 		 
@@ -110,23 +122,11 @@ export class api_collection_plateform {
 
 		 
 		 
-		this.service_nginxConfigurator= new HttpServiceBase<Interfaces.Iservice_nginxConfigurator>({url:conf.url + "collection/service_nginxConfigurator/" , secure:conf.secure})  ;
-
-		 
-		 
-		this.service_nginxMultiConfigurator= new HttpServiceBase<Interfaces.Iservice_nginxMultiConfigurator>({url:conf.url + "collection/service_nginxMultiConfigurator/" , secure:conf.secure})  ;
-
-		 
-		 
-		this.service_push_notification= new HttpServiceBase<Interfaces.Iservice_push_notification>({url:conf.url + "collection/service_push_notification/" , secure:conf.secure})  ;
+		this.service_goshabaGateway= new HttpServiceBase<Interfaces.Iservice_goshabaGateway>({url:conf.url + "collection/service_goshabaGateway/" , secure:conf.secure})  ;
 
 		 
 		 
 		this.service_like= new HttpServiceBase<Interfaces.Iservice_like>({url:conf.url + "collection/service_like/" , secure:conf.secure})  ;
-
-		 
-		 
-		this.service_dumy_fso= new HttpServiceBase<Interfaces.Iservice_dumy_fso>({url:conf.url + "collection/service_dumy_fso/" , secure:conf.secure})  ;
 
 		 
 		 
@@ -138,11 +138,15 @@ export class api_collection_plateform {
 
 		 
 		 
-		this.service_trainingCoursesService= new HttpServiceBase<Interfaces.Iservice_trainingCoursesService>({url:conf.url + "collection/service_trainingCoursesService/" , secure:conf.secure})  ;
+		this.service_licence_token= new HttpServiceBase<Interfaces.Iservice_licence_token>({url:conf.url + "collection/service_licence_token/" , secure:conf.secure})  ;
 
 		 
 		 
-		this.service_orchestrator= new HttpServiceBase<Interfaces.Iservice_orchestrator>({url:conf.url + "collection/service_orchestrator/" , secure:conf.secure})  ;
+		this.service_dumy_fso= new HttpServiceBase<Interfaces.Iservice_dumy_fso>({url:conf.url + "collection/service_dumy_fso/" , secure:conf.secure})  ;
+
+		 
+		 
+		this.service_push_notification= new HttpServiceBase<Interfaces.Iservice_push_notification>({url:conf.url + "collection/service_push_notification/" , secure:conf.secure})  ;
 
 		 
 		 
@@ -154,15 +158,15 @@ export class api_collection_plateform {
 
 		 
 		 
+		this.service_nginxConfigurator= new HttpServiceBase<Interfaces.Iservice_nginxConfigurator>({url:conf.url + "collection/service_nginxConfigurator/" , secure:conf.secure})  ;
+
+		 
+		 
+		this.service_nginxMultiConfigurator= new HttpServiceBase<Interfaces.Iservice_nginxMultiConfigurator>({url:conf.url + "collection/service_nginxMultiConfigurator/" , secure:conf.secure})  ;
+
+		 
+		 
 		this.service_init_js= new HttpServiceBase<Interfaces.Iservice_init_js>({url:conf.url + "collection/service_init_js/" , secure:conf.secure})  ;
-
-		 
-		 
-		this.service_infra_admin= new HttpServiceBase<Interfaces.Iservice_infra_admin>({url:conf.url + "collection/service_infra_admin/" , secure:conf.secure})  ;
-
-		 
-		 
-		this.mailtoinfra2= new HttpServiceBase<Interfaces.Imailtoinfra2>({url:conf.url + "collection/mailtoinfra2/" , secure:conf.secure})  ;
 
 		 
 		 
@@ -171,6 +175,22 @@ export class api_collection_plateform {
 		 
 		 
 		this.Service_scorm_gateway= new HttpServiceBase<Interfaces.IService_scorm_gateway>({url:conf.url + "collection/Service_scorm_gateway/" , secure:conf.secure})  ;
+
+		 
+		 
+		this.service_trainingCoursesService= new HttpServiceBase<Interfaces.Iservice_trainingCoursesService>({url:conf.url + "collection/service_trainingCoursesService/" , secure:conf.secure})  ;
+
+		 
+		 
+		this.service_infra_admin= new HttpServiceBase<Interfaces.Iservice_infra_admin>({url:conf.url + "collection/service_infra_admin/" , secure:conf.secure})  ;
+
+		 
+		 
+		this.service_nathan_gateway= new HttpServiceBase<Interfaces.Iservice_nathan_gateway>({url:conf.url + "collection/service_nathan_gateway/" , secure:conf.secure})  ;
+
+		 
+		 
+		this.service_mailtoinfra2= new HttpServiceBase<Interfaces.Iservice_mailtoinfra2>({url:conf.url + "collection/service_mailtoinfra2/" , secure:conf.secure})  ;
 
 		 
 	
@@ -189,7 +209,7 @@ export class api_collection_plateform {
 		 
 	
 
-		this.service_serviceOrchestrator= new HttpServiceBase<Interfaces.Iservice_serviceOrchestrator>( {url:conf.url + "collection/service_serviceOrchestrator/" , secure:conf.secure} )  ;
+		this.nginxConfigurationFile= new HttpServiceBase<Interfaces.InginxConfigurationFile>( {url:conf.url + "collection/nginxConfigurationFile/" , secure:conf.secure} )  ;
 
 		
 	
@@ -201,20 +221,6 @@ export class api_collection_plateform {
 		this._view_params= new HttpServiceBase<Interfaces.I_view_params>({url:conf.url + "collection/_view_params/" , secure:conf.secure})  ;
 
 		 
-	
-
-		this.licence= new HttpServiceBase<Interfaces.Ilicence>( {url:conf.url + "collection/licence/" , secure:conf.secure} )  ;
-
-		
-		 
-		this.licence_temporelle= new HttpServiceBase<Interfaces.Ilicence_temporelle>({url:conf.url + "collection/licence_temporelle/" , secure:conf.secure})  ;
-
-		 
-	
-
-		this.MultilangSendGridTemplate= new HttpServiceBase<Interfaces.IMultilangSendGridTemplate>( {url:conf.url + "collection/MultilangSendGridTemplate/" , secure:conf.secure} )  ;
-
-		
 	
 
 		this.application= new HttpServiceBase<Interfaces.Iapplication>( {url:conf.url + "collection/application/" , secure:conf.secure} )  ;
@@ -231,7 +237,31 @@ export class api_collection_plateform {
 		
 	
 
+		this.lang_code= new HttpServiceBase<Interfaces.Ilang_code>( {url:conf.url + "collection/lang_code/" , secure:conf.secure} )  ;
+
+		
+	
+
+		this.multilingual_text= new HttpServiceBase<Interfaces.Imultilingual_text>( {url:conf.url + "collection/multilingual_text/" , secure:conf.secure} )  ;
+
+		
+	
+
+		this.licence= new HttpServiceBase<Interfaces.Ilicence>( {url:conf.url + "collection/licence/" , secure:conf.secure} )  ;
+
+		
+		 
+		this.licence_temporelle= new HttpServiceBase<Interfaces.Ilicence_temporelle>({url:conf.url + "collection/licence_temporelle/" , secure:conf.secure})  ;
+
+		 
+	
+
 		this.end_client= new HttpServiceBase<Interfaces.Iend_client>( {url:conf.url + "collection/end_client/" , secure:conf.secure} )  ;
+
+		
+	
+
+		this.MultilangSendGridTemplate= new HttpServiceBase<Interfaces.IMultilangSendGridTemplate>( {url:conf.url + "collection/MultilangSendGridTemplate/" , secure:conf.secure} )  ;
 
 		
 	
@@ -248,6 +278,10 @@ export class api_collection_plateform {
 		 
 		 	Irsa      certificat RSA
 		 
+		 	Iapi_key      Défini un certificat utilisant uniquement une clé d'API pour une application donnée
+		 
+		 	Ipem_for_app      Certificat PEM pour une app donnée
+		 
 		 
 		*/
 		public certificat:HttpServiceBase<Interfaces.Icertificat> ;
@@ -259,6 +293,22 @@ export class api_collection_plateform {
 		 info: vous ne pouvez voir que ce type d'objet
 		*/
 		public rsa:HttpServiceBase<Interfaces.Irsa> ;
+
+		 
+		 /**
+		 service d'accès a la sous-collection :api_key
+		 desc: Défini un certificat utilisant uniquement une clé d'API pour une application donnée
+		 info: vous ne pouvez voir que ce type d'objet
+		*/
+		public api_key:HttpServiceBase<Interfaces.Iapi_key> ;
+
+		 
+		 /**
+		 service d'accès a la sous-collection :pem_for_app
+		 desc: Certificat PEM pour une app donnée
+		 info: vous ne pouvez voir que ce type d'objet
+		*/
+		public pem_for_app:HttpServiceBase<Interfaces.Ipem_for_app> ;
 
 		 
 	
@@ -280,39 +330,29 @@ export class api_collection_plateform {
 		 info: vous pouvez voir tous les objets de cette collection y compris les enfants
 		 liste des interfaces héritées possibles:
 		 
-		 	Iapplication_configuration_phoneCard      configuration d'une application phoneCard
-		 
-		 	Iapplication_configuration_appCoach      c'est la configuration d'une application Coach
-		 
 		 	Iapplication_configuration_super_admin_mongo      configuration de l'application superAdminMongo
 		 
-		 	Iapplication_configuration_antico      configuration d'un parcourt anticoruption
+		 	Iapplication_configuration_parcours      application_configuration_parcours
+		 
+		 	Iapplication_configuration_xlxUploader      application_configuration_xlxUploader
+		 
+		 	Iapplication_configuration_appApprenant      c'est la configuration d'une application Apprenant
+		 
+		 	Iapplication_configuration_appCoach      c'est la configuration d'une application coach
 		 
 		 	Iapplication_configuration_appClient      c'est la configuration d'une application Client
 		 
-		 	Iapplication_configuration_appApprenant      c'est la configuration d'une application Apprenant
+		 	Iapplication_configuration_appEditor      c'est la configuration d'une application type editeur
+		 
+		 	Iapplication_configuration_savvy_author      Configuration pour l'application Savvy - Author
+		 
+		 	Iapplication_configuration_savvy_learner      configuration de l'application Savvy Learner
 		 
 		 
 		*/
 		public application_configuration:HttpServiceBase<Interfaces.Iapplication_configuration> ;
 
 		
-		 /**
-		 service d'accès a la sous-collection :application_configuration_phoneCard
-		 desc: configuration d'une application phoneCard
-		 info: vous ne pouvez voir que ce type d'objet
-		*/
-		public application_configuration_phoneCard:HttpServiceBase<Interfaces.Iapplication_configuration_phoneCard> ;
-
-		 
-		 /**
-		 service d'accès a la sous-collection :application_configuration_appCoach
-		 desc: c'est la configuration d'une application Coach
-		 info: vous ne pouvez voir que ce type d'objet
-		*/
-		public application_configuration_appCoach:HttpServiceBase<Interfaces.Iapplication_configuration_appCoach> ;
-
-		 
 		 /**
 		 service d'accès a la sous-collection :application_configuration_super_admin_mongo
 		 desc: configuration de l'application superAdminMongo
@@ -322,11 +362,35 @@ export class api_collection_plateform {
 
 		 
 		 /**
-		 service d'accès a la sous-collection :application_configuration_antico
-		 desc: configuration d'un parcourt anticoruption
+		 service d'accès a la sous-collection :application_configuration_parcours
+		 desc: application_configuration_parcours
 		 info: vous ne pouvez voir que ce type d'objet
 		*/
-		public application_configuration_antico:HttpServiceBase<Interfaces.Iapplication_configuration_antico> ;
+		public application_configuration_parcours:HttpServiceBase<Interfaces.Iapplication_configuration_parcours> ;
+
+		 
+		 /**
+		 service d'accès a la sous-collection :application_configuration_xlxUploader
+		 desc: application_configuration_xlxUploader
+		 info: vous ne pouvez voir que ce type d'objet
+		*/
+		public application_configuration_xlxUploader:HttpServiceBase<Interfaces.Iapplication_configuration_xlxUploader> ;
+
+		 
+		 /**
+		 service d'accès a la sous-collection :application_configuration_appApprenant
+		 desc: c'est la configuration d'une application Apprenant
+		 info: vous ne pouvez voir que ce type d'objet
+		*/
+		public application_configuration_appApprenant:HttpServiceBase<Interfaces.Iapplication_configuration_appApprenant> ;
+
+		 
+		 /**
+		 service d'accès a la sous-collection :application_configuration_appCoach
+		 desc: c'est la configuration d'une application coach
+		 info: vous ne pouvez voir que ce type d'objet
+		*/
+		public application_configuration_appCoach:HttpServiceBase<Interfaces.Iapplication_configuration_appCoach> ;
 
 		 
 		 /**
@@ -338,11 +402,27 @@ export class api_collection_plateform {
 
 		 
 		 /**
-		 service d'accès a la sous-collection :application_configuration_appApprenant
-		 desc: c'est la configuration d'une application Apprenant
+		 service d'accès a la sous-collection :application_configuration_appEditor
+		 desc: c'est la configuration d'une application type editeur
 		 info: vous ne pouvez voir que ce type d'objet
 		*/
-		public application_configuration_appApprenant:HttpServiceBase<Interfaces.Iapplication_configuration_appApprenant> ;
+		public application_configuration_appEditor:HttpServiceBase<Interfaces.Iapplication_configuration_appEditor> ;
+
+		 
+		 /**
+		 service d'accès a la sous-collection :application_configuration_savvy_author
+		 desc: Configuration pour l'application Savvy - Author
+		 info: vous ne pouvez voir que ce type d'objet
+		*/
+		public application_configuration_savvy_author:HttpServiceBase<Interfaces.Iapplication_configuration_savvy_author> ;
+
+		 
+		 /**
+		 service d'accès a la sous-collection :application_configuration_savvy_learner
+		 desc: configuration de l'application Savvy Learner
+		 info: vous ne pouvez voir que ce type d'objet
+		*/
+		public application_configuration_savvy_learner:HttpServiceBase<Interfaces.Iapplication_configuration_savvy_learner> ;
 
 		 
 	
@@ -392,10 +472,6 @@ export class api_collection_plateform {
 		 
 		 	Iservice_mailtoinfra      service qui permet de configurer l'authentification a partir d'un mail
 		 
-		 	Iservice_licence_token      c'est un service en charge de valider les licences et retourner les configurations des applications web
-		 
-		 	Iservice_goshabaGateway      passerelle pour goshaba
-		 
 		 	Iservice_mongo      configure un service mongo
 		 
 		 	Iservice_socketIo      communication temps réelle multi format
@@ -404,37 +480,41 @@ export class api_collection_plateform {
 		 
 		 	Iservice_configuration      c'est le service de distribution des configurations des services
 		 
-		 	Iservice_nginxConfigurator      service_nginxConfigurator
-		 
-		 	Iservice_nginxMultiConfigurator      configuration d'un service nginx multi configuration
-		 
-		 	Iservice_push_notification      Service pour gérer les notifications push des applications
+		 	Iservice_goshabaGateway      passerelle pour goshaba
 		 
 		 	Iservice_like      service permettant de liker un objet de la base
-		 
-		 	Iservice_dumy_fso      simple remote file system a n utiliser que pour des test
 		 
 		 	Iservice_signin      service d'enregistrement
 		 
 		 	Iservice_sendGrid      permet d'envoyer des mail via l'api send grid v3
 		 
-		 	Iservice_trainingCoursesService      service de gestion des parcourts de formation
+		 	Iservice_licence_token      c'est un service en charge de valider les licences et retourner les configurations des applications web
 		 
-		 	Iservice_orchestrator      service d'orchestration
+		 	Iservice_dumy_fso      simple remote file system a n utiliser que pour des test
+		 
+		 	Iservice_push_notification      Service pour gérer les notifications push des applications
 		 
 		 	Iservice_socket_io      service messagerie de soket.io
 		 
 		 	Iservice_tutor      service de gestion des message tutoré
 		 
+		 	Iservice_nginxConfigurator      service_nginxConfigurator
+		 
+		 	Iservice_nginxMultiConfigurator      configuration d'un service nginx multi configuration
+		 
 		 	Iservice_init_js      service qui retourne un init.js
-		 
-		 	Iservice_infra_admin      administration de l'infra
-		 
-		 	Imailtoinfra2      retrouve la configuration de connection de l'app savy a partir du mail de l'utilisateur
 		 
 		 	Iservice_planned_tasks      Service de Taches planifiées
 		 
 		 	IService_scorm_gateway      service passerelle d'un package scorm vers l'interne
+		 
+		 	Iservice_trainingCoursesService      service de gestion des parcourts de formation
+		 
+		 	Iservice_infra_admin      administration de l'infra
+		 
+		 	Iservice_nathan_gateway      Service servant de passerelle entre Nathan et notre infra
+		 
+		 	Iservice_mailtoinfra2      retrouve la configuration de connection de l'app savy a partir du mail de l'utilisateur
 		 
 		 
 		*/
@@ -463,22 +543,6 @@ export class api_collection_plateform {
 		 info: vous ne pouvez voir que ce type d'objet
 		*/
 		public service_mailtoinfra:HttpServiceBase<Interfaces.Iservice_mailtoinfra> ;
-
-		 
-		 /**
-		 service d'accès a la sous-collection :service_licence_token
-		 desc: c'est un service en charge de valider les licences et retourner les configurations des applications web
-		 info: vous ne pouvez voir que ce type d'objet
-		*/
-		public service_licence_token:HttpServiceBase<Interfaces.Iservice_licence_token> ;
-
-		 
-		 /**
-		 service d'accès a la sous-collection :service_goshabaGateway
-		 desc: passerelle pour goshaba
-		 info: vous ne pouvez voir que ce type d'objet
-		*/
-		public service_goshabaGateway:HttpServiceBase<Interfaces.Iservice_goshabaGateway> ;
 
 		 
 		 /**
@@ -514,27 +578,11 @@ export class api_collection_plateform {
 
 		 
 		 /**
-		 service d'accès a la sous-collection :service_nginxConfigurator
-		 desc: service_nginxConfigurator
+		 service d'accès a la sous-collection :service_goshabaGateway
+		 desc: passerelle pour goshaba
 		 info: vous ne pouvez voir que ce type d'objet
 		*/
-		public service_nginxConfigurator:HttpServiceBase<Interfaces.Iservice_nginxConfigurator> ;
-
-		 
-		 /**
-		 service d'accès a la sous-collection :service_nginxMultiConfigurator
-		 desc: configuration d'un service nginx multi configuration
-		 info: vous ne pouvez voir que ce type d'objet
-		*/
-		public service_nginxMultiConfigurator:HttpServiceBase<Interfaces.Iservice_nginxMultiConfigurator> ;
-
-		 
-		 /**
-		 service d'accès a la sous-collection :service_push_notification
-		 desc: Service pour gérer les notifications push des applications
-		 info: vous ne pouvez voir que ce type d'objet
-		*/
-		public service_push_notification:HttpServiceBase<Interfaces.Iservice_push_notification> ;
+		public service_goshabaGateway:HttpServiceBase<Interfaces.Iservice_goshabaGateway> ;
 
 		 
 		 /**
@@ -543,14 +591,6 @@ export class api_collection_plateform {
 		 info: vous ne pouvez voir que ce type d'objet
 		*/
 		public service_like:HttpServiceBase<Interfaces.Iservice_like> ;
-
-		 
-		 /**
-		 service d'accès a la sous-collection :service_dumy_fso
-		 desc: simple remote file system a n utiliser que pour des test
-		 info: vous ne pouvez voir que ce type d'objet
-		*/
-		public service_dumy_fso:HttpServiceBase<Interfaces.Iservice_dumy_fso> ;
 
 		 
 		 /**
@@ -570,19 +610,27 @@ export class api_collection_plateform {
 
 		 
 		 /**
-		 service d'accès a la sous-collection :service_trainingCoursesService
-		 desc: service de gestion des parcourts de formation
+		 service d'accès a la sous-collection :service_licence_token
+		 desc: c'est un service en charge de valider les licences et retourner les configurations des applications web
 		 info: vous ne pouvez voir que ce type d'objet
 		*/
-		public service_trainingCoursesService:HttpServiceBase<Interfaces.Iservice_trainingCoursesService> ;
+		public service_licence_token:HttpServiceBase<Interfaces.Iservice_licence_token> ;
 
 		 
 		 /**
-		 service d'accès a la sous-collection :service_orchestrator
-		 desc: service d'orchestration
+		 service d'accès a la sous-collection :service_dumy_fso
+		 desc: simple remote file system a n utiliser que pour des test
 		 info: vous ne pouvez voir que ce type d'objet
 		*/
-		public service_orchestrator:HttpServiceBase<Interfaces.Iservice_orchestrator> ;
+		public service_dumy_fso:HttpServiceBase<Interfaces.Iservice_dumy_fso> ;
+
+		 
+		 /**
+		 service d'accès a la sous-collection :service_push_notification
+		 desc: Service pour gérer les notifications push des applications
+		 info: vous ne pouvez voir que ce type d'objet
+		*/
+		public service_push_notification:HttpServiceBase<Interfaces.Iservice_push_notification> ;
 
 		 
 		 /**
@@ -602,27 +650,27 @@ export class api_collection_plateform {
 
 		 
 		 /**
+		 service d'accès a la sous-collection :service_nginxConfigurator
+		 desc: service_nginxConfigurator
+		 info: vous ne pouvez voir que ce type d'objet
+		*/
+		public service_nginxConfigurator:HttpServiceBase<Interfaces.Iservice_nginxConfigurator> ;
+
+		 
+		 /**
+		 service d'accès a la sous-collection :service_nginxMultiConfigurator
+		 desc: configuration d'un service nginx multi configuration
+		 info: vous ne pouvez voir que ce type d'objet
+		*/
+		public service_nginxMultiConfigurator:HttpServiceBase<Interfaces.Iservice_nginxMultiConfigurator> ;
+
+		 
+		 /**
 		 service d'accès a la sous-collection :service_init_js
 		 desc: service qui retourne un init.js
 		 info: vous ne pouvez voir que ce type d'objet
 		*/
 		public service_init_js:HttpServiceBase<Interfaces.Iservice_init_js> ;
-
-		 
-		 /**
-		 service d'accès a la sous-collection :service_infra_admin
-		 desc: administration de l'infra
-		 info: vous ne pouvez voir que ce type d'objet
-		*/
-		public service_infra_admin:HttpServiceBase<Interfaces.Iservice_infra_admin> ;
-
-		 
-		 /**
-		 service d'accès a la sous-collection :mailtoinfra2
-		 desc: retrouve la configuration de connection de l'app savy a partir du mail de l'utilisateur
-		 info: vous ne pouvez voir que ce type d'objet
-		*/
-		public mailtoinfra2:HttpServiceBase<Interfaces.Imailtoinfra2> ;
 
 		 
 		 /**
@@ -639,6 +687,38 @@ export class api_collection_plateform {
 		 info: vous ne pouvez voir que ce type d'objet
 		*/
 		public Service_scorm_gateway:HttpServiceBase<Interfaces.IService_scorm_gateway> ;
+
+		 
+		 /**
+		 service d'accès a la sous-collection :service_trainingCoursesService
+		 desc: service de gestion des parcourts de formation
+		 info: vous ne pouvez voir que ce type d'objet
+		*/
+		public service_trainingCoursesService:HttpServiceBase<Interfaces.Iservice_trainingCoursesService> ;
+
+		 
+		 /**
+		 service d'accès a la sous-collection :service_infra_admin
+		 desc: administration de l'infra
+		 info: vous ne pouvez voir que ce type d'objet
+		*/
+		public service_infra_admin:HttpServiceBase<Interfaces.Iservice_infra_admin> ;
+
+		 
+		 /**
+		 service d'accès a la sous-collection :service_nathan_gateway
+		 desc: Service servant de passerelle entre Nathan et notre infra
+		 info: vous ne pouvez voir que ce type d'objet
+		*/
+		public service_nathan_gateway:HttpServiceBase<Interfaces.Iservice_nathan_gateway> ;
+
+		 
+		 /**
+		 service d'accès a la sous-collection :service_mailtoinfra2
+		 desc: retrouve la configuration de connection de l'app savy a partir du mail de l'utilisateur
+		 info: vous ne pouvez voir que ce type d'objet
+		*/
+		public service_mailtoinfra2:HttpServiceBase<Interfaces.Iservice_mailtoinfra2> ;
 
 		 
 	
@@ -677,13 +757,13 @@ export class api_collection_plateform {
 		 
 	
 		/**
-		 service d'accès à la collection :service_serviceOrchestrator
-		 desc: service d'orchestration de service. ce service permet de créer des routes qui enchaîne des middleware paramétré qui consomment les autres services
+		 service d'accès à la collection :nginxConfigurationFile
+		 desc: description d'un fichier de configuration nginx
 		 
 
 		 
 		*/
-		public service_serviceOrchestrator:HttpServiceBase<Interfaces.Iservice_serviceOrchestrator> ;
+		public nginxConfigurationFile:HttpServiceBase<Interfaces.InginxConfigurationFile> ;
 
 		
 	
@@ -709,40 +789,6 @@ export class api_collection_plateform {
 		public _view_params:HttpServiceBase<Interfaces.I_view_params> ;
 
 		 
-	
-		/**
-		 service d'accès à la collection :licence
-		 desc: représente la licence d'un utilisateur pour un service (ou application) distribué par un end_client
-		 
-		 info: vous pouvez voir tous les objets de cette collection y compris les enfants
-		 liste des interfaces héritées possibles:
-		 
-		 	Ilicence_temporelle      c'est une licence qui dure un certain temps
-		 
-		 
-		*/
-		public licence:HttpServiceBase<Interfaces.Ilicence> ;
-
-		
-		 /**
-		 service d'accès a la sous-collection :licence_temporelle
-		 desc: c'est une licence qui dure un certain temps
-		 info: vous ne pouvez voir que ce type d'objet
-		*/
-		public licence_temporelle:HttpServiceBase<Interfaces.Ilicence_temporelle> ;
-
-		 
-	
-		/**
-		 service d'accès à la collection :MultilangSendGridTemplate
-		 desc: décrit un template multi langue d'envoie de mail avec sendGrid
-		 
-
-		 
-		*/
-		public MultilangSendGridTemplate:HttpServiceBase<Interfaces.IMultilangSendGridTemplate> ;
-
-		
 	
 		/**
 		 service d'accès à la collection :application
@@ -779,6 +825,51 @@ export class api_collection_plateform {
 		
 	
 		/**
+		 service d'accès à la collection :lang_code
+		 desc: Définit le code pour une langue (se référer au code ISO 639 : https://fr.wikipedia.org/wiki/Liste_des_codes_ISO_639-1)
+		 
+
+		 
+		*/
+		public lang_code:HttpServiceBase<Interfaces.Ilang_code> ;
+
+		
+	
+		/**
+		 service d'accès à la collection :multilingual_text
+		 desc: Définit un texte multilingue
+		 
+
+		 
+		*/
+		public multilingual_text:HttpServiceBase<Interfaces.Imultilingual_text> ;
+
+		
+	
+		/**
+		 service d'accès à la collection :licence
+		 desc: représente la licence d'un utilisateur pour un service (ou application) distribué par un end_client
+		 
+		 info: vous pouvez voir tous les objets de cette collection y compris les enfants
+		 liste des interfaces héritées possibles:
+		 
+		 	Ilicence_temporelle      c'est une licence qui dure un certain temps
+		 
+		 
+		*/
+		public licence:HttpServiceBase<Interfaces.Ilicence> ;
+
+		
+		 /**
+		 service d'accès a la sous-collection :licence_temporelle
+		 desc: c'est une licence qui dure un certain temps
+		 info: vous ne pouvez voir que ce type d'objet
+		*/
+		public licence_temporelle:HttpServiceBase<Interfaces.Ilicence_temporelle> ;
+
+		 
+	
+		/**
 		 service d'accès à la collection :end_client
 		 desc: c'est le client que l'on facture
 		 
@@ -789,57 +880,20 @@ export class api_collection_plateform {
 
 		
 	
+		/**
+		 service d'accès à la collection :MultilangSendGridTemplate
+		 desc: décrit un template multi langue d'envoie de mail avec sendGrid
+		 
+
+		 
+		*/
+		public MultilangSendGridTemplate:HttpServiceBase<Interfaces.IMultilangSendGridTemplate> ;
+
+		
+	
 	
 }
 
-
-/**
-	accès à la vue :Client 
-	retourne la donnée du client connecté
-*/
-export class api_view_Client extends HttpAbstractService {
-/**
-	accès à la vue :Client 
-	
-*/	
-	constructor( public conf:any ) {
-			super( conf )
-			this.url = conf.url ;
-		}
-
-	protected url:string ;
-
-	protected  globalCtxInt:CtxInterpretor = new CtxInterpretor(process.env) ;
-
-	/**
-	génére une requette sur la vue Client
-	
-	*/
-	public get(  query: string = '*', headers: any = {}   ): Promise<IHttpResult<Interfaces.Iend_client>> {
-
-		return this.baseGet<Interfaces.Iend_client>(this.url +  query , headers)
-	}
-
-	/** middleware
-	génére une requette sur la vue Client
-	
-	*/
-	public  getMiddleware = (config:MiddleWareConfig) =>{   
-	    config = this.globalCtxInt.updateEnv(config , true) ;
-	    return (req , res , next) =>{
-	      var localCtxInt:CtxInterpretor = new CtxInterpretor(req.ctx)
-	      localCtxInt.startPatern = "$ctx." ;
-	      var localConfig = localCtxInt.updateEnv(config , true) ;
-	      this.get(  localConfig.params.query, localConfig.headers)
-	      .then((data)=>{
-	        req.ctx[localConfig.output] = data ;
-	        next() ;
-	      }).catch((err)=>{
-	        next(err)
-	      })
-	    }
-	  }
-	}
 
 /**
 	accès à la vue :UserLicence 
@@ -889,28 +943,76 @@ export class api_view_UserLicence extends HttpAbstractService {
 	  }
 	}
 
+/**
+	accès à la vue :Client 
+	retourne la donnée du client connecté
+*/
+export class api_view_Client extends HttpAbstractService {
+/**
+	accès à la vue :Client 
+	
+*/	
+	constructor( public conf:any ) {
+			super( conf )
+			this.url = conf.url ;
+		}
+
+	protected url:string ;
+
+	protected  globalCtxInt:CtxInterpretor = new CtxInterpretor(process.env) ;
+
+	/**
+	génére une requette sur la vue Client
+	
+	*/
+	public get(  query: string = '*', headers: any = {}   ): Promise<IHttpResult<Interfaces.Iend_client>> {
+
+		return this.baseGet<Interfaces.Iend_client>(this.url +  query , headers)
+	}
+
+	/** middleware
+	génére une requette sur la vue Client
+	
+	*/
+	public  getMiddleware = (config:MiddleWareConfig) =>{   
+	    config = this.globalCtxInt.updateEnv(config , true) ;
+	    return (req , res , next) =>{
+	      var localCtxInt:CtxInterpretor = new CtxInterpretor(req.ctx)
+	      localCtxInt.startPatern = "$ctx." ;
+	      var localConfig = localCtxInt.updateEnv(config , true) ;
+	      this.get(  localConfig.params.query, localConfig.headers)
+	      .then((data)=>{
+	        req.ctx[localConfig.output] = data ;
+	        next() ;
+	      }).catch((err)=>{
+	        next(err)
+	      })
+	    }
+	  }
+	}
+
 
 
 export class api_view_plateform {
 
 	constructor( public conf:any ){
 	
-	this.Client = new api_view_Client({url:conf.url + "views/Client/" , secure:conf.secure})  ;
-		
 	this.UserLicence = new api_view_UserLicence({url:conf.url + "views/UserLicence/" , secure:conf.secure})  ;
+		
+	this.Client = new api_view_Client({url:conf.url + "views/Client/" , secure:conf.secure})  ;
 		
 	}
 
 	
 	/**
-	accès à la vue :Client     retourne la donnée du client connecté
-	*/
-	public Client:api_view_Client ;
-	
-	/**
 	accès à la vue :UserLicence     retourne la liste des licences d'un utilisateur pour le client courrant
 	*/
 	public UserLicence:api_view_UserLicence ;
+	
+	/**
+	accès à la vue :Client     retourne la donnée du client connecté
+	*/
+	public Client:api_view_Client ;
 	
 	
 }

@@ -25,6 +25,14 @@ export class Model_MultilangSendGridTemplate extends  Base  implements Interface
         
     
         
+        if(obj["type"] != undefined){
+          
+           this["type"] = obj["type"].toString() ;
+           
+        }
+        
+    
+        
         if(obj["sendGridTemplates"] != undefined && obj["sendGridTemplates"] != null && _.isArray(obj["sendGridTemplates"])){
           
 
@@ -50,6 +58,12 @@ export class Model_MultilangSendGridTemplate extends  Base  implements Interface
         le nom du template
         */
                public "name":string ;
+              
+       
+              /**
+        enum type of mail (invit, relance)
+        */
+               public "type"?:string ;
               
        
               /**
@@ -80,6 +94,29 @@ export class Model_MultilangSendGridTemplate extends  Base  implements Interface
                     
                   }
                   
+                  
+                 
+              
+              
+           }
+           
+              
+              if(target["type"] != null && target["type"] != undefined ){
+              
+                let _type  = target["type"] ;
+                
+
+                 if(! _.isString(_type)){
+                    throw new Error(path+"type is not a string") ;
+                    
+                  }
+                  
+                  
+                    let _enum_type:string[] = ["_TRAININGCOURSE_INVITATION_","_TRAININGCOURSE_UNSTARTED_","_TRAININGCOURSE_INACTIVITY_","_TRAININGCOURSE_COMPLETE_","_TRAININGCOURSE_SUCCEED_","_TRAININGCOURSE_UNSUCCEED_","_TRAININGSESSION_ENDED_","_SAVVYLEARNER_INVITATION_"] ;
+                    if(_enum_type.indexOf(_type)==-1){
+                        throw new Error(path+"type dont match one of _TRAININGCOURSE_INVITATION_ , _TRAININGCOURSE_UNSTARTED_ , _TRAININGCOURSE_INACTIVITY_ , _TRAININGCOURSE_COMPLETE_ , _TRAININGCOURSE_SUCCEED_ , _TRAININGCOURSE_UNSUCCEED_ , _TRAININGSESSION_ENDED_ , _SAVVYLEARNER_INVITATION_" ) ;
+                        
+                    }
                   
                  
               

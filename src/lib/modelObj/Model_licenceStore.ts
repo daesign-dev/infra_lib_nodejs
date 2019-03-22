@@ -17,6 +17,14 @@ export class Model_licenceStore extends  Base  implements Interface.IlicenceStor
     super(obj);
     
         
+        if(obj["licenceStoreParent"] != undefined){
+          
+           this["licenceStoreParent"] = obj["licenceStoreParent"].toString() ;
+           
+        }
+        
+    
+        
         if(obj["nbLicence"] != undefined){
           
            this["nbLicence"] = new Number(obj["nbLicence"]).valueOf();
@@ -111,6 +119,12 @@ export class Model_licenceStore extends  Base  implements Interface.IlicenceStor
 
         
               /**
+        Parent licence to manage dependencies ( example: between the savvy pack and his training course  ). If empty the licence can be used without restrictions, else licence are managed by training course!
+        */
+               public "licenceStoreParent"?:string ;
+              
+       
+              /**
         nombre de licence a distrubuer
         */
                public "nbLicence"?:number ;
@@ -171,6 +185,23 @@ export class Model_licenceStore extends  Base  implements Interface.IlicenceStor
         .then((boolean)=>{
           var promArr:Array<Promise<boolean>> = [Promise.resolve(true)] ;
           
+              
+              if(target["licenceStoreParent"] != null && target["licenceStoreParent"] != undefined ){
+              
+                let _licenceStoreParent  = target["licenceStoreParent"] ;
+                
+
+                 if(! _.isString(_licenceStoreParent)){
+                    throw new Error(path+"licenceStoreParent is not a string") ;
+                    
+                  }
+                  
+                  
+                 
+              
+              
+           }
+           
               
               if(target["nbLicence"] != null && target["nbLicence"] != undefined ){
               

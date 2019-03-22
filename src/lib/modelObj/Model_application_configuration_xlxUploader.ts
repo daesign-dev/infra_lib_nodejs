@@ -8,12 +8,12 @@ import {Model_application_configuration } from "./Model_application_configuratio
 
 
 /**
-  configuration d'un parcourt anticoruption
+  application_configuration_xlxUploader
 */
-export class Model_application_configuration_antico extends   Model_application_configuration   implements Interface.Iapplication_configuration_antico {
+export class Model_application_configuration_xlxUploader extends   Model_application_configuration   implements Interface.Iapplication_configuration_xlxUploader {
 
 /**
-  configuration d'un parcourt anticoruption
+  application_configuration_xlxUploader
 */
   constructor(obj:any={}){
     super(obj);
@@ -21,7 +21,7 @@ export class Model_application_configuration_antico extends   Model_application_
   }
   
 
-    public _class:string  = "application_configuration_antico" ;
+    public _class:string  = "application_configuration_xlxUploader" ;
 
         
 
@@ -40,9 +40,9 @@ export class Model_application_configuration_antico extends   Model_application_
 
       }
 
-      public static create(target:any, path:string=""):Promise<Model_application_configuration_antico>{
-        return Model_application_configuration_antico.check(target, true, path).then(()=>{
-          return new Model_application_configuration_antico(target) ;
+      public static create(target:any, path:string=""):Promise<Model_application_configuration_xlxUploader>{
+        return Model_application_configuration_xlxUploader.check(target, true, path).then(()=>{
+          return new Model_application_configuration_xlxUploader(target) ;
         })
       }
 

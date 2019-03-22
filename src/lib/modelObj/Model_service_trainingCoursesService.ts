@@ -51,6 +51,14 @@ export class Model_service_trainingCoursesService extends   Model_service   impl
         
     
         
+        if(obj["defaultNameSender"] != undefined){
+          
+           this["defaultNameSender"] = obj["defaultNameSender"].toString() ;
+           
+        }
+        
+    
+        
         if(obj["clientInfraUrl"] != undefined){
           
            this["clientInfraUrl"] = obj["clientInfraUrl"].toString() ;
@@ -86,6 +94,12 @@ export class Model_service_trainingCoursesService extends   Model_service   impl
         url du service d'envoie de mail
         */
                public "mailServiceUrl":string ;
+              
+       
+              /**
+        default name sender for mail notifications
+        */
+               public "defaultNameSender"?:string ="Academy Daesign (dev)";
               
        
               /**
@@ -176,6 +190,23 @@ export class Model_service_trainingCoursesService extends   Model_service   impl
 
                  if(! _.isString(_mailServiceUrl)){
                     throw new Error(path+"mailServiceUrl is not a string") ;
+                    
+                  }
+                  
+                  
+                 
+              
+              
+           }
+           
+              
+              if(target["defaultNameSender"] != null && target["defaultNameSender"] != undefined ){
+              
+                let _defaultNameSender  = target["defaultNameSender"] ;
+                
+
+                 if(! _.isString(_defaultNameSender)){
+                    throw new Error(path+"defaultNameSender is not a string") ;
                     
                   }
                   

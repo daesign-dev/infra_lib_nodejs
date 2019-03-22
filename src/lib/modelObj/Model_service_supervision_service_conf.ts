@@ -93,7 +93,7 @@ export class Model_service_supervision_service_conf extends  Base  implements In
               /**
         le chemin vers le fichier js
         */
-               public "path"?:string ;
+               public "path"?:string ="$ENV.BASE_PATH$$/";
               
        
               /**
@@ -111,7 +111,7 @@ export class Model_service_supervision_service_conf extends  Base  implements In
               /**
         active le redémarrage automatique
         */
-               public "restart"?:boolean ;
+               public "restart"?:boolean =true;
               
        
               /**

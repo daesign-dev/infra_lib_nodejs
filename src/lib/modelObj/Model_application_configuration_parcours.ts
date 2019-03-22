@@ -4,16 +4,16 @@ import * as Index from "./Index" ;
 import {Base } from "utils" ;
 
 
-import {Model_mongo_expression_comp } from "./Model_mongo_expression_comp"
+import {Model_application_configuration } from "./Model_application_configuration"
 
 
 /**
-  https://docs.mongodb.com/manual/reference/operator/query/eq/#op._S_in
+  application_configuration_parcours
 */
-export class Model_mongo_expression_in extends   Model_mongo_expression_comp   implements Interface.Imongo_expression_in {
+export class Model_application_configuration_parcours extends   Model_application_configuration   implements Interface.Iapplication_configuration_parcours {
 
 /**
-  https://docs.mongodb.com/manual/reference/operator/query/eq/#op._S_in
+  application_configuration_parcours
 */
   constructor(obj:any={}){
     super(obj);
@@ -21,7 +21,7 @@ export class Model_mongo_expression_in extends   Model_mongo_expression_comp   i
   }
   
 
-    public _class:string  = "mongo_expression_in" ;
+    public _class:string  = "application_configuration_parcours" ;
 
         
 
@@ -40,9 +40,9 @@ export class Model_mongo_expression_in extends   Model_mongo_expression_comp   i
 
       }
 
-      public static create(target:any, path:string=""):Promise<Model_mongo_expression_in>{
-        return Model_mongo_expression_in.check(target, true, path).then(()=>{
-          return new Model_mongo_expression_in(target) ;
+      public static create(target:any, path:string=""):Promise<Model_application_configuration_parcours>{
+        return Model_application_configuration_parcours.check(target, true, path).then(()=>{
+          return new Model_application_configuration_parcours(target) ;
         })
       }
 

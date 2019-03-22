@@ -179,7 +179,7 @@ export class Model_string extends   Model_field   implements Interface.Istring {
               /**
         élimine les espaces au début et a la fin de la valeur
         */
-               public "trim"?:boolean ;
+               public "trim"?:boolean =true;
               
        
               /**
