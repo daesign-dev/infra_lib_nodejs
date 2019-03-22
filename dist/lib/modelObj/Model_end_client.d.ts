@@ -18,6 +18,10 @@ le nom humain à afficher pour l'entreprise
 */
     "label"?: string;
     /**
+url for logo
+*/
+    "logoUrl"?: string;
+    /**
 liste des instance d'application au quelle le end_client a accés
 */
     "applications"?: string[];
@@ -32,7 +36,7 @@ distributeur de licence
     /**
 client notices
 */
-    "client_notices"?: Interface.I[];
+    "client_notices"?: Interface.Inotice_field[];
     static check(target: any, isCompleteObj?: boolean, path?: string): Promise<boolean>;
     static create(target: any, path?: string): Promise<Model_end_client>;
 }

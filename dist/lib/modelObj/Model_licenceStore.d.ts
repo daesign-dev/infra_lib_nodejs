@@ -10,6 +10,10 @@ export declare class Model_licenceStore extends Base implements Interface.Ilicen
     constructor(obj?: any);
     _class: string;
     /**
+Parent licence to manage dependencies ( example: between the savvy pack and his training course  ). If empty the licence can be used without restrictions, else licence are managed by training course!
+*/
+    "licenceStoreParent"?: string;
+    /**
 nombre de licence a distrubuer
 */
     "nbLicence"?: number;

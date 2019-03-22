@@ -13,6 +13,10 @@ export declare class api_collection_plateform {
      
         Irsa      certificat RSA
      
+        Iapi_key      Défini un certificat utilisant uniquement une clé d'API pour une application donnée
+     
+        Ipem_for_app      Certificat PEM pour une app donnée
+     
      
     */
     certificat: HttpServiceBase<Interfaces.Icertificat>;
@@ -22,6 +26,18 @@ export declare class api_collection_plateform {
     info: vous ne pouvez voir que ce type d'objet
    */
     rsa: HttpServiceBase<Interfaces.Irsa>;
+    /**
+    service d'accès a la sous-collection :api_key
+    desc: Défini un certificat utilisant uniquement une clé d'API pour une application donnée
+    info: vous ne pouvez voir que ce type d'objet
+   */
+    api_key: HttpServiceBase<Interfaces.Iapi_key>;
+    /**
+    service d'accès a la sous-collection :pem_for_app
+    desc: Certificat PEM pour une app donnée
+    info: vous ne pouvez voir que ce type d'objet
+   */
+    pem_for_app: HttpServiceBase<Interfaces.Ipem_for_app>;
     /**
      service d'accès à la collection :oidc_Client
      desc: description d'un client openId (c'est une application)
@@ -37,33 +53,27 @@ export declare class api_collection_plateform {
      info: vous pouvez voir tous les objets de cette collection y compris les enfants
      liste des interfaces héritées possibles:
      
-        Iapplication_configuration_phoneCard      configuration d'une application phoneCard
-     
-        Iapplication_configuration_appCoach      c'est la configuration d'une application Coach
-     
         Iapplication_configuration_super_admin_mongo      configuration de l'application superAdminMongo
      
-        Iapplication_configuration_antico      configuration d'un parcourt anticoruption
+        Iapplication_configuration_parcours      application_configuration_parcours
+     
+        Iapplication_configuration_xlxUploader      application_configuration_xlxUploader
+     
+        Iapplication_configuration_appApprenant      c'est la configuration d'une application Apprenant
+     
+        Iapplication_configuration_appCoach      c'est la configuration d'une application coach
      
         Iapplication_configuration_appClient      c'est la configuration d'une application Client
      
-        Iapplication_configuration_appApprenant      c'est la configuration d'une application Apprenant
+        Iapplication_configuration_appEditor      c'est la configuration d'une application type editeur
+     
+        Iapplication_configuration_savvy_author      Configuration pour l'application Savvy - Author
+     
+        Iapplication_configuration_savvy_learner      configuration de l'application Savvy Learner
      
      
     */
     application_configuration: HttpServiceBase<Interfaces.Iapplication_configuration>;
-    /**
-    service d'accès a la sous-collection :application_configuration_phoneCard
-    desc: configuration d'une application phoneCard
-    info: vous ne pouvez voir que ce type d'objet
-   */
-    application_configuration_phoneCard: HttpServiceBase<Interfaces.Iapplication_configuration_phoneCard>;
-    /**
-    service d'accès a la sous-collection :application_configuration_appCoach
-    desc: c'est la configuration d'une application Coach
-    info: vous ne pouvez voir que ce type d'objet
-   */
-    application_configuration_appCoach: HttpServiceBase<Interfaces.Iapplication_configuration_appCoach>;
     /**
     service d'accès a la sous-collection :application_configuration_super_admin_mongo
     desc: configuration de l'application superAdminMongo
@@ -71,11 +81,29 @@ export declare class api_collection_plateform {
    */
     application_configuration_super_admin_mongo: HttpServiceBase<Interfaces.Iapplication_configuration_super_admin_mongo>;
     /**
-    service d'accès a la sous-collection :application_configuration_antico
-    desc: configuration d'un parcourt anticoruption
+    service d'accès a la sous-collection :application_configuration_parcours
+    desc: application_configuration_parcours
     info: vous ne pouvez voir que ce type d'objet
    */
-    application_configuration_antico: HttpServiceBase<Interfaces.Iapplication_configuration_antico>;
+    application_configuration_parcours: HttpServiceBase<Interfaces.Iapplication_configuration_parcours>;
+    /**
+    service d'accès a la sous-collection :application_configuration_xlxUploader
+    desc: application_configuration_xlxUploader
+    info: vous ne pouvez voir que ce type d'objet
+   */
+    application_configuration_xlxUploader: HttpServiceBase<Interfaces.Iapplication_configuration_xlxUploader>;
+    /**
+    service d'accès a la sous-collection :application_configuration_appApprenant
+    desc: c'est la configuration d'une application Apprenant
+    info: vous ne pouvez voir que ce type d'objet
+   */
+    application_configuration_appApprenant: HttpServiceBase<Interfaces.Iapplication_configuration_appApprenant>;
+    /**
+    service d'accès a la sous-collection :application_configuration_appCoach
+    desc: c'est la configuration d'une application coach
+    info: vous ne pouvez voir que ce type d'objet
+   */
+    application_configuration_appCoach: HttpServiceBase<Interfaces.Iapplication_configuration_appCoach>;
     /**
     service d'accès a la sous-collection :application_configuration_appClient
     desc: c'est la configuration d'une application Client
@@ -83,11 +111,23 @@ export declare class api_collection_plateform {
    */
     application_configuration_appClient: HttpServiceBase<Interfaces.Iapplication_configuration_appClient>;
     /**
-    service d'accès a la sous-collection :application_configuration_appApprenant
-    desc: c'est la configuration d'une application Apprenant
+    service d'accès a la sous-collection :application_configuration_appEditor
+    desc: c'est la configuration d'une application type editeur
     info: vous ne pouvez voir que ce type d'objet
    */
-    application_configuration_appApprenant: HttpServiceBase<Interfaces.Iapplication_configuration_appApprenant>;
+    application_configuration_appEditor: HttpServiceBase<Interfaces.Iapplication_configuration_appEditor>;
+    /**
+    service d'accès a la sous-collection :application_configuration_savvy_author
+    desc: Configuration pour l'application Savvy - Author
+    info: vous ne pouvez voir que ce type d'objet
+   */
+    application_configuration_savvy_author: HttpServiceBase<Interfaces.Iapplication_configuration_savvy_author>;
+    /**
+    service d'accès a la sous-collection :application_configuration_savvy_learner
+    desc: configuration de l'application Savvy Learner
+    info: vous ne pouvez voir que ce type d'objet
+   */
+    application_configuration_savvy_learner: HttpServiceBase<Interfaces.Iapplication_configuration_savvy_learner>;
     /**
      service d'accès à la collection :application_instance
      desc: c'est le couple application configuration
@@ -125,10 +165,6 @@ export declare class api_collection_plateform {
      
         Iservice_mailtoinfra      service qui permet de configurer l'authentification a partir d'un mail
      
-        Iservice_licence_token      c'est un service en charge de valider les licences et retourner les configurations des applications web
-     
-        Iservice_goshabaGateway      passerelle pour goshaba
-     
         Iservice_mongo      configure un service mongo
      
         Iservice_socketIo      communication temps réelle multi format
@@ -137,37 +173,41 @@ export declare class api_collection_plateform {
      
         Iservice_configuration      c'est le service de distribution des configurations des services
      
-        Iservice_nginxConfigurator      service_nginxConfigurator
-     
-        Iservice_nginxMultiConfigurator      configuration d'un service nginx multi configuration
-     
-        Iservice_push_notification      Service pour gérer les notifications push des applications
+        Iservice_goshabaGateway      passerelle pour goshaba
      
         Iservice_like      service permettant de liker un objet de la base
-     
-        Iservice_dumy_fso      simple remote file system a n utiliser que pour des test
      
         Iservice_signin      service d'enregistrement
      
         Iservice_sendGrid      permet d'envoyer des mail via l'api send grid v3
      
-        Iservice_trainingCoursesService      service de gestion des parcourts de formation
+        Iservice_licence_token      c'est un service en charge de valider les licences et retourner les configurations des applications web
      
-        Iservice_orchestrator      service d'orchestration
+        Iservice_dumy_fso      simple remote file system a n utiliser que pour des test
+     
+        Iservice_push_notification      Service pour gérer les notifications push des applications
      
         Iservice_socket_io      service messagerie de soket.io
      
         Iservice_tutor      service de gestion des message tutoré
      
+        Iservice_nginxConfigurator      service_nginxConfigurator
+     
+        Iservice_nginxMultiConfigurator      configuration d'un service nginx multi configuration
+     
         Iservice_init_js      service qui retourne un init.js
-     
-        Iservice_infra_admin      administration de l'infra
-     
-        Imailtoinfra2      retrouve la configuration de connection de l'app savy a partir du mail de l'utilisateur
      
         Iservice_planned_tasks      Service de Taches planifiées
      
         IService_scorm_gateway      service passerelle d'un package scorm vers l'interne
+     
+        Iservice_trainingCoursesService      service de gestion des parcourts de formation
+     
+        Iservice_infra_admin      administration de l'infra
+     
+        Iservice_nathan_gateway      Service servant de passerelle entre Nathan et notre infra
+     
+        Iservice_mailtoinfra2      retrouve la configuration de connection de l'app savy a partir du mail de l'utilisateur
      
      
     */
@@ -190,18 +230,6 @@ export declare class api_collection_plateform {
     info: vous ne pouvez voir que ce type d'objet
    */
     service_mailtoinfra: HttpServiceBase<Interfaces.Iservice_mailtoinfra>;
-    /**
-    service d'accès a la sous-collection :service_licence_token
-    desc: c'est un service en charge de valider les licences et retourner les configurations des applications web
-    info: vous ne pouvez voir que ce type d'objet
-   */
-    service_licence_token: HttpServiceBase<Interfaces.Iservice_licence_token>;
-    /**
-    service d'accès a la sous-collection :service_goshabaGateway
-    desc: passerelle pour goshaba
-    info: vous ne pouvez voir que ce type d'objet
-   */
-    service_goshabaGateway: HttpServiceBase<Interfaces.Iservice_goshabaGateway>;
     /**
     service d'accès a la sous-collection :service_mongo
     desc: configure un service mongo
@@ -227,35 +255,17 @@ export declare class api_collection_plateform {
    */
     service_configuration: HttpServiceBase<Interfaces.Iservice_configuration>;
     /**
-    service d'accès a la sous-collection :service_nginxConfigurator
-    desc: service_nginxConfigurator
+    service d'accès a la sous-collection :service_goshabaGateway
+    desc: passerelle pour goshaba
     info: vous ne pouvez voir que ce type d'objet
    */
-    service_nginxConfigurator: HttpServiceBase<Interfaces.Iservice_nginxConfigurator>;
-    /**
-    service d'accès a la sous-collection :service_nginxMultiConfigurator
-    desc: configuration d'un service nginx multi configuration
-    info: vous ne pouvez voir que ce type d'objet
-   */
-    service_nginxMultiConfigurator: HttpServiceBase<Interfaces.Iservice_nginxMultiConfigurator>;
-    /**
-    service d'accès a la sous-collection :service_push_notification
-    desc: Service pour gérer les notifications push des applications
-    info: vous ne pouvez voir que ce type d'objet
-   */
-    service_push_notification: HttpServiceBase<Interfaces.Iservice_push_notification>;
+    service_goshabaGateway: HttpServiceBase<Interfaces.Iservice_goshabaGateway>;
     /**
     service d'accès a la sous-collection :service_like
     desc: service permettant de liker un objet de la base
     info: vous ne pouvez voir que ce type d'objet
    */
     service_like: HttpServiceBase<Interfaces.Iservice_like>;
-    /**
-    service d'accès a la sous-collection :service_dumy_fso
-    desc: simple remote file system a n utiliser que pour des test
-    info: vous ne pouvez voir que ce type d'objet
-   */
-    service_dumy_fso: HttpServiceBase<Interfaces.Iservice_dumy_fso>;
     /**
     service d'accès a la sous-collection :service_signin
     desc: service d'enregistrement
@@ -269,17 +279,23 @@ export declare class api_collection_plateform {
    */
     service_sendGrid: HttpServiceBase<Interfaces.Iservice_sendGrid>;
     /**
-    service d'accès a la sous-collection :service_trainingCoursesService
-    desc: service de gestion des parcourts de formation
+    service d'accès a la sous-collection :service_licence_token
+    desc: c'est un service en charge de valider les licences et retourner les configurations des applications web
     info: vous ne pouvez voir que ce type d'objet
    */
-    service_trainingCoursesService: HttpServiceBase<Interfaces.Iservice_trainingCoursesService>;
+    service_licence_token: HttpServiceBase<Interfaces.Iservice_licence_token>;
     /**
-    service d'accès a la sous-collection :service_orchestrator
-    desc: service d'orchestration
+    service d'accès a la sous-collection :service_dumy_fso
+    desc: simple remote file system a n utiliser que pour des test
     info: vous ne pouvez voir que ce type d'objet
    */
-    service_orchestrator: HttpServiceBase<Interfaces.Iservice_orchestrator>;
+    service_dumy_fso: HttpServiceBase<Interfaces.Iservice_dumy_fso>;
+    /**
+    service d'accès a la sous-collection :service_push_notification
+    desc: Service pour gérer les notifications push des applications
+    info: vous ne pouvez voir que ce type d'objet
+   */
+    service_push_notification: HttpServiceBase<Interfaces.Iservice_push_notification>;
     /**
     service d'accès a la sous-collection :service_socket_io
     desc: service messagerie de soket.io
@@ -293,23 +309,23 @@ export declare class api_collection_plateform {
    */
     service_tutor: HttpServiceBase<Interfaces.Iservice_tutor>;
     /**
+    service d'accès a la sous-collection :service_nginxConfigurator
+    desc: service_nginxConfigurator
+    info: vous ne pouvez voir que ce type d'objet
+   */
+    service_nginxConfigurator: HttpServiceBase<Interfaces.Iservice_nginxConfigurator>;
+    /**
+    service d'accès a la sous-collection :service_nginxMultiConfigurator
+    desc: configuration d'un service nginx multi configuration
+    info: vous ne pouvez voir que ce type d'objet
+   */
+    service_nginxMultiConfigurator: HttpServiceBase<Interfaces.Iservice_nginxMultiConfigurator>;
+    /**
     service d'accès a la sous-collection :service_init_js
     desc: service qui retourne un init.js
     info: vous ne pouvez voir que ce type d'objet
    */
     service_init_js: HttpServiceBase<Interfaces.Iservice_init_js>;
-    /**
-    service d'accès a la sous-collection :service_infra_admin
-    desc: administration de l'infra
-    info: vous ne pouvez voir que ce type d'objet
-   */
-    service_infra_admin: HttpServiceBase<Interfaces.Iservice_infra_admin>;
-    /**
-    service d'accès a la sous-collection :mailtoinfra2
-    desc: retrouve la configuration de connection de l'app savy a partir du mail de l'utilisateur
-    info: vous ne pouvez voir que ce type d'objet
-   */
-    mailtoinfra2: HttpServiceBase<Interfaces.Imailtoinfra2>;
     /**
     service d'accès a la sous-collection :service_planned_tasks
     desc: Service de Taches planifiées
@@ -322,6 +338,30 @@ export declare class api_collection_plateform {
     info: vous ne pouvez voir que ce type d'objet
    */
     Service_scorm_gateway: HttpServiceBase<Interfaces.IService_scorm_gateway>;
+    /**
+    service d'accès a la sous-collection :service_trainingCoursesService
+    desc: service de gestion des parcourts de formation
+    info: vous ne pouvez voir que ce type d'objet
+   */
+    service_trainingCoursesService: HttpServiceBase<Interfaces.Iservice_trainingCoursesService>;
+    /**
+    service d'accès a la sous-collection :service_infra_admin
+    desc: administration de l'infra
+    info: vous ne pouvez voir que ce type d'objet
+   */
+    service_infra_admin: HttpServiceBase<Interfaces.Iservice_infra_admin>;
+    /**
+    service d'accès a la sous-collection :service_nathan_gateway
+    desc: Service servant de passerelle entre Nathan et notre infra
+    info: vous ne pouvez voir que ce type d'objet
+   */
+    service_nathan_gateway: HttpServiceBase<Interfaces.Iservice_nathan_gateway>;
+    /**
+    service d'accès a la sous-collection :service_mailtoinfra2
+    desc: retrouve la configuration de connection de l'app savy a partir du mail de l'utilisateur
+    info: vous ne pouvez voir que ce type d'objet
+   */
+    service_mailtoinfra2: HttpServiceBase<Interfaces.Iservice_mailtoinfra2>;
     /**
      service d'accès à la collection :protoschema
      desc: protoschema est un méta modéle. il permet de créer les autres modèle de la base
@@ -349,13 +389,13 @@ export declare class api_collection_plateform {
    */
     mail_sendgrid: HttpServiceBase<Interfaces.Imail_sendgrid>;
     /**
-     service d'accès à la collection :service_serviceOrchestrator
-     desc: service d'orchestration de service. ce service permet de créer des routes qui enchaîne des middleware paramétré qui consomment les autres services
+     service d'accès à la collection :nginxConfigurationFile
+     desc: description d'un fichier de configuration nginx
      
 
      
     */
-    service_serviceOrchestrator: HttpServiceBase<Interfaces.Iservice_serviceOrchestrator>;
+    nginxConfigurationFile: HttpServiceBase<Interfaces.InginxConfigurationFile>;
     /**
      service d'accès à la collection :_view
      desc: créer des pipe d'agrégation intérogeable https://docs.mongodb.com/manual/reference/operator/aggregation-pipeline/
@@ -374,32 +414,6 @@ export declare class api_collection_plateform {
     info: vous ne pouvez voir que ce type d'objet
    */
     _view_params: HttpServiceBase<Interfaces.I_view_params>;
-    /**
-     service d'accès à la collection :licence
-     desc: représente la licence d'un utilisateur pour un service (ou application) distribué par un end_client
-     
-     info: vous pouvez voir tous les objets de cette collection y compris les enfants
-     liste des interfaces héritées possibles:
-     
-        Ilicence_temporelle      c'est une licence qui dure un certain temps
-     
-     
-    */
-    licence: HttpServiceBase<Interfaces.Ilicence>;
-    /**
-    service d'accès a la sous-collection :licence_temporelle
-    desc: c'est une licence qui dure un certain temps
-    info: vous ne pouvez voir que ce type d'objet
-   */
-    licence_temporelle: HttpServiceBase<Interfaces.Ilicence_temporelle>;
-    /**
-     service d'accès à la collection :MultilangSendGridTemplate
-     desc: décrit un template multi langue d'envoie de mail avec sendGrid
-     
-
-     
-    */
-    MultilangSendGridTemplate: HttpServiceBase<Interfaces.IMultilangSendGridTemplate>;
     /**
      service d'accès à la collection :application
      desc: liste des applications
@@ -427,6 +441,40 @@ export declare class api_collection_plateform {
     */
     TemplateLodash: HttpServiceBase<Interfaces.ITemplateLodash>;
     /**
+     service d'accès à la collection :lang_code
+     desc: Définit le code pour une langue (se référer au code ISO 639 : https://fr.wikipedia.org/wiki/Liste_des_codes_ISO_639-1)
+     
+
+     
+    */
+    lang_code: HttpServiceBase<Interfaces.Ilang_code>;
+    /**
+     service d'accès à la collection :multilingual_text
+     desc: Définit un texte multilingue
+     
+
+     
+    */
+    multilingual_text: HttpServiceBase<Interfaces.Imultilingual_text>;
+    /**
+     service d'accès à la collection :licence
+     desc: représente la licence d'un utilisateur pour un service (ou application) distribué par un end_client
+     
+     info: vous pouvez voir tous les objets de cette collection y compris les enfants
+     liste des interfaces héritées possibles:
+     
+        Ilicence_temporelle      c'est une licence qui dure un certain temps
+     
+     
+    */
+    licence: HttpServiceBase<Interfaces.Ilicence>;
+    /**
+    service d'accès a la sous-collection :licence_temporelle
+    desc: c'est une licence qui dure un certain temps
+    info: vous ne pouvez voir que ce type d'objet
+   */
+    licence_temporelle: HttpServiceBase<Interfaces.Ilicence_temporelle>;
+    /**
      service d'accès à la collection :end_client
      desc: c'est le client que l'on facture
      
@@ -434,30 +482,14 @@ export declare class api_collection_plateform {
      
     */
     end_client: HttpServiceBase<Interfaces.Iend_client>;
-}
-/**
-    accès à la vue :Client
-    retourne la donnée du client connecté
-*/
-export declare class api_view_Client extends HttpAbstractService {
-    conf: any;
     /**
-        accès à la vue :Client
-        
+     service d'accès à la collection :MultilangSendGridTemplate
+     desc: décrit un template multi langue d'envoie de mail avec sendGrid
+     
+
+     
     */
-    constructor(conf: any);
-    protected url: string;
-    protected globalCtxInt: CtxInterpretor;
-    /**
-    génére une requette sur la vue Client
-    
-    */
-    get(query?: string, headers?: any): Promise<IHttpResult<Interfaces.Iend_client>>;
-    /** middleware
-    génére une requette sur la vue Client
-    
-    */
-    getMiddleware: (config: MiddleWareConfig) => (req: any, res: any, next: any) => void;
+    MultilangSendGridTemplate: HttpServiceBase<Interfaces.IMultilangSendGridTemplate>;
 }
 /**
     accès à la vue :UserLicence
@@ -483,17 +515,41 @@ export declare class api_view_UserLicence extends HttpAbstractService {
     */
     getMiddleware: (config: MiddleWareConfig) => (req: any, res: any, next: any) => void;
 }
+/**
+    accès à la vue :Client
+    retourne la donnée du client connecté
+*/
+export declare class api_view_Client extends HttpAbstractService {
+    conf: any;
+    /**
+        accès à la vue :Client
+        
+    */
+    constructor(conf: any);
+    protected url: string;
+    protected globalCtxInt: CtxInterpretor;
+    /**
+    génére une requette sur la vue Client
+    
+    */
+    get(query?: string, headers?: any): Promise<IHttpResult<Interfaces.Iend_client>>;
+    /** middleware
+    génére une requette sur la vue Client
+    
+    */
+    getMiddleware: (config: MiddleWareConfig) => (req: any, res: any, next: any) => void;
+}
 export declare class api_view_plateform {
     conf: any;
     constructor(conf: any);
     /**
-    accès à la vue :Client     retourne la donnée du client connecté
-    */
-    Client: api_view_Client;
-    /**
     accès à la vue :UserLicence     retourne la liste des licences d'un utilisateur pour le client courrant
     */
     UserLicence: api_view_UserLicence;
+    /**
+    accès à la vue :Client     retourne la donnée du client connecté
+    */
+    Client: api_view_Client;
 }
 export declare class Api_plateforme {
     conf: any;

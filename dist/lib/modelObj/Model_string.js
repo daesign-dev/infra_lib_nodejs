@@ -12,6 +12,10 @@ class Model_string extends Model_field_1.Model_field {
     constructor(obj = {}) {
         super(obj);
         this._class = "string";
+        /**
+  élimine les espaces au début et a la fin de la valeur
+  */
+        this["trim"] = true;
         if (obj["name"] != undefined) {
             this["name"] = obj["name"].toString();
         }

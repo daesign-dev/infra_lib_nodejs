@@ -28,6 +28,9 @@ class Model_application_configuration_appClient extends Model_application_config
         if (obj["clientServiceUrl"] != undefined) {
             this["clientServiceUrl"] = obj["clientServiceUrl"].toString();
         }
+        if (obj["fileServiceUrl"] != undefined) {
+            this["fileServiceUrl"] = obj["fileServiceUrl"].toString();
+        }
         if (obj["aclTemplate"] != undefined) {
             if (obj._class) {
                 this["aclTemplate"] = new Index[obj._class](obj["aclTemplate"]);
@@ -35,6 +38,9 @@ class Model_application_configuration_appClient extends Model_application_config
             else {
                 this["aclTemplate"] = new Index["_acl"](obj["aclTemplate"]);
             }
+        }
+        if (obj["test"] != undefined) {
+            this["test"] = obj["test"].toString();
         }
     }
     static check(target, isCompleteObj = true, path = "") {
@@ -86,6 +92,12 @@ class Model_application_configuration_appClient extends Model_application_config
                     throw new Error(path + "clientServiceUrl is not a string");
                 }
             }
+            if (target["fileServiceUrl"] != null && target["fileServiceUrl"] != undefined) {
+                let _fileServiceUrl = target["fileServiceUrl"];
+                if (!_.isString(_fileServiceUrl)) {
+                    throw new Error(path + "fileServiceUrl is not a string");
+                }
+            }
             if (target["aclTemplate"] != null && target["aclTemplate"] != undefined) {
                 let _aclTemplate = target["aclTemplate"];
                 promArr.push(Index["_acl"].check(_aclTemplate, isCompleteObj, path + "aclTemplate.")
@@ -97,6 +109,12 @@ class Model_application_configuration_appClient extends Model_application_config
                         .catch((err) => {
                         throw new Error(path + "aclTemplate is not a " + _aclTemplate._class);
                     }));
+                }
+            }
+            if (target["test"] != null && target["test"] != undefined) {
+                let _test = target["test"];
+                if (!_.isString(_test)) {
+                    throw new Error(path + "test is not a string");
                 }
             }
             return Promise.all(promArr).then(() => { return true; });

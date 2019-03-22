@@ -19,6 +19,9 @@ class Model_end_client extends utils_1.Base {
         if (obj["label"] != undefined) {
             this["label"] = obj["label"].toString();
         }
+        if (obj["logoUrl"] != undefined) {
+            this["logoUrl"] = obj["logoUrl"].toString();
+        }
         if (obj["applications"] != undefined && obj["applications"] != null && _.isArray(obj["applications"])) {
             this["applications"] = obj["applications"].map((value) => {
                 if (_.isString(value)) {
@@ -55,7 +58,7 @@ class Model_end_client extends utils_1.Base {
                     return new Index[value._class](value);
                 }
                 else {
-                    return new Index[""](value);
+                    return new Index["notice_field"](value);
                 }
             });
         }
@@ -74,6 +77,12 @@ class Model_end_client extends utils_1.Base {
                 let _label = target["label"];
                 if (!_.isString(_label)) {
                     throw new Error(path + "label is not a string");
+                }
+            }
+            if (target["logoUrl"] != null && target["logoUrl"] != undefined) {
+                let _logoUrl = target["logoUrl"];
+                if (!_.isString(_logoUrl)) {
+                    throw new Error(path + "logoUrl is not a string");
                 }
             }
             if (target["applications"] != null && target["applications"] != undefined) {
@@ -106,9 +115,9 @@ class Model_end_client extends utils_1.Base {
             }
             if (target["client_notices"] != null && target["client_notices"] != undefined) {
                 target["client_notices"].forEach((_client_notices, index) => {
-                    promArr.push(Index[""].check(_client_notices, isCompleteObj, path + "client_notices.")
+                    promArr.push(Index["notice_field"].check(_client_notices, isCompleteObj, path + "client_notices.")
                         .catch((err) => {
-                        throw new Error(path + "client_notices index: " + index + "is not ");
+                        throw new Error(path + "client_notices index: " + index + "is not notice_field");
                     }));
                     if (_client_notices._class != null && _client_notices._class != undefined) {
                         promArr.push(Index[_client_notices._class].check(_client_notices, isCompleteObj, path + "client_notices.")

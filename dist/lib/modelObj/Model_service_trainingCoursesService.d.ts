@@ -26,6 +26,10 @@ url du service d'envoie de mail
 */
     "mailServiceUrl": string;
     /**
+default name sender for mail notifications
+*/
+    "defaultNameSender"?: string;
+    /**
 l'url de la bd d'infra
 */
     "clientInfraUrl": string;

@@ -12,6 +12,10 @@ class Model_node_fork_option_env extends utils_1.Base {
     constructor(obj = {}) {
         super(obj);
         this._class = "node_fork_option_env";
+        /**
+  l'url du serveur de configuration
+  */
+        this["CONF_URL"] = "$ENV.CONF_URL";
         if (obj["CONF_URL"] != undefined) {
             this["CONF_URL"] = obj["CONF_URL"].toString();
         }

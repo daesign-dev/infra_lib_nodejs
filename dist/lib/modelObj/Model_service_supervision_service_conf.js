@@ -14,6 +14,14 @@ class Model_service_supervision_service_conf extends utils_1.Base {
         super(obj);
         this._class = "service_supervision_service_conf";
         /**
+  le chemin vers le fichier js
+  */
+        this["path"] = "$ENV.BASE_PATH$$/";
+        /**
+  active le redémarrage automatique
+  */
+        this["restart"] = true;
+        /**
   nombre maximum de redémarrage automatique
   */
         this["maxKill"] = 3;

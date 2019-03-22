@@ -13,6 +13,18 @@ class Model_application_configuration_appApprenant extends Model_application_con
     constructor(obj = {}) {
         super(obj);
         this._class = "application_configuration_appApprenant";
+        /**
+  Flag to enable forum for the whole application
+  */
+        this["useForums"] = true;
+        /**
+  Flag to enable tutor for the whole application
+  */
+        this["useTutors"] = true;
+        /**
+  use profile flag (defaut is true)
+  */
+        this["useProfile"] = true;
         if (obj["forumUrl"] != undefined) {
             this["forumUrl"] = obj["forumUrl"].toString();
         }
@@ -27,6 +39,9 @@ class Model_application_configuration_appApprenant extends Model_application_con
         }
         if (obj["urlBase"] != undefined) {
             this["urlBase"] = obj["urlBase"].toString();
+        }
+        if (obj["clientServiceUrl"] != undefined) {
+            this["clientServiceUrl"] = obj["clientServiceUrl"].toString();
         }
         if (obj["likeServiceUrl"] != undefined) {
             this["likeServiceUrl"] = obj["likeServiceUrl"].toString();
@@ -53,6 +68,18 @@ class Model_application_configuration_appApprenant extends Model_application_con
         }
         if (obj["tutorServiceUrl"] != undefined) {
             this["tutorServiceUrl"] = obj["tutorServiceUrl"].toString();
+        }
+        if (obj["savvyLearnerUrl"] != undefined) {
+            this["savvyLearnerUrl"] = obj["savvyLearnerUrl"].toString();
+        }
+        if (obj["useForums"] != undefined) {
+            this["useForums"] = new Boolean(obj["useForums"]).valueOf();
+        }
+        if (obj["useTutors"] != undefined) {
+            this["useTutors"] = new Boolean(obj["useTutors"]).valueOf();
+        }
+        if (obj["useProfile"] != undefined) {
+            this["useProfile"] = new Boolean(obj["useProfile"]).valueOf();
         }
     }
     static check(target, isCompleteObj = true, path = "") {
@@ -93,6 +120,12 @@ class Model_application_configuration_appApprenant extends Model_application_con
                 let _urlBase = target["urlBase"];
                 if (!_.isString(_urlBase)) {
                     throw new Error(path + "urlBase is not a string");
+                }
+            }
+            if (target["clientServiceUrl"] != null && target["clientServiceUrl"] != undefined) {
+                let _clientServiceUrl = target["clientServiceUrl"];
+                if (!_.isString(_clientServiceUrl)) {
+                    throw new Error(path + "clientServiceUrl is not a string");
                 }
             }
             if (isCompleteObj && (target["likeServiceUrl"] == null || target["likeServiceUrl"] == undefined)) {
@@ -160,6 +193,36 @@ class Model_application_configuration_appApprenant extends Model_application_con
                 let _tutorServiceUrl = target["tutorServiceUrl"];
                 if (!_.isString(_tutorServiceUrl)) {
                     throw new Error(path + "tutorServiceUrl is not a string");
+                }
+            }
+            if (target["savvyLearnerUrl"] != null && target["savvyLearnerUrl"] != undefined) {
+                let _savvyLearnerUrl = target["savvyLearnerUrl"];
+                if (!_.isString(_savvyLearnerUrl)) {
+                    throw new Error(path + "savvyLearnerUrl is not a string");
+                }
+            }
+            if (isCompleteObj && (target["useForums"] == null || target["useForums"] == undefined)) {
+                throw new Error(path + "useForums is required");
+            }
+            if (target["useForums"] != null && target["useForums"] != undefined) {
+                let _useForums = target["useForums"];
+                if (!_.isBoolean(_useForums)) {
+                    throw new Error(path + "useForums is not a boolean");
+                }
+            }
+            if (isCompleteObj && (target["useTutors"] == null || target["useTutors"] == undefined)) {
+                throw new Error(path + "useTutors is required");
+            }
+            if (target["useTutors"] != null && target["useTutors"] != undefined) {
+                let _useTutors = target["useTutors"];
+                if (!_.isBoolean(_useTutors)) {
+                    throw new Error(path + "useTutors is not a boolean");
+                }
+            }
+            if (target["useProfile"] != null && target["useProfile"] != undefined) {
+                let _useProfile = target["useProfile"];
+                if (!_.isBoolean(_useProfile)) {
+                    throw new Error(path + "useProfile is not a boolean");
                 }
             }
             return Promise.all(promArr).then(() => { return true; });
