@@ -21,6 +21,10 @@ Reference vers l'application savvy author
 Reference vers l'application savvy author - Super admin
 */
     "savvyAuthorSUId"?: string;
+    /**
+List of Savvy Author application instance for author detection
+*/
+    "savvyAuthorIdList"?: string[];
     static check(target: any, isCompleteObj?: boolean, path?: string): Promise<boolean>;
     static create(target: any, path?: string): Promise<Model_application_configuration_savvy_learner>;
 }

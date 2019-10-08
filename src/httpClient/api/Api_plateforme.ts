@@ -29,11 +29,6 @@ export class api_collection_plateform {
 		 
 	
 
-		this.oidc_Client= new HttpServiceBase<Interfaces.Ioidc_Client>( {url:conf.url + "collection/oidc_Client/" , secure:conf.secure} )  ;
-
-		
-	
-
 		this.application_configuration= new HttpServiceBase<Interfaces.Iapplication_configuration>( {url:conf.url + "collection/application_configuration/" , secure:conf.secure} )  ;
 
 		
@@ -50,15 +45,23 @@ export class api_collection_plateform {
 
 		 
 		 
+		this.application_configuration_appAdminDaesign= new HttpServiceBase<Interfaces.Iapplication_configuration_appAdminDaesign>({url:conf.url + "collection/application_configuration_appAdminDaesign/" , secure:conf.secure})  ;
+
+		 
+		 
+		this.application_configuration_appClient= new HttpServiceBase<Interfaces.Iapplication_configuration_appClient>({url:conf.url + "collection/application_configuration_appClient/" , secure:conf.secure})  ;
+
+		 
+		 
+		this.application_configuration_web= new HttpServiceBase<Interfaces.Iapplication_configuration_web>({url:conf.url + "collection/application_configuration_web/" , secure:conf.secure})  ;
+
+		 
+		 
 		this.application_configuration_appApprenant= new HttpServiceBase<Interfaces.Iapplication_configuration_appApprenant>({url:conf.url + "collection/application_configuration_appApprenant/" , secure:conf.secure})  ;
 
 		 
 		 
 		this.application_configuration_appCoach= new HttpServiceBase<Interfaces.Iapplication_configuration_appCoach>({url:conf.url + "collection/application_configuration_appCoach/" , secure:conf.secure})  ;
-
-		 
-		 
-		this.application_configuration_appClient= new HttpServiceBase<Interfaces.Iapplication_configuration_appClient>({url:conf.url + "collection/application_configuration_appClient/" , secure:conf.secure})  ;
 
 		 
 		 
@@ -73,16 +76,6 @@ export class api_collection_plateform {
 		this.application_configuration_savvy_learner= new HttpServiceBase<Interfaces.Iapplication_configuration_savvy_learner>({url:conf.url + "collection/application_configuration_savvy_learner/" , secure:conf.secure})  ;
 
 		 
-	
-
-		this.application_instance= new HttpServiceBase<Interfaces.Iapplication_instance>( {url:conf.url + "collection/application_instance/" , secure:conf.secure} )  ;
-
-		
-	
-
-		this.oidc_account= new HttpServiceBase<Interfaces.Ioidc_account>( {url:conf.url + "collection/oidc_account/" , secure:conf.secure} )  ;
-
-		
 	
 
 		this.service_access= new HttpServiceBase<Interfaces.Iservice_access>( {url:conf.url + "collection/service_access/" , secure:conf.secure} )  ;
@@ -178,10 +171,6 @@ export class api_collection_plateform {
 
 		 
 		 
-		this.service_trainingCoursesService= new HttpServiceBase<Interfaces.Iservice_trainingCoursesService>({url:conf.url + "collection/service_trainingCoursesService/" , secure:conf.secure})  ;
-
-		 
-		 
 		this.service_infra_admin= new HttpServiceBase<Interfaces.Iservice_infra_admin>({url:conf.url + "collection/service_infra_admin/" , secure:conf.secure})  ;
 
 		 
@@ -191,6 +180,18 @@ export class api_collection_plateform {
 		 
 		 
 		this.service_mailtoinfra2= new HttpServiceBase<Interfaces.Iservice_mailtoinfra2>({url:conf.url + "collection/service_mailtoinfra2/" , secure:conf.secure})  ;
+
+		 
+		 
+		this.service_trainingCoursesService= new HttpServiceBase<Interfaces.Iservice_trainingCoursesService>({url:conf.url + "collection/service_trainingCoursesService/" , secure:conf.secure})  ;
+
+		 
+		 
+		this.service_deploy= new HttpServiceBase<Interfaces.Iservice_deploy>({url:conf.url + "collection/service_deploy/" , secure:conf.secure})  ;
+
+		 
+		 
+		this.service_hello= new HttpServiceBase<Interfaces.Iservice_hello>({url:conf.url + "collection/service_hello/" , secure:conf.secure})  ;
 
 		 
 	
@@ -219,15 +220,6 @@ export class api_collection_plateform {
 		
 		 
 		this._view_params= new HttpServiceBase<Interfaces.I_view_params>({url:conf.url + "collection/_view_params/" , secure:conf.secure})  ;
-
-		 
-	
-
-		this.application= new HttpServiceBase<Interfaces.Iapplication>( {url:conf.url + "collection/application/" , secure:conf.secure} )  ;
-
-		
-		 
-		this.pack_card= new HttpServiceBase<Interfaces.Ipack_card>({url:conf.url + "collection/pack_card/" , secure:conf.secure})  ;
 
 		 
 	
@@ -262,6 +254,33 @@ export class api_collection_plateform {
 	
 
 		this.MultilangSendGridTemplate= new HttpServiceBase<Interfaces.IMultilangSendGridTemplate>( {url:conf.url + "collection/MultilangSendGridTemplate/" , secure:conf.secure} )  ;
+
+		
+	
+
+		this.application= new HttpServiceBase<Interfaces.Iapplication>( {url:conf.url + "collection/application/" , secure:conf.secure} )  ;
+
+		
+		 
+		this.pack_card= new HttpServiceBase<Interfaces.Ipack_card>({url:conf.url + "collection/pack_card/" , secure:conf.secure})  ;
+
+		 
+		 
+		this.webapp= new HttpServiceBase<Interfaces.Iwebapp>({url:conf.url + "collection/webapp/" , secure:conf.secure})  ;
+
+		 
+		 
+		this.app_training_course= new HttpServiceBase<Interfaces.Iapp_training_course>({url:conf.url + "collection/app_training_course/" , secure:conf.secure})  ;
+
+		 
+	
+
+		this.application_instance= new HttpServiceBase<Interfaces.Iapplication_instance>( {url:conf.url + "collection/application_instance/" , secure:conf.secure} )  ;
+
+		
+	
+
+		this.hello= new HttpServiceBase<Interfaces.Ihello>( {url:conf.url + "collection/hello/" , secure:conf.secure} )  ;
 
 		
 	
@@ -313,17 +332,6 @@ export class api_collection_plateform {
 		 
 	
 		/**
-		 service d'accès à la collection :oidc_Client
-		 desc: description d'un client openId (c'est une application)
-		 
-
-		 
-		*/
-		public oidc_Client:HttpServiceBase<Interfaces.Ioidc_Client> ;
-
-		
-	
-		/**
 		 service d'accès à la collection :application_configuration
 		 desc: c'est la configuration d'une application
 		 
@@ -336,11 +344,15 @@ export class api_collection_plateform {
 		 
 		 	Iapplication_configuration_xlxUploader      application_configuration_xlxUploader
 		 
+		 	Iapplication_configuration_appAdminDaesign      Application configuration for Daesign admin that have specific inputs
+		 
+		 	Iapplication_configuration_appClient      c'est la configuration d'une application Client
+		 
+		 	Iapplication_configuration_web      Application configuration for web applications
+		 
 		 	Iapplication_configuration_appApprenant      c'est la configuration d'une application Apprenant
 		 
 		 	Iapplication_configuration_appCoach      c'est la configuration d'une application coach
-		 
-		 	Iapplication_configuration_appClient      c'est la configuration d'une application Client
 		 
 		 	Iapplication_configuration_appEditor      c'est la configuration d'une application type editeur
 		 
@@ -378,6 +390,30 @@ export class api_collection_plateform {
 
 		 
 		 /**
+		 service d'accès a la sous-collection :application_configuration_appAdminDaesign
+		 desc: Application configuration for Daesign admin that have specific inputs
+		 info: vous ne pouvez voir que ce type d'objet
+		*/
+		public application_configuration_appAdminDaesign:HttpServiceBase<Interfaces.Iapplication_configuration_appAdminDaesign> ;
+
+		 
+		 /**
+		 service d'accès a la sous-collection :application_configuration_appClient
+		 desc: c'est la configuration d'une application Client
+		 info: vous ne pouvez voir que ce type d'objet
+		*/
+		public application_configuration_appClient:HttpServiceBase<Interfaces.Iapplication_configuration_appClient> ;
+
+		 
+		 /**
+		 service d'accès a la sous-collection :application_configuration_web
+		 desc: Application configuration for web applications
+		 info: vous ne pouvez voir que ce type d'objet
+		*/
+		public application_configuration_web:HttpServiceBase<Interfaces.Iapplication_configuration_web> ;
+
+		 
+		 /**
 		 service d'accès a la sous-collection :application_configuration_appApprenant
 		 desc: c'est la configuration d'une application Apprenant
 		 info: vous ne pouvez voir que ce type d'objet
@@ -391,14 +427,6 @@ export class api_collection_plateform {
 		 info: vous ne pouvez voir que ce type d'objet
 		*/
 		public application_configuration_appCoach:HttpServiceBase<Interfaces.Iapplication_configuration_appCoach> ;
-
-		 
-		 /**
-		 service d'accès a la sous-collection :application_configuration_appClient
-		 desc: c'est la configuration d'une application Client
-		 info: vous ne pouvez voir que ce type d'objet
-		*/
-		public application_configuration_appClient:HttpServiceBase<Interfaces.Iapplication_configuration_appClient> ;
 
 		 
 		 /**
@@ -425,28 +453,6 @@ export class api_collection_plateform {
 		public application_configuration_savvy_learner:HttpServiceBase<Interfaces.Iapplication_configuration_savvy_learner> ;
 
 		 
-	
-		/**
-		 service d'accès à la collection :application_instance
-		 desc: c'est le couple application configuration 
-		 
-
-		 
-		*/
-		public application_instance:HttpServiceBase<Interfaces.Iapplication_instance> ;
-
-		
-	
-		/**
-		 service d'accès à la collection :oidc_account
-		 desc: compte de l'utilisateur
-		 
-
-		 
-		*/
-		public oidc_account:HttpServiceBase<Interfaces.Ioidc_account> ;
-
-		
 	
 		/**
 		 service d'accès à la collection :service_access
@@ -508,13 +514,17 @@ export class api_collection_plateform {
 		 
 		 	IService_scorm_gateway      service passerelle d'un package scorm vers l'interne
 		 
-		 	Iservice_trainingCoursesService      service de gestion des parcourts de formation
-		 
 		 	Iservice_infra_admin      administration de l'infra
 		 
 		 	Iservice_nathan_gateway      Service servant de passerelle entre Nathan et notre infra
 		 
 		 	Iservice_mailtoinfra2      retrouve la configuration de connection de l'app savy a partir du mail de l'utilisateur
+		 
+		 	Iservice_trainingCoursesService      service de gestion des parcourts de formation
+		 
+		 	Iservice_deploy      Service qu'il est bien sympathique pour déployer des applications de qualité
+		 
+		 	Iservice_hello      Service d'exemple
 		 
 		 
 		*/
@@ -690,14 +700,6 @@ export class api_collection_plateform {
 
 		 
 		 /**
-		 service d'accès a la sous-collection :service_trainingCoursesService
-		 desc: service de gestion des parcourts de formation
-		 info: vous ne pouvez voir que ce type d'objet
-		*/
-		public service_trainingCoursesService:HttpServiceBase<Interfaces.Iservice_trainingCoursesService> ;
-
-		 
-		 /**
 		 service d'accès a la sous-collection :service_infra_admin
 		 desc: administration de l'infra
 		 info: vous ne pouvez voir que ce type d'objet
@@ -719,6 +721,30 @@ export class api_collection_plateform {
 		 info: vous ne pouvez voir que ce type d'objet
 		*/
 		public service_mailtoinfra2:HttpServiceBase<Interfaces.Iservice_mailtoinfra2> ;
+
+		 
+		 /**
+		 service d'accès a la sous-collection :service_trainingCoursesService
+		 desc: service de gestion des parcourts de formation
+		 info: vous ne pouvez voir que ce type d'objet
+		*/
+		public service_trainingCoursesService:HttpServiceBase<Interfaces.Iservice_trainingCoursesService> ;
+
+		 
+		 /**
+		 service d'accès a la sous-collection :service_deploy
+		 desc: Service qu'il est bien sympathique pour déployer des applications de qualité
+		 info: vous ne pouvez voir que ce type d'objet
+		*/
+		public service_deploy:HttpServiceBase<Interfaces.Iservice_deploy> ;
+
+		 
+		 /**
+		 service d'accès a la sous-collection :service_hello
+		 desc: Service d'exemple
+		 info: vous ne pouvez voir que ce type d'objet
+		*/
+		public service_hello:HttpServiceBase<Interfaces.Iservice_hello> ;
 
 		 
 	
@@ -787,29 +813,6 @@ export class api_collection_plateform {
 		 info: vous ne pouvez voir que ce type d'objet
 		*/
 		public _view_params:HttpServiceBase<Interfaces.I_view_params> ;
-
-		 
-	
-		/**
-		 service d'accès à la collection :application
-		 desc: liste des applications
-		 
-		 info: vous pouvez voir tous les objets de cette collection y compris les enfants
-		 liste des interfaces héritées possibles:
-		 
-		 	Ipack_card      c'est un paquet de carte
-		 
-		 
-		*/
-		public application:HttpServiceBase<Interfaces.Iapplication> ;
-
-		
-		 /**
-		 service d'accès a la sous-collection :pack_card
-		 desc: c'est un paquet de carte
-		 info: vous ne pouvez voir que ce type d'objet
-		*/
-		public pack_card:HttpServiceBase<Interfaces.Ipack_card> ;
 
 		 
 	
@@ -888,6 +891,71 @@ export class api_collection_plateform {
 		 
 		*/
 		public MultilangSendGridTemplate:HttpServiceBase<Interfaces.IMultilangSendGridTemplate> ;
+
+		
+	
+		/**
+		 service d'accès à la collection :application
+		 desc: liste des applications
+		 
+		 info: vous pouvez voir tous les objets de cette collection y compris les enfants
+		 liste des interfaces héritées possibles:
+		 
+		 	Ipack_card      c'est un paquet de carte
+		 
+		 	Iwebapp      webapp
+		 
+		 	Iapp_training_course      app_training_course
+		 
+		 
+		*/
+		public application:HttpServiceBase<Interfaces.Iapplication> ;
+
+		
+		 /**
+		 service d'accès a la sous-collection :pack_card
+		 desc: c'est un paquet de carte
+		 info: vous ne pouvez voir que ce type d'objet
+		*/
+		public pack_card:HttpServiceBase<Interfaces.Ipack_card> ;
+
+		 
+		 /**
+		 service d'accès a la sous-collection :webapp
+		 desc: webapp
+		 info: vous ne pouvez voir que ce type d'objet
+		*/
+		public webapp:HttpServiceBase<Interfaces.Iwebapp> ;
+
+		 
+		 /**
+		 service d'accès a la sous-collection :app_training_course
+		 desc: app_training_course
+		 info: vous ne pouvez voir que ce type d'objet
+		*/
+		public app_training_course:HttpServiceBase<Interfaces.Iapp_training_course> ;
+
+		 
+	
+		/**
+		 service d'accès à la collection :application_instance
+		 desc: c'est le couple application configuration 
+		 
+
+		 
+		*/
+		public application_instance:HttpServiceBase<Interfaces.Iapplication_instance> ;
+
+		
+	
+		/**
+		 service d'accès à la collection :hello
+		 desc: log collection for template backend service
+		 
+
+		 
+		*/
+		public hello:HttpServiceBase<Interfaces.Ihello> ;
 
 		
 	

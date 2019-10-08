@@ -1,9 +1,9 @@
 import * as Interface from "./Interfaces";
-import { Model_application_configuration } from "./Model_application_configuration";
+import { Model_application_configuration_web } from "./Model_application_configuration_web";
 /**
   c'est la configuration d'une application coach
 */
-export declare class Model_application_configuration_appCoach extends Model_application_configuration implements Interface.Iapplication_configuration_appCoach {
+export declare class Model_application_configuration_appCoach extends Model_application_configuration_web implements Interface.Iapplication_configuration_appCoach {
     /**
       c'est la configuration d'une application coach
     */

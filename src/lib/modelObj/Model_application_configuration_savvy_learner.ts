@@ -50,6 +50,21 @@ export class Model_application_configuration_savvy_learner extends   Model_appli
         }
         
     
+        
+        if(obj["savvyAuthorIdList"] != undefined && obj["savvyAuthorIdList"] != null && _.isArray(obj["savvyAuthorIdList"])){
+          
+          this["savvyAuthorIdList"] = obj["savvyAuthorIdList"].map((value)=>{
+            if(_.isString(value)){
+              return value ;
+            }else if(value._id){
+              return value._id ;
+            }
+          })
+          
+          
+        }
+        
+    
   }
   
 
@@ -72,6 +87,12 @@ export class Model_application_configuration_savvy_learner extends   Model_appli
         Reference vers l'application savvy author - Super admin
         */
                public "savvyAuthorSUId"?:string ;
+              
+       
+              /**
+        List of Savvy Author application instance for author detection
+        */
+               public "savvyAuthorIdList"?:string[] ;
               
        
 
@@ -121,6 +142,20 @@ export class Model_application_configuration_savvy_learner extends   Model_appli
                    throw new Error(path + "savvyAuthorSUId is not a string") ;
                   }
                   
+
+              
+              
+           }
+           
+              
+              if(target["savvyAuthorIdList"] != null && target["savvyAuthorIdList"] != undefined ){
+              
+                  target["savvyAuthorIdList"].forEach((_savvyAuthorIdList , index:number)=>{
+                  
+                  if( ! _.isString(_savvyAuthorIdList)){
+                   throw new Error(path + "savvyAuthorIdList is not a string") ;
+                  }
+                  });
 
               
               

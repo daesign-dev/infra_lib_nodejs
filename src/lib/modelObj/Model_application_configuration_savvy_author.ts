@@ -4,13 +4,13 @@ import * as Index from "./Index" ;
 import {Base } from "utils" ;
 
 
-import {Model_application_configuration } from "./Model_application_configuration"
+import {Model_application_configuration_web } from "./Model_application_configuration_web"
 
 
 /**
   Configuration pour l'application Savvy - Author
 */
-export class Model_application_configuration_savvy_author extends   Model_application_configuration   implements Interface.Iapplication_configuration_savvy_author {
+export class Model_application_configuration_savvy_author extends   Model_application_configuration_web   implements Interface.Iapplication_configuration_savvy_author {
 
 /**
   Configuration pour l'application Savvy - Author
@@ -74,6 +74,26 @@ export class Model_application_configuration_savvy_author extends   Model_applic
         }
         
     
+        
+        if(obj["savvyLearnerAppId"] != undefined){
+          
+          if(_.isString(obj["savvyLearnerAppId"])){
+            this["savvyLearnerAppId"] = obj["savvyLearnerAppId"];
+          }else if(obj["savvyLearnerAppId"]._id){
+            this["savvyLearnerAppId"] = obj["savvyLearnerAppId"]._id ;
+          }
+          
+        }
+        
+    
+        
+        if(obj["pushNotificationServiceUrl"] != undefined){
+          
+           this["pushNotificationServiceUrl"] = obj["pushNotificationServiceUrl"].toString() ;
+           
+        }
+        
+    
   }
   
 
@@ -114,6 +134,18 @@ export class Model_application_configuration_savvy_author extends   Model_applic
         Est-ce que c'est une conf de super Admin ?
         */
                public "su_conf"?:boolean ;
+              
+       
+              /**
+        Identifiant de l'application savvy learner
+        */
+               public "savvyLearnerAppId"?:string ;
+              
+       
+              /**
+        URL for push notification service
+        */
+               public "pushNotificationServiceUrl"?:string ;
               
        
 
@@ -230,6 +262,37 @@ export class Model_application_configuration_savvy_author extends   Model_applic
                   }
                 
 
+              
+              
+           }
+           
+              
+              if(target["savvyLearnerAppId"] != null && target["savvyLearnerAppId"] != undefined ){
+              
+                  let _savvyLearnerAppId  = target["savvyLearnerAppId"] ;
+                  
+                  if( ! _.isString(_savvyLearnerAppId)){
+                   throw new Error(path + "savvyLearnerAppId is not a string") ;
+                  }
+                  
+
+              
+              
+           }
+           
+              
+              if(target["pushNotificationServiceUrl"] != null && target["pushNotificationServiceUrl"] != undefined ){
+              
+                let _pushNotificationServiceUrl  = target["pushNotificationServiceUrl"] ;
+                
+
+                 if(! _.isString(_pushNotificationServiceUrl)){
+                    throw new Error(path+"pushNotificationServiceUrl is not a string") ;
+                    
+                  }
+                  
+                  
+                 
               
               
            }

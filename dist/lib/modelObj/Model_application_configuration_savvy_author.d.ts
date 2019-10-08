@@ -1,9 +1,9 @@
 import * as Interface from "./Interfaces";
-import { Model_application_configuration } from "./Model_application_configuration";
+import { Model_application_configuration_web } from "./Model_application_configuration_web";
 /**
   Configuration pour l'application Savvy - Author
 */
-export declare class Model_application_configuration_savvy_author extends Model_application_configuration implements Interface.Iapplication_configuration_savvy_author {
+export declare class Model_application_configuration_savvy_author extends Model_application_configuration_web implements Interface.Iapplication_configuration_savvy_author {
     /**
       Configuration pour l'application Savvy - Author
     */
@@ -33,6 +33,14 @@ Super admin pour les utilisateurs de end_client
 Est-ce que c'est une conf de super Admin ?
 */
     "su_conf"?: boolean;
+    /**
+Identifiant de l'application savvy learner
+*/
+    "savvyLearnerAppId"?: string;
+    /**
+URL for push notification service
+*/
+    "pushNotificationServiceUrl"?: string;
     static check(target: any, isCompleteObj?: boolean, path?: string): Promise<boolean>;
     static create(target: any, path?: string): Promise<Model_application_configuration_savvy_author>;
 }

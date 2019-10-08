@@ -48,21 +48,6 @@ export class Model_application_instance extends  Base  implements Interface.Iapp
         }
         
     
-        
-        if(obj["users"] != undefined && obj["users"] != null && _.isArray(obj["users"])){
-          
-          this["users"] = obj["users"].map((value)=>{
-            if(_.isString(value)){
-              return value ;
-            }else if(value._id){
-              return value._id ;
-            }
-          })
-          
-          
-        }
-        
-    
   }
   
 
@@ -85,12 +70,6 @@ export class Model_application_instance extends  Base  implements Interface.Iapp
         la configuration de l'application
         */
                public "configuration"?:string ;
-              
-       
-              /**
-        les utilisateurs
-        */
-               public "users"?:string[] ;
               
        
 
@@ -140,20 +119,6 @@ export class Model_application_instance extends  Base  implements Interface.Iapp
                    throw new Error(path + "configuration is not a string") ;
                   }
                   
-
-              
-              
-           }
-           
-              
-              if(target["users"] != null && target["users"] != undefined ){
-              
-                  target["users"].forEach((_users , index:number)=>{
-                  
-                  if( ! _.isString(_users)){
-                   throw new Error(path + "users is not a string") ;
-                  }
-                  });
 
               
               

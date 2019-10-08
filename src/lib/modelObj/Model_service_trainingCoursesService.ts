@@ -51,6 +51,18 @@ export class Model_service_trainingCoursesService extends   Model_service   impl
         
     
         
+        if(obj["defaultSender"] != undefined){
+          
+            if(obj._class){
+              this["defaultSender"] =  new Index[obj._class](obj["defaultSender"]) ;
+            }else{
+              this["defaultSender"] =  new Index["mailSenderParams"](obj["defaultSender"]) ;
+            }
+          
+        }
+        
+    
+        
         if(obj["defaultNameSender"] != undefined){
           
            this["defaultNameSender"] = obj["defaultNameSender"].toString() ;
@@ -94,6 +106,12 @@ export class Model_service_trainingCoursesService extends   Model_service   impl
         url du service d'envoie de mail
         */
                public "mailServiceUrl":string ;
+              
+       
+              /**
+        default Sender params
+        */
+               public "defaultSender"?:Interface.ImailSenderParams;
               
        
               /**
@@ -195,6 +213,33 @@ export class Model_service_trainingCoursesService extends   Model_service   impl
                   
                   
                  
+              
+              
+           }
+           
+              
+              if(target["defaultSender"] != null && target["defaultSender"] != undefined ){
+              
+                  let _defaultSender  = target["defaultSender"] ;
+                  
+                  
+                    promArr.push( Index["mailSenderParams"].check(_defaultSender, isCompleteObj , path+"defaultSender.")
+                      .catch((err)=>{
+                        throw new Error(path+"defaultSender is not ") ;
+                        
+
+                      }) )
+                  if(_defaultSender._class != null && _defaultSender._class != undefined){
+                    promArr.push( Index[_defaultSender._class].check(_defaultSender, isCompleteObj , path+"defaultSender.")
+                      .catch((err)=>{
+                        throw new Error(path+"defaultSender is not a " + _defaultSender._class ) ;
+                        
+
+                      })
+                    )
+                  }
+
+                  
               
               
            }

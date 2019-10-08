@@ -2,11 +2,11 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const _ = require("lodash");
 const Index = require("./Index");
-const Model_application_configuration_1 = require("./Model_application_configuration");
+const Model_application_configuration_web_1 = require("./Model_application_configuration_web");
 /**
   c'est la configuration d'une application Client
 */
-class Model_application_configuration_appClient extends Model_application_configuration_1.Model_application_configuration {
+class Model_application_configuration_appClient extends Model_application_configuration_web_1.Model_application_configuration_web {
     /**
       c'est la configuration d'une application Client
     */
@@ -39,8 +39,8 @@ class Model_application_configuration_appClient extends Model_application_config
                 this["aclTemplate"] = new Index["_acl"](obj["aclTemplate"]);
             }
         }
-        if (obj["test"] != undefined) {
-            this["test"] = obj["test"].toString();
+        if (obj["isForProspect"] != undefined) {
+            this["isForProspect"] = new Boolean(obj["isForProspect"]).valueOf();
         }
     }
     static check(target, isCompleteObj = true, path = "") {
@@ -111,10 +111,10 @@ class Model_application_configuration_appClient extends Model_application_config
                     }));
                 }
             }
-            if (target["test"] != null && target["test"] != undefined) {
-                let _test = target["test"];
-                if (!_.isString(_test)) {
-                    throw new Error(path + "test is not a string");
+            if (target["isForProspect"] != null && target["isForProspect"] != undefined) {
+                let _isForProspect = target["isForProspect"];
+                if (!_.isBoolean(_isForProspect)) {
+                    throw new Error(path + "isForProspect is not a boolean");
                 }
             }
             return Promise.all(promArr).then(() => { return true; });

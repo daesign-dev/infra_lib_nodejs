@@ -14,6 +14,10 @@ Parent licence to manage dependencies ( example: between the savvy pack and his 
 */
     "licenceStoreParent"?: string;
     /**
+endclient parent ID, to manage shared licences
+*/
+    "endclientParentID"?: string;
+    /**
 nombre de licence a distrubuer
 */
     "nbLicence"?: number;

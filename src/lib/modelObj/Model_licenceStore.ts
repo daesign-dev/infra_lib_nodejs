@@ -25,6 +25,18 @@ export class Model_licenceStore extends  Base  implements Interface.IlicenceStor
         
     
         
+        if(obj["endclientParentID"] != undefined){
+          
+          if(_.isString(obj["endclientParentID"])){
+            this["endclientParentID"] = obj["endclientParentID"];
+          }else if(obj["endclientParentID"]._id){
+            this["endclientParentID"] = obj["endclientParentID"]._id ;
+          }
+          
+        }
+        
+    
+        
         if(obj["nbLicence"] != undefined){
           
            this["nbLicence"] = new Number(obj["nbLicence"]).valueOf();
@@ -125,6 +137,12 @@ export class Model_licenceStore extends  Base  implements Interface.IlicenceStor
               
        
               /**
+        endclient parent ID, to manage shared licences
+        */
+               public "endclientParentID"?:string ;
+              
+       
+              /**
         nombre de licence a distrubuer
         */
                public "nbLicence"?:number ;
@@ -198,6 +216,20 @@ export class Model_licenceStore extends  Base  implements Interface.IlicenceStor
                   
                   
                  
+              
+              
+           }
+           
+              
+              if(target["endclientParentID"] != null && target["endclientParentID"] != undefined ){
+              
+                  let _endclientParentID  = target["endclientParentID"] ;
+                  
+                  if( ! _.isString(_endclientParentID)){
+                   throw new Error(path + "endclientParentID is not a string") ;
+                  }
+                  
+
               
               
            }

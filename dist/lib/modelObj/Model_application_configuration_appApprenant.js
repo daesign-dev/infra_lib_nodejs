@@ -2,11 +2,11 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const _ = require("lodash");
 const Index = require("./Index");
-const Model_application_configuration_1 = require("./Model_application_configuration");
+const Model_application_configuration_web_1 = require("./Model_application_configuration_web");
 /**
   c'est la configuration d'une application Apprenant
 */
-class Model_application_configuration_appApprenant extends Model_application_configuration_1.Model_application_configuration {
+class Model_application_configuration_appApprenant extends Model_application_configuration_web_1.Model_application_configuration_web {
     /**
       c'est la configuration d'une application Apprenant
     */
@@ -80,6 +80,9 @@ class Model_application_configuration_appApprenant extends Model_application_con
         }
         if (obj["useProfile"] != undefined) {
             this["useProfile"] = new Boolean(obj["useProfile"]).valueOf();
+        }
+        if (obj["isForProspect"] != undefined) {
+            this["isForProspect"] = new Boolean(obj["isForProspect"]).valueOf();
         }
     }
     static check(target, isCompleteObj = true, path = "") {
@@ -223,6 +226,12 @@ class Model_application_configuration_appApprenant extends Model_application_con
                 let _useProfile = target["useProfile"];
                 if (!_.isBoolean(_useProfile)) {
                     throw new Error(path + "useProfile is not a boolean");
+                }
+            }
+            if (target["isForProspect"] != null && target["isForProspect"] != undefined) {
+                let _isForProspect = target["isForProspect"];
+                if (!_.isBoolean(_isForProspect)) {
+                    throw new Error(path + "isForProspect is not a boolean");
                 }
             }
             return Promise.all(promArr).then(() => { return true; });

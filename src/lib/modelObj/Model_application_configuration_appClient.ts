@@ -4,13 +4,13 @@ import * as Index from "./Index" ;
 import {Base } from "utils" ;
 
 
-import {Model_application_configuration } from "./Model_application_configuration"
+import {Model_application_configuration_web } from "./Model_application_configuration_web"
 
 
 /**
   c'est la configuration d'une application Client
 */
-export class Model_application_configuration_appClient extends   Model_application_configuration   implements Interface.Iapplication_configuration_appClient {
+export class Model_application_configuration_appClient extends   Model_application_configuration_web   implements Interface.Iapplication_configuration_appClient {
 
 /**
   c'est la configuration d'une application Client
@@ -79,10 +79,10 @@ export class Model_application_configuration_appClient extends   Model_applicati
         
     
         
-        if(obj["test"] != undefined){
+        if(obj["isForProspect"] != undefined){
           
-           this["test"] = obj["test"].toString() ;
-           
+           this["isForProspect"] = new Boolean(obj["isForProspect"]).valueOf() ;
+          
         }
         
     
@@ -135,9 +135,9 @@ export class Model_application_configuration_appClient extends   Model_applicati
               
        
               /**
-        test
+        boolean to set prospect workspace
         */
-               public "test"?:string ;
+               public "isForProspect"?:boolean ;
               
        
 
@@ -297,18 +297,16 @@ export class Model_application_configuration_appClient extends   Model_applicati
            }
            
               
-              if(target["test"] != null && target["test"] != undefined ){
+              if(target["isForProspect"] != null && target["isForProspect"] != undefined ){
               
-                let _test  = target["test"] ;
+                let _isForProspect  = target["isForProspect"] ;
                 
-
-                 if(! _.isString(_test)){
-                    throw new Error(path+"test is not a string") ;
+                  if(! _.isBoolean(_isForProspect)){
+                    throw new Error(path+"isForProspect is not a boolean") ;
                     
                   }
-                  
-                  
-                 
+                
+
               
               
            }

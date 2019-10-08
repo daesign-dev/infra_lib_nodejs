@@ -4,13 +4,13 @@ import * as Index from "./Index" ;
 import {Base } from "utils" ;
 
 
-import {Model_application_configuration } from "./Model_application_configuration"
+import {Model_application_configuration_web } from "./Model_application_configuration_web"
 
 
 /**
   c'est la configuration d'une application type editeur
 */
-export class Model_application_configuration_appEditor extends   Model_application_configuration   implements Interface.Iapplication_configuration_appEditor {
+export class Model_application_configuration_appEditor extends   Model_application_configuration_web   implements Interface.Iapplication_configuration_appEditor {
 
 /**
   c'est la configuration d'une application type editeur

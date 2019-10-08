@@ -77,9 +77,6 @@ class Model_passport_strategie_saml extends Model_passport_strategie_1.Model_pas
         if (obj["requestIdExpirationPeriodMs"] != undefined) {
             this["requestIdExpirationPeriodMs"] = new Number(obj["requestIdExpirationPeriodMs"]).valueOf();
         }
-        if (obj["requestIdExpirationPeriodMs"] != undefined) {
-            this["requestIdExpirationPeriodMs"] = obj["requestIdExpirationPeriodMs"].toString();
-        }
         if (obj["passReqToCallback"] != undefined) {
             this["passReqToCallback"] = new Boolean(obj["passReqToCallback"]).valueOf();
         }
@@ -222,12 +219,6 @@ class Model_passport_strategie_saml extends Model_passport_strategie_1.Model_pas
                 let _requestIdExpirationPeriodMs = target["requestIdExpirationPeriodMs"];
                 if (!_.isNumber(_requestIdExpirationPeriodMs)) {
                     throw new Error(path + "requestIdExpirationPeriodMs is not a number");
-                }
-            }
-            if (target["requestIdExpirationPeriodMs"] != null && target["requestIdExpirationPeriodMs"] != undefined) {
-                let _requestIdExpirationPeriodMs = target["requestIdExpirationPeriodMs"];
-                if (!_.isString(_requestIdExpirationPeriodMs)) {
-                    throw new Error(path + "requestIdExpirationPeriodMs is not a string");
                 }
             }
             if (target["passReqToCallback"] != null && target["passReqToCallback"] != undefined) {
