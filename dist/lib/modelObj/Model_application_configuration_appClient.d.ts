@@ -1,9 +1,9 @@
 import * as Interface from "./Interfaces";
-import { Model_application_configuration } from "./Model_application_configuration";
+import { Model_application_configuration_web } from "./Model_application_configuration_web";
 /**
   c'est la configuration d'une application Client
 */
-export declare class Model_application_configuration_appClient extends Model_application_configuration implements Interface.Iapplication_configuration_appClient {
+export declare class Model_application_configuration_appClient extends Model_application_configuration_web implements Interface.Iapplication_configuration_appClient {
     /**
       c'est la configuration d'une application Client
     */
@@ -38,9 +38,9 @@ template des acl
 */
     "aclTemplate"?: Interface.I_acl;
     /**
-test
+boolean to set prospect workspace
 */
-    "test"?: string;
+    "isForProspect"?: boolean;
     static check(target: any, isCompleteObj?: boolean, path?: string): Promise<boolean>;
     static create(target: any, path?: string): Promise<Model_application_configuration_appClient>;
 }

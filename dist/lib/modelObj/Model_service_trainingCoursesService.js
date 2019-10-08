@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const _ = require("lodash");
+const Index = require("./Index");
 const Model_service_1 = require("./Model_service");
 /**
   service de gestion des parcourts de formation
@@ -27,6 +28,14 @@ class Model_service_trainingCoursesService extends Model_service_1.Model_service
         }
         if (obj["mailServiceUrl"] != undefined) {
             this["mailServiceUrl"] = obj["mailServiceUrl"].toString();
+        }
+        if (obj["defaultSender"] != undefined) {
+            if (obj._class) {
+                this["defaultSender"] = new Index[obj._class](obj["defaultSender"]);
+            }
+            else {
+                this["defaultSender"] = new Index["mailSenderParams"](obj["defaultSender"]);
+            }
         }
         if (obj["defaultNameSender"] != undefined) {
             this["defaultNameSender"] = obj["defaultNameSender"].toString();
@@ -73,6 +82,19 @@ class Model_service_trainingCoursesService extends Model_service_1.Model_service
                 let _mailServiceUrl = target["mailServiceUrl"];
                 if (!_.isString(_mailServiceUrl)) {
                     throw new Error(path + "mailServiceUrl is not a string");
+                }
+            }
+            if (target["defaultSender"] != null && target["defaultSender"] != undefined) {
+                let _defaultSender = target["defaultSender"];
+                promArr.push(Index["mailSenderParams"].check(_defaultSender, isCompleteObj, path + "defaultSender.")
+                    .catch((err) => {
+                    throw new Error(path + "defaultSender is not ");
+                }));
+                if (_defaultSender._class != null && _defaultSender._class != undefined) {
+                    promArr.push(Index[_defaultSender._class].check(_defaultSender, isCompleteObj, path + "defaultSender.")
+                        .catch((err) => {
+                        throw new Error(path + "defaultSender is not a " + _defaultSender._class);
+                    }));
                 }
             }
             if (target["defaultNameSender"] != null && target["defaultNameSender"] != undefined) {

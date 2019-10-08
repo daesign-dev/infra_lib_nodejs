@@ -16,6 +16,14 @@ class Model_licenceStore extends utils_1.Base {
         if (obj["licenceStoreParent"] != undefined) {
             this["licenceStoreParent"] = obj["licenceStoreParent"].toString();
         }
+        if (obj["endclientParentID"] != undefined) {
+            if (_.isString(obj["endclientParentID"])) {
+                this["endclientParentID"] = obj["endclientParentID"];
+            }
+            else if (obj["endclientParentID"]._id) {
+                this["endclientParentID"] = obj["endclientParentID"]._id;
+            }
+        }
         if (obj["nbLicence"] != undefined) {
             this["nbLicence"] = new Number(obj["nbLicence"]).valueOf();
         }
@@ -66,6 +74,12 @@ class Model_licenceStore extends utils_1.Base {
                 let _licenceStoreParent = target["licenceStoreParent"];
                 if (!_.isString(_licenceStoreParent)) {
                     throw new Error(path + "licenceStoreParent is not a string");
+                }
+            }
+            if (target["endclientParentID"] != null && target["endclientParentID"] != undefined) {
+                let _endclientParentID = target["endclientParentID"];
+                if (!_.isString(_endclientParentID)) {
+                    throw new Error(path + "endclientParentID is not a string");
                 }
             }
             if (target["nbLicence"] != null && target["nbLicence"] != undefined) {

@@ -31,6 +31,16 @@ class Model_application_configuration_savvy_learner extends Model_application_co
                 this["savvyAuthorSUId"] = obj["savvyAuthorSUId"]._id;
             }
         }
+        if (obj["savvyAuthorIdList"] != undefined && obj["savvyAuthorIdList"] != null && _.isArray(obj["savvyAuthorIdList"])) {
+            this["savvyAuthorIdList"] = obj["savvyAuthorIdList"].map((value) => {
+                if (_.isString(value)) {
+                    return value;
+                }
+                else if (value._id) {
+                    return value._id;
+                }
+            });
+        }
     }
     static check(target, isCompleteObj = true, path = "") {
         return super.check(target, isCompleteObj, path)
@@ -53,6 +63,13 @@ class Model_application_configuration_savvy_learner extends Model_application_co
                 if (!_.isString(_savvyAuthorSUId)) {
                     throw new Error(path + "savvyAuthorSUId is not a string");
                 }
+            }
+            if (target["savvyAuthorIdList"] != null && target["savvyAuthorIdList"] != undefined) {
+                target["savvyAuthorIdList"].forEach((_savvyAuthorIdList, index) => {
+                    if (!_.isString(_savvyAuthorIdList)) {
+                        throw new Error(path + "savvyAuthorIdList is not a string");
+                    }
+                });
             }
             return Promise.all(promArr).then(() => { return true; });
         }).catch((err) => {

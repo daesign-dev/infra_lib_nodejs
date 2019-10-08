@@ -2,11 +2,11 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const _ = require("lodash");
 const Index = require("./Index");
-const Model_application_configuration_1 = require("./Model_application_configuration");
+const Model_application_configuration_web_1 = require("./Model_application_configuration_web");
 /**
   Configuration pour l'application Savvy - Author
 */
-class Model_application_configuration_savvy_author extends Model_application_configuration_1.Model_application_configuration {
+class Model_application_configuration_savvy_author extends Model_application_configuration_web_1.Model_application_configuration_web {
     /**
       Configuration pour l'application Savvy - Author
     */
@@ -40,6 +40,17 @@ class Model_application_configuration_savvy_author extends Model_application_con
         }
         if (obj["su_conf"] != undefined) {
             this["su_conf"] = new Boolean(obj["su_conf"]).valueOf();
+        }
+        if (obj["savvyLearnerAppId"] != undefined) {
+            if (_.isString(obj["savvyLearnerAppId"])) {
+                this["savvyLearnerAppId"] = obj["savvyLearnerAppId"];
+            }
+            else if (obj["savvyLearnerAppId"]._id) {
+                this["savvyLearnerAppId"] = obj["savvyLearnerAppId"]._id;
+            }
+        }
+        if (obj["pushNotificationServiceUrl"] != undefined) {
+            this["pushNotificationServiceUrl"] = obj["pushNotificationServiceUrl"].toString();
         }
     }
     static check(target, isCompleteObj = true, path = "") {
@@ -90,6 +101,18 @@ class Model_application_configuration_savvy_author extends Model_application_con
                 let _su_conf = target["su_conf"];
                 if (!_.isBoolean(_su_conf)) {
                     throw new Error(path + "su_conf is not a boolean");
+                }
+            }
+            if (target["savvyLearnerAppId"] != null && target["savvyLearnerAppId"] != undefined) {
+                let _savvyLearnerAppId = target["savvyLearnerAppId"];
+                if (!_.isString(_savvyLearnerAppId)) {
+                    throw new Error(path + "savvyLearnerAppId is not a string");
+                }
+            }
+            if (target["pushNotificationServiceUrl"] != null && target["pushNotificationServiceUrl"] != undefined) {
+                let _pushNotificationServiceUrl = target["pushNotificationServiceUrl"];
+                if (!_.isString(_pushNotificationServiceUrl)) {
+                    throw new Error(path + "pushNotificationServiceUrl is not a string");
                 }
             }
             return Promise.all(promArr).then(() => { return true; });

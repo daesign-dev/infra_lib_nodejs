@@ -295,48 +295,6 @@ export interface Ipassport_strategie extends IBase {
     "autoLoginWMail"?: boolean;
 }
 /**
-interface de la class oidc_Client
-description description d'un client openId (c'est une application)
-*/
-export interface Ioidc_Client extends IBase {
-    "client_id": string;
-    "client_secret": string;
-    "grant_types": string[];
-    "redirect_uris": string[];
-    "response_types"?: string[];
-    "application_type"?: string;
-    "contacts"?: string[];
-    "client_name"?: string;
-    "logo_uri"?: string;
-    "client_uri"?: string;
-    "policy_uri"?: string;
-    "tos_uri"?: string;
-    "jwks_uri"?: string;
-    "jwks"?: Ijwks;
-    "sector_identifier_uri"?: string;
-    "subject_type"?: string;
-    "id_token_signed_response_alg"?: string;
-    "id_token_encrypted_response_alg"?: string;
-    "id_token_encrypted_response_enc"?: string;
-    "userinfo_signed_response_alg"?: string;
-    "userinfo_encrypted_response_alg"?: string;
-    "userinfo_encrypted_response_enc"?: string;
-    "request_object_signing_alg"?: string;
-    "request_object_encryption_alg"?: string;
-    "request_object_encryption_enc"?: string;
-    "token_endpoint_auth_method"?: string;
-    "token_endpoint_auth_signing_alg"?: string;
-    "default_max_age"?: number;
-    "require_auth_time"?: boolean;
-    "default_acr_values"?: string[];
-    "initiate_login_uri"?: string;
-    "request_uris"?: string[];
-    "users"?: Iuser_roles[];
-    "post_logout_redirect_uris"?: string[];
-    "passportConfig"?: Ipassport_strategie[];
-    "userManagment"?: Ioidc_clientUserManagment;
-}
-/**
 interface de la class application_configuration
 description c'est la configuration d'une application
 */
@@ -344,16 +302,6 @@ export interface Iapplication_configuration extends IBase {
     "name"?: string;
     "services"?: string[] | Iservice_access[];
     "appName"?: string;
-}
-/**
-interface de la class application_instance
-description c'est le couple application configuration
-*/
-export interface Iapplication_instance extends IBase {
-    "name"?: string;
-    "application"?: string | Iapplication;
-    "configuration"?: string | Iapplication_configuration;
-    "users"?: string[] | Ioidc_account[];
 }
 /**
 interface de la class passport_strategie_twitter
@@ -384,28 +332,6 @@ description paire clef valeur
 export interface Iname_value extends IBase {
     "key": string;
     "value"?: string;
-}
-/**
-interface de la class oidc_account
-description compte de l'utilisateur
-*/
-export interface Ioidc_account extends IBase {
-    "account_id": string;
-    "birthdate"?: Date;
-    "email": string;
-    "email_verified"?: boolean;
-    "family_name"?: string;
-    "gender"?: string;
-    "given_name"?: string;
-    "locale"?: string;
-    "middle_name"?: string;
-    "name"?: string;
-    "nickname"?: string;
-    "phone_number"?: string;
-    "phone_number_verified"?: boolean;
-    "password"?: string;
-    "picture"?: string;
-    "connector"?: Isocial_data[];
 }
 /**
 interface de la class service_access
@@ -482,35 +408,6 @@ export interface IdataTableInit extends IBase {
     "fieldsNames"?: string[];
     "sortField"?: string;
     "direction"?: string;
-}
-/**
-interface de la class passport_strategie_saml
-description strategie saml pour passport (https://github.com/bergie/passport-saml)
-*/
-export interface Ipassport_strategie_saml extends Ipassport_strategie {
-    "lib": string;
-    "strategieName": string;
-    "callbackUrl": string;
-    "entryPoint"?: string;
-    "issuer"?: string;
-    "cert"?: string;
-    "privateCert"?: string;
-    "decryptionPvk"?: string;
-    "signatureAlgorithm"?: string;
-    "additionalParams"?: string;
-    "identifierFormat"?: string;
-    "acceptedClockSkewMs"?: number;
-    "attributeConsumingServiceIndex"?: string;
-    "disableRequestedAuthnContext"?: boolean;
-    "authnContext"?: string;
-    "forceAuthn"?: boolean;
-    "skipRequestCompression"?: boolean;
-    "validateInResponseTo"?: string;
-    "requestIdExpirationPeriodMs"?: number;
-    "passReqToCallback"?: boolean;
-    "logoutUrl"?: string;
-    "additionalLogoutParams"?: string;
-    "logoutCallbackUrl"?: string;
 }
 /**
 interface de la class periodicalDistrution_month
@@ -665,14 +562,6 @@ description association d'une entité et de l'url de son service
 export interface Ientity_source extends IBase {
     "url"?: string;
     "entityName"?: string[];
-}
-/**
-interface de la class oidc_clientUserManagment
-description configuration du gestionnaire d'utilisateur
-*/
-export interface Ioidc_clientUserManagment extends IBase {
-    "sign_in_uri": string;
-    "password_recovery_uri": string;
 }
 /**
 interface de la class mail
@@ -931,15 +820,6 @@ export interface Iservice_tutor extends Iservice {
     "apiSession": string;
 }
 /**
-interface de la class application
-description liste des applications
-*/
-export interface Iapplication extends IBase {
-    "name"?: string;
-    "description"?: string;
-    "depot"?: string;
-}
-/**
 interface de la class service_nginxConfigurator
 description service_nginxConfigurator
 */
@@ -1035,34 +915,6 @@ description licence store dont les applications sont le catalogue du client
 export interface IlicenceStore_global extends IlicenceStore {
 }
 /**
-interface de la class licenceStore
-description stock de licence distribuable
-*/
-export interface IlicenceStore extends IBase {
-    "licenceStoreParent"?: string;
-    "nbLicence"?: number;
-    "licenceTemplate"?: Ilicence[];
-    "autoAssign"?: boolean;
-    "validytyStartDate"?: Date;
-    "validityEndDate"?: Date;
-    "distributionPeriode"?: IperiodicalDistrution[];
-    "name": string;
-    "nbLicenceOriginal": number;
-    "ref"?: string;
-}
-/**
-interface de la class service_trainingCoursesService
-description service de gestion des parcourts de formation
-*/
-export interface Iservice_trainingCoursesService extends Iservice {
-    "apiSession": string;
-    "licenceServiceUrl": string;
-    "taskServiceUrl": string;
-    "mailServiceUrl": string;
-    "defaultNameSender"?: string;
-    "clientInfraUrl": string;
-}
-/**
 interface de la class lang_code
 description Définit le code pour une langue (se référer au code ISO 639 : https://fr.wikipedia.org/wiki/Liste_des_codes_ISO_639-1)
 */
@@ -1124,74 +976,6 @@ export interface Iend_client extends IBase {
     "client_notices"?: Inotice_field[];
 }
 /**
-interface de la class application_configuration_appApprenant
-description c'est la configuration d'une application Apprenant
-*/
-export interface Iapplication_configuration_appApprenant extends Iapplication_configuration {
-    "forumUrl"?: string;
-    "fileServiceUrl"?: string;
-    "URL_FileService"?: string;
-    "configurationUrlDb": string;
-    "urlBase": string;
-    "clientServiceUrl"?: string;
-    "likeServiceUrl": string;
-    "aclTemplate"?: I_acl;
-    "trainingCourseServiceUrl": string;
-    "syncSoketioUrl": string;
-    "syncSoketioPath": string;
-    "tutorVideoCallUrl": string;
-    "tutorServiceUrl": string;
-    "savvyLearnerUrl"?: string;
-    "useForums": boolean;
-    "useTutors": boolean;
-    "useProfile"?: boolean;
-}
-/**
-interface de la class application_configuration_appCoach
-description c'est la configuration d'une application coach
-*/
-export interface Iapplication_configuration_appCoach extends Iapplication_configuration {
-    "forumUrl"?: string;
-    "fileServiceUrl"?: string;
-    "URL_FileService"?: string;
-    "configurationUrlDb": string;
-    "urlBase": string;
-    "clientServiceUrl"?: string;
-    "likeServiceUrl": string;
-    "aclTemplate"?: I_acl;
-    "trainingCourseServiceUrl": string;
-    "tutorServiceUrl": string;
-    "syncSoketioUrl": string;
-    "syncSoketioPath": string;
-    "tutorVideoCallUrl"?: string;
-}
-/**
-interface de la class application_configuration_appClient
-description c'est la configuration d'une application Client
-*/
-export interface Iapplication_configuration_appClient extends Iapplication_configuration {
-    "configurationUrlDb": string;
-    "urlBase": string;
-    "signinUrl": string;
-    "serviceSessionUrl": string;
-    "clientServiceUrl": string;
-    "fileServiceUrl"?: string;
-    "aclTemplate"?: I_acl;
-    "test"?: string;
-}
-/**
-interface de la class application_configuration_appEditor
-description c'est la configuration d'une application type editeur
-*/
-export interface Iapplication_configuration_appEditor extends Iapplication_configuration {
-    "fileServiceUrl"?: string;
-    "URL_FileService"?: string;
-    "configurationUrlDb": string;
-    "urlBase": string;
-    "clientServiceUrl": string;
-    "aclTemplate"?: I_acl;
-}
-/**
 interface de la class MultilangSendGridTemplate
 description décrit un template multi langue d'envoie de mail avec sendGrid
 */
@@ -1226,16 +1010,273 @@ export interface Iservice_nathan_gateway extends Iservice {
     "savvy_author_db_url"?: string;
 }
 /**
+interface de la class service_mailtoinfra2
+description retrouve la configuration de connection de l'app savy a partir du mail de l'utilisateur
+*/
+export interface Iservice_mailtoinfra2 extends Iservice {
+    "ssoBdUrl": string;
+    "infraBdUrl": string;
+    "savyLearnerId"?: string | Iapplication;
+    "confMapping"?: Imail_connexion_conf[];
+}
+/**
+interface de la class nginxDomainConfiguration
+description All informations needed for the nginx / hosting domain deployment
+*/
+export interface InginxDomainConfiguration extends IBase {
+    "domainName": string;
+    "nginxSuffix": string;
+    "dnsZone": string;
+    "dnsTarget": string;
+}
+/**
+interface de la class daesignMobileApplication
+description A daesign mobile application object description used by deployment
+*/
+export interface IdaesignMobileApplication extends IBase {
+    "id": string;
+    "name": string;
+}
+/**
+interface de la class mailSenderParams
+description mail sender params (name, email, ..)
+*/
+export interface ImailSenderParams extends IBase {
+    "name": string;
+    "email"?: string;
+}
+/**
+interface de la class service_trainingCoursesService
+description service de gestion des parcourts de formation
+*/
+export interface Iservice_trainingCoursesService extends Iservice {
+    "apiSession": string;
+    "licenceServiceUrl": string;
+    "taskServiceUrl": string;
+    "mailServiceUrl": string;
+    "defaultSender"?: ImailSenderParams;
+    "defaultNameSender"?: string;
+    "clientInfraUrl": string;
+}
+/**
+interface de la class application
+description liste des applications
+*/
+export interface Iapplication extends IBase {
+    "name"?: string;
+    "description"?: string;
+    "depot"?: string;
+}
+/**
+interface de la class webapp
+description webapp
+*/
+export interface Iwebapp extends Iapplication {
+}
+/**
+interface de la class app_training_course
+description app_training_course
+*/
+export interface Iapp_training_course extends Iapplication {
+}
+/**
+interface de la class daesignApplication
+description daesignApplication
+*/
+export interface IdaesignApplication extends IBase {
+    "id": string;
+    "name"?: string;
+    "domainToInstallOn"?: string;
+    "appInstanceNameSuffix"?: string;
+}
+/**
+interface de la class application_configuration_appAdminDaesign
+description Application configuration for Daesign admin that have specific inputs
+*/
+export interface Iapplication_configuration_appAdminDaesign extends Iapplication_configuration {
+    "configurationUrlDb": string;
+    "urlBase": string;
+    "signinUrl": string;
+    "serviceSessionUrl": string;
+    "clientServiceUrl": string;
+    "fileServiceUrl"?: string;
+    "aclTemplate"?: I_acl;
+    "deployServiceUrl"?: string;
+    "webAppAdminId"?: string;
+    "webAppApprenantId"?: string;
+    "savvyLearnerInstanceId"?: string;
+    "licenseTokenUrl"?: string;
+}
+/**
+interface de la class oidc_Client
+description description d'un client openId (c'est une application)
+*/
+export interface Ioidc_Client extends IBase {
+    "client_id": string;
+    "client_secret": string;
+    "grant_types": string[];
+    "redirect_uris": string[];
+    "response_types"?: string[];
+    "application_type"?: string;
+    "contacts"?: string[];
+    "client_name"?: string;
+    "logo_uri"?: string;
+    "client_uri"?: string;
+    "policy_uri"?: string;
+    "tos_uri"?: string;
+    "jwks_uri"?: string;
+    "jwks"?: Ijwks;
+    "sector_identifier_uri"?: string;
+    "subject_type"?: string;
+    "id_token_signed_response_alg"?: string;
+    "id_token_encrypted_response_alg"?: string;
+    "id_token_encrypted_response_enc"?: string;
+    "userinfo_signed_response_alg"?: string;
+    "userinfo_encrypted_response_alg"?: string;
+    "userinfo_encrypted_response_enc"?: string;
+    "request_object_signing_alg"?: string;
+    "request_object_encryption_alg"?: string;
+    "request_object_encryption_enc"?: string;
+    "token_endpoint_auth_method"?: string;
+    "token_endpoint_auth_signing_alg"?: string;
+    "default_max_age"?: number;
+    "require_auth_time"?: boolean;
+    "default_acr_values"?: string[];
+    "initiate_login_uri"?: string;
+    "request_uris"?: string[];
+    "users"?: Iuser_roles[];
+    "post_logout_redirect_uris"?: string[];
+    "passportConfig"?: Ipassport_strategie[];
+    "userManagment"?: Ioidc_clientUserManagment;
+}
+/**
+interface de la class oidc_account
+description compte de l'utilisateur
+*/
+export interface Ioidc_account extends IBase {
+    "account_id": string;
+    "birthdate"?: Date;
+    "email": string;
+    "email_verified"?: boolean;
+    "family_name"?: string;
+    "gender"?: string;
+    "given_name"?: string;
+    "locale"?: string;
+    "middle_name"?: string;
+    "name"?: string;
+    "nickname"?: string;
+    "phone_number"?: string;
+    "phone_number_verified"?: boolean;
+    "password"?: string;
+    "picture"?: string;
+    "connector"?: Isocial_data[];
+}
+/**
+interface de la class oidc_clientUserManagment
+description configuration du gestionnaire d'utilisateur
+*/
+export interface Ioidc_clientUserManagment extends IBase {
+    "sign_in_uri": string;
+    "password_recovery_uri": string;
+}
+/**
+interface de la class application_instance
+description c'est le couple application configuration
+*/
+export interface Iapplication_instance extends IBase {
+    "name"?: string;
+    "application"?: string | Iapplication;
+    "configuration"?: string | Iapplication_configuration;
+}
+/**
+interface de la class application_configuration_appClient
+description c'est la configuration d'une application Client
+*/
+export interface Iapplication_configuration_appClient extends Iapplication_configuration_web {
+    "configurationUrlDb": string;
+    "urlBase": string;
+    "signinUrl": string;
+    "serviceSessionUrl": string;
+    "clientServiceUrl": string;
+    "fileServiceUrl"?: string;
+    "aclTemplate"?: I_acl;
+    "isForProspect"?: boolean;
+}
+/**
+interface de la class application_configuration_web
+description Application configuration for web applications
+*/
+export interface Iapplication_configuration_web extends Iapplication_configuration {
+    "appUrl": string;
+}
+/**
+interface de la class application_configuration_appApprenant
+description c'est la configuration d'une application Apprenant
+*/
+export interface Iapplication_configuration_appApprenant extends Iapplication_configuration_web {
+    "forumUrl"?: string;
+    "fileServiceUrl"?: string;
+    "URL_FileService"?: string;
+    "configurationUrlDb": string;
+    "urlBase": string;
+    "clientServiceUrl"?: string;
+    "likeServiceUrl": string;
+    "aclTemplate"?: I_acl;
+    "trainingCourseServiceUrl": string;
+    "syncSoketioUrl": string;
+    "syncSoketioPath": string;
+    "tutorVideoCallUrl": string;
+    "tutorServiceUrl": string;
+    "savvyLearnerUrl"?: string;
+    "useForums": boolean;
+    "useTutors": boolean;
+    "useProfile"?: boolean;
+    "isForProspect"?: boolean;
+}
+/**
+interface de la class application_configuration_appCoach
+description c'est la configuration d'une application coach
+*/
+export interface Iapplication_configuration_appCoach extends Iapplication_configuration_web {
+    "forumUrl"?: string;
+    "fileServiceUrl"?: string;
+    "URL_FileService"?: string;
+    "configurationUrlDb": string;
+    "urlBase": string;
+    "clientServiceUrl"?: string;
+    "likeServiceUrl": string;
+    "aclTemplate"?: I_acl;
+    "trainingCourseServiceUrl": string;
+    "tutorServiceUrl": string;
+    "syncSoketioUrl": string;
+    "syncSoketioPath": string;
+    "tutorVideoCallUrl"?: string;
+}
+/**
+interface de la class application_configuration_appEditor
+description c'est la configuration d'une application type editeur
+*/
+export interface Iapplication_configuration_appEditor extends Iapplication_configuration_web {
+    "fileServiceUrl"?: string;
+    "URL_FileService"?: string;
+    "configurationUrlDb": string;
+    "urlBase": string;
+    "clientServiceUrl": string;
+    "aclTemplate"?: I_acl;
+}
+/**
 interface de la class application_configuration_savvy_author
 description Configuration pour l'application Savvy - Author
 */
-export interface Iapplication_configuration_savvy_author extends Iapplication_configuration {
+export interface Iapplication_configuration_savvy_author extends Iapplication_configuration_web {
     "configurationUrlDb": string;
     "aclTemplate"?: I_acl;
     "urlInfraDb"?: string;
     "urlFrontAppsDb"?: string;
     "su_clientId"?: string | Iend_client;
     "su_conf"?: boolean;
+    "savvyLearnerAppId"?: string | Iapplication_instance;
+    "pushNotificationServiceUrl"?: string;
 }
 /**
 interface de la class application_configuration_savvy_learner
@@ -1245,14 +1286,102 @@ export interface Iapplication_configuration_savvy_learner extends Iapplication_c
     "savvyDbUrl"?: string;
     "savvyAuthorId"?: string | Iapplication_instance;
     "savvyAuthorSUId"?: string | Iapplication_instance;
+    "savvyAuthorIdList"?: string[] | Iapplication_instance[];
 }
 /**
-interface de la class service_mailtoinfra2
-description retrouve la configuration de connection de l'app savy a partir du mail de l'utilisateur
+interface de la class daesignIdsRequired
+description The IDS required for deployment
 */
-export interface Iservice_mailtoinfra2 extends Iservice {
+export interface IdaesignIdsRequired extends IBase {
+    "daesignEndClientId": string | Iend_client;
+    "infraAdminInstanceId": string | Iapplication_instance;
+    "nathanEndClientId": string | Iend_client;
+    "savvyLearnerInstanceId": string | Iapplication_instance;
+    "revizQuizInstanceId": string | Iapplication_instance;
+    "serviceNginxMultiConfiguratorId": string | I;
+    "serviceMailToInfraSavvyId": string | Iservice;
+    "superAdminEndclientId": string | Iend_client;
+    "superAdminApplicationInstanceId": string | Iapplication_instance;
+    "daesignSavvyAuthorAdminInstanceId": string | Iapplication_instance;
+}
+/**
+interface de la class service_deploy
+description Service qu'il est bien sympathique pour déployer des applications de qualité
+*/
+export interface Iservice_deploy extends Iservice {
     "ssoBdUrl": string;
     "infraBdUrl": string;
-    "savyLearnerId"?: string | Iapplication;
-    "confMapping"?: Imail_connexion_conf[];
+    "platformBdUrl": string;
+    "templateUriEnv"?: string;
+    "daesignIdsRequired"?: IdaesignIdsRequired;
+    "daesignApplications"?: IdaesignApplication[];
+    "daesignMobileApplications"?: IdaesignMobileApplication[];
+    "nginxDomainsConfigurations"?: InginxDomainConfiguration[];
+    "infraServiceUrl"?: string;
+    "nginxSgamesServicesUrl"?: string;
+    "nginxSgamesSupvUrl"?: string;
+    "mailToInfraSupvUrl"?: string;
+}
+/**
+interface de la class hello
+description log collection for template backend service
+*/
+export interface Ihello extends IBase {
+    "category": string;
+    "message": string;
+}
+/**
+interface de la class service_hello
+description Service d'exemple
+*/
+export interface Iservice_hello extends Iservice {
+    "ssoBdUrl": string;
+    "infraBdUrl": string;
+    "platformBdUrl": string;
+}
+/**
+interface de la class licenceStore
+description stock de licence distribuable
+*/
+export interface IlicenceStore extends IBase {
+    "licenceStoreParent"?: string;
+    "endclientParentID"?: string | Iend_client;
+    "nbLicence"?: number;
+    "licenceTemplate"?: Ilicence[];
+    "autoAssign"?: boolean;
+    "validytyStartDate"?: Date;
+    "validityEndDate"?: Date;
+    "distributionPeriode"?: IperiodicalDistrution[];
+    "name": string;
+    "nbLicenceOriginal": number;
+    "ref"?: string;
+}
+/**
+interface de la class passport_strategie_saml
+description strategie saml pour passport (https://github.com/bergie/passport-saml)
+*/
+export interface Ipassport_strategie_saml extends Ipassport_strategie {
+    "lib": string;
+    "strategieName": string;
+    "callbackUrl": string;
+    "entryPoint"?: string;
+    "issuer"?: string;
+    "cert"?: string;
+    "privateCert"?: string;
+    "decryptionPvk"?: string;
+    "signatureAlgorithm"?: string;
+    "additionalParams"?: string;
+    "identifierFormat"?: string;
+    "acceptedClockSkewMs"?: number;
+    "attributeConsumingServiceIndex"?: string;
+    "disableRequestedAuthnContext"?: boolean;
+    "authnContext"?: string;
+    "forceAuthn"?: boolean;
+    "skipRequestCompression"?: boolean;
+    "validateInResponseTo"?: string;
+    "requestIdExpirationPeriodMs"?: number;
+    "passReqToCallback"?: boolean;
+    "logoutUrl"?: string;
+    "additionalLogoutParams"?: string;
+    "logoutCallbackUrl"?: string;
 }

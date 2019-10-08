@@ -26,6 +26,10 @@ url du service d'envoie de mail
 */
     "mailServiceUrl": string;
     /**
+default Sender params
+*/
+    "defaultSender"?: Interface.ImailSenderParams;
+    /**
 default name sender for mail notifications
 */
     "defaultNameSender"?: string;

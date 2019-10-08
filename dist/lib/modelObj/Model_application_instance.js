@@ -31,16 +31,6 @@ class Model_application_instance extends utils_1.Base {
                 this["configuration"] = obj["configuration"]._id;
             }
         }
-        if (obj["users"] != undefined && obj["users"] != null && _.isArray(obj["users"])) {
-            this["users"] = obj["users"].map((value) => {
-                if (_.isString(value)) {
-                    return value;
-                }
-                else if (value._id) {
-                    return value._id;
-                }
-            });
-        }
     }
     static check(target, isCompleteObj = true, path = "") {
         return super.check(target, isCompleteObj, path)
@@ -63,13 +53,6 @@ class Model_application_instance extends utils_1.Base {
                 if (!_.isString(_configuration)) {
                     throw new Error(path + "configuration is not a string");
                 }
-            }
-            if (target["users"] != null && target["users"] != undefined) {
-                target["users"].forEach((_users, index) => {
-                    if (!_.isString(_users)) {
-                        throw new Error(path + "users is not a string");
-                    }
-                });
             }
             return Promise.all(promArr).then(() => { return true; });
         }).catch((err) => {

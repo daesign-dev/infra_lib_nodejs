@@ -86,9 +86,6 @@ Defines the expiration time when a Request ID generated for a SAML request will 
 */
     "requestIdExpirationPeriodMs"?: number;
     /**
-Defines the expiration time when a Request ID generated for a SAML request will not be valid if seen in a SAML response in the InResponseTo field. Default is 8 hours.
-*/
-    /**
 if truthy, req will be passed as the first argument to the verify callback (default: false)
 */
     "passReqToCallback"?: boolean;

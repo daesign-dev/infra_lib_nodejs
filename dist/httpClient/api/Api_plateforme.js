@@ -10,19 +10,18 @@ class api_collection_plateform {
         this.rsa = new utils_1.HttpServiceBase({ url: conf.url + "collection/rsa/", secure: conf.secure });
         this.api_key = new utils_1.HttpServiceBase({ url: conf.url + "collection/api_key/", secure: conf.secure });
         this.pem_for_app = new utils_1.HttpServiceBase({ url: conf.url + "collection/pem_for_app/", secure: conf.secure });
-        this.oidc_Client = new utils_1.HttpServiceBase({ url: conf.url + "collection/oidc_Client/", secure: conf.secure });
         this.application_configuration = new utils_1.HttpServiceBase({ url: conf.url + "collection/application_configuration/", secure: conf.secure });
         this.application_configuration_super_admin_mongo = new utils_1.HttpServiceBase({ url: conf.url + "collection/application_configuration_super_admin_mongo/", secure: conf.secure });
         this.application_configuration_parcours = new utils_1.HttpServiceBase({ url: conf.url + "collection/application_configuration_parcours/", secure: conf.secure });
         this.application_configuration_xlxUploader = new utils_1.HttpServiceBase({ url: conf.url + "collection/application_configuration_xlxUploader/", secure: conf.secure });
+        this.application_configuration_appAdminDaesign = new utils_1.HttpServiceBase({ url: conf.url + "collection/application_configuration_appAdminDaesign/", secure: conf.secure });
+        this.application_configuration_appClient = new utils_1.HttpServiceBase({ url: conf.url + "collection/application_configuration_appClient/", secure: conf.secure });
+        this.application_configuration_web = new utils_1.HttpServiceBase({ url: conf.url + "collection/application_configuration_web/", secure: conf.secure });
         this.application_configuration_appApprenant = new utils_1.HttpServiceBase({ url: conf.url + "collection/application_configuration_appApprenant/", secure: conf.secure });
         this.application_configuration_appCoach = new utils_1.HttpServiceBase({ url: conf.url + "collection/application_configuration_appCoach/", secure: conf.secure });
-        this.application_configuration_appClient = new utils_1.HttpServiceBase({ url: conf.url + "collection/application_configuration_appClient/", secure: conf.secure });
         this.application_configuration_appEditor = new utils_1.HttpServiceBase({ url: conf.url + "collection/application_configuration_appEditor/", secure: conf.secure });
         this.application_configuration_savvy_author = new utils_1.HttpServiceBase({ url: conf.url + "collection/application_configuration_savvy_author/", secure: conf.secure });
         this.application_configuration_savvy_learner = new utils_1.HttpServiceBase({ url: conf.url + "collection/application_configuration_savvy_learner/", secure: conf.secure });
-        this.application_instance = new utils_1.HttpServiceBase({ url: conf.url + "collection/application_instance/", secure: conf.secure });
-        this.oidc_account = new utils_1.HttpServiceBase({ url: conf.url + "collection/oidc_account/", secure: conf.secure });
         this.service_access = new utils_1.HttpServiceBase({ url: conf.url + "collection/service_access/", secure: conf.secure });
         this.service = new utils_1.HttpServiceBase({ url: conf.url + "collection/service/", secure: conf.secure });
         this.service_sso = new utils_1.HttpServiceBase({ url: conf.url + "collection/service_sso/", secure: conf.secure });
@@ -46,18 +45,18 @@ class api_collection_plateform {
         this.service_init_js = new utils_1.HttpServiceBase({ url: conf.url + "collection/service_init_js/", secure: conf.secure });
         this.service_planned_tasks = new utils_1.HttpServiceBase({ url: conf.url + "collection/service_planned_tasks/", secure: conf.secure });
         this.Service_scorm_gateway = new utils_1.HttpServiceBase({ url: conf.url + "collection/Service_scorm_gateway/", secure: conf.secure });
-        this.service_trainingCoursesService = new utils_1.HttpServiceBase({ url: conf.url + "collection/service_trainingCoursesService/", secure: conf.secure });
         this.service_infra_admin = new utils_1.HttpServiceBase({ url: conf.url + "collection/service_infra_admin/", secure: conf.secure });
         this.service_nathan_gateway = new utils_1.HttpServiceBase({ url: conf.url + "collection/service_nathan_gateway/", secure: conf.secure });
         this.service_mailtoinfra2 = new utils_1.HttpServiceBase({ url: conf.url + "collection/service_mailtoinfra2/", secure: conf.secure });
+        this.service_trainingCoursesService = new utils_1.HttpServiceBase({ url: conf.url + "collection/service_trainingCoursesService/", secure: conf.secure });
+        this.service_deploy = new utils_1.HttpServiceBase({ url: conf.url + "collection/service_deploy/", secure: conf.secure });
+        this.service_hello = new utils_1.HttpServiceBase({ url: conf.url + "collection/service_hello/", secure: conf.secure });
         this.protoschema = new utils_1.HttpServiceBase({ url: conf.url + "collection/protoschema/", secure: conf.secure });
         this.mail = new utils_1.HttpServiceBase({ url: conf.url + "collection/mail/", secure: conf.secure });
         this.mail_sendgrid = new utils_1.HttpServiceBase({ url: conf.url + "collection/mail_sendgrid/", secure: conf.secure });
         this.nginxConfigurationFile = new utils_1.HttpServiceBase({ url: conf.url + "collection/nginxConfigurationFile/", secure: conf.secure });
         this._view = new utils_1.HttpServiceBase({ url: conf.url + "collection/_view/", secure: conf.secure });
         this._view_params = new utils_1.HttpServiceBase({ url: conf.url + "collection/_view_params/", secure: conf.secure });
-        this.application = new utils_1.HttpServiceBase({ url: conf.url + "collection/application/", secure: conf.secure });
-        this.pack_card = new utils_1.HttpServiceBase({ url: conf.url + "collection/pack_card/", secure: conf.secure });
         this.TemplateLodash = new utils_1.HttpServiceBase({ url: conf.url + "collection/TemplateLodash/", secure: conf.secure });
         this.lang_code = new utils_1.HttpServiceBase({ url: conf.url + "collection/lang_code/", secure: conf.secure });
         this.multilingual_text = new utils_1.HttpServiceBase({ url: conf.url + "collection/multilingual_text/", secure: conf.secure });
@@ -65,6 +64,12 @@ class api_collection_plateform {
         this.licence_temporelle = new utils_1.HttpServiceBase({ url: conf.url + "collection/licence_temporelle/", secure: conf.secure });
         this.end_client = new utils_1.HttpServiceBase({ url: conf.url + "collection/end_client/", secure: conf.secure });
         this.MultilangSendGridTemplate = new utils_1.HttpServiceBase({ url: conf.url + "collection/MultilangSendGridTemplate/", secure: conf.secure });
+        this.application = new utils_1.HttpServiceBase({ url: conf.url + "collection/application/", secure: conf.secure });
+        this.pack_card = new utils_1.HttpServiceBase({ url: conf.url + "collection/pack_card/", secure: conf.secure });
+        this.webapp = new utils_1.HttpServiceBase({ url: conf.url + "collection/webapp/", secure: conf.secure });
+        this.app_training_course = new utils_1.HttpServiceBase({ url: conf.url + "collection/app_training_course/", secure: conf.secure });
+        this.application_instance = new utils_1.HttpServiceBase({ url: conf.url + "collection/application_instance/", secure: conf.secure });
+        this.hello = new utils_1.HttpServiceBase({ url: conf.url + "collection/hello/", secure: conf.secure });
     }
 }
 exports.api_collection_plateform = api_collection_plateform;
