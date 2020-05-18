@@ -4,13 +4,13 @@ import * as Index from "./Index" ;
 import {Base } from "utils" ;
 
 
-import {Model_application_configuration } from "./Model_application_configuration"
+import {Model_application_configuration_web } from "./Model_application_configuration_web"
 
 
 /**
   Application configuration for Daesign admin that have specific inputs
 */
-export class Model_application_configuration_appAdminDaesign extends   Model_application_configuration   implements Interface.Iapplication_configuration_appAdminDaesign {
+export class Model_application_configuration_appAdminDaesign extends   Model_application_configuration_web   implements Interface.Iapplication_configuration_appAdminDaesign {
 
 /**
   Application configuration for Daesign admin that have specific inputs

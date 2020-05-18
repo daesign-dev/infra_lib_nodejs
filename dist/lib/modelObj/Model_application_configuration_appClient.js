@@ -31,6 +31,9 @@ class Model_application_configuration_appClient extends Model_application_config
         if (obj["fileServiceUrl"] != undefined) {
             this["fileServiceUrl"] = obj["fileServiceUrl"].toString();
         }
+        if (obj["trackingServiceUrl"] != undefined) {
+            this["trackingServiceUrl"] = obj["trackingServiceUrl"].toString();
+        }
         if (obj["aclTemplate"] != undefined) {
             if (obj._class) {
                 this["aclTemplate"] = new Index[obj._class](obj["aclTemplate"]);
@@ -96,6 +99,12 @@ class Model_application_configuration_appClient extends Model_application_config
                 let _fileServiceUrl = target["fileServiceUrl"];
                 if (!_.isString(_fileServiceUrl)) {
                     throw new Error(path + "fileServiceUrl is not a string");
+                }
+            }
+            if (target["trackingServiceUrl"] != null && target["trackingServiceUrl"] != undefined) {
+                let _trackingServiceUrl = target["trackingServiceUrl"];
+                if (!_.isString(_trackingServiceUrl)) {
+                    throw new Error(path + "trackingServiceUrl is not a string");
                 }
             }
             if (target["aclTemplate"] != null && target["aclTemplate"] != undefined) {

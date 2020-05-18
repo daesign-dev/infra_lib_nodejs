@@ -2628,62 +2628,6 @@
    }
 
     /**
-    interface de la class application_configuration_appAdminDaesign 
-    description Application configuration for Daesign admin that have specific inputs
-   */
-    export interface Iapplication_configuration_appAdminDaesign extends   Iapplication_configuration{
-        
-              
-               "configurationUrlDb":string;
-              
-       
-              
-               "urlBase":string;
-              
-       
-              
-               "signinUrl":string;
-              
-       
-              
-               "serviceSessionUrl":string;
-              
-       
-              
-               "clientServiceUrl":string;
-              
-       
-              
-               "fileServiceUrl"?:string;
-              
-       
-              
-               "aclTemplate"?:I_acl;
-              
-       
-              
-               "deployServiceUrl"?:string;
-              
-       
-              
-               "webAppAdminId"?:string;
-              
-       
-              
-               "webAppApprenantId"?:string;
-              
-       
-              
-               "savvyLearnerInstanceId"?:string;
-              
-       
-              
-               "licenseTokenUrl"?:string;
-              
-       
-   }
-
-    /**
     interface de la class oidc_Client 
     description description d'un client openId (c'est une application)
    */
@@ -2944,46 +2888,6 @@
    }
 
     /**
-    interface de la class application_configuration_appClient 
-    description c'est la configuration d'une application Client
-   */
-    export interface Iapplication_configuration_appClient extends   Iapplication_configuration_web{
-        
-              
-               "configurationUrlDb":string;
-              
-       
-              
-               "urlBase":string;
-              
-       
-              
-               "signinUrl":string;
-              
-       
-              
-               "serviceSessionUrl":string;
-              
-       
-              
-               "clientServiceUrl":string;
-              
-       
-              
-               "fileServiceUrl"?:string;
-              
-       
-              
-               "aclTemplate"?:I_acl;
-              
-       
-              
-               "isForProspect"?:boolean;
-              
-       
-   }
-
-    /**
     interface de la class application_configuration_web 
     description Application configuration for web applications
    */
@@ -3163,46 +3067,6 @@
        
               
                "aclTemplate"?:I_acl;
-              
-       
-   }
-
-    /**
-    interface de la class application_configuration_savvy_author 
-    description Configuration pour l'application Savvy - Author
-   */
-    export interface Iapplication_configuration_savvy_author extends   Iapplication_configuration_web{
-        
-              
-               "configurationUrlDb":string;
-              
-       
-              
-               "aclTemplate"?:I_acl;
-              
-       
-              
-               "urlInfraDb"?:string;
-              
-       
-              
-               "urlFrontAppsDb"?:string;
-              
-       
-              
-               "su_clientId"?:string | Iend_client;
-              
-       
-              
-               "su_conf"?:boolean;
-              
-       
-              
-               "savvyLearnerAppId"?:string | Iapplication_instance;
-              
-       
-              
-               "pushNotificationServiceUrl"?:string;
               
        
    }
@@ -3519,6 +3383,466 @@
        
               
                "logoutCallbackUrl"?:string;
+              
+       
+   }
+
+    /**
+    interface de la class ServiceTracking 
+    description Service to acces tracking for application
+   */
+    export interface IServiceTracking extends   Iservice{
+        
+              
+               "savvyDbUrl"?:string;
+              
+       
+              
+               "savvyTrackingDbUrl"?:string;
+              
+       
+              
+               "infraBdUrl"?:string;
+              
+       
+              
+               "platformBdUrl"?:string;
+              
+       
+   }
+
+    /**
+    interface de la class application_configuration_appClient 
+    description c'est la configuration d'une application Client
+   */
+    export interface Iapplication_configuration_appClient extends   Iapplication_configuration_web{
+        
+              
+               "configurationUrlDb":string;
+              
+       
+              
+               "urlBase":string;
+              
+       
+              
+               "signinUrl":string;
+              
+       
+              
+               "serviceSessionUrl":string;
+              
+       
+              
+               "clientServiceUrl":string;
+              
+       
+              
+               "fileServiceUrl"?:string;
+              
+       
+              
+               "trackingServiceUrl"?:string;
+              
+       
+              
+               "aclTemplate"?:I_acl;
+              
+       
+              
+               "isForProspect"?:boolean;
+              
+       
+   }
+
+    /**
+    interface de la class application_configuration_savvy_author 
+    description Configuration pour l'application Savvy - Author
+   */
+    export interface Iapplication_configuration_savvy_author extends   Iapplication_configuration_web{
+        
+              
+               "configurationUrlDb":string;
+              
+       
+              
+               "aclTemplate"?:I_acl;
+              
+       
+              
+               "urlInfraDb"?:string;
+              
+       
+              
+               "urlFrontAppsDb"?:string;
+              
+       
+              
+               "su_clientId"?:string | Iend_client;
+              
+       
+              
+               "su_conf"?:boolean;
+              
+       
+              
+               "savvyLearnerAppId"?:string | Iapplication_instance;
+              
+       
+              
+               "pushNotificationServiceUrl"?:string;
+              
+       
+   }
+
+    /**
+    interface de la class application_configuration_appAdminDaesign 
+    description Application configuration for Daesign admin that have specific inputs
+   */
+    export interface Iapplication_configuration_appAdminDaesign extends   Iapplication_configuration_web{
+        
+              
+               "configurationUrlDb":string;
+              
+       
+              
+               "urlBase":string;
+              
+       
+              
+               "signinUrl":string;
+              
+       
+              
+               "serviceSessionUrl":string;
+              
+       
+              
+               "clientServiceUrl":string;
+              
+       
+              
+               "fileServiceUrl"?:string;
+              
+       
+              
+               "aclTemplate"?:I_acl;
+              
+       
+              
+               "deployServiceUrl"?:string;
+              
+       
+              
+               "webAppAdminId"?:string;
+              
+       
+              
+               "webAppApprenantId"?:string;
+              
+       
+              
+               "savvyLearnerInstanceId"?:string;
+              
+       
+              
+               "licenseTokenUrl"?:string;
+              
+       
+   }
+
+    /**
+    interface de la class user_profile 
+    description User profile collection
+   */
+    export interface Iuser_profile extends  IBase {
+        
+              
+               "name":string;
+              
+       
+              
+               "description"?:string;
+              
+       
+   }
+
+    /**
+    interface de la class user 
+    description User account collection
+   */
+    export interface Iuser extends  IBase {
+        
+              
+               "first_name":string;
+              
+       
+              
+               "last_name":string;
+              
+       
+              
+               "email":Ifield;
+              
+       
+              
+               "user_profile":string | Iuser_profile;
+              
+       
+   }
+
+    /**
+    interface de la class application_configuration_generic_author 
+    description conf for generic authos app
+   */
+    export interface Iapplication_configuration_generic_author extends   Iapplication_configuration_web{
+        
+              
+               "configurationUrlDb":string;
+              
+       
+              
+               "urlBase":string;
+              
+       
+              
+               "uploadServiceURL"?:string;
+              
+       
+              
+               "clientServiceUrl":string;
+              
+       
+              
+               "aclTemplate"?:I_acl;
+              
+       
+              
+               "tinymcekey"?:string;
+              
+       
+              
+               "aws_region"?:string;
+              
+       
+              
+               "aws_access_key_id"?:string;
+              
+       
+              
+               "aws_secret_access_key"?:string;
+              
+       
+              
+               "aws_s3_bucket_name"?:string;
+              
+       
+   }
+
+    /**
+    interface de la class application_configuration_generic 
+    description generic conf
+   */
+    export interface Iapplication_configuration_generic extends   Iapplication_configuration_web{
+        
+              
+               "configurationUrlDb":string;
+              
+       
+              
+               "urlBase":string;
+              
+       
+              
+               "clientServiceUrl":string;
+              
+       
+              
+               "aclTemplate"?:I_acl;
+              
+       
+   }
+
+    /**
+    interface de la class service_cloud_storage 
+    description Service used to upload files to AWS S3
+   */
+    export interface Iservice_cloud_storage extends   Iservice{
+        
+              
+               "assets_db":string;
+              
+       
+              
+               "S3_MaxKeys":number;
+              
+       
+              
+               "S3_DefaultStorageClass":string;
+              
+       
+              
+               "InfraEndclient":string | Iend_client;
+              
+       
+              
+               "InfraApplicationInstance":string | Iapplication_instance;
+              
+       
+              
+               "NumberOfSearchTagsSupported":number;
+              
+       
+              
+               "EmptySearchTag":string;
+              
+       
+              
+               "SearchMaxDepth":number;
+              
+       
+              
+               "MaxFileSizeDocument":number;
+              
+       
+              
+               "MaxFileSizeImage":number;
+              
+       
+              
+               "MaxFileSizeSound":number;
+              
+       
+              
+               "MaxFileSizeVideo":number;
+              
+       
+   }
+
+    /**
+    interface de la class cloudStorageFiles 
+    description List of files stored in a cloud storage
+   */
+    export interface IcloudStorageFiles extends  IBase {
+        
+              
+               "name":string;
+              
+       
+              
+               "uri"?:string;
+              
+       
+              
+               "tags"?:string[];
+              
+       
+              
+               "type":string;
+              
+       
+              
+               "mimeType":string;
+              
+       
+              
+               "creationDate":Date;
+              
+       
+   }
+
+    /**
+    interface de la class cloudStorageFolders 
+    description List of folders stored in a cloud storage with ACL
+   */
+    export interface IcloudStorageFolders extends  IBase {
+        
+              
+               "name":string;
+              
+       
+              
+               "parent"?:string | IcloudStorageFolders;
+              
+       
+              
+               "files"?:string[] | IcloudStorageFiles[];
+              
+       
+              
+               "_acl"?:I_acl;
+              
+       
+   }
+
+    /**
+    interface de la class deploy_template 
+    description Templates collection used by the deployment service
+   */
+    export interface Ideploy_template extends  IBase {
+        
+              
+               "name"?:string;
+              
+       
+              
+               "template"?:string;
+              
+       
+   }
+
+    /**
+    interface de la class deploy_template_application_configuration 
+    description Template used by deploy service - application configuration specific
+   */
+    export interface Ideploy_template_application_configuration extends   Ideploy_template{
+        
+              
+               "application_id"?:string | Iapplication;
+              
+       
+   }
+
+    /**
+    interface de la class deploy_template_licence_store 
+    description  Template used by deploy service - licence store specific
+   */
+    export interface Ideploy_template_licence_store extends   Ideploy_template{
+        
+              
+               "application_instance"?:string | Iapplication_instance;
+              
+       
+              
+               "lang"?:string | Ilang_code;
+              
+       
+   }
+
+    /**
+    interface de la class deploy_template_training_course 
+    description Template used by deploy service - training course specific
+   */
+    export interface Ideploy_template_training_course extends   Ideploy_template{
+        
+              
+               "application_instance"?:string | Iapplication_instance;
+              
+       
+   }
+
+    /**
+    interface de la class deploy_template_training_course_i18n 
+    description Template used by deploy service - training course internationalisation
+   */
+    export interface Ideploy_template_training_course_i18n extends   Ideploy_template{
+        
+              
+               "lang"?:string | Ilang_code;
+              
+       
+              
+               "parentTemplate"?:string | Ideploy_template_training_course;
               
        
    }

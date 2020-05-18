@@ -1,9 +1,9 @@
 import * as Interface from "./Interfaces";
-import { Model_application_configuration } from "./Model_application_configuration";
+import { Model_application_configuration_web } from "./Model_application_configuration_web";
 /**
   Application configuration for Daesign admin that have specific inputs
 */
-export declare class Model_application_configuration_appAdminDaesign extends Model_application_configuration implements Interface.Iapplication_configuration_appAdminDaesign {
+export declare class Model_application_configuration_appAdminDaesign extends Model_application_configuration_web implements Interface.Iapplication_configuration_appAdminDaesign {
     /**
       Application configuration for Daesign admin that have specific inputs
     */

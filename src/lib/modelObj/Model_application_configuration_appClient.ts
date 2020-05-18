@@ -67,6 +67,14 @@ export class Model_application_configuration_appClient extends   Model_applicati
         
     
         
+        if(obj["trackingServiceUrl"] != undefined){
+          
+           this["trackingServiceUrl"] = obj["trackingServiceUrl"].toString() ;
+           
+        }
+        
+    
+        
         if(obj["aclTemplate"] != undefined){
           
             if(obj._class){
@@ -126,6 +134,12 @@ export class Model_application_configuration_appClient extends   Model_applicati
         url du file service pour le forum
         */
                public "fileServiceUrl"?:string ;
+              
+       
+              /**
+        url of tracking service.
+        */
+               public "trackingServiceUrl"?:string ;
               
        
               /**
@@ -260,6 +274,23 @@ export class Model_application_configuration_appClient extends   Model_applicati
 
                  if(! _.isString(_fileServiceUrl)){
                     throw new Error(path+"fileServiceUrl is not a string") ;
+                    
+                  }
+                  
+                  
+                 
+              
+              
+           }
+           
+              
+              if(target["trackingServiceUrl"] != null && target["trackingServiceUrl"] != undefined ){
+              
+                let _trackingServiceUrl  = target["trackingServiceUrl"] ;
+                
+
+                 if(! _.isString(_trackingServiceUrl)){
+                    throw new Error(path+"trackingServiceUrl is not a string") ;
                     
                   }
                   

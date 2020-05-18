@@ -2,11 +2,11 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const _ = require("lodash");
 const Index = require("./Index");
-const Model_application_configuration_1 = require("./Model_application_configuration");
+const Model_application_configuration_web_1 = require("./Model_application_configuration_web");
 /**
   Application configuration for Daesign admin that have specific inputs
 */
-class Model_application_configuration_appAdminDaesign extends Model_application_configuration_1.Model_application_configuration {
+class Model_application_configuration_appAdminDaesign extends Model_application_configuration_web_1.Model_application_configuration_web {
     /**
       Application configuration for Daesign admin that have specific inputs
     */
