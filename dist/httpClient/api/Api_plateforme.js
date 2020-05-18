@@ -14,14 +14,16 @@ class api_collection_plateform {
         this.application_configuration_super_admin_mongo = new utils_1.HttpServiceBase({ url: conf.url + "collection/application_configuration_super_admin_mongo/", secure: conf.secure });
         this.application_configuration_parcours = new utils_1.HttpServiceBase({ url: conf.url + "collection/application_configuration_parcours/", secure: conf.secure });
         this.application_configuration_xlxUploader = new utils_1.HttpServiceBase({ url: conf.url + "collection/application_configuration_xlxUploader/", secure: conf.secure });
-        this.application_configuration_appAdminDaesign = new utils_1.HttpServiceBase({ url: conf.url + "collection/application_configuration_appAdminDaesign/", secure: conf.secure });
-        this.application_configuration_appClient = new utils_1.HttpServiceBase({ url: conf.url + "collection/application_configuration_appClient/", secure: conf.secure });
         this.application_configuration_web = new utils_1.HttpServiceBase({ url: conf.url + "collection/application_configuration_web/", secure: conf.secure });
         this.application_configuration_appApprenant = new utils_1.HttpServiceBase({ url: conf.url + "collection/application_configuration_appApprenant/", secure: conf.secure });
         this.application_configuration_appCoach = new utils_1.HttpServiceBase({ url: conf.url + "collection/application_configuration_appCoach/", secure: conf.secure });
         this.application_configuration_appEditor = new utils_1.HttpServiceBase({ url: conf.url + "collection/application_configuration_appEditor/", secure: conf.secure });
-        this.application_configuration_savvy_author = new utils_1.HttpServiceBase({ url: conf.url + "collection/application_configuration_savvy_author/", secure: conf.secure });
         this.application_configuration_savvy_learner = new utils_1.HttpServiceBase({ url: conf.url + "collection/application_configuration_savvy_learner/", secure: conf.secure });
+        this.application_configuration_appClient = new utils_1.HttpServiceBase({ url: conf.url + "collection/application_configuration_appClient/", secure: conf.secure });
+        this.application_configuration_savvy_author = new utils_1.HttpServiceBase({ url: conf.url + "collection/application_configuration_savvy_author/", secure: conf.secure });
+        this.application_configuration_appAdminDaesign = new utils_1.HttpServiceBase({ url: conf.url + "collection/application_configuration_appAdminDaesign/", secure: conf.secure });
+        this.application_configuration_generic_author = new utils_1.HttpServiceBase({ url: conf.url + "collection/application_configuration_generic_author/", secure: conf.secure });
+        this.application_configuration_generic = new utils_1.HttpServiceBase({ url: conf.url + "collection/application_configuration_generic/", secure: conf.secure });
         this.service_access = new utils_1.HttpServiceBase({ url: conf.url + "collection/service_access/", secure: conf.secure });
         this.service = new utils_1.HttpServiceBase({ url: conf.url + "collection/service/", secure: conf.secure });
         this.service_sso = new utils_1.HttpServiceBase({ url: conf.url + "collection/service_sso/", secure: conf.secure });
@@ -51,6 +53,8 @@ class api_collection_plateform {
         this.service_trainingCoursesService = new utils_1.HttpServiceBase({ url: conf.url + "collection/service_trainingCoursesService/", secure: conf.secure });
         this.service_deploy = new utils_1.HttpServiceBase({ url: conf.url + "collection/service_deploy/", secure: conf.secure });
         this.service_hello = new utils_1.HttpServiceBase({ url: conf.url + "collection/service_hello/", secure: conf.secure });
+        this.ServiceTracking = new utils_1.HttpServiceBase({ url: conf.url + "collection/ServiceTracking/", secure: conf.secure });
+        this.service_cloud_storage = new utils_1.HttpServiceBase({ url: conf.url + "collection/service_cloud_storage/", secure: conf.secure });
         this.protoschema = new utils_1.HttpServiceBase({ url: conf.url + "collection/protoschema/", secure: conf.secure });
         this.mail = new utils_1.HttpServiceBase({ url: conf.url + "collection/mail/", secure: conf.secure });
         this.mail_sendgrid = new utils_1.HttpServiceBase({ url: conf.url + "collection/mail_sendgrid/", secure: conf.secure });
@@ -70,6 +74,15 @@ class api_collection_plateform {
         this.app_training_course = new utils_1.HttpServiceBase({ url: conf.url + "collection/app_training_course/", secure: conf.secure });
         this.application_instance = new utils_1.HttpServiceBase({ url: conf.url + "collection/application_instance/", secure: conf.secure });
         this.hello = new utils_1.HttpServiceBase({ url: conf.url + "collection/hello/", secure: conf.secure });
+        this.user_profile = new utils_1.HttpServiceBase({ url: conf.url + "collection/user_profile/", secure: conf.secure });
+        this.user = new utils_1.HttpServiceBase({ url: conf.url + "collection/user/", secure: conf.secure });
+        this.cloudStorageFiles = new utils_1.HttpServiceBase({ url: conf.url + "collection/cloudStorageFiles/", secure: conf.secure });
+        this.cloudStorageFolders = new utils_1.HttpServiceBase({ url: conf.url + "collection/cloudStorageFolders/", secure: conf.secure });
+        this.deploy_template = new utils_1.HttpServiceBase({ url: conf.url + "collection/deploy_template/", secure: conf.secure });
+        this.deploy_template_application_configuration = new utils_1.HttpServiceBase({ url: conf.url + "collection/deploy_template_application_configuration/", secure: conf.secure });
+        this.deploy_template_licence_store = new utils_1.HttpServiceBase({ url: conf.url + "collection/deploy_template_licence_store/", secure: conf.secure });
+        this.deploy_template_training_course = new utils_1.HttpServiceBase({ url: conf.url + "collection/deploy_template_training_course/", secure: conf.secure });
+        this.deploy_template_training_course_i18n = new utils_1.HttpServiceBase({ url: conf.url + "collection/deploy_template_training_course_i18n/", secure: conf.secure });
     }
 }
 exports.api_collection_plateform = api_collection_plateform;
@@ -159,11 +172,143 @@ class api_view_Client extends utils_1.HttpAbstractService {
     }
 }
 exports.api_view_Client = api_view_Client;
+/**
+    accès à la vue :CloudStorageFolderList
+    View used to get cloudStorageFolder nested folders
+*/
+class api_view_CloudStorageFolderList extends utils_1.HttpAbstractService {
+    /**
+        accès à la vue :CloudStorageFolderList
+        
+    */
+    constructor(conf) {
+        super(conf);
+        this.conf = conf;
+        this.globalCtxInt = new utils_1.CtxInterpretor(process.env);
+        /** middleware
+        génére une requette sur la vue CloudStorageFolderList
+        
+        */
+        this.getMiddleware = (config) => {
+            config = this.globalCtxInt.updateEnv(config, true);
+            return (req, res, next) => {
+                var localCtxInt = new utils_1.CtxInterpretor(req.ctx);
+                localCtxInt.startPatern = "$ctx.";
+                var localConfig = localCtxInt.updateEnv(config, true);
+                this.get(localConfig.params.folderId, localConfig.params.depth, localConfig.params.query, localConfig.headers)
+                    .then((data) => {
+                    req.ctx[localConfig.output] = data;
+                    next();
+                }).catch((err) => {
+                    next(err);
+                });
+            };
+        };
+        this.url = conf.url;
+    }
+    /**
+    génére une requette sur la vue CloudStorageFolderList
+    
+    */
+    get(folderId, depth, query = '*', headers = {}) {
+        return this.baseGet(this.url + folderId.toString() + "/" + depth.toString() + "/" + query, headers);
+    }
+}
+exports.api_view_CloudStorageFolderList = api_view_CloudStorageFolderList;
+/**
+    accès à la vue :CloudStorageFolderAncestors
+    Aggregation that returns every ancestors of a folder ordered from farer to current folder
+*/
+class api_view_CloudStorageFolderAncestors extends utils_1.HttpAbstractService {
+    /**
+        accès à la vue :CloudStorageFolderAncestors
+        
+    */
+    constructor(conf) {
+        super(conf);
+        this.conf = conf;
+        this.globalCtxInt = new utils_1.CtxInterpretor(process.env);
+        /** middleware
+        génére une requette sur la vue CloudStorageFolderAncestors
+        
+        */
+        this.getMiddleware = (config) => {
+            config = this.globalCtxInt.updateEnv(config, true);
+            return (req, res, next) => {
+                var localCtxInt = new utils_1.CtxInterpretor(req.ctx);
+                localCtxInt.startPatern = "$ctx.";
+                var localConfig = localCtxInt.updateEnv(config, true);
+                this.get(localConfig.params.folderId, localConfig.params.query, localConfig.headers)
+                    .then((data) => {
+                    req.ctx[localConfig.output] = data;
+                    next();
+                }).catch((err) => {
+                    next(err);
+                });
+            };
+        };
+        this.url = conf.url;
+    }
+    /**
+    génére une requette sur la vue CloudStorageFolderAncestors
+    
+    */
+    get(folderId, query = '*', headers = {}) {
+        return this.baseGet(this.url + folderId.toString() + "/" + query, headers);
+    }
+}
+exports.api_view_CloudStorageFolderAncestors = api_view_CloudStorageFolderAncestors;
+/**
+    accès à la vue :CloudStorageFolderSearch
+    View used to filter Folders by tags
+*/
+class api_view_CloudStorageFolderSearch extends utils_1.HttpAbstractService {
+    /**
+        accès à la vue :CloudStorageFolderSearch
+        
+    */
+    constructor(conf) {
+        super(conf);
+        this.conf = conf;
+        this.globalCtxInt = new utils_1.CtxInterpretor(process.env);
+        /** middleware
+        génére une requette sur la vue CloudStorageFolderSearch
+        
+        */
+        this.getMiddleware = (config) => {
+            config = this.globalCtxInt.updateEnv(config, true);
+            return (req, res, next) => {
+                var localCtxInt = new utils_1.CtxInterpretor(req.ctx);
+                localCtxInt.startPatern = "$ctx.";
+                var localConfig = localCtxInt.updateEnv(config, true);
+                this.get(localConfig.params.folderId, localConfig.params.depth, localConfig.params.tag1, localConfig.params.tag2, localConfig.params.tag3, localConfig.params.type, localConfig.params.query, localConfig.headers)
+                    .then((data) => {
+                    req.ctx[localConfig.output] = data;
+                    next();
+                }).catch((err) => {
+                    next(err);
+                });
+            };
+        };
+        this.url = conf.url;
+    }
+    /**
+    génére une requette sur la vue CloudStorageFolderSearch
+    
+    */
+    get(folderId, depth, tag1, tag2, tag3, type, query = '*', headers = {}) {
+        return this.baseGet(this.url + folderId.toString() + "/" + depth.toString() + "/" + tag1.toString() + "/" + tag2.toString() + "/" + tag3.toString() + "/" + type.toString() + "/" + query, headers);
+    }
+}
+exports.api_view_CloudStorageFolderSearch = api_view_CloudStorageFolderSearch;
 class api_view_plateform {
     constructor(conf) {
         this.conf = conf;
         this.UserLicence = new api_view_UserLicence({ url: conf.url + "views/UserLicence/", secure: conf.secure });
         this.Client = new api_view_Client({ url: conf.url + "views/Client/", secure: conf.secure });
+        this.CloudStorageFolderList = new api_view_CloudStorageFolderList({ url: conf.url + "views/CloudStorageFolderList/", secure: conf.secure });
+        this.CloudStorageFolderAncestors = new api_view_CloudStorageFolderAncestors({ url: conf.url + "views/CloudStorageFolderAncestors/", secure: conf.secure });
+        this.CloudStorageFolderSearch = new api_view_CloudStorageFolderSearch({ url: conf.url + "views/CloudStorageFolderSearch/", secure: conf.secure });
     }
 }
 exports.api_view_plateform = api_view_plateform;

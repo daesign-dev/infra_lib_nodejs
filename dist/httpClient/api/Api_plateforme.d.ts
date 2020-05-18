@@ -51,10 +51,6 @@ export declare class api_collection_plateform {
      
         Iapplication_configuration_xlxUploader      application_configuration_xlxUploader
      
-        Iapplication_configuration_appAdminDaesign      Application configuration for Daesign admin that have specific inputs
-     
-        Iapplication_configuration_appClient      c'est la configuration d'une application Client
-     
         Iapplication_configuration_web      Application configuration for web applications
      
         Iapplication_configuration_appApprenant      c'est la configuration d'une application Apprenant
@@ -63,9 +59,17 @@ export declare class api_collection_plateform {
      
         Iapplication_configuration_appEditor      c'est la configuration d'une application type editeur
      
+        Iapplication_configuration_savvy_learner      configuration de l'application Savvy Learner
+     
+        Iapplication_configuration_appClient      c'est la configuration d'une application Client
+     
         Iapplication_configuration_savvy_author      Configuration pour l'application Savvy - Author
      
-        Iapplication_configuration_savvy_learner      configuration de l'application Savvy Learner
+        Iapplication_configuration_appAdminDaesign      Application configuration for Daesign admin that have specific inputs
+     
+        Iapplication_configuration_generic_author      conf for generic authos app
+     
+        Iapplication_configuration_generic      generic conf
      
      
     */
@@ -88,18 +92,6 @@ export declare class api_collection_plateform {
     info: vous ne pouvez voir que ce type d'objet
    */
     application_configuration_xlxUploader: HttpServiceBase<Interfaces.Iapplication_configuration_xlxUploader>;
-    /**
-    service d'accès a la sous-collection :application_configuration_appAdminDaesign
-    desc: Application configuration for Daesign admin that have specific inputs
-    info: vous ne pouvez voir que ce type d'objet
-   */
-    application_configuration_appAdminDaesign: HttpServiceBase<Interfaces.Iapplication_configuration_appAdminDaesign>;
-    /**
-    service d'accès a la sous-collection :application_configuration_appClient
-    desc: c'est la configuration d'une application Client
-    info: vous ne pouvez voir que ce type d'objet
-   */
-    application_configuration_appClient: HttpServiceBase<Interfaces.Iapplication_configuration_appClient>;
     /**
     service d'accès a la sous-collection :application_configuration_web
     desc: Application configuration for web applications
@@ -125,17 +117,41 @@ export declare class api_collection_plateform {
    */
     application_configuration_appEditor: HttpServiceBase<Interfaces.Iapplication_configuration_appEditor>;
     /**
+    service d'accès a la sous-collection :application_configuration_savvy_learner
+    desc: configuration de l'application Savvy Learner
+    info: vous ne pouvez voir que ce type d'objet
+   */
+    application_configuration_savvy_learner: HttpServiceBase<Interfaces.Iapplication_configuration_savvy_learner>;
+    /**
+    service d'accès a la sous-collection :application_configuration_appClient
+    desc: c'est la configuration d'une application Client
+    info: vous ne pouvez voir que ce type d'objet
+   */
+    application_configuration_appClient: HttpServiceBase<Interfaces.Iapplication_configuration_appClient>;
+    /**
     service d'accès a la sous-collection :application_configuration_savvy_author
     desc: Configuration pour l'application Savvy - Author
     info: vous ne pouvez voir que ce type d'objet
    */
     application_configuration_savvy_author: HttpServiceBase<Interfaces.Iapplication_configuration_savvy_author>;
     /**
-    service d'accès a la sous-collection :application_configuration_savvy_learner
-    desc: configuration de l'application Savvy Learner
+    service d'accès a la sous-collection :application_configuration_appAdminDaesign
+    desc: Application configuration for Daesign admin that have specific inputs
     info: vous ne pouvez voir que ce type d'objet
    */
-    application_configuration_savvy_learner: HttpServiceBase<Interfaces.Iapplication_configuration_savvy_learner>;
+    application_configuration_appAdminDaesign: HttpServiceBase<Interfaces.Iapplication_configuration_appAdminDaesign>;
+    /**
+    service d'accès a la sous-collection :application_configuration_generic_author
+    desc: conf for generic authos app
+    info: vous ne pouvez voir que ce type d'objet
+   */
+    application_configuration_generic_author: HttpServiceBase<Interfaces.Iapplication_configuration_generic_author>;
+    /**
+    service d'accès a la sous-collection :application_configuration_generic
+    desc: generic conf
+    info: vous ne pouvez voir que ce type d'objet
+   */
+    application_configuration_generic: HttpServiceBase<Interfaces.Iapplication_configuration_generic>;
     /**
      service d'accès à la collection :service_access
      desc: décrit les régles de paramètre des servies
@@ -204,6 +220,10 @@ export declare class api_collection_plateform {
         Iservice_deploy      Service qu'il est bien sympathique pour déployer des applications de qualité
      
         Iservice_hello      Service d'exemple
+     
+        IServiceTracking      Service to acces tracking for application
+     
+        Iservice_cloud_storage      Service used to upload files to AWS S3
      
      
     */
@@ -371,6 +391,18 @@ export declare class api_collection_plateform {
    */
     service_hello: HttpServiceBase<Interfaces.Iservice_hello>;
     /**
+    service d'accès a la sous-collection :ServiceTracking
+    desc: Service to acces tracking for application
+    info: vous ne pouvez voir que ce type d'objet
+   */
+    ServiceTracking: HttpServiceBase<Interfaces.IServiceTracking>;
+    /**
+    service d'accès a la sous-collection :service_cloud_storage
+    desc: Service used to upload files to AWS S3
+    info: vous ne pouvez voir que ce type d'objet
+   */
+    service_cloud_storage: HttpServiceBase<Interfaces.Iservice_cloud_storage>;
+    /**
      service d'accès à la collection :protoschema
      desc: protoschema est un méta modéle. il permet de créer les autres modèle de la base
      
@@ -530,6 +562,80 @@ export declare class api_collection_plateform {
      
     */
     hello: HttpServiceBase<Interfaces.Ihello>;
+    /**
+     service d'accès à la collection :user_profile
+     desc: User profile collection
+     
+
+     
+    */
+    user_profile: HttpServiceBase<Interfaces.Iuser_profile>;
+    /**
+     service d'accès à la collection :user
+     desc: User account collection
+     
+
+     
+    */
+    user: HttpServiceBase<Interfaces.Iuser>;
+    /**
+     service d'accès à la collection :cloudStorageFiles
+     desc: List of files stored in a cloud storage
+     
+
+     
+    */
+    cloudStorageFiles: HttpServiceBase<Interfaces.IcloudStorageFiles>;
+    /**
+     service d'accès à la collection :cloudStorageFolders
+     desc: List of folders stored in a cloud storage with ACL
+     
+
+     
+    */
+    cloudStorageFolders: HttpServiceBase<Interfaces.IcloudStorageFolders>;
+    /**
+     service d'accès à la collection :deploy_template
+     desc: Templates collection used by the deployment service
+     
+     info: vous pouvez voir tous les objets de cette collection y compris les enfants
+     liste des interfaces héritées possibles:
+     
+        Ideploy_template_application_configuration      Template used by deploy service - application configuration specific
+     
+        Ideploy_template_licence_store       Template used by deploy service - licence store specific
+     
+        Ideploy_template_training_course      Template used by deploy service - training course specific
+     
+        Ideploy_template_training_course_i18n      Template used by deploy service - training course internationalisation
+     
+     
+    */
+    deploy_template: HttpServiceBase<Interfaces.Ideploy_template>;
+    /**
+    service d'accès a la sous-collection :deploy_template_application_configuration
+    desc: Template used by deploy service - application configuration specific
+    info: vous ne pouvez voir que ce type d'objet
+   */
+    deploy_template_application_configuration: HttpServiceBase<Interfaces.Ideploy_template_application_configuration>;
+    /**
+    service d'accès a la sous-collection :deploy_template_licence_store
+    desc:  Template used by deploy service - licence store specific
+    info: vous ne pouvez voir que ce type d'objet
+   */
+    deploy_template_licence_store: HttpServiceBase<Interfaces.Ideploy_template_licence_store>;
+    /**
+    service d'accès a la sous-collection :deploy_template_training_course
+    desc: Template used by deploy service - training course specific
+    info: vous ne pouvez voir que ce type d'objet
+   */
+    deploy_template_training_course: HttpServiceBase<Interfaces.Ideploy_template_training_course>;
+    /**
+    service d'accès a la sous-collection :deploy_template_training_course_i18n
+    desc: Template used by deploy service - training course internationalisation
+    info: vous ne pouvez voir que ce type d'objet
+   */
+    deploy_template_training_course_i18n: HttpServiceBase<Interfaces.Ideploy_template_training_course_i18n>;
 }
 /**
     accès à la vue :UserLicence
@@ -579,6 +685,78 @@ export declare class api_view_Client extends HttpAbstractService {
     */
     getMiddleware: (config: MiddleWareConfig) => (req: any, res: any, next: any) => void;
 }
+/**
+    accès à la vue :CloudStorageFolderList
+    View used to get cloudStorageFolder nested folders
+*/
+export declare class api_view_CloudStorageFolderList extends HttpAbstractService {
+    conf: any;
+    /**
+        accès à la vue :CloudStorageFolderList
+        
+    */
+    constructor(conf: any);
+    protected url: string;
+    protected globalCtxInt: CtxInterpretor;
+    /**
+    génére une requette sur la vue CloudStorageFolderList
+    
+    */
+    get(folderId: string, depth: number, query?: string, headers?: any): Promise<IHttpResult<Interfaces.IcloudStorageFolders>>;
+    /** middleware
+    génére une requette sur la vue CloudStorageFolderList
+    
+    */
+    getMiddleware: (config: MiddleWareConfig) => (req: any, res: any, next: any) => void;
+}
+/**
+    accès à la vue :CloudStorageFolderAncestors
+    Aggregation that returns every ancestors of a folder ordered from farer to current folder
+*/
+export declare class api_view_CloudStorageFolderAncestors extends HttpAbstractService {
+    conf: any;
+    /**
+        accès à la vue :CloudStorageFolderAncestors
+        
+    */
+    constructor(conf: any);
+    protected url: string;
+    protected globalCtxInt: CtxInterpretor;
+    /**
+    génére une requette sur la vue CloudStorageFolderAncestors
+    
+    */
+    get(folderId: string, query?: string, headers?: any): Promise<IHttpResult<Interfaces.IcloudStorageFolders>>;
+    /** middleware
+    génére une requette sur la vue CloudStorageFolderAncestors
+    
+    */
+    getMiddleware: (config: MiddleWareConfig) => (req: any, res: any, next: any) => void;
+}
+/**
+    accès à la vue :CloudStorageFolderSearch
+    View used to filter Folders by tags
+*/
+export declare class api_view_CloudStorageFolderSearch extends HttpAbstractService {
+    conf: any;
+    /**
+        accès à la vue :CloudStorageFolderSearch
+        
+    */
+    constructor(conf: any);
+    protected url: string;
+    protected globalCtxInt: CtxInterpretor;
+    /**
+    génére une requette sur la vue CloudStorageFolderSearch
+    
+    */
+    get(folderId: string, depth: number, tag1: string, tag2: string, tag3: string, type: string, query?: string, headers?: any): Promise<IHttpResult<Interfaces.IcloudStorageFolders>>;
+    /** middleware
+    génére une requette sur la vue CloudStorageFolderSearch
+    
+    */
+    getMiddleware: (config: MiddleWareConfig) => (req: any, res: any, next: any) => void;
+}
 export declare class api_view_plateform {
     conf: any;
     constructor(conf: any);
@@ -590,6 +768,18 @@ export declare class api_view_plateform {
     accès à la vue :Client     retourne la donnée du client connecté
     */
     Client: api_view_Client;
+    /**
+    accès à la vue :CloudStorageFolderList     View used to get cloudStorageFolder nested folders
+    */
+    CloudStorageFolderList: api_view_CloudStorageFolderList;
+    /**
+    accès à la vue :CloudStorageFolderAncestors     Aggregation that returns every ancestors of a folder ordered from farer to current folder
+    */
+    CloudStorageFolderAncestors: api_view_CloudStorageFolderAncestors;
+    /**
+    accès à la vue :CloudStorageFolderSearch     View used to filter Folders by tags
+    */
+    CloudStorageFolderSearch: api_view_CloudStorageFolderSearch;
 }
 export declare class Api_plateforme {
     conf: any;

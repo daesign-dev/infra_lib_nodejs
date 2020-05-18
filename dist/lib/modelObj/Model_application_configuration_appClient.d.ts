@@ -34,6 +34,10 @@ url du file service pour le forum
 */
     "fileServiceUrl"?: string;
     /**
+url of tracking service.
+*/
+    "trackingServiceUrl"?: string;
+    /**
 template des acl
 */
     "aclTemplate"?: Interface.I_acl;

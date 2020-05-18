@@ -4,35 +4,26 @@ const _ = require("lodash");
 const Index = require("./Index");
 const Model_application_configuration_web_1 = require("./Model_application_configuration_web");
 /**
-  c'est la configuration d'une application Client
+  conf for generic authos app
 */
-class Model_application_configuration_appClient extends Model_application_configuration_web_1.Model_application_configuration_web {
+class Model_application_configuration_generic_author extends Model_application_configuration_web_1.Model_application_configuration_web {
     /**
-      c'est la configuration d'une application Client
+      conf for generic authos app
     */
     constructor(obj = {}) {
         super(obj);
-        this._class = "application_configuration_appClient";
+        this._class = "application_configuration_generic_author";
         if (obj["configurationUrlDb"] != undefined) {
             this["configurationUrlDb"] = obj["configurationUrlDb"].toString();
         }
         if (obj["urlBase"] != undefined) {
             this["urlBase"] = obj["urlBase"].toString();
         }
-        if (obj["signinUrl"] != undefined) {
-            this["signinUrl"] = obj["signinUrl"].toString();
-        }
-        if (obj["serviceSessionUrl"] != undefined) {
-            this["serviceSessionUrl"] = obj["serviceSessionUrl"].toString();
+        if (obj["uploadServiceURL"] != undefined) {
+            this["uploadServiceURL"] = obj["uploadServiceURL"].toString();
         }
         if (obj["clientServiceUrl"] != undefined) {
             this["clientServiceUrl"] = obj["clientServiceUrl"].toString();
-        }
-        if (obj["fileServiceUrl"] != undefined) {
-            this["fileServiceUrl"] = obj["fileServiceUrl"].toString();
-        }
-        if (obj["trackingServiceUrl"] != undefined) {
-            this["trackingServiceUrl"] = obj["trackingServiceUrl"].toString();
         }
         if (obj["aclTemplate"] != undefined) {
             if (obj._class) {
@@ -42,8 +33,20 @@ class Model_application_configuration_appClient extends Model_application_config
                 this["aclTemplate"] = new Index["_acl"](obj["aclTemplate"]);
             }
         }
-        if (obj["isForProspect"] != undefined) {
-            this["isForProspect"] = new Boolean(obj["isForProspect"]).valueOf();
+        if (obj["tinymcekey"] != undefined) {
+            this["tinymcekey"] = obj["tinymcekey"].toString();
+        }
+        if (obj["aws_region"] != undefined) {
+            this["aws_region"] = obj["aws_region"].toString();
+        }
+        if (obj["aws_access_key_id"] != undefined) {
+            this["aws_access_key_id"] = obj["aws_access_key_id"].toString();
+        }
+        if (obj["aws_secret_access_key"] != undefined) {
+            this["aws_secret_access_key"] = obj["aws_secret_access_key"].toString();
+        }
+        if (obj["aws_s3_bucket_name"] != undefined) {
+            this["aws_s3_bucket_name"] = obj["aws_s3_bucket_name"].toString();
         }
     }
     static check(target, isCompleteObj = true, path = "") {
@@ -68,22 +71,10 @@ class Model_application_configuration_appClient extends Model_application_config
                     throw new Error(path + "urlBase is not a string");
                 }
             }
-            if (isCompleteObj && (target["signinUrl"] == null || target["signinUrl"] == undefined)) {
-                throw new Error(path + "signinUrl is required");
-            }
-            if (target["signinUrl"] != null && target["signinUrl"] != undefined) {
-                let _signinUrl = target["signinUrl"];
-                if (!_.isString(_signinUrl)) {
-                    throw new Error(path + "signinUrl is not a string");
-                }
-            }
-            if (isCompleteObj && (target["serviceSessionUrl"] == null || target["serviceSessionUrl"] == undefined)) {
-                throw new Error(path + "serviceSessionUrl is required");
-            }
-            if (target["serviceSessionUrl"] != null && target["serviceSessionUrl"] != undefined) {
-                let _serviceSessionUrl = target["serviceSessionUrl"];
-                if (!_.isString(_serviceSessionUrl)) {
-                    throw new Error(path + "serviceSessionUrl is not a string");
+            if (target["uploadServiceURL"] != null && target["uploadServiceURL"] != undefined) {
+                let _uploadServiceURL = target["uploadServiceURL"];
+                if (!_.isString(_uploadServiceURL)) {
+                    throw new Error(path + "uploadServiceURL is not a string");
                 }
             }
             if (isCompleteObj && (target["clientServiceUrl"] == null || target["clientServiceUrl"] == undefined)) {
@@ -93,18 +84,6 @@ class Model_application_configuration_appClient extends Model_application_config
                 let _clientServiceUrl = target["clientServiceUrl"];
                 if (!_.isString(_clientServiceUrl)) {
                     throw new Error(path + "clientServiceUrl is not a string");
-                }
-            }
-            if (target["fileServiceUrl"] != null && target["fileServiceUrl"] != undefined) {
-                let _fileServiceUrl = target["fileServiceUrl"];
-                if (!_.isString(_fileServiceUrl)) {
-                    throw new Error(path + "fileServiceUrl is not a string");
-                }
-            }
-            if (target["trackingServiceUrl"] != null && target["trackingServiceUrl"] != undefined) {
-                let _trackingServiceUrl = target["trackingServiceUrl"];
-                if (!_.isString(_trackingServiceUrl)) {
-                    throw new Error(path + "trackingServiceUrl is not a string");
                 }
             }
             if (target["aclTemplate"] != null && target["aclTemplate"] != undefined) {
@@ -120,10 +99,34 @@ class Model_application_configuration_appClient extends Model_application_config
                     }));
                 }
             }
-            if (target["isForProspect"] != null && target["isForProspect"] != undefined) {
-                let _isForProspect = target["isForProspect"];
-                if (!_.isBoolean(_isForProspect)) {
-                    throw new Error(path + "isForProspect is not a boolean");
+            if (target["tinymcekey"] != null && target["tinymcekey"] != undefined) {
+                let _tinymcekey = target["tinymcekey"];
+                if (!_.isString(_tinymcekey)) {
+                    throw new Error(path + "tinymcekey is not a string");
+                }
+            }
+            if (target["aws_region"] != null && target["aws_region"] != undefined) {
+                let _aws_region = target["aws_region"];
+                if (!_.isString(_aws_region)) {
+                    throw new Error(path + "aws_region is not a string");
+                }
+            }
+            if (target["aws_access_key_id"] != null && target["aws_access_key_id"] != undefined) {
+                let _aws_access_key_id = target["aws_access_key_id"];
+                if (!_.isString(_aws_access_key_id)) {
+                    throw new Error(path + "aws_access_key_id is not a string");
+                }
+            }
+            if (target["aws_secret_access_key"] != null && target["aws_secret_access_key"] != undefined) {
+                let _aws_secret_access_key = target["aws_secret_access_key"];
+                if (!_.isString(_aws_secret_access_key)) {
+                    throw new Error(path + "aws_secret_access_key is not a string");
+                }
+            }
+            if (target["aws_s3_bucket_name"] != null && target["aws_s3_bucket_name"] != undefined) {
+                let _aws_s3_bucket_name = target["aws_s3_bucket_name"];
+                if (!_.isString(_aws_s3_bucket_name)) {
+                    throw new Error(path + "aws_s3_bucket_name is not a string");
                 }
             }
             return Promise.all(promArr).then(() => { return true; });
@@ -132,10 +135,10 @@ class Model_application_configuration_appClient extends Model_application_config
         });
     }
     static create(target, path = "") {
-        return Model_application_configuration_appClient.check(target, true, path).then(() => {
-            return new Model_application_configuration_appClient(target);
+        return Model_application_configuration_generic_author.check(target, true, path).then(() => {
+            return new Model_application_configuration_generic_author(target);
         });
     }
 }
-exports.Model_application_configuration_appClient = Model_application_configuration_appClient;
-//# sourceMappingURL=Model_application_configuration_appClient.js.map
+exports.Model_application_configuration_generic_author = Model_application_configuration_generic_author;
+//# sourceMappingURL=Model_application_configuration_generic_author.js.map

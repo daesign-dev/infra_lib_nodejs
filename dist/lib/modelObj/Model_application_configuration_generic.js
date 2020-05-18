@@ -4,35 +4,23 @@ const _ = require("lodash");
 const Index = require("./Index");
 const Model_application_configuration_web_1 = require("./Model_application_configuration_web");
 /**
-  c'est la configuration d'une application Client
+  generic conf
 */
-class Model_application_configuration_appClient extends Model_application_configuration_web_1.Model_application_configuration_web {
+class Model_application_configuration_generic extends Model_application_configuration_web_1.Model_application_configuration_web {
     /**
-      c'est la configuration d'une application Client
+      generic conf
     */
     constructor(obj = {}) {
         super(obj);
-        this._class = "application_configuration_appClient";
+        this._class = "application_configuration_generic";
         if (obj["configurationUrlDb"] != undefined) {
             this["configurationUrlDb"] = obj["configurationUrlDb"].toString();
         }
         if (obj["urlBase"] != undefined) {
             this["urlBase"] = obj["urlBase"].toString();
         }
-        if (obj["signinUrl"] != undefined) {
-            this["signinUrl"] = obj["signinUrl"].toString();
-        }
-        if (obj["serviceSessionUrl"] != undefined) {
-            this["serviceSessionUrl"] = obj["serviceSessionUrl"].toString();
-        }
         if (obj["clientServiceUrl"] != undefined) {
             this["clientServiceUrl"] = obj["clientServiceUrl"].toString();
-        }
-        if (obj["fileServiceUrl"] != undefined) {
-            this["fileServiceUrl"] = obj["fileServiceUrl"].toString();
-        }
-        if (obj["trackingServiceUrl"] != undefined) {
-            this["trackingServiceUrl"] = obj["trackingServiceUrl"].toString();
         }
         if (obj["aclTemplate"] != undefined) {
             if (obj._class) {
@@ -41,9 +29,6 @@ class Model_application_configuration_appClient extends Model_application_config
             else {
                 this["aclTemplate"] = new Index["_acl"](obj["aclTemplate"]);
             }
-        }
-        if (obj["isForProspect"] != undefined) {
-            this["isForProspect"] = new Boolean(obj["isForProspect"]).valueOf();
         }
     }
     static check(target, isCompleteObj = true, path = "") {
@@ -68,24 +53,6 @@ class Model_application_configuration_appClient extends Model_application_config
                     throw new Error(path + "urlBase is not a string");
                 }
             }
-            if (isCompleteObj && (target["signinUrl"] == null || target["signinUrl"] == undefined)) {
-                throw new Error(path + "signinUrl is required");
-            }
-            if (target["signinUrl"] != null && target["signinUrl"] != undefined) {
-                let _signinUrl = target["signinUrl"];
-                if (!_.isString(_signinUrl)) {
-                    throw new Error(path + "signinUrl is not a string");
-                }
-            }
-            if (isCompleteObj && (target["serviceSessionUrl"] == null || target["serviceSessionUrl"] == undefined)) {
-                throw new Error(path + "serviceSessionUrl is required");
-            }
-            if (target["serviceSessionUrl"] != null && target["serviceSessionUrl"] != undefined) {
-                let _serviceSessionUrl = target["serviceSessionUrl"];
-                if (!_.isString(_serviceSessionUrl)) {
-                    throw new Error(path + "serviceSessionUrl is not a string");
-                }
-            }
             if (isCompleteObj && (target["clientServiceUrl"] == null || target["clientServiceUrl"] == undefined)) {
                 throw new Error(path + "clientServiceUrl is required");
             }
@@ -93,18 +60,6 @@ class Model_application_configuration_appClient extends Model_application_config
                 let _clientServiceUrl = target["clientServiceUrl"];
                 if (!_.isString(_clientServiceUrl)) {
                     throw new Error(path + "clientServiceUrl is not a string");
-                }
-            }
-            if (target["fileServiceUrl"] != null && target["fileServiceUrl"] != undefined) {
-                let _fileServiceUrl = target["fileServiceUrl"];
-                if (!_.isString(_fileServiceUrl)) {
-                    throw new Error(path + "fileServiceUrl is not a string");
-                }
-            }
-            if (target["trackingServiceUrl"] != null && target["trackingServiceUrl"] != undefined) {
-                let _trackingServiceUrl = target["trackingServiceUrl"];
-                if (!_.isString(_trackingServiceUrl)) {
-                    throw new Error(path + "trackingServiceUrl is not a string");
                 }
             }
             if (target["aclTemplate"] != null && target["aclTemplate"] != undefined) {
@@ -120,22 +75,16 @@ class Model_application_configuration_appClient extends Model_application_config
                     }));
                 }
             }
-            if (target["isForProspect"] != null && target["isForProspect"] != undefined) {
-                let _isForProspect = target["isForProspect"];
-                if (!_.isBoolean(_isForProspect)) {
-                    throw new Error(path + "isForProspect is not a boolean");
-                }
-            }
             return Promise.all(promArr).then(() => { return true; });
         }).catch((err) => {
             throw err;
         });
     }
     static create(target, path = "") {
-        return Model_application_configuration_appClient.check(target, true, path).then(() => {
-            return new Model_application_configuration_appClient(target);
+        return Model_application_configuration_generic.check(target, true, path).then(() => {
+            return new Model_application_configuration_generic(target);
         });
     }
 }
-exports.Model_application_configuration_appClient = Model_application_configuration_appClient;
-//# sourceMappingURL=Model_application_configuration_appClient.js.map
+exports.Model_application_configuration_generic = Model_application_configuration_generic;
+//# sourceMappingURL=Model_application_configuration_generic.js.map
