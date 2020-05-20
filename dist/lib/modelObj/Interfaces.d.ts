@@ -1496,14 +1496,6 @@ export interface Ideploy_template_application_configuration extends Ideploy_temp
     "application_id"?: string | Iapplication;
 }
 /**
-interface de la class deploy_template_licence_store
-description  Template used by deploy service - licence store specific
-*/
-export interface Ideploy_template_licence_store extends Ideploy_template {
-    "application_instance"?: string | Iapplication_instance;
-    "lang"?: string | Ilang_code;
-}
-/**
 interface de la class deploy_template_training_course
 description Template used by deploy service - training course specific
 */
@@ -1517,4 +1509,19 @@ description Template used by deploy service - training course internationalisati
 export interface Ideploy_template_training_course_i18n extends Ideploy_template {
     "lang"?: string | Ilang_code;
     "parentTemplate"?: string | Ideploy_template_training_course;
+}
+/**
+interface de la class deploy_template_licence_store_training
+description  Template used by deploy service - training licence store specific
+*/
+export interface Ideploy_template_licence_store_training extends Ideploy_template {
+    "application_instance"?: string | Iapplication_instance;
+    "lang"?: string | Ilang_code;
+}
+/**
+interface de la class deploy_template_licence_store_application
+description Template used by deploy service - application licence store specific
+*/
+export interface Ideploy_template_licence_store_application extends Ideploy_template {
+    "application"?: string | Iapplication;
 }

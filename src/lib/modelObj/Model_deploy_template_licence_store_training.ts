@@ -8,12 +8,12 @@ import {Model_deploy_template } from "./Model_deploy_template"
 
 
 /**
-   Template used by deploy service - licence store specific
+   Template used by deploy service - training licence store specific
 */
-export class Model_deploy_template_licence_store extends   Model_deploy_template   implements Interface.Ideploy_template_licence_store {
+export class Model_deploy_template_licence_store_training extends   Model_deploy_template   implements Interface.Ideploy_template_licence_store_training {
 
 /**
-   Template used by deploy service - licence store specific
+   Template used by deploy service - training licence store specific
 */
   constructor(obj:any={}){
     super(obj);
@@ -45,7 +45,7 @@ export class Model_deploy_template_licence_store extends   Model_deploy_template
   }
   
 
-    public _class:string  = "deploy_template_licence_store" ;
+    public _class:string  = "deploy_template_licence_store_training" ;
 
         
               /**
@@ -104,9 +104,9 @@ export class Model_deploy_template_licence_store extends   Model_deploy_template
 
       }
 
-      public static create(target:any, path:string=""):Promise<Model_deploy_template_licence_store>{
-        return Model_deploy_template_licence_store.check(target, true, path).then(()=>{
-          return new Model_deploy_template_licence_store(target) ;
+      public static create(target:any, path:string=""):Promise<Model_deploy_template_licence_store_training>{
+        return Model_deploy_template_licence_store_training.check(target, true, path).then(()=>{
+          return new Model_deploy_template_licence_store_training(target) ;
         })
       }
 

@@ -603,11 +603,13 @@ export declare class api_collection_plateform {
      
         Ideploy_template_application_configuration      Template used by deploy service - application configuration specific
      
-        Ideploy_template_licence_store       Template used by deploy service - licence store specific
-     
         Ideploy_template_training_course      Template used by deploy service - training course specific
      
         Ideploy_template_training_course_i18n      Template used by deploy service - training course internationalisation
+     
+        Ideploy_template_licence_store_training       Template used by deploy service - training licence store specific
+     
+        Ideploy_template_licence_store_application      Template used by deploy service - application licence store specific
      
      
     */
@@ -618,12 +620,6 @@ export declare class api_collection_plateform {
     info: vous ne pouvez voir que ce type d'objet
    */
     deploy_template_application_configuration: HttpServiceBase<Interfaces.Ideploy_template_application_configuration>;
-    /**
-    service d'accès a la sous-collection :deploy_template_licence_store
-    desc:  Template used by deploy service - licence store specific
-    info: vous ne pouvez voir que ce type d'objet
-   */
-    deploy_template_licence_store: HttpServiceBase<Interfaces.Ideploy_template_licence_store>;
     /**
     service d'accès a la sous-collection :deploy_template_training_course
     desc: Template used by deploy service - training course specific
@@ -636,6 +632,18 @@ export declare class api_collection_plateform {
     info: vous ne pouvez voir que ce type d'objet
    */
     deploy_template_training_course_i18n: HttpServiceBase<Interfaces.Ideploy_template_training_course_i18n>;
+    /**
+    service d'accès a la sous-collection :deploy_template_licence_store_training
+    desc:  Template used by deploy service - training licence store specific
+    info: vous ne pouvez voir que ce type d'objet
+   */
+    deploy_template_licence_store_training: HttpServiceBase<Interfaces.Ideploy_template_licence_store_training>;
+    /**
+    service d'accès a la sous-collection :deploy_template_licence_store_application
+    desc: Template used by deploy service - application licence store specific
+    info: vous ne pouvez voir que ce type d'objet
+   */
+    deploy_template_licence_store_application: HttpServiceBase<Interfaces.Ideploy_template_licence_store_application>;
 }
 /**
     accès à la vue :UserLicence

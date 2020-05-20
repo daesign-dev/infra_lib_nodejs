@@ -80,9 +80,10 @@ class api_collection_plateform {
         this.cloudStorageFolders = new utils_1.HttpServiceBase({ url: conf.url + "collection/cloudStorageFolders/", secure: conf.secure });
         this.deploy_template = new utils_1.HttpServiceBase({ url: conf.url + "collection/deploy_template/", secure: conf.secure });
         this.deploy_template_application_configuration = new utils_1.HttpServiceBase({ url: conf.url + "collection/deploy_template_application_configuration/", secure: conf.secure });
-        this.deploy_template_licence_store = new utils_1.HttpServiceBase({ url: conf.url + "collection/deploy_template_licence_store/", secure: conf.secure });
         this.deploy_template_training_course = new utils_1.HttpServiceBase({ url: conf.url + "collection/deploy_template_training_course/", secure: conf.secure });
         this.deploy_template_training_course_i18n = new utils_1.HttpServiceBase({ url: conf.url + "collection/deploy_template_training_course_i18n/", secure: conf.secure });
+        this.deploy_template_licence_store_training = new utils_1.HttpServiceBase({ url: conf.url + "collection/deploy_template_licence_store_training/", secure: conf.secure });
+        this.deploy_template_licence_store_application = new utils_1.HttpServiceBase({ url: conf.url + "collection/deploy_template_licence_store_application/", secure: conf.secure });
     }
 }
 exports.api_collection_plateform = api_collection_plateform;
