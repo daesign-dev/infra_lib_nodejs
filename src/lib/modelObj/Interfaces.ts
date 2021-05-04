@@ -1276,26 +1276,6 @@
    }
 
     /**
-    interface de la class service_mongo 
-    description configure un service mongo
-   */
-    export interface Iservice_mongo extends   Iservice{
-        
-              
-               "mongoosePath"?:string;
-              
-       
-              
-               "mongoAuthSource"?:string;
-              
-       
-              
-               "secretKey"?:string;
-              
-       
-   }
-
-    /**
     interface de la class service_socketIo 
     description communication temps réelle multi format
    */
@@ -1756,42 +1736,6 @@
    }
 
     /**
-    interface de la class service_signin 
-    description service d'enregistrement
-   */
-    export interface Iservice_signin extends   Iservice{
-        
-              
-               "userUrl":string;
-              
-       
-              
-               "mailResetUrl":string;
-              
-       
-              
-               "mailInfoUrl":string;
-              
-       
-              
-               "mailAccountCreatedUrl":string;
-              
-       
-              
-               "durationResetDay":number;
-              
-       
-              
-               "userAppUrl":string;
-              
-       
-              
-               "userProfileUrl":string;
-              
-       
-   }
-
-    /**
     interface de la class service_sendGrid 
     description permet d'envoyer des mail via l'api send grid v3
    */
@@ -1859,38 +1803,6 @@
        
               
                "admins"?:IaclIdentity[];
-              
-       
-   }
-
-    /**
-    interface de la class service_licence_token 
-    description c'est un service en charge de valider les licences et retourner les configurations des applications web
-   */
-    export interface Iservice_licence_token extends   Iservice{
-        
-              
-               "licenceUrl"?:string;
-              
-       
-              
-               "application_instanceUrl"?:string;
-              
-       
-              
-               "tockenDuration"?:number;
-              
-       
-              
-               "sso_well-known"?:string;
-              
-       
-              
-               "certificates"?:string[] | Icertificat[];
-              
-       
-              
-               "end_clientUrl"?:string;
               
        
    }
@@ -2172,42 +2084,6 @@
    }
 
     /**
-    interface de la class Service_scorm_gateway 
-    description service passerelle d'un package scorm vers l'interne
-   */
-    export interface IService_scorm_gateway extends   Iservice{
-        
-              
-               "privateKey":string;
-              
-       
-              
-               "endClientId":string | Iend_client;
-              
-       
-              
-               "signinUrl":string;
-              
-       
-              
-               "licenceUrl":string;
-              
-       
-              
-               "templateUser":any;              
-              
-       
-              
-               "templateProfileUser":any;              
-              
-       
-              
-               "apiUrl"?:string;
-              
-       
-   }
-
-    /**
     interface de la class licenceStore_global 
     description licence store dont les applications sont le catalogue du client
    */
@@ -2292,78 +2168,6 @@
    }
 
     /**
-    interface de la class licence 
-    description représente la licence d'un utilisateur pour un service (ou application) distribué par un end_client
-   */
-    export interface Ilicence extends  IBase {
-        
-              
-               "end_client"?:string | Iend_client;
-              
-       
-              
-               "user"?:string | Ioidc_account;
-              
-       
-              
-               "application_instance"?:string[] | Iapplication_instance[];
-              
-       
-              
-               "ressource"?:string[] | Ipack_card[];
-              
-       
-              
-               "licenceStoreRef"?:string;
-              
-       
-              
-               "creationDate":Date;
-              
-       
-              
-               "usingDate"?:Date;
-              
-       
-   }
-
-    /**
-    interface de la class end_client 
-    description c'est le client que l'on facture
-   */
-    export interface Iend_client extends  IBase {
-        
-              
-               "name"?:string;
-              
-       
-              
-               "label"?:string;
-              
-       
-              
-               "logoUrl"?:string;
-              
-       
-              
-               "applications"?:string[] | Iapplication_instance[];
-              
-       
-              
-               "admins"?:string[] | Ioidc_account[];
-              
-       
-              
-               "licenceStore"?:IlicenceStore[];
-              
-       
-              
-               "client_notices"?:Inotice_field[];
-              
-       
-   }
-
-    /**
     interface de la class MultilangSendGridTemplate 
     description décrit un template multi langue d'envoie de mail avec sendGrid
    */
@@ -2411,42 +2215,6 @@
        
               
                "nginxApplicationSuffixWebapp2"?:string;
-              
-       
-   }
-
-    /**
-    interface de la class service_nathan_gateway 
-    description Service servant de passerelle entre Nathan et notre infra
-   */
-    export interface Iservice_nathan_gateway extends   Iservice{
-        
-              
-               "url_webservice_prospect"?:string;
-              
-       
-              
-               "url_wsdl_prospect"?:string;
-              
-       
-              
-               "login"?:string;
-              
-       
-              
-               "password"?:string;
-              
-       
-              
-               "licence"?:string | Ilicence;
-              
-       
-              
-               "url_licence_collection"?:string;
-              
-       
-              
-               "savvy_author_db_url"?:string;
               
        
    }
@@ -2532,42 +2300,6 @@
    }
 
     /**
-    interface de la class service_trainingCoursesService 
-    description service de gestion des parcourts de formation
-   */
-    export interface Iservice_trainingCoursesService extends   Iservice{
-        
-              
-               "apiSession":string;
-              
-       
-              
-               "licenceServiceUrl":string;
-              
-       
-              
-               "taskServiceUrl":string;
-              
-       
-              
-               "mailServiceUrl":string;
-              
-       
-              
-               "defaultSender"?:ImailSenderParams;
-              
-       
-              
-               "defaultNameSender"?:string;
-              
-       
-              
-               "clientInfraUrl":string;
-              
-       
-   }
-
-    /**
     interface de la class application 
     description liste des applications
    */
@@ -2601,30 +2333,6 @@
    */
     export interface Iapp_training_course extends   Iapplication{
         
-   }
-
-    /**
-    interface de la class daesignApplication 
-    description daesignApplication
-   */
-    export interface IdaesignApplication extends  IBase {
-        
-              
-               "id":string;
-              
-       
-              
-               "name"?:string;
-              
-       
-              
-               "domainToInstallOn"?:string;
-              
-       
-              
-               "appInstanceNameSuffix"?:string;
-              
-       
    }
 
     /**
@@ -3096,54 +2804,6 @@
    }
 
     /**
-    interface de la class daesignIdsRequired 
-    description The IDS required for deployment
-   */
-    export interface IdaesignIdsRequired extends  IBase {
-        
-              
-               "daesignEndClientId":string | Iend_client;
-              
-       
-              
-               "infraAdminInstanceId":string | Iapplication_instance;
-              
-       
-              
-               "nathanEndClientId":string | Iend_client;
-              
-       
-              
-               "savvyLearnerInstanceId":string | Iapplication_instance;
-              
-       
-              
-               "revizQuizInstanceId":string | Iapplication_instance;
-              
-       
-              
-               "serviceNginxMultiConfiguratorId":string | I;
-              
-       
-              
-               "serviceMailToInfraSavvyId":string | Iservice;
-              
-       
-              
-               "superAdminEndclientId":string | Iend_client;
-              
-       
-              
-               "superAdminApplicationInstanceId":string | Iapplication_instance;
-              
-       
-              
-               "daesignSavvyAuthorAdminInstanceId":string | Iapplication_instance;
-              
-       
-   }
-
-    /**
     interface de la class service_deploy 
     description Service qu'il est bien sympathique pour déployer des applications de qualité
    */
@@ -3407,90 +3067,6 @@
        
               
                "platformBdUrl"?:string;
-              
-       
-   }
-
-    /**
-    interface de la class application_configuration_appClient 
-    description c'est la configuration d'une application Client
-   */
-    export interface Iapplication_configuration_appClient extends   Iapplication_configuration_web{
-        
-              
-               "configurationUrlDb":string;
-              
-       
-              
-               "urlBase":string;
-              
-       
-              
-               "signinUrl":string;
-              
-       
-              
-               "serviceSessionUrl":string;
-              
-       
-              
-               "clientServiceUrl":string;
-              
-       
-              
-               "fileServiceUrl"?:string;
-              
-       
-              
-               "trackingServiceUrl"?:string;
-              
-       
-              
-               "aclTemplate"?:I_acl;
-              
-       
-              
-               "isForProspect"?:boolean;
-              
-       
-   }
-
-    /**
-    interface de la class application_configuration_savvy_author 
-    description Configuration pour l'application Savvy - Author
-   */
-    export interface Iapplication_configuration_savvy_author extends   Iapplication_configuration_web{
-        
-              
-               "configurationUrlDb":string;
-              
-       
-              
-               "aclTemplate"?:I_acl;
-              
-       
-              
-               "urlInfraDb"?:string;
-              
-       
-              
-               "urlFrontAppsDb"?:string;
-              
-       
-              
-               "su_clientId"?:string | Iend_client;
-              
-       
-              
-               "su_conf"?:boolean;
-              
-       
-              
-               "savvyLearnerAppId"?:string | Iapplication_instance;
-              
-       
-              
-               "pushNotificationServiceUrl"?:string;
               
        
    }
@@ -3855,6 +3431,810 @@
         
               
                "application"?:string | Iapplication;
+              
+       
+   }
+
+    /**
+    interface de la class service_licence_token 
+    description c'est un service en charge de valider les licences et retourner les configurations des applications web
+   */
+    export interface Iservice_licence_token extends   Iservice{
+        
+              
+               "licenceUrl"?:string;
+              
+       
+              
+               "application_instanceUrl"?:string;
+              
+       
+              
+               "tockenDuration"?:number;
+              
+       
+              
+               "sso_well-known"?:string;
+              
+       
+              
+               "certificates"?:string[] | Icertificat[];
+              
+       
+              
+               "end_clientUrl"?:string;
+              
+       
+              
+               "infraBdUrl"?:string;
+              
+       
+   }
+
+    /**
+    interface de la class service_mongo 
+    description configure un service mongo
+   */
+    export interface Iservice_mongo extends   Iservice{
+        
+              
+               "mongoosePath"?:string;
+              
+       
+              
+               "mongoAuthSource"?:string;
+              
+       
+              
+               "secretKey"?:string;
+              
+       
+              
+               "mongoPoolSize"?:number;
+              
+       
+   }
+
+    /**
+    interface de la class service_gateway 
+    description service passerelle vers l'interne
+   */
+    export interface Iservice_gateway extends   Iservice{
+        
+              
+               "privateKey":string;
+              
+       
+              
+               "endClientId":string | Iend_client;
+              
+       
+              
+               "signinUrl":string;
+              
+       
+              
+               "licenceServiceUrl":string;
+              
+       
+              
+               "templateUser":any;              
+              
+       
+              
+               "templateProfileUser":any;              
+              
+       
+              
+               "apiUrl"?:string;
+              
+       
+              
+               "licenceAdminId"?:string | Ilicence;
+              
+       
+   }
+
+    /**
+    interface de la class redirection_map 
+    description redirection_map
+   */
+    export interface Iredirection_map extends  IBase {
+        
+              
+               "activation"?:Iactivation_map[];
+              
+       
+   }
+
+    /**
+    interface de la class licence 
+    description représente la licence d'un utilisateur pour un service (ou application) distribué par un end_client
+   */
+    export interface Ilicence extends  IBase {
+        
+              
+               "end_client"?:string | Iend_client;
+              
+       
+              
+               "user"?:string | Ioidc_account;
+              
+       
+              
+               "application_instance"?:string[] | Iapplication_instance[];
+              
+       
+              
+               "ressource"?:string[] | Ipack_card[];
+              
+       
+              
+               "licenceStoreRef"?:string;
+              
+       
+              
+               "creationDate":Date;
+              
+       
+              
+               "usingDate"?:Date;
+              
+       
+   }
+
+    /**
+    interface de la class end_client 
+    description c'est le client que l'on facture
+   */
+    export interface Iend_client extends  IBase {
+        
+              
+               "name"?:string;
+              
+       
+              
+               "label"?:string;
+              
+       
+              
+               "logoUrl"?:string;
+              
+       
+              
+               "applications"?:string[] | Iapplication_instance[];
+              
+       
+              
+               "admins"?:string[] | Ioidc_account[];
+              
+       
+              
+               "licenceStore"?:IlicenceStore[];
+              
+       
+              
+               "redirection"?:Iredirection_map;
+              
+       
+              
+               "client_notices"?:Inotice_field[];
+              
+       
+   }
+
+    /**
+    interface de la class TrainingCourses 
+    description parcours que Daesign a créé et qu’il peuvent mettre à disposition de leurs clients
+   */
+    export interface ITrainingCourses extends  IBase {
+        
+              
+               "Tag":string;
+              
+       
+              
+               "lang"?:string | Ilang_code;
+              
+       
+              
+               "title"?:string | Imultilingual_text;
+              
+       
+              
+               "description"?:string[] | Imultilingual_text[];
+              
+       
+              
+               "helpInfo"?:string | Imultilingual_text;
+              
+       
+              
+               "texts"?:string[] | Imultilingual_text[];
+              
+       
+              
+               "Scoring"?:boolean;
+              
+       
+              
+               "competencies"?:string[];
+              
+       
+              
+               "SubTrainingCourses"?:string[] | ITrainingCourses[];
+              
+       
+              
+               "Contents"?:string[] | I[];
+              
+       
+              
+               "isSubtraining":boolean;
+              
+       
+              
+               "frname"?:string;
+              
+       
+              
+               "frdescription"?:string;
+              
+       
+              
+               "frduration"?:string;
+              
+       
+   }
+
+    /**
+    interface de la class service_amclustering 
+    description service passerelle pour le clustering
+   */
+    export interface Iservice_amclustering extends   Iservice{
+        
+              
+               "privateKey":string;
+              
+       
+              
+               "endClientId":string | Iend_client;
+              
+       
+              
+               "signinUrl":string;
+              
+       
+              
+               "licenceServiceUrl":string;
+              
+       
+              
+               "apiUrl"?:string;
+              
+       
+              
+               "licenceAdminId"?:string | Ilicence;
+              
+       
+              
+               "clusteringUrl"?:string;
+              
+       
+              
+               "bearer"?:string;
+              
+       
+   }
+
+    /**
+    interface de la class module 
+    description Define a learning module like Math
+   */
+    export interface Imodule extends  IBase {
+        
+   }
+
+    /**
+    interface de la class application_configuration_adaptivmath_teacher 
+    description generic conf
+   */
+    export interface Iapplication_configuration_adaptivmath_teacher extends   Iapplication_configuration_web{
+        
+              
+               "configurationUrlDb":string;
+              
+       
+              
+               "urlBase":string;
+              
+       
+              
+               "clientServiceUrl":string;
+              
+       
+              
+               "aclTemplate"?:I_acl;
+              
+       
+              
+               "clusteringServiceUrl"?:string;
+              
+       
+              
+               "module_validity"?:Imodule_validity[];
+              
+       
+   }
+
+    /**
+    interface de la class application_configuration_adaptivmath_student 
+    description generic conf
+   */
+    export interface Iapplication_configuration_adaptivmath_student extends   Iapplication_configuration_web{
+        
+              
+               "configurationUrlDb":string;
+              
+       
+              
+               "urlBase":string;
+              
+       
+              
+               "clientServiceUrl":string;
+              
+       
+              
+               "aclTemplate"?:I_acl;
+              
+       
+              
+               "module_validity"?:Imodule_validity[];
+              
+       
+              
+               "useDataFromAuthor"?:boolean;
+              
+       
+   }
+
+    /**
+    interface de la class activation_map 
+    description activation IDs  mapping
+   */
+    export interface Iactivation_map extends  IBase {
+        
+              
+               "test"?:string;
+              
+       
+              
+               "trainingID"?:string | ITrainingCourses;
+              
+       
+              
+               "redirectID"?:string | ITrainingCourses;
+              
+       
+   }
+
+    /**
+    interface de la class module_validity 
+    description module ID validy for adaptivmat app teacher
+   */
+    export interface Imodule_validity extends  IBase {
+        
+              
+               "module"?:string | Imodule;
+              
+       
+              
+               "enable"?:boolean;
+              
+       
+   }
+
+    /**
+    interface de la class application_configuration_savvy_author 
+    description Configuration pour l'application Savvy - Author
+   */
+    export interface Iapplication_configuration_savvy_author extends   Iapplication_configuration_web{
+        
+              
+               "configurationUrlDb":string;
+              
+       
+              
+               "aclTemplate"?:I_acl;
+              
+       
+              
+               "urlInfraDb"?:string;
+              
+       
+              
+               "urlFrontAppsDb"?:string;
+              
+       
+              
+               "su_clientId"?:string | Iend_client;
+              
+       
+              
+               "su_conf"?:boolean;
+              
+       
+              
+               "savvyLearnerAppId"?:string | Iapplication_instance;
+              
+       
+              
+               "pushNotificationServiceUrl"?:string;
+              
+       
+              
+               "rewardColors"?:string[];
+              
+       
+   }
+
+    /**
+    interface de la class service_nathan_gateway 
+    description Service servant de passerelle entre Nathan et notre infra
+   */
+    export interface Iservice_nathan_gateway extends   Iservice{
+        
+              
+               "url_webservice_prospect"?:string;
+              
+       
+              
+               "url_wsdl_prospect"?:string;
+              
+       
+              
+               "login"?:string;
+              
+       
+              
+               "password"?:string;
+              
+       
+              
+               "licence"?:string | Ilicence;
+              
+       
+              
+               "lerobertLicence"?:string | Ilicence;
+              
+       
+              
+               "url_licence_collection"?:string;
+              
+       
+              
+               "savvy_author_db_url"?:string;
+              
+       
+   }
+
+    /**
+    interface de la class daesignApplication 
+    description daesignApplication
+   */
+    export interface IdaesignApplication extends  IBase {
+        
+              
+               "id":string;
+              
+       
+              
+               "name"?:string;
+              
+       
+              
+               "domainToInstallOn"?:string;
+              
+       
+              
+               "appInstanceNameSuffix"?:string;
+              
+       
+   }
+
+    /**
+    interface de la class Service_scorm_gateway 
+    description service passerelle d'un package scorm vers l'interne
+   */
+    export interface IService_scorm_gateway extends   Iservice{
+        
+              
+               "privateKey":string;
+              
+       
+              
+               "endClientId":string | Iend_client;
+              
+       
+              
+               "signinUrl":string;
+              
+       
+              
+               "licenceUrl":string;
+              
+       
+              
+               "templateUser":any;              
+              
+       
+              
+               "templateProfileUser":any;              
+              
+       
+              
+               "apiUrl"?:string;
+              
+       
+              
+               "infraUrl"?:string;
+              
+       
+   }
+
+    /**
+    interface de la class authentication 
+    description service d'enregistrement
+   */
+    export interface Iauthentication extends   Iservice{
+        
+              
+               "mailInfoUrl":string;
+              
+       
+              
+               "mailAccountCreatedUrl":string;
+              
+       
+              
+               "durationResetDay":number;
+              
+       
+              
+               "ssoBdUrl":string;
+              
+       
+              
+               "infraBdUrl":string;
+              
+       
+              
+               "platformBdUrl":string;
+              
+       
+   }
+
+    /**
+    interface de la class signin_service 
+    description service d'enregistrement
+   */
+    export interface Isignin_service extends   Iservice{
+        
+              
+               "userUrl":string;
+              
+       
+              
+               "mailResetUrl":string;
+              
+       
+              
+               "mailInfoUrl":string;
+              
+       
+              
+               "mailAccountCreatedUrl":string;
+              
+       
+              
+               "durationResetDay":number;
+              
+       
+              
+               "userAppUrl":string;
+              
+       
+              
+               "userProfileUrl":string;
+              
+       
+   }
+
+    /**
+    interface de la class service_signin 
+    description service d'enregistrement
+   */
+    export interface Iservice_signin extends   Iservice{
+        
+              
+               "userUrl":string;
+              
+       
+              
+               "mailResetUrl":string;
+              
+       
+              
+               "mailInfoUrl":string;
+              
+       
+              
+               "mailAccountCreatedUrl":string;
+              
+       
+              
+               "durationResetDay":number;
+              
+       
+              
+               "userAppUrl":string;
+              
+       
+              
+               "userProfileUrl":string;
+              
+       
+   }
+
+    /**
+    interface de la class daesignIdsRequired 
+    description The IDS required for deployment
+   */
+    export interface IdaesignIdsRequired extends  IBase {
+        
+              
+               "daesignEndClientId":string | Iend_client;
+              
+       
+              
+               "infraAdminInstanceId":string | Iapplication_instance;
+              
+       
+              
+               "nathanEndClientId":string | Iend_client;
+              
+       
+              
+               "savvyLearnerInstanceId":string | Iapplication_instance;
+              
+       
+              
+               "revizQuizInstanceId":string | Iapplication_instance;
+              
+       
+              
+               "serviceNginxMultiConfiguratorId":string | Iservice;
+              
+       
+              
+               "serviceMailToInfraSavvyId":string | Iservice;
+              
+       
+              
+               "superAdminEndclientId":string | Iend_client;
+              
+       
+              
+               "superAdminApplicationInstanceId":string | Iapplication_instance;
+              
+       
+              
+               "daesignSavvyAuthorAdminInstanceId":string | Iapplication_instance;
+              
+       
+   }
+
+    /**
+    interface de la class service_trainingCoursesService 
+    description service de gestion des parcourts de formation
+   */
+    export interface Iservice_trainingCoursesService extends   Iservice{
+        
+              
+               "apiSession":string;
+              
+       
+              
+               "licenceServiceUrl":string;
+              
+       
+              
+               "signinServiceUrl"?:string;
+              
+       
+              
+               "taskServiceUrl":string;
+              
+       
+              
+               "mailServiceUrl":string;
+              
+       
+              
+               "defaultSender"?:ImailSenderParams;
+              
+       
+              
+               "defaultNameSender"?:string;
+              
+       
+              
+               "clientInfraUrl":string;
+              
+       
+   }
+
+    /**
+    interface de la class application_configuration_appClient 
+    description c'est la configuration d'une application Client
+   */
+    export interface Iapplication_configuration_appClient extends   Iapplication_configuration_web{
+        
+              
+               "configurationUrlDb":string;
+              
+       
+              
+               "urlBase":string;
+              
+       
+              
+               "signinUrl":string;
+              
+       
+              
+               "licenseServiceUrl"?:string;
+              
+       
+              
+               "serviceSessionUrl":string;
+              
+       
+              
+               "clientServiceUrl":string;
+              
+       
+              
+               "fileServiceUrl"?:string;
+              
+       
+              
+               "trackingServiceUrl"?:string;
+              
+       
+              
+               "aclTemplate"?:I_acl;
+              
+       
+              
+               "isForProspect"?:boolean;
+              
+       
+              
+               "licenseTokenUrl"?:string;
+              
+       
+   }
+
+    /**
+    interface de la class deploy_template_training_course_savvy 
+    description Deploy template for SAVVY training courses
+   */
+    export interface Ideploy_template_training_course_savvy extends   Ideploy_template{
+        
+              
+               "application_instance"?:string | Iapplication_instance;
               
        
    }

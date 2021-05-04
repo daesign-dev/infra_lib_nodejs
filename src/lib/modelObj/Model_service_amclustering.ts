@@ -8,12 +8,12 @@ import {Model_service } from "./Model_service"
 
 
 /**
-  service passerelle d'un package scorm vers l'interne
+  service passerelle pour le clustering
 */
-export class Model_Service_scorm_gateway extends   Model_service   implements Interface.IService_scorm_gateway {
+export class Model_service_amclustering extends   Model_service   implements Interface.Iservice_amclustering {
 
 /**
-  service passerelle d'un package scorm vers l'interne
+  service passerelle pour le clustering
 */
   constructor(obj:any={}){
     super(obj);
@@ -47,26 +47,10 @@ export class Model_Service_scorm_gateway extends   Model_service   implements In
         
     
         
-        if(obj["licenceUrl"] != undefined){
+        if(obj["licenceServiceUrl"] != undefined){
           
-           this["licenceUrl"] = obj["licenceUrl"].toString() ;
+           this["licenceServiceUrl"] = obj["licenceServiceUrl"].toString() ;
            
-        }
-        
-    
-        
-        if(obj["templateUser"] != undefined){
-          
-           this["templateUser"] = obj["templateUser"] ;
-          
-        }
-        
-    
-        
-        if(obj["templateProfileUser"] != undefined){
-          
-           this["templateProfileUser"] = obj["templateProfileUser"] ;
-          
         }
         
     
@@ -79,9 +63,29 @@ export class Model_Service_scorm_gateway extends   Model_service   implements In
         
     
         
-        if(obj["infraUrl"] != undefined){
+        if(obj["licenceAdminId"] != undefined){
           
-           this["infraUrl"] = obj["infraUrl"].toString() ;
+          if(_.isString(obj["licenceAdminId"])){
+            this["licenceAdminId"] = obj["licenceAdminId"];
+          }else if(obj["licenceAdminId"]._id){
+            this["licenceAdminId"] = obj["licenceAdminId"]._id ;
+          }
+          
+        }
+        
+    
+        
+        if(obj["clusteringUrl"] != undefined){
+          
+           this["clusteringUrl"] = obj["clusteringUrl"].toString() ;
+           
+        }
+        
+    
+        
+        if(obj["bearer"] != undefined){
+          
+           this["bearer"] = obj["bearer"].toString() ;
            
         }
         
@@ -89,7 +93,7 @@ export class Model_Service_scorm_gateway extends   Model_service   implements In
   }
   
 
-    public _class:string  = "Service_scorm_gateway" ;
+    public _class:string  = "service_amclustering" ;
 
         
               /**
@@ -111,21 +115,9 @@ export class Model_Service_scorm_gateway extends   Model_service   implements In
               
        
               /**
-        url du service de licence
+        url  de licencetoken
         */
-               public "licenceUrl":string ;
-              
-       
-              /**
-        templateUser
-        */
-               public "templateUser":any ;
-              
-       
-              /**
-        templateProfileUser
-        */
-               public "templateProfileUser":any ;
+               public "licenceServiceUrl":string ;
               
        
               /**
@@ -135,9 +127,21 @@ export class Model_Service_scorm_gateway extends   Model_service   implements In
               
        
               /**
-        Url infra
+        licence Admin ref to acces over acl
         */
-               public "infraUrl"?:string ;
+               public "licenceAdminId"?:string ;
+              
+       
+              /**
+        evidence B clustering url
+        */
+               public "clusteringUrl"?:string ;
+              
+       
+              /**
+        bearer code
+        */
+               public "bearer"?:string ;
               
        
 
@@ -208,46 +212,22 @@ export class Model_Service_scorm_gateway extends   Model_service   implements In
            }
            
               
-              if( isCompleteObj && (target["licenceUrl"] == null || target["licenceUrl"] == undefined) ){
-                  throw new Error(path + "licenceUrl is required") ;
+              if( isCompleteObj && (target["licenceServiceUrl"] == null || target["licenceServiceUrl"] == undefined) ){
+                  throw new Error(path + "licenceServiceUrl is required") ;
               }
               
-              if(target["licenceUrl"] != null && target["licenceUrl"] != undefined ){
+              if(target["licenceServiceUrl"] != null && target["licenceServiceUrl"] != undefined ){
               
-                let _licenceUrl  = target["licenceUrl"] ;
+                let _licenceServiceUrl  = target["licenceServiceUrl"] ;
                 
 
-                 if(! _.isString(_licenceUrl)){
-                    throw new Error(path+"licenceUrl is not a string") ;
+                 if(! _.isString(_licenceServiceUrl)){
+                    throw new Error(path+"licenceServiceUrl is not a string") ;
                     
                   }
                   
                   
                  
-              
-              
-           }
-           
-              
-              if( isCompleteObj && (target["templateUser"] == null || target["templateUser"] == undefined) ){
-                  throw new Error(path + "templateUser is required") ;
-              }
-              
-              if(target["templateUser"] != null && target["templateUser"] != undefined ){
-              
-               // public "templateUser":Iobject;
-              
-              
-           }
-           
-              
-              if( isCompleteObj && (target["templateProfileUser"] == null || target["templateProfileUser"] == undefined) ){
-                  throw new Error(path + "templateProfileUser is required") ;
-              }
-              
-              if(target["templateProfileUser"] != null && target["templateProfileUser"] != undefined ){
-              
-               // public "templateProfileUser":Iobject;
               
               
            }
@@ -270,13 +250,44 @@ export class Model_Service_scorm_gateway extends   Model_service   implements In
            }
            
               
-              if(target["infraUrl"] != null && target["infraUrl"] != undefined ){
+              if(target["licenceAdminId"] != null && target["licenceAdminId"] != undefined ){
               
-                let _infraUrl  = target["infraUrl"] ;
+                  let _licenceAdminId  = target["licenceAdminId"] ;
+                  
+                  if( ! _.isString(_licenceAdminId)){
+                   throw new Error(path + "licenceAdminId is not a string") ;
+                  }
+                  
+
+              
+              
+           }
+           
+              
+              if(target["clusteringUrl"] != null && target["clusteringUrl"] != undefined ){
+              
+                let _clusteringUrl  = target["clusteringUrl"] ;
                 
 
-                 if(! _.isString(_infraUrl)){
-                    throw new Error(path+"infraUrl is not a string") ;
+                 if(! _.isString(_clusteringUrl)){
+                    throw new Error(path+"clusteringUrl is not a string") ;
+                    
+                  }
+                  
+                  
+                 
+              
+              
+           }
+           
+              
+              if(target["bearer"] != null && target["bearer"] != undefined ){
+              
+                let _bearer  = target["bearer"] ;
+                
+
+                 if(! _.isString(_bearer)){
+                    throw new Error(path+"bearer is not a string") ;
                     
                   }
                   
@@ -295,9 +306,9 @@ export class Model_Service_scorm_gateway extends   Model_service   implements In
 
       }
 
-      public static create(target:any, path:string=""):Promise<Model_Service_scorm_gateway>{
-        return Model_Service_scorm_gateway.check(target, true, path).then(()=>{
-          return new Model_Service_scorm_gateway(target) ;
+      public static create(target:any, path:string=""):Promise<Model_service_amclustering>{
+        return Model_service_amclustering.check(target, true, path).then(()=>{
+          return new Model_service_amclustering(target) ;
         })
       }
 

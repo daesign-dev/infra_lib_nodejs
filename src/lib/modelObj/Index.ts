@@ -94,8 +94,6 @@ import {Base } from "utils" ;
     
         import {Model_pack_card} from "./Model_pack_card" ;
     
-        import {Model_service_mongo} from "./Model_service_mongo" ;
-    
         import {Model_service_socketIo} from "./Model_service_socketIo" ;
     
         import {Model_service_supervision} from "./Model_service_supervision" ;
@@ -138,15 +136,11 @@ import {Base } from "utils" ;
     
         import {Model_pem_for_app} from "./Model_pem_for_app" ;
     
-        import {Model_service_signin} from "./Model_service_signin" ;
-    
         import {Model_service_sendGrid} from "./Model_service_sendGrid" ;
     
         import {Model_aclIdentity} from "./Model_aclIdentity" ;
     
         import {Model__acl} from "./Model__acl" ;
-    
-        import {Model_service_licence_token} from "./Model_service_licence_token" ;
     
         import {Model_licence_temporelle} from "./Model_licence_temporelle" ;
     
@@ -176,8 +170,6 @@ import {Base } from "utils" ;
     
         import {Model_client_notices} from "./Model_client_notices" ;
     
-        import {Model_Service_scorm_gateway} from "./Model_Service_scorm_gateway" ;
-    
         import {Model_licenceStore_global} from "./Model_licenceStore_global" ;
     
         import {Model_lang_code} from "./Model_lang_code" ;
@@ -188,15 +180,9 @@ import {Base } from "utils" ;
     
         import {Model_notice_field} from "./Model_notice_field" ;
     
-        import {Model_licence} from "./Model_licence" ;
-    
-        import {Model_end_client} from "./Model_end_client" ;
-    
         import {Model_MultilangSendGridTemplate} from "./Model_MultilangSendGridTemplate" ;
     
         import {Model_service_infra_admin} from "./Model_service_infra_admin" ;
-    
-        import {Model_service_nathan_gateway} from "./Model_service_nathan_gateway" ;
     
         import {Model_service_mailtoinfra2} from "./Model_service_mailtoinfra2" ;
     
@@ -206,15 +192,11 @@ import {Base } from "utils" ;
     
         import {Model_mailSenderParams} from "./Model_mailSenderParams" ;
     
-        import {Model_service_trainingCoursesService} from "./Model_service_trainingCoursesService" ;
-    
         import {Model_application} from "./Model_application" ;
     
         import {Model_webapp} from "./Model_webapp" ;
     
         import {Model_app_training_course} from "./Model_app_training_course" ;
-    
-        import {Model_daesignApplication} from "./Model_daesignApplication" ;
     
         import {Model_oidc_Client} from "./Model_oidc_Client" ;
     
@@ -234,8 +216,6 @@ import {Base } from "utils" ;
     
         import {Model_application_configuration_savvy_learner} from "./Model_application_configuration_savvy_learner" ;
     
-        import {Model_daesignIdsRequired} from "./Model_daesignIdsRequired" ;
-    
         import {Model_service_deploy} from "./Model_service_deploy" ;
     
         import {Model_hello} from "./Model_hello" ;
@@ -247,10 +227,6 @@ import {Base } from "utils" ;
         import {Model_passport_strategie_saml} from "./Model_passport_strategie_saml" ;
     
         import {Model_ServiceTracking} from "./Model_ServiceTracking" ;
-    
-        import {Model_application_configuration_appClient} from "./Model_application_configuration_appClient" ;
-    
-        import {Model_application_configuration_savvy_author} from "./Model_application_configuration_savvy_author" ;
     
         import {Model_application_configuration_appAdminDaesign} from "./Model_application_configuration_appAdminDaesign" ;
     
@@ -280,4 +256,52 @@ import {Base } from "utils" ;
     
         import {Model_deploy_template_licence_store_application} from "./Model_deploy_template_licence_store_application" ;
     
-    export { Base  , Model_ui_menu_mongo_editor_separateur as ui_menu_mongo_editor_separateur , Model_certificat as certificat , Model_service_sso as service_sso , Model_date as date , Model_number as number , Model_jwks as jwks , Model_jwk as jwk , Model_boolean as boolean , Model_htmltexte as htmltexte , Model_subdoc as subdoc , Model_modelid as modelid , Model_password as password , Model_field as field , Model_texte as texte , Model_objectid as objectid , Model_user_roles as user_roles , Model_service_init as service_init , Model_rsa as rsa , Model_route_role as route_role , Model_service_mailtoinfra as service_mailtoinfra , Model_mail_connexion_conf as mail_connexion_conf , Model_passport_strategie_facebook as passport_strategie_facebook , Model_passport_strategie_google as passport_strategie_google , Model_passport_strategie_linkedin as passport_strategie_linkedin , Model_name_url as name_url , Model_passport_strategie as passport_strategie , Model_application_configuration as application_configuration , Model_passport_strategie_twitter as passport_strategie_twitter , Model_passport_strategie_instagram as passport_strategie_instagram , Model_name_value as name_value , Model_service_access as service_access , Model_url_role as url_role , Model_socketIoConfig as socketIoConfig , Model_social_data as social_data , Model_ui_menu_mongo_editor as ui_menu_mongo_editor , Model_passport_strategie_windowslive as passport_strategie_windowslive , Model_passport_strategie_dropbox as passport_strategie_dropbox , Model_dataTableInit as dataTableInit , Model_periodicalDistrution_month as periodicalDistrution_month , Model_periodicalDistrution as periodicalDistrution , Model_periodicalDistrution_day as periodicalDistrution_day , Model_periodicalDistrution_periode as periodicalDistrution_periode , Model_mail_sendgrid as mail_sendgrid , Model_service as service , Model_sendGridTemplate as sendGridTemplate , Model_schema_name as schema_name , Model_pack_card as pack_card , Model_service_mongo as service_mongo , Model_service_socketIo as service_socketIo , Model_service_supervision as service_supervision , Model_service_configuration as service_configuration , Model_protoschema as protoschema , Model_entity_source as entity_source , Model_mail as mail , Model_nginxConfigurationFile as nginxConfigurationFile , Model_string as string , Model_service_supervision_service_conf as service_supervision_service_conf , Model_node_fork_option as node_fork_option , Model_node_fork_option_env as node_fork_option_env , Model_routeParam as routeParam , Model_castParam as castParam , Model_object as object , Model__view as _view , Model__view_params as _view_params , Model_application_configuration_super_admin_mongo as application_configuration_super_admin_mongo , Model_service_goshabaGateway as service_goshabaGateway , Model_service_like as service_like , Model_api_key as api_key , Model_pem_for_app as pem_for_app , Model_service_signin as service_signin , Model_service_sendGrid as service_sendGrid , Model_aclIdentity as aclIdentity , Model__acl as _acl , Model_service_licence_token as service_licence_token , Model_licence_temporelle as licence_temporelle , Model_service_dumy_fso as service_dumy_fso , Model_service_push_notification as service_push_notification , Model_service_socket_io as service_socket_io , Model_service_tutor as service_tutor , Model_service_nginxConfigurator as service_nginxConfigurator , Model_service_nginxMultiConfigurator as service_nginxMultiConfigurator , Model_service_init_js as service_init_js , Model_TemplateLodash as TemplateLodash , Model_nginxConfigurationFileApp as nginxConfigurationFileApp , Model_application_configuration_parcours as application_configuration_parcours , Model_application_configuration_xlxUploader as application_configuration_xlxUploader , Model_service_planned_tasks as service_planned_tasks , Model_client_notices as client_notices , Model_Service_scorm_gateway as Service_scorm_gateway , Model_licenceStore_global as licenceStore_global , Model_lang_code as lang_code , Model_multilingual_text as multilingual_text , Model_monolingual_text as monolingual_text , Model_notice_field as notice_field , Model_licence as licence , Model_end_client as end_client , Model_MultilangSendGridTemplate as MultilangSendGridTemplate , Model_service_infra_admin as service_infra_admin , Model_service_nathan_gateway as service_nathan_gateway , Model_service_mailtoinfra2 as service_mailtoinfra2 , Model_nginxDomainConfiguration as nginxDomainConfiguration , Model_daesignMobileApplication as daesignMobileApplication , Model_mailSenderParams as mailSenderParams , Model_service_trainingCoursesService as service_trainingCoursesService , Model_application as application , Model_webapp as webapp , Model_app_training_course as app_training_course , Model_daesignApplication as daesignApplication , Model_oidc_Client as oidc_Client , Model_oidc_account as oidc_account , Model_oidc_clientUserManagment as oidc_clientUserManagment , Model_application_instance as application_instance , Model_application_configuration_web as application_configuration_web , Model_application_configuration_appApprenant as application_configuration_appApprenant , Model_application_configuration_appCoach as application_configuration_appCoach , Model_application_configuration_appEditor as application_configuration_appEditor , Model_application_configuration_savvy_learner as application_configuration_savvy_learner , Model_daesignIdsRequired as daesignIdsRequired , Model_service_deploy as service_deploy , Model_hello as hello , Model_service_hello as service_hello , Model_licenceStore as licenceStore , Model_passport_strategie_saml as passport_strategie_saml , Model_ServiceTracking as ServiceTracking , Model_application_configuration_appClient as application_configuration_appClient , Model_application_configuration_savvy_author as application_configuration_savvy_author , Model_application_configuration_appAdminDaesign as application_configuration_appAdminDaesign , Model_user_profile as user_profile , Model_user as user , Model_application_configuration_generic_author as application_configuration_generic_author , Model_application_configuration_generic as application_configuration_generic , Model_service_cloud_storage as service_cloud_storage , Model_cloudStorageFiles as cloudStorageFiles , Model_cloudStorageFolders as cloudStorageFolders , Model_deploy_template as deploy_template , Model_deploy_template_application_configuration as deploy_template_application_configuration , Model_deploy_template_training_course as deploy_template_training_course , Model_deploy_template_training_course_i18n as deploy_template_training_course_i18n , Model_deploy_template_licence_store_training as deploy_template_licence_store_training , Model_deploy_template_licence_store_application as deploy_template_licence_store_application };
+        import {Model_service_licence_token} from "./Model_service_licence_token" ;
+    
+        import {Model_service_mongo} from "./Model_service_mongo" ;
+    
+        import {Model_service_gateway} from "./Model_service_gateway" ;
+    
+        import {Model_redirection_map} from "./Model_redirection_map" ;
+    
+        import {Model_licence} from "./Model_licence" ;
+    
+        import {Model_end_client} from "./Model_end_client" ;
+    
+        import {Model_TrainingCourses} from "./Model_TrainingCourses" ;
+    
+        import {Model_service_amclustering} from "./Model_service_amclustering" ;
+    
+        import {Model_module} from "./Model_module" ;
+    
+        import {Model_application_configuration_adaptivmath_teacher} from "./Model_application_configuration_adaptivmath_teacher" ;
+    
+        import {Model_application_configuration_adaptivmath_student} from "./Model_application_configuration_adaptivmath_student" ;
+    
+        import {Model_activation_map} from "./Model_activation_map" ;
+    
+        import {Model_module_validity} from "./Model_module_validity" ;
+    
+        import {Model_application_configuration_savvy_author} from "./Model_application_configuration_savvy_author" ;
+    
+        import {Model_service_nathan_gateway} from "./Model_service_nathan_gateway" ;
+    
+        import {Model_daesignApplication} from "./Model_daesignApplication" ;
+    
+        import {Model_Service_scorm_gateway} from "./Model_Service_scorm_gateway" ;
+    
+        import {Model_authentication} from "./Model_authentication" ;
+    
+        import {Model_signin_service} from "./Model_signin_service" ;
+    
+        import {Model_service_signin} from "./Model_service_signin" ;
+    
+        import {Model_daesignIdsRequired} from "./Model_daesignIdsRequired" ;
+    
+        import {Model_service_trainingCoursesService} from "./Model_service_trainingCoursesService" ;
+    
+        import {Model_application_configuration_appClient} from "./Model_application_configuration_appClient" ;
+    
+        import {Model_deploy_template_training_course_savvy} from "./Model_deploy_template_training_course_savvy" ;
+    
+    export { Base  , Model_ui_menu_mongo_editor_separateur as ui_menu_mongo_editor_separateur , Model_certificat as certificat , Model_service_sso as service_sso , Model_date as date , Model_number as number , Model_jwks as jwks , Model_jwk as jwk , Model_boolean as boolean , Model_htmltexte as htmltexte , Model_subdoc as subdoc , Model_modelid as modelid , Model_password as password , Model_field as field , Model_texte as texte , Model_objectid as objectid , Model_user_roles as user_roles , Model_service_init as service_init , Model_rsa as rsa , Model_route_role as route_role , Model_service_mailtoinfra as service_mailtoinfra , Model_mail_connexion_conf as mail_connexion_conf , Model_passport_strategie_facebook as passport_strategie_facebook , Model_passport_strategie_google as passport_strategie_google , Model_passport_strategie_linkedin as passport_strategie_linkedin , Model_name_url as name_url , Model_passport_strategie as passport_strategie , Model_application_configuration as application_configuration , Model_passport_strategie_twitter as passport_strategie_twitter , Model_passport_strategie_instagram as passport_strategie_instagram , Model_name_value as name_value , Model_service_access as service_access , Model_url_role as url_role , Model_socketIoConfig as socketIoConfig , Model_social_data as social_data , Model_ui_menu_mongo_editor as ui_menu_mongo_editor , Model_passport_strategie_windowslive as passport_strategie_windowslive , Model_passport_strategie_dropbox as passport_strategie_dropbox , Model_dataTableInit as dataTableInit , Model_periodicalDistrution_month as periodicalDistrution_month , Model_periodicalDistrution as periodicalDistrution , Model_periodicalDistrution_day as periodicalDistrution_day , Model_periodicalDistrution_periode as periodicalDistrution_periode , Model_mail_sendgrid as mail_sendgrid , Model_service as service , Model_sendGridTemplate as sendGridTemplate , Model_schema_name as schema_name , Model_pack_card as pack_card , Model_service_socketIo as service_socketIo , Model_service_supervision as service_supervision , Model_service_configuration as service_configuration , Model_protoschema as protoschema , Model_entity_source as entity_source , Model_mail as mail , Model_nginxConfigurationFile as nginxConfigurationFile , Model_string as string , Model_service_supervision_service_conf as service_supervision_service_conf , Model_node_fork_option as node_fork_option , Model_node_fork_option_env as node_fork_option_env , Model_routeParam as routeParam , Model_castParam as castParam , Model_object as object , Model__view as _view , Model__view_params as _view_params , Model_application_configuration_super_admin_mongo as application_configuration_super_admin_mongo , Model_service_goshabaGateway as service_goshabaGateway , Model_service_like as service_like , Model_api_key as api_key , Model_pem_for_app as pem_for_app , Model_service_sendGrid as service_sendGrid , Model_aclIdentity as aclIdentity , Model__acl as _acl , Model_licence_temporelle as licence_temporelle , Model_service_dumy_fso as service_dumy_fso , Model_service_push_notification as service_push_notification , Model_service_socket_io as service_socket_io , Model_service_tutor as service_tutor , Model_service_nginxConfigurator as service_nginxConfigurator , Model_service_nginxMultiConfigurator as service_nginxMultiConfigurator , Model_service_init_js as service_init_js , Model_TemplateLodash as TemplateLodash , Model_nginxConfigurationFileApp as nginxConfigurationFileApp , Model_application_configuration_parcours as application_configuration_parcours , Model_application_configuration_xlxUploader as application_configuration_xlxUploader , Model_service_planned_tasks as service_planned_tasks , Model_client_notices as client_notices , Model_licenceStore_global as licenceStore_global , Model_lang_code as lang_code , Model_multilingual_text as multilingual_text , Model_monolingual_text as monolingual_text , Model_notice_field as notice_field , Model_MultilangSendGridTemplate as MultilangSendGridTemplate , Model_service_infra_admin as service_infra_admin , Model_service_mailtoinfra2 as service_mailtoinfra2 , Model_nginxDomainConfiguration as nginxDomainConfiguration , Model_daesignMobileApplication as daesignMobileApplication , Model_mailSenderParams as mailSenderParams , Model_application as application , Model_webapp as webapp , Model_app_training_course as app_training_course , Model_oidc_Client as oidc_Client , Model_oidc_account as oidc_account , Model_oidc_clientUserManagment as oidc_clientUserManagment , Model_application_instance as application_instance , Model_application_configuration_web as application_configuration_web , Model_application_configuration_appApprenant as application_configuration_appApprenant , Model_application_configuration_appCoach as application_configuration_appCoach , Model_application_configuration_appEditor as application_configuration_appEditor , Model_application_configuration_savvy_learner as application_configuration_savvy_learner , Model_service_deploy as service_deploy , Model_hello as hello , Model_service_hello as service_hello , Model_licenceStore as licenceStore , Model_passport_strategie_saml as passport_strategie_saml , Model_ServiceTracking as ServiceTracking , Model_application_configuration_appAdminDaesign as application_configuration_appAdminDaesign , Model_user_profile as user_profile , Model_user as user , Model_application_configuration_generic_author as application_configuration_generic_author , Model_application_configuration_generic as application_configuration_generic , Model_service_cloud_storage as service_cloud_storage , Model_cloudStorageFiles as cloudStorageFiles , Model_cloudStorageFolders as cloudStorageFolders , Model_deploy_template as deploy_template , Model_deploy_template_application_configuration as deploy_template_application_configuration , Model_deploy_template_training_course as deploy_template_training_course , Model_deploy_template_training_course_i18n as deploy_template_training_course_i18n , Model_deploy_template_licence_store_training as deploy_template_licence_store_training , Model_deploy_template_licence_store_application as deploy_template_licence_store_application , Model_service_licence_token as service_licence_token , Model_service_mongo as service_mongo , Model_service_gateway as service_gateway , Model_redirection_map as redirection_map , Model_licence as licence , Model_end_client as end_client , Model_TrainingCourses as TrainingCourses , Model_service_amclustering as service_amclustering , Model_module as module , Model_application_configuration_adaptivmath_teacher as application_configuration_adaptivmath_teacher , Model_application_configuration_adaptivmath_student as application_configuration_adaptivmath_student , Model_activation_map as activation_map , Model_module_validity as module_validity , Model_application_configuration_savvy_author as application_configuration_savvy_author , Model_service_nathan_gateway as service_nathan_gateway , Model_daesignApplication as daesignApplication , Model_Service_scorm_gateway as Service_scorm_gateway , Model_authentication as authentication , Model_signin_service as signin_service , Model_service_signin as service_signin , Model_daesignIdsRequired as daesignIdsRequired , Model_service_trainingCoursesService as service_trainingCoursesService , Model_application_configuration_appClient as application_configuration_appClient , Model_deploy_template_training_course_savvy as deploy_template_training_course_savvy };

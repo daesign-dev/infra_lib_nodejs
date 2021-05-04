@@ -63,6 +63,18 @@ export class Model_service_nathan_gateway extends   Model_service   implements I
         
     
         
+        if(obj["lerobertLicence"] != undefined){
+          
+          if(_.isString(obj["lerobertLicence"])){
+            this["lerobertLicence"] = obj["lerobertLicence"];
+          }else if(obj["lerobertLicence"]._id){
+            this["lerobertLicence"] = obj["lerobertLicence"]._id ;
+          }
+          
+        }
+        
+    
+        
         if(obj["url_licence_collection"] != undefined){
           
            this["url_licence_collection"] = obj["url_licence_collection"].toString() ;
@@ -112,6 +124,12 @@ export class Model_service_nathan_gateway extends   Model_service   implements I
         Licence à utiliser
         */
                public "licence"?:string ;
+              
+       
+              /**
+         Licence avec la liste des packs le robert pour la route lerobertConf
+        */
+               public "lerobertLicence"?:string ;
               
        
               /**
@@ -208,6 +226,20 @@ export class Model_service_nathan_gateway extends   Model_service   implements I
                   
                   if( ! _.isString(_licence)){
                    throw new Error(path + "licence is not a string") ;
+                  }
+                  
+
+              
+              
+           }
+           
+              
+              if(target["lerobertLicence"] != null && target["lerobertLicence"] != undefined ){
+              
+                  let _lerobertLicence  = target["lerobertLicence"] ;
+                  
+                  if( ! _.isString(_lerobertLicence)){
+                   throw new Error(path + "lerobertLicence is not a string") ;
                   }
                   
 

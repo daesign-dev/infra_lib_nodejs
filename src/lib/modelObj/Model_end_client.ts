@@ -87,6 +87,18 @@ export class Model_end_client extends  Base  implements Interface.Iend_client {
         
     
         
+        if(obj["redirection"] != undefined){
+          
+            if(obj._class){
+              this["redirection"] =  new Index[obj._class](obj["redirection"]) ;
+            }else{
+              this["redirection"] =  new Index["redirection_map"](obj["redirection"]) ;
+            }
+          
+        }
+        
+    
+        
         if(obj["client_notices"] != undefined && obj["client_notices"] != null && _.isArray(obj["client_notices"])){
           
 
@@ -142,6 +154,12 @@ export class Model_end_client extends  Base  implements Interface.Iend_client {
         distributeur de licence
         */
                public "licenceStore"?:Interface.IlicenceStore[];
+              
+       
+              /**
+        redirection
+        */
+               public "redirection"?:Interface.Iredirection_map;
               
        
               /**
@@ -259,6 +277,33 @@ export class Model_end_client extends  Base  implements Interface.Iend_client {
                   }
 
                   });
+              
+              
+           }
+           
+              
+              if(target["redirection"] != null && target["redirection"] != undefined ){
+              
+                  let _redirection  = target["redirection"] ;
+                  
+                  
+                    promArr.push( Index["redirection_map"].check(_redirection, isCompleteObj , path+"redirection.")
+                      .catch((err)=>{
+                        throw new Error(path+"redirection is not ") ;
+                        
+
+                      }) )
+                  if(_redirection._class != null && _redirection._class != undefined){
+                    promArr.push( Index[_redirection._class].check(_redirection, isCompleteObj , path+"redirection.")
+                      .catch((err)=>{
+                        throw new Error(path+"redirection is not a " + _redirection._class ) ;
+                        
+
+                      })
+                    )
+                  }
+
+                  
               
               
            }

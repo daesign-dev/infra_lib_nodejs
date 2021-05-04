@@ -94,6 +94,16 @@ export class Model_application_configuration_savvy_author extends   Model_applic
         }
         
     
+        
+        if(obj["rewardColors"] != undefined && obj["rewardColors"] != null && _.isArray(obj["rewardColors"])){
+          
+           this["rewardColors"] = obj["rewardColors"].map((value)=>{
+              return value.toString();
+            })
+          
+        }
+        
+    
   }
   
 
@@ -146,6 +156,12 @@ export class Model_application_configuration_savvy_author extends   Model_applic
         URL for push notification service
         */
                public "pushNotificationServiceUrl"?:string ;
+              
+       
+              /**
+        liste des noms des couleurs des rewards (liées aux assets de savvy learner)
+        */
+               public "rewardColors"?:string[];
               
        
 
@@ -293,6 +309,23 @@ export class Model_application_configuration_savvy_author extends   Model_applic
                   
                   
                  
+              
+              
+           }
+           
+              
+              if(target["rewardColors"] != null && target["rewardColors"] != undefined ){
+              
+                target["rewardColors"].forEach((_rewardColors , index:number)=>{
+                
+
+                 if(! _.isString(_rewardColors)){
+                    throw new Error(path+"rewardColors index: "+ index +"is not a string")
+                    
+                  }
+                  
+                  
+                 });
               
               
            }

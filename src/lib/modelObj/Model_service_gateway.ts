@@ -8,12 +8,12 @@ import {Model_service } from "./Model_service"
 
 
 /**
-  service passerelle d'un package scorm vers l'interne
+  service passerelle vers l'interne
 */
-export class Model_Service_scorm_gateway extends   Model_service   implements Interface.IService_scorm_gateway {
+export class Model_service_gateway extends   Model_service   implements Interface.Iservice_gateway {
 
 /**
-  service passerelle d'un package scorm vers l'interne
+  service passerelle vers l'interne
 */
   constructor(obj:any={}){
     super(obj);
@@ -47,9 +47,9 @@ export class Model_Service_scorm_gateway extends   Model_service   implements In
         
     
         
-        if(obj["licenceUrl"] != undefined){
+        if(obj["licenceServiceUrl"] != undefined){
           
-           this["licenceUrl"] = obj["licenceUrl"].toString() ;
+           this["licenceServiceUrl"] = obj["licenceServiceUrl"].toString() ;
            
         }
         
@@ -79,17 +79,21 @@ export class Model_Service_scorm_gateway extends   Model_service   implements In
         
     
         
-        if(obj["infraUrl"] != undefined){
+        if(obj["licenceAdminId"] != undefined){
           
-           this["infraUrl"] = obj["infraUrl"].toString() ;
-           
+          if(_.isString(obj["licenceAdminId"])){
+            this["licenceAdminId"] = obj["licenceAdminId"];
+          }else if(obj["licenceAdminId"]._id){
+            this["licenceAdminId"] = obj["licenceAdminId"]._id ;
+          }
+          
         }
         
     
   }
   
 
-    public _class:string  = "Service_scorm_gateway" ;
+    public _class:string  = "service_gateway" ;
 
         
               /**
@@ -111,9 +115,9 @@ export class Model_Service_scorm_gateway extends   Model_service   implements In
               
        
               /**
-        url du service de licence
+        url  de licencetoken
         */
-               public "licenceUrl":string ;
+               public "licenceServiceUrl":string ;
               
        
               /**
@@ -135,9 +139,9 @@ export class Model_Service_scorm_gateway extends   Model_service   implements In
               
        
               /**
-        Url infra
+        licence Admin ref to acces over acl
         */
-               public "infraUrl"?:string ;
+               public "licenceAdminId"?:string ;
               
        
 
@@ -208,17 +212,17 @@ export class Model_Service_scorm_gateway extends   Model_service   implements In
            }
            
               
-              if( isCompleteObj && (target["licenceUrl"] == null || target["licenceUrl"] == undefined) ){
-                  throw new Error(path + "licenceUrl is required") ;
+              if( isCompleteObj && (target["licenceServiceUrl"] == null || target["licenceServiceUrl"] == undefined) ){
+                  throw new Error(path + "licenceServiceUrl is required") ;
               }
               
-              if(target["licenceUrl"] != null && target["licenceUrl"] != undefined ){
+              if(target["licenceServiceUrl"] != null && target["licenceServiceUrl"] != undefined ){
               
-                let _licenceUrl  = target["licenceUrl"] ;
+                let _licenceServiceUrl  = target["licenceServiceUrl"] ;
                 
 
-                 if(! _.isString(_licenceUrl)){
-                    throw new Error(path+"licenceUrl is not a string") ;
+                 if(! _.isString(_licenceServiceUrl)){
+                    throw new Error(path+"licenceServiceUrl is not a string") ;
                     
                   }
                   
@@ -270,18 +274,15 @@ export class Model_Service_scorm_gateway extends   Model_service   implements In
            }
            
               
-              if(target["infraUrl"] != null && target["infraUrl"] != undefined ){
+              if(target["licenceAdminId"] != null && target["licenceAdminId"] != undefined ){
               
-                let _infraUrl  = target["infraUrl"] ;
-                
-
-                 if(! _.isString(_infraUrl)){
-                    throw new Error(path+"infraUrl is not a string") ;
-                    
+                  let _licenceAdminId  = target["licenceAdminId"] ;
+                  
+                  if( ! _.isString(_licenceAdminId)){
+                   throw new Error(path + "licenceAdminId is not a string") ;
                   }
                   
-                  
-                 
+
               
               
            }
@@ -295,9 +296,9 @@ export class Model_Service_scorm_gateway extends   Model_service   implements In
 
       }
 
-      public static create(target:any, path:string=""):Promise<Model_Service_scorm_gateway>{
-        return Model_Service_scorm_gateway.check(target, true, path).then(()=>{
-          return new Model_Service_scorm_gateway(target) ;
+      public static create(target:any, path:string=""):Promise<Model_service_gateway>{
+        return Model_service_gateway.check(target, true, path).then(()=>{
+          return new Model_service_gateway(target) ;
         })
       }
 

@@ -118,9 +118,9 @@ export class Model_daesignApplication extends  Base  implements Interface.Idaesi
                   }
                   
                   
-                    let _enum_name:string[] = ["appClient","appApprenant","appCoach","appDialogEditor","appSavvyAuthor","appSavvyAuthorAdmin"] ;
+                    let _enum_name:string[] = ["appClient","appApprenant","appCoach","appDialogEditor","appSavvyAuthor","appSavvyAuthorAdmin","SavvyLearner"] ;
                     if(_enum_name.indexOf(_name)==-1){
-                        throw new Error(path+"name dont match one of appClient , appApprenant , appCoach , appDialogEditor , appSavvyAuthor , appSavvyAuthorAdmin" ) ;
+                        throw new Error(path+"name dont match one of appClient , appApprenant , appCoach , appDialogEditor , appSavvyAuthor , appSavvyAuthorAdmin , SavvyLearner" ) ;
                         
                     }
                   
@@ -141,9 +141,9 @@ export class Model_daesignApplication extends  Base  implements Interface.Idaesi
                   }
                   
                   
-                    let _enum_domainToInstallOn:string[] = [".daesign.com",".savvy-author.com"] ;
+                    let _enum_domainToInstallOn:string[] = [".daesign.com",".savvy-author.com",".savvy-learner.com"] ;
                     if(_enum_domainToInstallOn.indexOf(_domainToInstallOn)==-1){
-                        throw new Error(path+"domainToInstallOn dont match one of .daesign.com , .savvy-author.com" ) ;
+                        throw new Error(path+"domainToInstallOn dont match one of .daesign.com , .savvy-author.com , .savvy-learner.com" ) ;
                         
                     }
                   
@@ -164,9 +164,9 @@ export class Model_daesignApplication extends  Base  implements Interface.Idaesi
                   }
                   
                   
-                    let _enum_appInstanceNameSuffix:string[] = ["-adminacademy","-academy","-mentoracademy","-dialogeditor","-savvyauthor","-adminsavvyauthor"] ;
+                    let _enum_appInstanceNameSuffix:string[] = ["-adminacademy","-academy","-mentoracademy","-dialogeditor","-savvyauthor","-adminsavvyauthor",""] ;
                     if(_enum_appInstanceNameSuffix.indexOf(_appInstanceNameSuffix)==-1){
-                        throw new Error(path+"appInstanceNameSuffix dont match one of -adminacademy , -academy , -mentoracademy , -dialogeditor , -savvyauthor , -adminsavvyauthor" ) ;
+                        throw new Error(path+"appInstanceNameSuffix dont match one of -adminacademy , -academy , -mentoracademy , -dialogeditor , -savvyauthor , -adminsavvyauthor , " ) ;
                         
                     }
                   

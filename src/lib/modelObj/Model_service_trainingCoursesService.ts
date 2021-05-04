@@ -35,6 +35,14 @@ export class Model_service_trainingCoursesService extends   Model_service   impl
         
     
         
+        if(obj["signinServiceUrl"] != undefined){
+          
+           this["signinServiceUrl"] = obj["signinServiceUrl"].toString() ;
+           
+        }
+        
+    
+        
         if(obj["taskServiceUrl"] != undefined){
           
            this["taskServiceUrl"] = obj["taskServiceUrl"].toString() ;
@@ -94,6 +102,12 @@ export class Model_service_trainingCoursesService extends   Model_service   impl
         url du licence service
         */
                public "licenceServiceUrl":string ;
+              
+       
+              /**
+        signinServiceUrl
+        */
+               public "signinServiceUrl"?:string ;
               
        
               /**
@@ -166,6 +180,23 @@ export class Model_service_trainingCoursesService extends   Model_service   impl
 
                  if(! _.isString(_licenceServiceUrl)){
                     throw new Error(path+"licenceServiceUrl is not a string") ;
+                    
+                  }
+                  
+                  
+                 
+              
+              
+           }
+           
+              
+              if(target["signinServiceUrl"] != null && target["signinServiceUrl"] != undefined ){
+              
+                let _signinServiceUrl  = target["signinServiceUrl"] ;
+                
+
+                 if(! _.isString(_signinServiceUrl)){
+                    throw new Error(path+"signinServiceUrl is not a string") ;
                     
                   }
                   
