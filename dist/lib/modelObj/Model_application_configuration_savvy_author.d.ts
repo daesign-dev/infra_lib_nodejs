@@ -41,6 +41,10 @@ Identifiant de l'application savvy learner
 URL for push notification service
 */
     "pushNotificationServiceUrl"?: string;
+    /**
+liste des noms des couleurs des rewards (liées aux assets de savvy learner)
+*/
+    "rewardColors"?: string[];
     static check(target: any, isCompleteObj?: boolean, path?: string): Promise<boolean>;
     static create(target: any, path?: string): Promise<Model_application_configuration_savvy_author>;
 }

@@ -61,15 +61,19 @@ export declare class api_collection_plateform {
      
         Iapplication_configuration_savvy_learner      configuration de l'application Savvy Learner
      
-        Iapplication_configuration_appClient      c'est la configuration d'une application Client
-     
-        Iapplication_configuration_savvy_author      Configuration pour l'application Savvy - Author
-     
         Iapplication_configuration_appAdminDaesign      Application configuration for Daesign admin that have specific inputs
      
         Iapplication_configuration_generic_author      conf for generic authos app
      
         Iapplication_configuration_generic      generic conf
+     
+        Iapplication_configuration_adaptivmath_teacher      generic conf
+     
+        Iapplication_configuration_adaptivmath_student      generic conf
+     
+        Iapplication_configuration_savvy_author      Configuration pour l'application Savvy - Author
+     
+        Iapplication_configuration_appClient      c'est la configuration d'une application Client
      
      
     */
@@ -123,18 +127,6 @@ export declare class api_collection_plateform {
    */
     application_configuration_savvy_learner: HttpServiceBase<Interfaces.Iapplication_configuration_savvy_learner>;
     /**
-    service d'accès a la sous-collection :application_configuration_appClient
-    desc: c'est la configuration d'une application Client
-    info: vous ne pouvez voir que ce type d'objet
-   */
-    application_configuration_appClient: HttpServiceBase<Interfaces.Iapplication_configuration_appClient>;
-    /**
-    service d'accès a la sous-collection :application_configuration_savvy_author
-    desc: Configuration pour l'application Savvy - Author
-    info: vous ne pouvez voir que ce type d'objet
-   */
-    application_configuration_savvy_author: HttpServiceBase<Interfaces.Iapplication_configuration_savvy_author>;
-    /**
     service d'accès a la sous-collection :application_configuration_appAdminDaesign
     desc: Application configuration for Daesign admin that have specific inputs
     info: vous ne pouvez voir que ce type d'objet
@@ -152,6 +144,30 @@ export declare class api_collection_plateform {
     info: vous ne pouvez voir que ce type d'objet
    */
     application_configuration_generic: HttpServiceBase<Interfaces.Iapplication_configuration_generic>;
+    /**
+    service d'accès a la sous-collection :application_configuration_adaptivmath_teacher
+    desc: generic conf
+    info: vous ne pouvez voir que ce type d'objet
+   */
+    application_configuration_adaptivmath_teacher: HttpServiceBase<Interfaces.Iapplication_configuration_adaptivmath_teacher>;
+    /**
+    service d'accès a la sous-collection :application_configuration_adaptivmath_student
+    desc: generic conf
+    info: vous ne pouvez voir que ce type d'objet
+   */
+    application_configuration_adaptivmath_student: HttpServiceBase<Interfaces.Iapplication_configuration_adaptivmath_student>;
+    /**
+    service d'accès a la sous-collection :application_configuration_savvy_author
+    desc: Configuration pour l'application Savvy - Author
+    info: vous ne pouvez voir que ce type d'objet
+   */
+    application_configuration_savvy_author: HttpServiceBase<Interfaces.Iapplication_configuration_savvy_author>;
+    /**
+    service d'accès a la sous-collection :application_configuration_appClient
+    desc: c'est la configuration d'une application Client
+    info: vous ne pouvez voir que ce type d'objet
+   */
+    application_configuration_appClient: HttpServiceBase<Interfaces.Iapplication_configuration_appClient>;
     /**
      service d'accès à la collection :service_access
      desc: décrit les régles de paramètre des servies
@@ -173,8 +189,6 @@ export declare class api_collection_plateform {
      
         Iservice_mailtoinfra      service qui permet de configurer l'authentification a partir d'un mail
      
-        Iservice_mongo      configure un service mongo
-     
         Iservice_socketIo      communication temps réelle multi format
      
         Iservice_supervision      service_supervision
@@ -185,11 +199,7 @@ export declare class api_collection_plateform {
      
         Iservice_like      service permettant de liker un objet de la base
      
-        Iservice_signin      service d'enregistrement
-     
         Iservice_sendGrid      permet d'envoyer des mail via l'api send grid v3
-     
-        Iservice_licence_token      c'est un service en charge de valider les licences et retourner les configurations des applications web
      
         Iservice_dumy_fso      simple remote file system a n utiliser que pour des test
      
@@ -207,15 +217,9 @@ export declare class api_collection_plateform {
      
         Iservice_planned_tasks      Service de Taches planifiées
      
-        IService_scorm_gateway      service passerelle d'un package scorm vers l'interne
-     
         Iservice_infra_admin      administration de l'infra
      
-        Iservice_nathan_gateway      Service servant de passerelle entre Nathan et notre infra
-     
         Iservice_mailtoinfra2      retrouve la configuration de connection de l'app savy a partir du mail de l'utilisateur
-     
-        Iservice_trainingCoursesService      service de gestion des parcourts de formation
      
         Iservice_deploy      Service qu'il est bien sympathique pour déployer des applications de qualité
      
@@ -224,6 +228,26 @@ export declare class api_collection_plateform {
         IServiceTracking      Service to acces tracking for application
      
         Iservice_cloud_storage      Service used to upload files to AWS S3
+     
+        Iservice_licence_token      c'est un service en charge de valider les licences et retourner les configurations des applications web
+     
+        Iservice_mongo      configure un service mongo
+     
+        Iservice_gateway      service passerelle vers l'interne
+     
+        Iservice_amclustering      service passerelle pour le clustering
+     
+        Iservice_nathan_gateway      Service servant de passerelle entre Nathan et notre infra
+     
+        IService_scorm_gateway      service passerelle d'un package scorm vers l'interne
+     
+        Iauthentication      service d'enregistrement
+     
+        Isignin_service      service d'enregistrement
+     
+        Iservice_signin      service d'enregistrement
+     
+        Iservice_trainingCoursesService      service de gestion des parcourts de formation
      
      
     */
@@ -246,12 +270,6 @@ export declare class api_collection_plateform {
     info: vous ne pouvez voir que ce type d'objet
    */
     service_mailtoinfra: HttpServiceBase<Interfaces.Iservice_mailtoinfra>;
-    /**
-    service d'accès a la sous-collection :service_mongo
-    desc: configure un service mongo
-    info: vous ne pouvez voir que ce type d'objet
-   */
-    service_mongo: HttpServiceBase<Interfaces.Iservice_mongo>;
     /**
     service d'accès a la sous-collection :service_socketIo
     desc: communication temps réelle multi format
@@ -283,23 +301,11 @@ export declare class api_collection_plateform {
    */
     service_like: HttpServiceBase<Interfaces.Iservice_like>;
     /**
-    service d'accès a la sous-collection :service_signin
-    desc: service d'enregistrement
-    info: vous ne pouvez voir que ce type d'objet
-   */
-    service_signin: HttpServiceBase<Interfaces.Iservice_signin>;
-    /**
     service d'accès a la sous-collection :service_sendGrid
     desc: permet d'envoyer des mail via l'api send grid v3
     info: vous ne pouvez voir que ce type d'objet
    */
     service_sendGrid: HttpServiceBase<Interfaces.Iservice_sendGrid>;
-    /**
-    service d'accès a la sous-collection :service_licence_token
-    desc: c'est un service en charge de valider les licences et retourner les configurations des applications web
-    info: vous ne pouvez voir que ce type d'objet
-   */
-    service_licence_token: HttpServiceBase<Interfaces.Iservice_licence_token>;
     /**
     service d'accès a la sous-collection :service_dumy_fso
     desc: simple remote file system a n utiliser que pour des test
@@ -349,35 +355,17 @@ export declare class api_collection_plateform {
    */
     service_planned_tasks: HttpServiceBase<Interfaces.Iservice_planned_tasks>;
     /**
-    service d'accès a la sous-collection :Service_scorm_gateway
-    desc: service passerelle d'un package scorm vers l'interne
-    info: vous ne pouvez voir que ce type d'objet
-   */
-    Service_scorm_gateway: HttpServiceBase<Interfaces.IService_scorm_gateway>;
-    /**
     service d'accès a la sous-collection :service_infra_admin
     desc: administration de l'infra
     info: vous ne pouvez voir que ce type d'objet
    */
     service_infra_admin: HttpServiceBase<Interfaces.Iservice_infra_admin>;
     /**
-    service d'accès a la sous-collection :service_nathan_gateway
-    desc: Service servant de passerelle entre Nathan et notre infra
-    info: vous ne pouvez voir que ce type d'objet
-   */
-    service_nathan_gateway: HttpServiceBase<Interfaces.Iservice_nathan_gateway>;
-    /**
     service d'accès a la sous-collection :service_mailtoinfra2
     desc: retrouve la configuration de connection de l'app savy a partir du mail de l'utilisateur
     info: vous ne pouvez voir que ce type d'objet
    */
     service_mailtoinfra2: HttpServiceBase<Interfaces.Iservice_mailtoinfra2>;
-    /**
-    service d'accès a la sous-collection :service_trainingCoursesService
-    desc: service de gestion des parcourts de formation
-    info: vous ne pouvez voir que ce type d'objet
-   */
-    service_trainingCoursesService: HttpServiceBase<Interfaces.Iservice_trainingCoursesService>;
     /**
     service d'accès a la sous-collection :service_deploy
     desc: Service qu'il est bien sympathique pour déployer des applications de qualité
@@ -402,6 +390,66 @@ export declare class api_collection_plateform {
     info: vous ne pouvez voir que ce type d'objet
    */
     service_cloud_storage: HttpServiceBase<Interfaces.Iservice_cloud_storage>;
+    /**
+    service d'accès a la sous-collection :service_licence_token
+    desc: c'est un service en charge de valider les licences et retourner les configurations des applications web
+    info: vous ne pouvez voir que ce type d'objet
+   */
+    service_licence_token: HttpServiceBase<Interfaces.Iservice_licence_token>;
+    /**
+    service d'accès a la sous-collection :service_mongo
+    desc: configure un service mongo
+    info: vous ne pouvez voir que ce type d'objet
+   */
+    service_mongo: HttpServiceBase<Interfaces.Iservice_mongo>;
+    /**
+    service d'accès a la sous-collection :service_gateway
+    desc: service passerelle vers l'interne
+    info: vous ne pouvez voir que ce type d'objet
+   */
+    service_gateway: HttpServiceBase<Interfaces.Iservice_gateway>;
+    /**
+    service d'accès a la sous-collection :service_amclustering
+    desc: service passerelle pour le clustering
+    info: vous ne pouvez voir que ce type d'objet
+   */
+    service_amclustering: HttpServiceBase<Interfaces.Iservice_amclustering>;
+    /**
+    service d'accès a la sous-collection :service_nathan_gateway
+    desc: Service servant de passerelle entre Nathan et notre infra
+    info: vous ne pouvez voir que ce type d'objet
+   */
+    service_nathan_gateway: HttpServiceBase<Interfaces.Iservice_nathan_gateway>;
+    /**
+    service d'accès a la sous-collection :Service_scorm_gateway
+    desc: service passerelle d'un package scorm vers l'interne
+    info: vous ne pouvez voir que ce type d'objet
+   */
+    Service_scorm_gateway: HttpServiceBase<Interfaces.IService_scorm_gateway>;
+    /**
+    service d'accès a la sous-collection :authentication
+    desc: service d'enregistrement
+    info: vous ne pouvez voir que ce type d'objet
+   */
+    authentication: HttpServiceBase<Interfaces.Iauthentication>;
+    /**
+    service d'accès a la sous-collection :signin_service
+    desc: service d'enregistrement
+    info: vous ne pouvez voir que ce type d'objet
+   */
+    signin_service: HttpServiceBase<Interfaces.Isignin_service>;
+    /**
+    service d'accès a la sous-collection :service_signin
+    desc: service d'enregistrement
+    info: vous ne pouvez voir que ce type d'objet
+   */
+    service_signin: HttpServiceBase<Interfaces.Iservice_signin>;
+    /**
+    service d'accès a la sous-collection :service_trainingCoursesService
+    desc: service de gestion des parcourts de formation
+    info: vous ne pouvez voir que ce type d'objet
+   */
+    service_trainingCoursesService: HttpServiceBase<Interfaces.Iservice_trainingCoursesService>;
     /**
      service d'accès à la collection :protoschema
      desc: protoschema est un méta modéle. il permet de créer les autres modèle de la base
@@ -478,32 +526,6 @@ export declare class api_collection_plateform {
      
     */
     multilingual_text: HttpServiceBase<Interfaces.Imultilingual_text>;
-    /**
-     service d'accès à la collection :licence
-     desc: représente la licence d'un utilisateur pour un service (ou application) distribué par un end_client
-     
-     info: vous pouvez voir tous les objets de cette collection y compris les enfants
-     liste des interfaces héritées possibles:
-     
-        Ilicence_temporelle      c'est une licence qui dure un certain temps
-     
-     
-    */
-    licence: HttpServiceBase<Interfaces.Ilicence>;
-    /**
-    service d'accès a la sous-collection :licence_temporelle
-    desc: c'est une licence qui dure un certain temps
-    info: vous ne pouvez voir que ce type d'objet
-   */
-    licence_temporelle: HttpServiceBase<Interfaces.Ilicence_temporelle>;
-    /**
-     service d'accès à la collection :end_client
-     desc: c'est le client que l'on facture
-     
-
-     
-    */
-    end_client: HttpServiceBase<Interfaces.Iend_client>;
     /**
      service d'accès à la collection :MultilangSendGridTemplate
      desc: décrit un template multi langue d'envoie de mail avec sendGrid
@@ -611,6 +633,8 @@ export declare class api_collection_plateform {
      
         Ideploy_template_licence_store_application      Template used by deploy service - application licence store specific
      
+        Ideploy_template_training_course_savvy      Deploy template for SAVVY training courses
+     
      
     */
     deploy_template: HttpServiceBase<Interfaces.Ideploy_template>;
@@ -644,54 +668,38 @@ export declare class api_collection_plateform {
     info: vous ne pouvez voir que ce type d'objet
    */
     deploy_template_licence_store_application: HttpServiceBase<Interfaces.Ideploy_template_licence_store_application>;
-}
-/**
-    accès à la vue :UserLicence
-    retourne la liste des licences d'un utilisateur pour le client courrant
-*/
-export declare class api_view_UserLicence extends HttpAbstractService {
-    conf: any;
     /**
-        accès à la vue :UserLicence
-        
-    */
-    constructor(conf: any);
-    protected url: string;
-    protected globalCtxInt: CtxInterpretor;
+    service d'accès a la sous-collection :deploy_template_training_course_savvy
+    desc: Deploy template for SAVVY training courses
+    info: vous ne pouvez voir que ce type d'objet
+   */
+    deploy_template_training_course_savvy: HttpServiceBase<Interfaces.Ideploy_template_training_course_savvy>;
     /**
-    génére une requette sur la vue UserLicence
-    
+     service d'accès à la collection :licence
+     desc: représente la licence d'un utilisateur pour un service (ou application) distribué par un end_client
+     
+     info: vous pouvez voir tous les objets de cette collection y compris les enfants
+     liste des interfaces héritées possibles:
+     
+        Ilicence_temporelle      c'est une licence qui dure un certain temps
+     
+     
     */
-    get(userId: string, query?: string, headers?: any): Promise<IHttpResult<Interfaces.Ilicence>>;
-    /** middleware
-    génére une requette sur la vue UserLicence
-    
-    */
-    getMiddleware: (config: MiddleWareConfig) => (req: any, res: any, next: any) => void;
-}
-/**
-    accès à la vue :Client
-    retourne la donnée du client connecté
-*/
-export declare class api_view_Client extends HttpAbstractService {
-    conf: any;
+    licence: HttpServiceBase<Interfaces.Ilicence>;
     /**
-        accès à la vue :Client
-        
-    */
-    constructor(conf: any);
-    protected url: string;
-    protected globalCtxInt: CtxInterpretor;
+    service d'accès a la sous-collection :licence_temporelle
+    desc: c'est une licence qui dure un certain temps
+    info: vous ne pouvez voir que ce type d'objet
+   */
+    licence_temporelle: HttpServiceBase<Interfaces.Ilicence_temporelle>;
     /**
-    génére une requette sur la vue Client
-    
+     service d'accès à la collection :end_client
+     desc: c'est le client que l'on facture
+     
+
+     
     */
-    get(query?: string, headers?: any): Promise<IHttpResult<Interfaces.Iend_client>>;
-    /** middleware
-    génére une requette sur la vue Client
-    
-    */
-    getMiddleware: (config: MiddleWareConfig) => (req: any, res: any, next: any) => void;
+    end_client: HttpServiceBase<Interfaces.Iend_client>;
 }
 /**
     accès à la vue :CloudStorageFolderList
@@ -765,17 +773,129 @@ export declare class api_view_CloudStorageFolderSearch extends HttpAbstractServi
     */
     getMiddleware: (config: MiddleWareConfig) => (req: any, res: any, next: any) => void;
 }
+/**
+    accès à la vue :Client
+    retourne la donnée du client connecté
+*/
+export declare class api_view_Client extends HttpAbstractService {
+    conf: any;
+    /**
+        accès à la vue :Client
+        
+    */
+    constructor(conf: any);
+    protected url: string;
+    protected globalCtxInt: CtxInterpretor;
+    /**
+    génére une requette sur la vue Client
+    
+    */
+    get(query?: string, headers?: any): Promise<IHttpResult<Interfaces.Iend_client>>;
+    /** middleware
+    génére une requette sur la vue Client
+    
+    */
+    getMiddleware: (config: MiddleWareConfig) => (req: any, res: any, next: any) => void;
+}
+/**
+    accès à la vue :licensesUser
+    retourne la liste des licences d'un utilisateur pour le client courrant
+*/
+export declare class api_view_licensesUser extends HttpAbstractService {
+    conf: any;
+    /**
+        accès à la vue :licensesUser
+        
+    */
+    constructor(conf: any);
+    protected url: string;
+    protected globalCtxInt: CtxInterpretor;
+    /**
+    génére une requette sur la vue licensesUser
+    
+    */
+    get(userId: string, query?: string, headers?: any): Promise<IHttpResult<Interfaces.Ilicence>>;
+    /** middleware
+    génére une requette sur la vue licensesUser
+    
+    */
+    getMiddleware: (config: MiddleWareConfig) => (req: any, res: any, next: any) => void;
+}
+/**
+    accès à la vue :usersLicense
+    retourne la liste des utilisateurs pour le client courant et la licence donnée
+*/
+export declare class api_view_usersLicense extends HttpAbstractService {
+    conf: any;
+    /**
+        accès à la vue :usersLicense
+        
+    */
+    constructor(conf: any);
+    protected url: string;
+    protected globalCtxInt: CtxInterpretor;
+    /**
+    génére une requette sur la vue usersLicense
+    
+    */
+    get(licenceStoreRef: string, query?: string, headers?: any): Promise<IHttpResult<Interfaces.Ilicence>>;
+    /** middleware
+    génére une requette sur la vue usersLicense
+    
+    */
+    getMiddleware: (config: MiddleWareConfig) => (req: any, res: any, next: any) => void;
+}
+/**
+    accès à la vue :clientParent
+    Get the client parent
+*/
+export declare class api_view_clientParent extends HttpAbstractService {
+    conf: any;
+    /**
+        accès à la vue :clientParent
+        
+    */
+    constructor(conf: any);
+    protected url: string;
+    protected globalCtxInt: CtxInterpretor;
+    /**
+    génére une requette sur la vue clientParent
+    
+    */
+    get(query?: string, headers?: any): Promise<IHttpResult<Interfaces.Iend_client>>;
+    /** middleware
+    génére une requette sur la vue clientParent
+    
+    */
+    getMiddleware: (config: MiddleWareConfig) => (req: any, res: any, next: any) => void;
+}
+/**
+    accès à la vue :UserLicence
+    retourne la liste des licences d'un utilisateur pour le client courrant ( == licensesUser)
+*/
+export declare class api_view_UserLicence extends HttpAbstractService {
+    conf: any;
+    /**
+        accès à la vue :UserLicence
+        
+    */
+    constructor(conf: any);
+    protected url: string;
+    protected globalCtxInt: CtxInterpretor;
+    /**
+    génére une requette sur la vue UserLicence
+    
+    */
+    get(userId: string, query?: string, headers?: any): Promise<IHttpResult<Interfaces.Ilicence>>;
+    /** middleware
+    génére une requette sur la vue UserLicence
+    
+    */
+    getMiddleware: (config: MiddleWareConfig) => (req: any, res: any, next: any) => void;
+}
 export declare class api_view_plateform {
     conf: any;
     constructor(conf: any);
-    /**
-    accès à la vue :UserLicence     retourne la liste des licences d'un utilisateur pour le client courrant
-    */
-    UserLicence: api_view_UserLicence;
-    /**
-    accès à la vue :Client     retourne la donnée du client connecté
-    */
-    Client: api_view_Client;
     /**
     accès à la vue :CloudStorageFolderList     View used to get cloudStorageFolder nested folders
     */
@@ -788,6 +908,26 @@ export declare class api_view_plateform {
     accès à la vue :CloudStorageFolderSearch     View used to filter Folders by tags
     */
     CloudStorageFolderSearch: api_view_CloudStorageFolderSearch;
+    /**
+    accès à la vue :Client     retourne la donnée du client connecté
+    */
+    Client: api_view_Client;
+    /**
+    accès à la vue :licensesUser     retourne la liste des licences d'un utilisateur pour le client courrant
+    */
+    licensesUser: api_view_licensesUser;
+    /**
+    accès à la vue :usersLicense     retourne la liste des utilisateurs pour le client courant et la licence donnée
+    */
+    usersLicense: api_view_usersLicense;
+    /**
+    accès à la vue :clientParent     Get the client parent
+    */
+    clientParent: api_view_clientParent;
+    /**
+    accès à la vue :UserLicence     retourne la liste des licences d'un utilisateur pour le client courrant ( == licensesUser)
+    */
+    UserLicence: api_view_UserLicence;
 }
 export declare class Api_plateforme {
     conf: any;

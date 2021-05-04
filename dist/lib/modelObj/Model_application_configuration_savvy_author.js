@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Model_application_configuration_savvy_author = void 0;
 const _ = require("lodash");
 const Index = require("./Index");
 const Model_application_configuration_web_1 = require("./Model_application_configuration_web");
@@ -51,6 +52,11 @@ class Model_application_configuration_savvy_author extends Model_application_con
         }
         if (obj["pushNotificationServiceUrl"] != undefined) {
             this["pushNotificationServiceUrl"] = obj["pushNotificationServiceUrl"].toString();
+        }
+        if (obj["rewardColors"] != undefined && obj["rewardColors"] != null && _.isArray(obj["rewardColors"])) {
+            this["rewardColors"] = obj["rewardColors"].map((value) => {
+                return value.toString();
+            });
         }
     }
     static check(target, isCompleteObj = true, path = "") {
@@ -114,6 +120,13 @@ class Model_application_configuration_savvy_author extends Model_application_con
                 if (!_.isString(_pushNotificationServiceUrl)) {
                     throw new Error(path + "pushNotificationServiceUrl is not a string");
                 }
+            }
+            if (target["rewardColors"] != null && target["rewardColors"] != undefined) {
+                target["rewardColors"].forEach((_rewardColors, index) => {
+                    if (!_.isString(_rewardColors)) {
+                        throw new Error(path + "rewardColors index: " + index + "is not a string");
+                    }
+                });
             }
             return Promise.all(promArr).then(() => { return true; });
         }).catch((err) => {

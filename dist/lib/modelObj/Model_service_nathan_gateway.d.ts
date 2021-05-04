@@ -30,6 +30,10 @@ Licence à utiliser
 */
     "licence"?: string;
     /**
+Licence avec la liste des packs le robert pour la route lerobertConf
+*/
+    "lerobertLicence"?: string;
+    /**
 Url de la collection de licence
 */
     "url_licence_collection"?: string;

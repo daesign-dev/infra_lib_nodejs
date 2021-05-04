@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Model_ui_menu_mongo_editor_separateur = void 0;
 const _ = require("lodash");
 const Model_ui_menu_mongo_editor_1 = require("./Model_ui_menu_mongo_editor");
 /**

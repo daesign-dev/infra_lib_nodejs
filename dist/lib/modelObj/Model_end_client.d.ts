@@ -34,6 +34,10 @@ distributeur de licence
 */
     "licenceStore"?: Interface.IlicenceStore[];
     /**
+redirection
+*/
+    "redirection"?: Interface.Iredirection_map;
+    /**
 client notices
 */
     "client_notices"?: Interface.Inotice_field[];

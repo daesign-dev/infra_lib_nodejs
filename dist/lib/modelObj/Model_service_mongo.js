@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Model_service_mongo = void 0;
 const _ = require("lodash");
 const Model_service_1 = require("./Model_service");
 /**
@@ -16,6 +17,10 @@ class Model_service_mongo extends Model_service_1.Model_service {
   clef secrète de communication interne a l'infra
   */
         this["secretKey"] = "$$ENV.SECRET";
+        /**
+  The max pool size for mongo connection
+  */
+        this["mongoPoolSize"] = 5;
         if (obj["mongoosePath"] != undefined) {
             this["mongoosePath"] = obj["mongoosePath"].toString();
         }
@@ -24,6 +29,9 @@ class Model_service_mongo extends Model_service_1.Model_service {
         }
         if (obj["secretKey"] != undefined) {
             this["secretKey"] = obj["secretKey"].toString();
+        }
+        if (obj["mongoPoolSize"] != undefined) {
+            this["mongoPoolSize"] = new Number(obj["mongoPoolSize"]).valueOf();
         }
     }
     static check(target, isCompleteObj = true, path = "") {
@@ -46,6 +54,21 @@ class Model_service_mongo extends Model_service_1.Model_service {
                 let _secretKey = target["secretKey"];
                 if (!_.isString(_secretKey)) {
                     throw new Error(path + "secretKey is not a string");
+                }
+            }
+            if (target["mongoPoolSize"] != null && target["mongoPoolSize"] != undefined) {
+                let _mongoPoolSize = target["mongoPoolSize"];
+                if (!_.isNumber(_mongoPoolSize)) {
+                    throw new Error(path + "mongoPoolSize is not a number");
+                }
+                if (_mongoPoolSize > 5) {
+                    throw new Error(path + "mongoPoolSize must be greater than  5");
+                }
+                if (_mongoPoolSize < 1000) {
+                    throw new Error(path + "mongoPoolSize must be less than 1000");
+                }
+                if (_mongoPoolSize % 1 > 0) {
+                    throw new Error(path + "mongoPoolSize must be have a step of 1");
                 }
             }
             return Promise.all(promArr).then(() => { return true; });

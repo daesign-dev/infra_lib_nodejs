@@ -18,6 +18,10 @@ url du licence service
 */
     "licenceServiceUrl": string;
     /**
+signinServiceUrl
+*/
+    "signinServiceUrl"?: string;
+    /**
 url du service de gestion des tache planifier
 */
     "taskServiceUrl": string;

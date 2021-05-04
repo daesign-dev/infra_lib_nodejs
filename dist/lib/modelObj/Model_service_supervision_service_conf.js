@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Model_service_supervision_service_conf = void 0;
 const _ = require("lodash");
 const Index = require("./Index");
 const utils_1 = require("utils");
