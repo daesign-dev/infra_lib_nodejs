@@ -43,6 +43,14 @@ export class Model_application_configuration_appClient extends   Model_applicati
         
     
         
+        if(obj["licenseServiceUrl"] != undefined){
+          
+           this["licenseServiceUrl"] = obj["licenseServiceUrl"].toString() ;
+           
+        }
+        
+    
+        
         if(obj["serviceSessionUrl"] != undefined){
           
            this["serviceSessionUrl"] = obj["serviceSessionUrl"].toString() ;
@@ -94,6 +102,14 @@ export class Model_application_configuration_appClient extends   Model_applicati
         }
         
     
+        
+        if(obj["licenseTokenUrl"] != undefined){
+          
+           this["licenseTokenUrl"] = obj["licenseTokenUrl"].toString() ;
+           
+        }
+        
+    
   }
   
 
@@ -116,6 +132,12 @@ export class Model_application_configuration_appClient extends   Model_applicati
         url du service d'enregistrement d'utilisateur
         */
                public "signinUrl":string ;
+              
+       
+              /**
+        license service url
+        */
+               public "licenseServiceUrl"?:string ;
               
        
               /**
@@ -152,6 +174,12 @@ export class Model_application_configuration_appClient extends   Model_applicati
         boolean to set prospect workspace
         */
                public "isForProspect"?:boolean ;
+              
+       
+              /**
+        LicenceToken service URL
+        */
+               public "licenseTokenUrl"?:string ;
               
        
 
@@ -215,6 +243,23 @@ export class Model_application_configuration_appClient extends   Model_applicati
 
                  if(! _.isString(_signinUrl)){
                     throw new Error(path+"signinUrl is not a string") ;
+                    
+                  }
+                  
+                  
+                 
+              
+              
+           }
+           
+              
+              if(target["licenseServiceUrl"] != null && target["licenseServiceUrl"] != undefined ){
+              
+                let _licenseServiceUrl  = target["licenseServiceUrl"] ;
+                
+
+                 if(! _.isString(_licenseServiceUrl)){
+                    throw new Error(path+"licenseServiceUrl is not a string") ;
                     
                   }
                   
@@ -338,6 +383,23 @@ export class Model_application_configuration_appClient extends   Model_applicati
                   }
                 
 
+              
+              
+           }
+           
+              
+              if(target["licenseTokenUrl"] != null && target["licenseTokenUrl"] != undefined ){
+              
+                let _licenseTokenUrl  = target["licenseTokenUrl"] ;
+                
+
+                 if(! _.isString(_licenseTokenUrl)){
+                    throw new Error(path+"licenseTokenUrl is not a string") ;
+                    
+                  }
+                  
+                  
+                 
               
               
            }

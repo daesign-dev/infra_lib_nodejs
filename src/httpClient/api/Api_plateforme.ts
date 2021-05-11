@@ -65,14 +65,6 @@ export class api_collection_plateform {
 
 		 
 		 
-		this.application_configuration_appClient= new HttpServiceBase<Interfaces.Iapplication_configuration_appClient>({url:conf.url + "collection/application_configuration_appClient/" , secure:conf.secure})  ;
-
-		 
-		 
-		this.application_configuration_savvy_author= new HttpServiceBase<Interfaces.Iapplication_configuration_savvy_author>({url:conf.url + "collection/application_configuration_savvy_author/" , secure:conf.secure})  ;
-
-		 
-		 
 		this.application_configuration_appAdminDaesign= new HttpServiceBase<Interfaces.Iapplication_configuration_appAdminDaesign>({url:conf.url + "collection/application_configuration_appAdminDaesign/" , secure:conf.secure})  ;
 
 		 
@@ -82,6 +74,22 @@ export class api_collection_plateform {
 		 
 		 
 		this.application_configuration_generic= new HttpServiceBase<Interfaces.Iapplication_configuration_generic>({url:conf.url + "collection/application_configuration_generic/" , secure:conf.secure})  ;
+
+		 
+		 
+		this.application_configuration_adaptivmath_teacher= new HttpServiceBase<Interfaces.Iapplication_configuration_adaptivmath_teacher>({url:conf.url + "collection/application_configuration_adaptivmath_teacher/" , secure:conf.secure})  ;
+
+		 
+		 
+		this.application_configuration_adaptivmath_student= new HttpServiceBase<Interfaces.Iapplication_configuration_adaptivmath_student>({url:conf.url + "collection/application_configuration_adaptivmath_student/" , secure:conf.secure})  ;
+
+		 
+		 
+		this.application_configuration_savvy_author= new HttpServiceBase<Interfaces.Iapplication_configuration_savvy_author>({url:conf.url + "collection/application_configuration_savvy_author/" , secure:conf.secure})  ;
+
+		 
+		 
+		this.application_configuration_appClient= new HttpServiceBase<Interfaces.Iapplication_configuration_appClient>({url:conf.url + "collection/application_configuration_appClient/" , secure:conf.secure})  ;
 
 		 
 	
@@ -107,10 +115,6 @@ export class api_collection_plateform {
 
 		 
 		 
-		this.service_mongo= new HttpServiceBase<Interfaces.Iservice_mongo>({url:conf.url + "collection/service_mongo/" , secure:conf.secure})  ;
-
-		 
-		 
 		this.service_socketIo= new HttpServiceBase<Interfaces.Iservice_socketIo>({url:conf.url + "collection/service_socketIo/" , secure:conf.secure})  ;
 
 		 
@@ -131,15 +135,7 @@ export class api_collection_plateform {
 
 		 
 		 
-		this.service_signin= new HttpServiceBase<Interfaces.Iservice_signin>({url:conf.url + "collection/service_signin/" , secure:conf.secure})  ;
-
-		 
-		 
 		this.service_sendGrid= new HttpServiceBase<Interfaces.Iservice_sendGrid>({url:conf.url + "collection/service_sendGrid/" , secure:conf.secure})  ;
-
-		 
-		 
-		this.service_licence_token= new HttpServiceBase<Interfaces.Iservice_licence_token>({url:conf.url + "collection/service_licence_token/" , secure:conf.secure})  ;
 
 		 
 		 
@@ -175,23 +171,11 @@ export class api_collection_plateform {
 
 		 
 		 
-		this.Service_scorm_gateway= new HttpServiceBase<Interfaces.IService_scorm_gateway>({url:conf.url + "collection/Service_scorm_gateway/" , secure:conf.secure})  ;
-
-		 
-		 
 		this.service_infra_admin= new HttpServiceBase<Interfaces.Iservice_infra_admin>({url:conf.url + "collection/service_infra_admin/" , secure:conf.secure})  ;
 
 		 
 		 
-		this.service_nathan_gateway= new HttpServiceBase<Interfaces.Iservice_nathan_gateway>({url:conf.url + "collection/service_nathan_gateway/" , secure:conf.secure})  ;
-
-		 
-		 
 		this.service_mailtoinfra2= new HttpServiceBase<Interfaces.Iservice_mailtoinfra2>({url:conf.url + "collection/service_mailtoinfra2/" , secure:conf.secure})  ;
-
-		 
-		 
-		this.service_trainingCoursesService= new HttpServiceBase<Interfaces.Iservice_trainingCoursesService>({url:conf.url + "collection/service_trainingCoursesService/" , secure:conf.secure})  ;
 
 		 
 		 
@@ -208,6 +192,46 @@ export class api_collection_plateform {
 		 
 		 
 		this.service_cloud_storage= new HttpServiceBase<Interfaces.Iservice_cloud_storage>({url:conf.url + "collection/service_cloud_storage/" , secure:conf.secure})  ;
+
+		 
+		 
+		this.service_licence_token= new HttpServiceBase<Interfaces.Iservice_licence_token>({url:conf.url + "collection/service_licence_token/" , secure:conf.secure})  ;
+
+		 
+		 
+		this.service_mongo= new HttpServiceBase<Interfaces.Iservice_mongo>({url:conf.url + "collection/service_mongo/" , secure:conf.secure})  ;
+
+		 
+		 
+		this.service_gateway= new HttpServiceBase<Interfaces.Iservice_gateway>({url:conf.url + "collection/service_gateway/" , secure:conf.secure})  ;
+
+		 
+		 
+		this.service_amclustering= new HttpServiceBase<Interfaces.Iservice_amclustering>({url:conf.url + "collection/service_amclustering/" , secure:conf.secure})  ;
+
+		 
+		 
+		this.service_nathan_gateway= new HttpServiceBase<Interfaces.Iservice_nathan_gateway>({url:conf.url + "collection/service_nathan_gateway/" , secure:conf.secure})  ;
+
+		 
+		 
+		this.Service_scorm_gateway= new HttpServiceBase<Interfaces.IService_scorm_gateway>({url:conf.url + "collection/Service_scorm_gateway/" , secure:conf.secure})  ;
+
+		 
+		 
+		this.authentication= new HttpServiceBase<Interfaces.Iauthentication>({url:conf.url + "collection/authentication/" , secure:conf.secure})  ;
+
+		 
+		 
+		this.signin_service= new HttpServiceBase<Interfaces.Isignin_service>({url:conf.url + "collection/signin_service/" , secure:conf.secure})  ;
+
+		 
+		 
+		this.service_signin= new HttpServiceBase<Interfaces.Iservice_signin>({url:conf.url + "collection/service_signin/" , secure:conf.secure})  ;
+
+		 
+		 
+		this.service_trainingCoursesService= new HttpServiceBase<Interfaces.Iservice_trainingCoursesService>({url:conf.url + "collection/service_trainingCoursesService/" , secure:conf.secure})  ;
 
 		 
 	
@@ -251,20 +275,6 @@ export class api_collection_plateform {
 	
 
 		this.multilingual_text= new HttpServiceBase<Interfaces.Imultilingual_text>( {url:conf.url + "collection/multilingual_text/" , secure:conf.secure} )  ;
-
-		
-	
-
-		this.licence= new HttpServiceBase<Interfaces.Ilicence>( {url:conf.url + "collection/licence/" , secure:conf.secure} )  ;
-
-		
-		 
-		this.licence_temporelle= new HttpServiceBase<Interfaces.Ilicence_temporelle>({url:conf.url + "collection/licence_temporelle/" , secure:conf.secure})  ;
-
-		 
-	
-
-		this.end_client= new HttpServiceBase<Interfaces.Iend_client>( {url:conf.url + "collection/end_client/" , secure:conf.secure} )  ;
 
 		
 	
@@ -344,6 +354,24 @@ export class api_collection_plateform {
 		this.deploy_template_licence_store_application= new HttpServiceBase<Interfaces.Ideploy_template_licence_store_application>({url:conf.url + "collection/deploy_template_licence_store_application/" , secure:conf.secure})  ;
 
 		 
+		 
+		this.deploy_template_training_course_savvy= new HttpServiceBase<Interfaces.Ideploy_template_training_course_savvy>({url:conf.url + "collection/deploy_template_training_course_savvy/" , secure:conf.secure})  ;
+
+		 
+	
+
+		this.licence= new HttpServiceBase<Interfaces.Ilicence>( {url:conf.url + "collection/licence/" , secure:conf.secure} )  ;
+
+		
+		 
+		this.licence_temporelle= new HttpServiceBase<Interfaces.Ilicence_temporelle>({url:conf.url + "collection/licence_temporelle/" , secure:conf.secure})  ;
+
+		 
+	
+
+		this.end_client= new HttpServiceBase<Interfaces.Iend_client>( {url:conf.url + "collection/end_client/" , secure:conf.secure} )  ;
+
+		
 	
 	}
 	protected url:string ;
@@ -415,15 +443,19 @@ export class api_collection_plateform {
 		 
 		 	Iapplication_configuration_savvy_learner      configuration de l'application Savvy Learner
 		 
-		 	Iapplication_configuration_appClient      c'est la configuration d'une application Client
-		 
-		 	Iapplication_configuration_savvy_author      Configuration pour l'application Savvy - Author
-		 
 		 	Iapplication_configuration_appAdminDaesign      Application configuration for Daesign admin that have specific inputs
 		 
 		 	Iapplication_configuration_generic_author      conf for generic authos app
 		 
 		 	Iapplication_configuration_generic      generic conf
+		 
+		 	Iapplication_configuration_adaptivmath_teacher      generic conf
+		 
+		 	Iapplication_configuration_adaptivmath_student      generic conf
+		 
+		 	Iapplication_configuration_savvy_author      Configuration pour l'application Savvy - Author
+		 
+		 	Iapplication_configuration_appClient      c'est la configuration d'une application Client
 		 
 		 
 		*/
@@ -495,22 +527,6 @@ export class api_collection_plateform {
 
 		 
 		 /**
-		 service d'accès a la sous-collection :application_configuration_appClient
-		 desc: c'est la configuration d'une application Client
-		 info: vous ne pouvez voir que ce type d'objet
-		*/
-		public application_configuration_appClient:HttpServiceBase<Interfaces.Iapplication_configuration_appClient> ;
-
-		 
-		 /**
-		 service d'accès a la sous-collection :application_configuration_savvy_author
-		 desc: Configuration pour l'application Savvy - Author
-		 info: vous ne pouvez voir que ce type d'objet
-		*/
-		public application_configuration_savvy_author:HttpServiceBase<Interfaces.Iapplication_configuration_savvy_author> ;
-
-		 
-		 /**
 		 service d'accès a la sous-collection :application_configuration_appAdminDaesign
 		 desc: Application configuration for Daesign admin that have specific inputs
 		 info: vous ne pouvez voir que ce type d'objet
@@ -532,6 +548,38 @@ export class api_collection_plateform {
 		 info: vous ne pouvez voir que ce type d'objet
 		*/
 		public application_configuration_generic:HttpServiceBase<Interfaces.Iapplication_configuration_generic> ;
+
+		 
+		 /**
+		 service d'accès a la sous-collection :application_configuration_adaptivmath_teacher
+		 desc: generic conf
+		 info: vous ne pouvez voir que ce type d'objet
+		*/
+		public application_configuration_adaptivmath_teacher:HttpServiceBase<Interfaces.Iapplication_configuration_adaptivmath_teacher> ;
+
+		 
+		 /**
+		 service d'accès a la sous-collection :application_configuration_adaptivmath_student
+		 desc: generic conf
+		 info: vous ne pouvez voir que ce type d'objet
+		*/
+		public application_configuration_adaptivmath_student:HttpServiceBase<Interfaces.Iapplication_configuration_adaptivmath_student> ;
+
+		 
+		 /**
+		 service d'accès a la sous-collection :application_configuration_savvy_author
+		 desc: Configuration pour l'application Savvy - Author
+		 info: vous ne pouvez voir que ce type d'objet
+		*/
+		public application_configuration_savvy_author:HttpServiceBase<Interfaces.Iapplication_configuration_savvy_author> ;
+
+		 
+		 /**
+		 service d'accès a la sous-collection :application_configuration_appClient
+		 desc: c'est la configuration d'une application Client
+		 info: vous ne pouvez voir que ce type d'objet
+		*/
+		public application_configuration_appClient:HttpServiceBase<Interfaces.Iapplication_configuration_appClient> ;
 
 		 
 	
@@ -559,8 +607,6 @@ export class api_collection_plateform {
 		 
 		 	Iservice_mailtoinfra      service qui permet de configurer l'authentification a partir d'un mail
 		 
-		 	Iservice_mongo      configure un service mongo
-		 
 		 	Iservice_socketIo      communication temps réelle multi format
 		 
 		 	Iservice_supervision      service_supervision
@@ -571,11 +617,7 @@ export class api_collection_plateform {
 		 
 		 	Iservice_like      service permettant de liker un objet de la base
 		 
-		 	Iservice_signin      service d'enregistrement
-		 
 		 	Iservice_sendGrid      permet d'envoyer des mail via l'api send grid v3
-		 
-		 	Iservice_licence_token      c'est un service en charge de valider les licences et retourner les configurations des applications web
 		 
 		 	Iservice_dumy_fso      simple remote file system a n utiliser que pour des test
 		 
@@ -593,15 +635,9 @@ export class api_collection_plateform {
 		 
 		 	Iservice_planned_tasks      Service de Taches planifiées
 		 
-		 	IService_scorm_gateway      service passerelle d'un package scorm vers l'interne
-		 
 		 	Iservice_infra_admin      administration de l'infra
 		 
-		 	Iservice_nathan_gateway      Service servant de passerelle entre Nathan et notre infra
-		 
 		 	Iservice_mailtoinfra2      retrouve la configuration de connection de l'app savy a partir du mail de l'utilisateur
-		 
-		 	Iservice_trainingCoursesService      service de gestion des parcourts de formation
 		 
 		 	Iservice_deploy      Service qu'il est bien sympathique pour déployer des applications de qualité
 		 
@@ -610,6 +646,26 @@ export class api_collection_plateform {
 		 	IServiceTracking      Service to acces tracking for application
 		 
 		 	Iservice_cloud_storage      Service used to upload files to AWS S3
+		 
+		 	Iservice_licence_token      c'est un service en charge de valider les licences et retourner les configurations des applications web
+		 
+		 	Iservice_mongo      configure un service mongo
+		 
+		 	Iservice_gateway      service passerelle vers l'interne
+		 
+		 	Iservice_amclustering      service passerelle pour le clustering
+		 
+		 	Iservice_nathan_gateway      Service servant de passerelle entre Nathan et notre infra
+		 
+		 	IService_scorm_gateway      service passerelle d'un package scorm vers l'interne
+		 
+		 	Iauthentication      service d'enregistrement
+		 
+		 	Isignin_service      service d'enregistrement
+		 
+		 	Iservice_signin      service d'enregistrement
+		 
+		 	Iservice_trainingCoursesService      service de gestion des parcourts de formation
 		 
 		 
 		*/
@@ -638,14 +694,6 @@ export class api_collection_plateform {
 		 info: vous ne pouvez voir que ce type d'objet
 		*/
 		public service_mailtoinfra:HttpServiceBase<Interfaces.Iservice_mailtoinfra> ;
-
-		 
-		 /**
-		 service d'accès a la sous-collection :service_mongo
-		 desc: configure un service mongo
-		 info: vous ne pouvez voir que ce type d'objet
-		*/
-		public service_mongo:HttpServiceBase<Interfaces.Iservice_mongo> ;
 
 		 
 		 /**
@@ -689,27 +737,11 @@ export class api_collection_plateform {
 
 		 
 		 /**
-		 service d'accès a la sous-collection :service_signin
-		 desc: service d'enregistrement
-		 info: vous ne pouvez voir que ce type d'objet
-		*/
-		public service_signin:HttpServiceBase<Interfaces.Iservice_signin> ;
-
-		 
-		 /**
 		 service d'accès a la sous-collection :service_sendGrid
 		 desc: permet d'envoyer des mail via l'api send grid v3
 		 info: vous ne pouvez voir que ce type d'objet
 		*/
 		public service_sendGrid:HttpServiceBase<Interfaces.Iservice_sendGrid> ;
-
-		 
-		 /**
-		 service d'accès a la sous-collection :service_licence_token
-		 desc: c'est un service en charge de valider les licences et retourner les configurations des applications web
-		 info: vous ne pouvez voir que ce type d'objet
-		*/
-		public service_licence_token:HttpServiceBase<Interfaces.Iservice_licence_token> ;
 
 		 
 		 /**
@@ -777,14 +809,6 @@ export class api_collection_plateform {
 
 		 
 		 /**
-		 service d'accès a la sous-collection :Service_scorm_gateway
-		 desc: service passerelle d'un package scorm vers l'interne
-		 info: vous ne pouvez voir que ce type d'objet
-		*/
-		public Service_scorm_gateway:HttpServiceBase<Interfaces.IService_scorm_gateway> ;
-
-		 
-		 /**
 		 service d'accès a la sous-collection :service_infra_admin
 		 desc: administration de l'infra
 		 info: vous ne pouvez voir que ce type d'objet
@@ -793,27 +817,11 @@ export class api_collection_plateform {
 
 		 
 		 /**
-		 service d'accès a la sous-collection :service_nathan_gateway
-		 desc: Service servant de passerelle entre Nathan et notre infra
-		 info: vous ne pouvez voir que ce type d'objet
-		*/
-		public service_nathan_gateway:HttpServiceBase<Interfaces.Iservice_nathan_gateway> ;
-
-		 
-		 /**
 		 service d'accès a la sous-collection :service_mailtoinfra2
 		 desc: retrouve la configuration de connection de l'app savy a partir du mail de l'utilisateur
 		 info: vous ne pouvez voir que ce type d'objet
 		*/
 		public service_mailtoinfra2:HttpServiceBase<Interfaces.Iservice_mailtoinfra2> ;
-
-		 
-		 /**
-		 service d'accès a la sous-collection :service_trainingCoursesService
-		 desc: service de gestion des parcourts de formation
-		 info: vous ne pouvez voir que ce type d'objet
-		*/
-		public service_trainingCoursesService:HttpServiceBase<Interfaces.Iservice_trainingCoursesService> ;
 
 		 
 		 /**
@@ -846,6 +854,86 @@ export class api_collection_plateform {
 		 info: vous ne pouvez voir que ce type d'objet
 		*/
 		public service_cloud_storage:HttpServiceBase<Interfaces.Iservice_cloud_storage> ;
+
+		 
+		 /**
+		 service d'accès a la sous-collection :service_licence_token
+		 desc: c'est un service en charge de valider les licences et retourner les configurations des applications web
+		 info: vous ne pouvez voir que ce type d'objet
+		*/
+		public service_licence_token:HttpServiceBase<Interfaces.Iservice_licence_token> ;
+
+		 
+		 /**
+		 service d'accès a la sous-collection :service_mongo
+		 desc: configure un service mongo
+		 info: vous ne pouvez voir que ce type d'objet
+		*/
+		public service_mongo:HttpServiceBase<Interfaces.Iservice_mongo> ;
+
+		 
+		 /**
+		 service d'accès a la sous-collection :service_gateway
+		 desc: service passerelle vers l'interne
+		 info: vous ne pouvez voir que ce type d'objet
+		*/
+		public service_gateway:HttpServiceBase<Interfaces.Iservice_gateway> ;
+
+		 
+		 /**
+		 service d'accès a la sous-collection :service_amclustering
+		 desc: service passerelle pour le clustering
+		 info: vous ne pouvez voir que ce type d'objet
+		*/
+		public service_amclustering:HttpServiceBase<Interfaces.Iservice_amclustering> ;
+
+		 
+		 /**
+		 service d'accès a la sous-collection :service_nathan_gateway
+		 desc: Service servant de passerelle entre Nathan et notre infra
+		 info: vous ne pouvez voir que ce type d'objet
+		*/
+		public service_nathan_gateway:HttpServiceBase<Interfaces.Iservice_nathan_gateway> ;
+
+		 
+		 /**
+		 service d'accès a la sous-collection :Service_scorm_gateway
+		 desc: service passerelle d'un package scorm vers l'interne
+		 info: vous ne pouvez voir que ce type d'objet
+		*/
+		public Service_scorm_gateway:HttpServiceBase<Interfaces.IService_scorm_gateway> ;
+
+		 
+		 /**
+		 service d'accès a la sous-collection :authentication
+		 desc: service d'enregistrement
+		 info: vous ne pouvez voir que ce type d'objet
+		*/
+		public authentication:HttpServiceBase<Interfaces.Iauthentication> ;
+
+		 
+		 /**
+		 service d'accès a la sous-collection :signin_service
+		 desc: service d'enregistrement
+		 info: vous ne pouvez voir que ce type d'objet
+		*/
+		public signin_service:HttpServiceBase<Interfaces.Isignin_service> ;
+
+		 
+		 /**
+		 service d'accès a la sous-collection :service_signin
+		 desc: service d'enregistrement
+		 info: vous ne pouvez voir que ce type d'objet
+		*/
+		public service_signin:HttpServiceBase<Interfaces.Iservice_signin> ;
+
+		 
+		 /**
+		 service d'accès a la sous-collection :service_trainingCoursesService
+		 desc: service de gestion des parcourts de formation
+		 info: vous ne pouvez voir que ce type d'objet
+		*/
+		public service_trainingCoursesService:HttpServiceBase<Interfaces.Iservice_trainingCoursesService> ;
 
 		 
 	
@@ -947,40 +1035,6 @@ export class api_collection_plateform {
 		 
 		*/
 		public multilingual_text:HttpServiceBase<Interfaces.Imultilingual_text> ;
-
-		
-	
-		/**
-		 service d'accès à la collection :licence
-		 desc: représente la licence d'un utilisateur pour un service (ou application) distribué par un end_client
-		 
-		 info: vous pouvez voir tous les objets de cette collection y compris les enfants
-		 liste des interfaces héritées possibles:
-		 
-		 	Ilicence_temporelle      c'est une licence qui dure un certain temps
-		 
-		 
-		*/
-		public licence:HttpServiceBase<Interfaces.Ilicence> ;
-
-		
-		 /**
-		 service d'accès a la sous-collection :licence_temporelle
-		 desc: c'est une licence qui dure un certain temps
-		 info: vous ne pouvez voir que ce type d'objet
-		*/
-		public licence_temporelle:HttpServiceBase<Interfaces.Ilicence_temporelle> ;
-
-		 
-	
-		/**
-		 service d'accès à la collection :end_client
-		 desc: c'est le client que l'on facture
-		 
-
-		 
-		*/
-		public end_client:HttpServiceBase<Interfaces.Iend_client> ;
 
 		
 	
@@ -1121,6 +1175,8 @@ export class api_collection_plateform {
 		 
 		 	Ideploy_template_licence_store_application      Template used by deploy service - application licence store specific
 		 
+		 	Ideploy_template_training_course_savvy      Deploy template for SAVVY training courses
+		 
 		 
 		*/
 		public deploy_template:HttpServiceBase<Interfaces.Ideploy_template> ;
@@ -1166,106 +1222,52 @@ export class api_collection_plateform {
 		public deploy_template_licence_store_application:HttpServiceBase<Interfaces.Ideploy_template_licence_store_application> ;
 
 		 
+		 /**
+		 service d'accès a la sous-collection :deploy_template_training_course_savvy
+		 desc: Deploy template for SAVVY training courses
+		 info: vous ne pouvez voir que ce type d'objet
+		*/
+		public deploy_template_training_course_savvy:HttpServiceBase<Interfaces.Ideploy_template_training_course_savvy> ;
+
+		 
+	
+		/**
+		 service d'accès à la collection :licence
+		 desc: représente la licence d'un utilisateur pour un service (ou application) distribué par un end_client
+		 
+		 info: vous pouvez voir tous les objets de cette collection y compris les enfants
+		 liste des interfaces héritées possibles:
+		 
+		 	Ilicence_temporelle      c'est une licence qui dure un certain temps
+		 
+		 
+		*/
+		public licence:HttpServiceBase<Interfaces.Ilicence> ;
+
+		
+		 /**
+		 service d'accès a la sous-collection :licence_temporelle
+		 desc: c'est une licence qui dure un certain temps
+		 info: vous ne pouvez voir que ce type d'objet
+		*/
+		public licence_temporelle:HttpServiceBase<Interfaces.Ilicence_temporelle> ;
+
+		 
+	
+		/**
+		 service d'accès à la collection :end_client
+		 desc: c'est le client que l'on facture
+		 
+
+		 
+		*/
+		public end_client:HttpServiceBase<Interfaces.Iend_client> ;
+
+		
 	
 	
 }
 
-
-/**
-	accès à la vue :UserLicence 
-	retourne la liste des licences d'un utilisateur pour le client courrant
-*/
-export class api_view_UserLicence extends HttpAbstractService {
-/**
-	accès à la vue :UserLicence 
-	
-*/	
-	constructor( public conf:any ) {
-			super( conf )
-			this.url = conf.url ;
-		}
-
-	protected url:string ;
-
-	protected  globalCtxInt:CtxInterpretor = new CtxInterpretor(process.env) ;
-
-	/**
-	génére une requette sur la vue UserLicence
-	
-	*/
-	public get( userId:string ,  query: string = '*', headers: any = {}   ): Promise<IHttpResult<Interfaces.Ilicence>> {
-
-		return this.baseGet<Interfaces.Ilicence>(this.url + userId.toString() + "/" +  query , headers)
-	}
-
-	/** middleware
-	génére une requette sur la vue UserLicence
-	
-	*/
-	public  getMiddleware = (config:MiddleWareConfig) =>{   
-	    config = this.globalCtxInt.updateEnv(config , true) ;
-	    return (req , res , next) =>{
-	      var localCtxInt:CtxInterpretor = new CtxInterpretor(req.ctx)
-	      localCtxInt.startPatern = "$ctx." ;
-	      var localConfig = localCtxInt.updateEnv(config , true) ;
-	      this.get( localConfig.params.userId ,  localConfig.params.query, localConfig.headers)
-	      .then((data)=>{
-	        req.ctx[localConfig.output] = data ;
-	        next() ;
-	      }).catch((err)=>{
-	        next(err)
-	      })
-	    }
-	  }
-	}
-
-/**
-	accès à la vue :Client 
-	retourne la donnée du client connecté
-*/
-export class api_view_Client extends HttpAbstractService {
-/**
-	accès à la vue :Client 
-	
-*/	
-	constructor( public conf:any ) {
-			super( conf )
-			this.url = conf.url ;
-		}
-
-	protected url:string ;
-
-	protected  globalCtxInt:CtxInterpretor = new CtxInterpretor(process.env) ;
-
-	/**
-	génére une requette sur la vue Client
-	
-	*/
-	public get(  query: string = '*', headers: any = {}   ): Promise<IHttpResult<Interfaces.Iend_client>> {
-
-		return this.baseGet<Interfaces.Iend_client>(this.url +  query , headers)
-	}
-
-	/** middleware
-	génére une requette sur la vue Client
-	
-	*/
-	public  getMiddleware = (config:MiddleWareConfig) =>{   
-	    config = this.globalCtxInt.updateEnv(config , true) ;
-	    return (req , res , next) =>{
-	      var localCtxInt:CtxInterpretor = new CtxInterpretor(req.ctx)
-	      localCtxInt.startPatern = "$ctx." ;
-	      var localConfig = localCtxInt.updateEnv(config , true) ;
-	      this.get(  localConfig.params.query, localConfig.headers)
-	      .then((data)=>{
-	        req.ctx[localConfig.output] = data ;
-	        next() ;
-	      }).catch((err)=>{
-	        next(err)
-	      })
-	    }
-	  }
-	}
 
 /**
 	accès à la vue :CloudStorageFolderList 
@@ -1411,34 +1413,270 @@ export class api_view_CloudStorageFolderSearch extends HttpAbstractService {
 	  }
 	}
 
+/**
+	accès à la vue :Client 
+	retourne la donnée du client connecté
+*/
+export class api_view_Client extends HttpAbstractService {
+/**
+	accès à la vue :Client 
+	
+*/	
+	constructor( public conf:any ) {
+			super( conf )
+			this.url = conf.url ;
+		}
+
+	protected url:string ;
+
+	protected  globalCtxInt:CtxInterpretor = new CtxInterpretor(process.env) ;
+
+	/**
+	génére une requette sur la vue Client
+	
+	*/
+	public get(  query: string = '*', headers: any = {}   ): Promise<IHttpResult<Interfaces.Iend_client>> {
+
+		return this.baseGet<Interfaces.Iend_client>(this.url +  query , headers)
+	}
+
+	/** middleware
+	génére une requette sur la vue Client
+	
+	*/
+	public  getMiddleware = (config:MiddleWareConfig) =>{   
+	    config = this.globalCtxInt.updateEnv(config , true) ;
+	    return (req , res , next) =>{
+	      var localCtxInt:CtxInterpretor = new CtxInterpretor(req.ctx)
+	      localCtxInt.startPatern = "$ctx." ;
+	      var localConfig = localCtxInt.updateEnv(config , true) ;
+	      this.get(  localConfig.params.query, localConfig.headers)
+	      .then((data)=>{
+	        req.ctx[localConfig.output] = data ;
+	        next() ;
+	      }).catch((err)=>{
+	        next(err)
+	      })
+	    }
+	  }
+	}
+
+/**
+	accès à la vue :licensesUser 
+	retourne la liste des licences d'un utilisateur pour le client courrant
+*/
+export class api_view_licensesUser extends HttpAbstractService {
+/**
+	accès à la vue :licensesUser 
+	
+*/	
+	constructor( public conf:any ) {
+			super( conf )
+			this.url = conf.url ;
+		}
+
+	protected url:string ;
+
+	protected  globalCtxInt:CtxInterpretor = new CtxInterpretor(process.env) ;
+
+	/**
+	génére une requette sur la vue licensesUser
+	
+	*/
+	public get( userId:string ,  query: string = '*', headers: any = {}   ): Promise<IHttpResult<Interfaces.Ilicence>> {
+
+		return this.baseGet<Interfaces.Ilicence>(this.url + userId.toString() + "/" +  query , headers)
+	}
+
+	/** middleware
+	génére une requette sur la vue licensesUser
+	
+	*/
+	public  getMiddleware = (config:MiddleWareConfig) =>{   
+	    config = this.globalCtxInt.updateEnv(config , true) ;
+	    return (req , res , next) =>{
+	      var localCtxInt:CtxInterpretor = new CtxInterpretor(req.ctx)
+	      localCtxInt.startPatern = "$ctx." ;
+	      var localConfig = localCtxInt.updateEnv(config , true) ;
+	      this.get( localConfig.params.userId ,  localConfig.params.query, localConfig.headers)
+	      .then((data)=>{
+	        req.ctx[localConfig.output] = data ;
+	        next() ;
+	      }).catch((err)=>{
+	        next(err)
+	      })
+	    }
+	  }
+	}
+
+/**
+	accès à la vue :usersLicense 
+	retourne la liste des utilisateurs pour le client courant et la licence donnée
+*/
+export class api_view_usersLicense extends HttpAbstractService {
+/**
+	accès à la vue :usersLicense 
+	
+*/	
+	constructor( public conf:any ) {
+			super( conf )
+			this.url = conf.url ;
+		}
+
+	protected url:string ;
+
+	protected  globalCtxInt:CtxInterpretor = new CtxInterpretor(process.env) ;
+
+	/**
+	génére une requette sur la vue usersLicense
+	
+	*/
+	public get( licenceStoreRef:string ,  query: string = '*', headers: any = {}   ): Promise<IHttpResult<Interfaces.Ilicence>> {
+
+		return this.baseGet<Interfaces.Ilicence>(this.url + licenceStoreRef.toString() + "/" +  query , headers)
+	}
+
+	/** middleware
+	génére une requette sur la vue usersLicense
+	
+	*/
+	public  getMiddleware = (config:MiddleWareConfig) =>{   
+	    config = this.globalCtxInt.updateEnv(config , true) ;
+	    return (req , res , next) =>{
+	      var localCtxInt:CtxInterpretor = new CtxInterpretor(req.ctx)
+	      localCtxInt.startPatern = "$ctx." ;
+	      var localConfig = localCtxInt.updateEnv(config , true) ;
+	      this.get( localConfig.params.licenceStoreRef ,  localConfig.params.query, localConfig.headers)
+	      .then((data)=>{
+	        req.ctx[localConfig.output] = data ;
+	        next() ;
+	      }).catch((err)=>{
+	        next(err)
+	      })
+	    }
+	  }
+	}
+
+/**
+	accès à la vue :clientParent 
+	Get the client parent
+*/
+export class api_view_clientParent extends HttpAbstractService {
+/**
+	accès à la vue :clientParent 
+	
+*/	
+	constructor( public conf:any ) {
+			super( conf )
+			this.url = conf.url ;
+		}
+
+	protected url:string ;
+
+	protected  globalCtxInt:CtxInterpretor = new CtxInterpretor(process.env) ;
+
+	/**
+	génére une requette sur la vue clientParent
+	
+	*/
+	public get(  query: string = '*', headers: any = {}   ): Promise<IHttpResult<Interfaces.Iend_client>> {
+
+		return this.baseGet<Interfaces.Iend_client>(this.url +  query , headers)
+	}
+
+	/** middleware
+	génére une requette sur la vue clientParent
+	
+	*/
+	public  getMiddleware = (config:MiddleWareConfig) =>{   
+	    config = this.globalCtxInt.updateEnv(config , true) ;
+	    return (req , res , next) =>{
+	      var localCtxInt:CtxInterpretor = new CtxInterpretor(req.ctx)
+	      localCtxInt.startPatern = "$ctx." ;
+	      var localConfig = localCtxInt.updateEnv(config , true) ;
+	      this.get(  localConfig.params.query, localConfig.headers)
+	      .then((data)=>{
+	        req.ctx[localConfig.output] = data ;
+	        next() ;
+	      }).catch((err)=>{
+	        next(err)
+	      })
+	    }
+	  }
+	}
+
+/**
+	accès à la vue :UserLicence 
+	retourne la liste des licences d'un utilisateur pour le client courrant ( == licensesUser)
+*/
+export class api_view_UserLicence extends HttpAbstractService {
+/**
+	accès à la vue :UserLicence 
+	
+*/	
+	constructor( public conf:any ) {
+			super( conf )
+			this.url = conf.url ;
+		}
+
+	protected url:string ;
+
+	protected  globalCtxInt:CtxInterpretor = new CtxInterpretor(process.env) ;
+
+	/**
+	génére une requette sur la vue UserLicence
+	
+	*/
+	public get( userId:string ,  query: string = '*', headers: any = {}   ): Promise<IHttpResult<Interfaces.Ilicence>> {
+
+		return this.baseGet<Interfaces.Ilicence>(this.url + userId.toString() + "/" +  query , headers)
+	}
+
+	/** middleware
+	génére une requette sur la vue UserLicence
+	
+	*/
+	public  getMiddleware = (config:MiddleWareConfig) =>{   
+	    config = this.globalCtxInt.updateEnv(config , true) ;
+	    return (req , res , next) =>{
+	      var localCtxInt:CtxInterpretor = new CtxInterpretor(req.ctx)
+	      localCtxInt.startPatern = "$ctx." ;
+	      var localConfig = localCtxInt.updateEnv(config , true) ;
+	      this.get( localConfig.params.userId ,  localConfig.params.query, localConfig.headers)
+	      .then((data)=>{
+	        req.ctx[localConfig.output] = data ;
+	        next() ;
+	      }).catch((err)=>{
+	        next(err)
+	      })
+	    }
+	  }
+	}
+
 
 
 export class api_view_plateform {
 
 	constructor( public conf:any ){
 	
-	this.UserLicence = new api_view_UserLicence({url:conf.url + "views/UserLicence/" , secure:conf.secure})  ;
-		
-	this.Client = new api_view_Client({url:conf.url + "views/Client/" , secure:conf.secure})  ;
-		
 	this.CloudStorageFolderList = new api_view_CloudStorageFolderList({url:conf.url + "views/CloudStorageFolderList/" , secure:conf.secure})  ;
 		
 	this.CloudStorageFolderAncestors = new api_view_CloudStorageFolderAncestors({url:conf.url + "views/CloudStorageFolderAncestors/" , secure:conf.secure})  ;
 		
 	this.CloudStorageFolderSearch = new api_view_CloudStorageFolderSearch({url:conf.url + "views/CloudStorageFolderSearch/" , secure:conf.secure})  ;
 		
+	this.Client = new api_view_Client({url:conf.url + "views/Client/" , secure:conf.secure})  ;
+		
+	this.licensesUser = new api_view_licensesUser({url:conf.url + "views/licensesUser/" , secure:conf.secure})  ;
+		
+	this.usersLicense = new api_view_usersLicense({url:conf.url + "views/usersLicense/" , secure:conf.secure})  ;
+		
+	this.clientParent = new api_view_clientParent({url:conf.url + "views/clientParent/" , secure:conf.secure})  ;
+		
+	this.UserLicence = new api_view_UserLicence({url:conf.url + "views/UserLicence/" , secure:conf.secure})  ;
+		
 	}
 
-	
-	/**
-	accès à la vue :UserLicence     retourne la liste des licences d'un utilisateur pour le client courrant
-	*/
-	public UserLicence:api_view_UserLicence ;
-	
-	/**
-	accès à la vue :Client     retourne la donnée du client connecté
-	*/
-	public Client:api_view_Client ;
 	
 	/**
 	accès à la vue :CloudStorageFolderList     View used to get cloudStorageFolder nested folders
@@ -1454,6 +1692,31 @@ export class api_view_plateform {
 	accès à la vue :CloudStorageFolderSearch     View used to filter Folders by tags
 	*/
 	public CloudStorageFolderSearch:api_view_CloudStorageFolderSearch ;
+	
+	/**
+	accès à la vue :Client     retourne la donnée du client connecté
+	*/
+	public Client:api_view_Client ;
+	
+	/**
+	accès à la vue :licensesUser     retourne la liste des licences d'un utilisateur pour le client courrant
+	*/
+	public licensesUser:api_view_licensesUser ;
+	
+	/**
+	accès à la vue :usersLicense     retourne la liste des utilisateurs pour le client courant et la licence donnée
+	*/
+	public usersLicense:api_view_usersLicense ;
+	
+	/**
+	accès à la vue :clientParent     Get the client parent
+	*/
+	public clientParent:api_view_clientParent ;
+	
+	/**
+	accès à la vue :UserLicence     retourne la liste des licences d'un utilisateur pour le client courrant ( == licensesUser)
+	*/
+	public UserLicence:api_view_UserLicence ;
 	
 	
 }

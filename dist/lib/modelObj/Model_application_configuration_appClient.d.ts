@@ -22,6 +22,10 @@ url du service d'enregistrement d'utilisateur
 */
     "signinUrl": string;
     /**
+license service url
+*/
+    "licenseServiceUrl"?: string;
+    /**
 url du service de gestion des sessions
 */
     "serviceSessionUrl": string;
@@ -45,6 +49,10 @@ template des acl
 boolean to set prospect workspace
 */
     "isForProspect"?: boolean;
+    /**
+LicenceToken service URL
+*/
+    "licenseTokenUrl"?: string;
     static check(target: any, isCompleteObj?: boolean, path?: string): Promise<boolean>;
     static create(target: any, path?: string): Promise<Model_application_configuration_appClient>;
 }

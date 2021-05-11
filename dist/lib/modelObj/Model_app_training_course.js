@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Model_app_training_course = void 0;
 const Model_application_1 = require("./Model_application");
 /**
   app_training_course

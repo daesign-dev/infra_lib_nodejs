@@ -73,6 +73,14 @@ export class Model_service_licence_token extends   Model_service   implements In
         }
         
     
+        
+        if(obj["infraBdUrl"] != undefined){
+          
+           this["infraBdUrl"] = obj["infraBdUrl"].toString() ;
+           
+        }
+        
+    
   }
   
 
@@ -113,6 +121,12 @@ export class Model_service_licence_token extends   Model_service   implements In
         url de la collection endClient
         */
                public "end_clientUrl"?:string ;
+              
+       
+              /**
+        Infra db url
+        */
+               public "infraBdUrl"?:string ;
               
        
 
@@ -213,6 +227,23 @@ export class Model_service_licence_token extends   Model_service   implements In
 
                  if(! _.isString(_end_clientUrl)){
                     throw new Error(path+"end_clientUrl is not a string") ;
+                    
+                  }
+                  
+                  
+                 
+              
+              
+           }
+           
+              
+              if(target["infraBdUrl"] != null && target["infraBdUrl"] != undefined ){
+              
+                let _infraBdUrl  = target["infraBdUrl"] ;
+                
+
+                 if(! _.isString(_infraBdUrl)){
+                    throw new Error(path+"infraBdUrl is not a string") ;
                     
                   }
                   

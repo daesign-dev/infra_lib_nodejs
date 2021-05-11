@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Model_daesignMobileApplication = void 0;
 const _ = require("lodash");
 const utils_1 = require("utils");
 /**

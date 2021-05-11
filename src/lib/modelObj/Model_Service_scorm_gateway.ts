@@ -78,6 +78,14 @@ export class Model_Service_scorm_gateway extends   Model_service   implements In
         }
         
     
+        
+        if(obj["infraUrl"] != undefined){
+          
+           this["infraUrl"] = obj["infraUrl"].toString() ;
+           
+        }
+        
+    
   }
   
 
@@ -124,6 +132,12 @@ export class Model_Service_scorm_gateway extends   Model_service   implements In
         apiUrl
         */
                public "apiUrl"?:string ;
+              
+       
+              /**
+        Url infra
+        */
+               public "infraUrl"?:string ;
               
        
 
@@ -246,6 +260,23 @@ export class Model_Service_scorm_gateway extends   Model_service   implements In
 
                  if(! _.isString(_apiUrl)){
                     throw new Error(path+"apiUrl is not a string") ;
+                    
+                  }
+                  
+                  
+                 
+              
+              
+           }
+           
+              
+              if(target["infraUrl"] != null && target["infraUrl"] != undefined ){
+              
+                let _infraUrl  = target["infraUrl"] ;
+                
+
+                 if(! _.isString(_infraUrl)){
+                    throw new Error(path+"infraUrl is not a string") ;
                     
                   }
                   

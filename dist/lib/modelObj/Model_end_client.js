@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Model_end_client = void 0;
 const _ = require("lodash");
 const Index = require("./Index");
 const utils_1 = require("utils");
@@ -51,6 +52,14 @@ class Model_end_client extends utils_1.Base {
                     return new Index["licenceStore"](value);
                 }
             });
+        }
+        if (obj["redirection"] != undefined) {
+            if (obj._class) {
+                this["redirection"] = new Index[obj._class](obj["redirection"]);
+            }
+            else {
+                this["redirection"] = new Index["redirection_map"](obj["redirection"]);
+            }
         }
         if (obj["client_notices"] != undefined && obj["client_notices"] != null && _.isArray(obj["client_notices"])) {
             this["client_notices"] = obj["client_notices"].map((value) => {
@@ -112,6 +121,19 @@ class Model_end_client extends utils_1.Base {
                         }));
                     }
                 });
+            }
+            if (target["redirection"] != null && target["redirection"] != undefined) {
+                let _redirection = target["redirection"];
+                promArr.push(Index["redirection_map"].check(_redirection, isCompleteObj, path + "redirection.")
+                    .catch((err) => {
+                    throw new Error(path + "redirection is not ");
+                }));
+                if (_redirection._class != null && _redirection._class != undefined) {
+                    promArr.push(Index[_redirection._class].check(_redirection, isCompleteObj, path + "redirection.")
+                        .catch((err) => {
+                        throw new Error(path + "redirection is not a " + _redirection._class);
+                    }));
+                }
             }
             if (target["client_notices"] != null && target["client_notices"] != undefined) {
                 target["client_notices"].forEach((_client_notices, index) => {

@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Model_service_trainingCoursesService = void 0;
 const _ = require("lodash");
 const Index = require("./Index");
 const Model_service_1 = require("./Model_service");
@@ -22,6 +23,9 @@ class Model_service_trainingCoursesService extends Model_service_1.Model_service
         }
         if (obj["licenceServiceUrl"] != undefined) {
             this["licenceServiceUrl"] = obj["licenceServiceUrl"].toString();
+        }
+        if (obj["signinServiceUrl"] != undefined) {
+            this["signinServiceUrl"] = obj["signinServiceUrl"].toString();
         }
         if (obj["taskServiceUrl"] != undefined) {
             this["taskServiceUrl"] = obj["taskServiceUrl"].toString();
@@ -64,6 +68,12 @@ class Model_service_trainingCoursesService extends Model_service_1.Model_service
                 let _licenceServiceUrl = target["licenceServiceUrl"];
                 if (!_.isString(_licenceServiceUrl)) {
                     throw new Error(path + "licenceServiceUrl is not a string");
+                }
+            }
+            if (target["signinServiceUrl"] != null && target["signinServiceUrl"] != undefined) {
+                let _signinServiceUrl = target["signinServiceUrl"];
+                if (!_.isString(_signinServiceUrl)) {
+                    throw new Error(path + "signinServiceUrl is not a string");
                 }
             }
             if (isCompleteObj && (target["taskServiceUrl"] == null || target["taskServiceUrl"] == undefined)) {

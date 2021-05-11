@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Model_daesignApplication = void 0;
 const _ = require("lodash");
 const utils_1 = require("utils");
 /**
@@ -43,9 +44,9 @@ class Model_daesignApplication extends utils_1.Base {
                 if (!_.isString(_name)) {
                     throw new Error(path + "name is not a string");
                 }
-                let _enum_name = ["appClient", "appApprenant", "appCoach", "appDialogEditor", "appSavvyAuthor", "appSavvyAuthorAdmin"];
+                let _enum_name = ["appClient", "appApprenant", "appCoach", "appDialogEditor", "appSavvyAuthor", "appSavvyAuthorAdmin", "SavvyLearner"];
                 if (_enum_name.indexOf(_name) == -1) {
-                    throw new Error(path + "name dont match one of appClient , appApprenant , appCoach , appDialogEditor , appSavvyAuthor , appSavvyAuthorAdmin");
+                    throw new Error(path + "name dont match one of appClient , appApprenant , appCoach , appDialogEditor , appSavvyAuthor , appSavvyAuthorAdmin , SavvyLearner");
                 }
             }
             if (target["domainToInstallOn"] != null && target["domainToInstallOn"] != undefined) {
@@ -53,9 +54,9 @@ class Model_daesignApplication extends utils_1.Base {
                 if (!_.isString(_domainToInstallOn)) {
                     throw new Error(path + "domainToInstallOn is not a string");
                 }
-                let _enum_domainToInstallOn = [".daesign.com", ".savvy-author.com"];
+                let _enum_domainToInstallOn = [".daesign.com", ".savvy-author.com", ".savvy-learner.com"];
                 if (_enum_domainToInstallOn.indexOf(_domainToInstallOn) == -1) {
-                    throw new Error(path + "domainToInstallOn dont match one of .daesign.com , .savvy-author.com");
+                    throw new Error(path + "domainToInstallOn dont match one of .daesign.com , .savvy-author.com , .savvy-learner.com");
                 }
             }
             if (target["appInstanceNameSuffix"] != null && target["appInstanceNameSuffix"] != undefined) {
@@ -63,9 +64,9 @@ class Model_daesignApplication extends utils_1.Base {
                 if (!_.isString(_appInstanceNameSuffix)) {
                     throw new Error(path + "appInstanceNameSuffix is not a string");
                 }
-                let _enum_appInstanceNameSuffix = ["-adminacademy", "-academy", "-mentoracademy", "-dialogeditor", "-savvyauthor", "-adminsavvyauthor"];
+                let _enum_appInstanceNameSuffix = ["-adminacademy", "-academy", "-mentoracademy", "-dialogeditor", "-savvyauthor", "-adminsavvyauthor", ""];
                 if (_enum_appInstanceNameSuffix.indexOf(_appInstanceNameSuffix) == -1) {
-                    throw new Error(path + "appInstanceNameSuffix dont match one of -adminacademy , -academy , -mentoracademy , -dialogeditor , -savvyauthor , -adminsavvyauthor");
+                    throw new Error(path + "appInstanceNameSuffix dont match one of -adminacademy , -academy , -mentoracademy , -dialogeditor , -savvyauthor , -adminsavvyauthor , ");
                 }
             }
             return Promise.all(promArr).then(() => { return true; });
