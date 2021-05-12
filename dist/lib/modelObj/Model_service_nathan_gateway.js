@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Model_service_nathan_gateway = void 0;
 const _ = require("lodash");
 const Model_service_1 = require("./Model_service");
 /**
@@ -30,6 +31,14 @@ class Model_service_nathan_gateway extends Model_service_1.Model_service {
             }
             else if (obj["licence"]._id) {
                 this["licence"] = obj["licence"]._id;
+            }
+        }
+        if (obj["lerobertLicence"] != undefined) {
+            if (_.isString(obj["lerobertLicence"])) {
+                this["lerobertLicence"] = obj["lerobertLicence"];
+            }
+            else if (obj["lerobertLicence"]._id) {
+                this["lerobertLicence"] = obj["lerobertLicence"]._id;
             }
         }
         if (obj["url_licence_collection"] != undefined) {
@@ -71,6 +80,12 @@ class Model_service_nathan_gateway extends Model_service_1.Model_service {
                 let _licence = target["licence"];
                 if (!_.isString(_licence)) {
                     throw new Error(path + "licence is not a string");
+                }
+            }
+            if (target["lerobertLicence"] != null && target["lerobertLicence"] != undefined) {
+                let _lerobertLicence = target["lerobertLicence"];
+                if (!_.isString(_lerobertLicence)) {
+                    throw new Error(path + "lerobertLicence is not a string");
                 }
             }
             if (target["url_licence_collection"] != null && target["url_licence_collection"] != undefined) {

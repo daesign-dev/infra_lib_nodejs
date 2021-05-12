@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Model_deploy_template_training_course = void 0;
 const _ = require("lodash");
 const Model_deploy_template_1 = require("./Model_deploy_template");
 /**

@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Model_application_configuration_appClient = void 0;
 const _ = require("lodash");
 const Index = require("./Index");
 const Model_application_configuration_web_1 = require("./Model_application_configuration_web");
@@ -21,6 +22,9 @@ class Model_application_configuration_appClient extends Model_application_config
         }
         if (obj["signinUrl"] != undefined) {
             this["signinUrl"] = obj["signinUrl"].toString();
+        }
+        if (obj["licenseServiceUrl"] != undefined) {
+            this["licenseServiceUrl"] = obj["licenseServiceUrl"].toString();
         }
         if (obj["serviceSessionUrl"] != undefined) {
             this["serviceSessionUrl"] = obj["serviceSessionUrl"].toString();
@@ -44,6 +48,9 @@ class Model_application_configuration_appClient extends Model_application_config
         }
         if (obj["isForProspect"] != undefined) {
             this["isForProspect"] = new Boolean(obj["isForProspect"]).valueOf();
+        }
+        if (obj["licenseTokenUrl"] != undefined) {
+            this["licenseTokenUrl"] = obj["licenseTokenUrl"].toString();
         }
     }
     static check(target, isCompleteObj = true, path = "") {
@@ -75,6 +82,12 @@ class Model_application_configuration_appClient extends Model_application_config
                 let _signinUrl = target["signinUrl"];
                 if (!_.isString(_signinUrl)) {
                     throw new Error(path + "signinUrl is not a string");
+                }
+            }
+            if (target["licenseServiceUrl"] != null && target["licenseServiceUrl"] != undefined) {
+                let _licenseServiceUrl = target["licenseServiceUrl"];
+                if (!_.isString(_licenseServiceUrl)) {
+                    throw new Error(path + "licenseServiceUrl is not a string");
                 }
             }
             if (isCompleteObj && (target["serviceSessionUrl"] == null || target["serviceSessionUrl"] == undefined)) {
@@ -124,6 +137,12 @@ class Model_application_configuration_appClient extends Model_application_config
                 let _isForProspect = target["isForProspect"];
                 if (!_.isBoolean(_isForProspect)) {
                     throw new Error(path + "isForProspect is not a boolean");
+                }
+            }
+            if (target["licenseTokenUrl"] != null && target["licenseTokenUrl"] != undefined) {
+                let _licenseTokenUrl = target["licenseTokenUrl"];
+                if (!_.isString(_licenseTokenUrl)) {
+                    throw new Error(path + "licenseTokenUrl is not a string");
                 }
             }
             return Promise.all(promArr).then(() => { return true; });

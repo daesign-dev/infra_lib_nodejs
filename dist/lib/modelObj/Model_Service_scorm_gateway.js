@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Model_Service_scorm_gateway = void 0;
 const _ = require("lodash");
 const Model_service_1 = require("./Model_service");
 /**
@@ -37,6 +38,9 @@ class Model_Service_scorm_gateway extends Model_service_1.Model_service {
         }
         if (obj["apiUrl"] != undefined) {
             this["apiUrl"] = obj["apiUrl"].toString();
+        }
+        if (obj["infraUrl"] != undefined) {
+            this["infraUrl"] = obj["infraUrl"].toString();
         }
     }
     static check(target, isCompleteObj = true, path = "") {
@@ -95,6 +99,12 @@ class Model_Service_scorm_gateway extends Model_service_1.Model_service {
                 let _apiUrl = target["apiUrl"];
                 if (!_.isString(_apiUrl)) {
                     throw new Error(path + "apiUrl is not a string");
+                }
+            }
+            if (target["infraUrl"] != null && target["infraUrl"] != undefined) {
+                let _infraUrl = target["infraUrl"];
+                if (!_.isString(_infraUrl)) {
+                    throw new Error(path + "infraUrl is not a string");
                 }
             }
             return Promise.all(promArr).then(() => { return true; });

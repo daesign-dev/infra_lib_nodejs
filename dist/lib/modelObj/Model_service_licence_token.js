@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Model_service_licence_token = void 0;
 const _ = require("lodash");
 const Model_service_1 = require("./Model_service");
 /**
@@ -36,6 +37,9 @@ class Model_service_licence_token extends Model_service_1.Model_service {
         }
         if (obj["end_clientUrl"] != undefined) {
             this["end_clientUrl"] = obj["end_clientUrl"].toString();
+        }
+        if (obj["infraBdUrl"] != undefined) {
+            this["infraBdUrl"] = obj["infraBdUrl"].toString();
         }
     }
     static check(target, isCompleteObj = true, path = "") {
@@ -77,6 +81,12 @@ class Model_service_licence_token extends Model_service_1.Model_service {
                 let _end_clientUrl = target["end_clientUrl"];
                 if (!_.isString(_end_clientUrl)) {
                     throw new Error(path + "end_clientUrl is not a string");
+                }
+            }
+            if (target["infraBdUrl"] != null && target["infraBdUrl"] != undefined) {
+                let _infraBdUrl = target["infraBdUrl"];
+                if (!_.isString(_infraBdUrl)) {
+                    throw new Error(path + "infraBdUrl is not a string");
                 }
             }
             return Promise.all(promArr).then(() => { return true; });

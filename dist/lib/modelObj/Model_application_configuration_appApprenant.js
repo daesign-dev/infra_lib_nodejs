@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Model_application_configuration_appApprenant = void 0;
 const _ = require("lodash");
 const Index = require("./Index");
 const Model_application_configuration_web_1 = require("./Model_application_configuration_web");
